@@ -6,7 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Theater-Box-Office" />
+        <module name="4-cleanproject-abstractioncode" />
+        <module name="1-cleanproject-adapters" />
+        <module name="3-cleanproject-domain" />
+        <module name="0-cleanproject-plugins" />
+        <module name="2-cleanproject-application" />
       </profile>
     </annotationProcessing>
   </component>
