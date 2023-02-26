@@ -25,7 +25,7 @@ public class Ticket {
         return event;
     }
 
-    public Seat getSeatNumber() {
-        return seat;
+    public int getSeatNumber() {
+        return seat.getSeatNumber();
     }
 }

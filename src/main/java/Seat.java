@@ -12,4 +12,20 @@ public class Seat {
         this.seatNumber=seatID+1;
 
     }
+
+    public int getSeatID() {
+        return seatID;
+    }
+
+    public String getHall() {
+        return hall;
+    }
+
+    public SeatType getType() {
+        return type;
+    }
+
+    public int getSeatNumber() {
+        return seatNumber;
+    }
 }
