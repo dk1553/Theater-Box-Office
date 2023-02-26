@@ -4,12 +4,28 @@ public class Ticket {
     private int id;
     private Price price;
     private Event event;
-    private int seatNumber;
+    private Seat seat;
 
-    public Ticket(int id, Price price, Event event,int seatNumber){
+    public Ticket(int id, Price price, Event event, Seat seat){
         this.id=id;
         this.price=price;
         this.event=event;
-        this.seatNumber=seatNumber;
+        this.seat=seat;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public Price getPrice() {
+        return price;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public Seat getSeatNumber() {
+        return seat;
     }
 }

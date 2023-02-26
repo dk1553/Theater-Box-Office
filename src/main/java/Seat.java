@@ -1,12 +1,15 @@
 public class Seat {
     private int seatID;
-    private String location;
+    private String hall;
     private SeatType type;
+    private int seatNumber;
 
-    public Seat (int seatID, String location, SeatType type){
+    public Seat (int seatID, String hall, SeatType type){
         this.seatID=seatID;
-        this.location=location;
+        this.hall=hall;
         this.type=type;
+        //change seatNumber to seatLine and seatNumberInLine
+        this.seatNumber=seatID+1;
 
     }
 }
