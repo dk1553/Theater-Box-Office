@@ -11,13 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>level-0-cleanproject-plugins</artifactId>
-    <dependencies>
-        <dependency>
-            <artifactId>level-1-cleanproject-adapters</artifactId>
-            <groupId>org.example</groupId>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
+
 
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
