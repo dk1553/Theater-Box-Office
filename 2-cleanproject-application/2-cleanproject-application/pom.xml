@@ -11,6 +11,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>level-2-cleanproject-application</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>level-3-cleanproject-domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
 
     <properties>
