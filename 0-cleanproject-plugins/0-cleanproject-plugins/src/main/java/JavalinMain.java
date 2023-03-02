@@ -5,10 +5,13 @@ public class JavalinMain {
     public static void main (String[] args){
         Javalin app=Javalin.create().start(7777);
         ViewController.start();
-
-        app.get("/events", ViewController::getAllEvents);
+        //test functions
         app.get("/events/{eventID}", ViewController::getEvent);
+
+
+        app.get("/events", ViewController::getEventList);
         app.get("/performances", ViewController::getPerformanceList);
+        app.get("/performances/{performanceName}", ViewController::getPerformance);
     }
 
 

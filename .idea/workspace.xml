@@ -4,23 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="Project's configuration was changed">
-      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/target/classes/Currency.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/target/classes/Event.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/target/classes/Hall.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/target/classes/Performance.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/target/classes/Price.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/target/classes/Seat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/target/classes/SeatType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/target/classes/Ticket.class" afterDir="false" />
+    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="UseCase show theater's repertoire">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/SQLiteJDBC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/ShowProgram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/TheaterProgram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/DataConrtoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/DataConrtoller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/JavalinMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/JavalinMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/DataConrtoller.class" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/DataConrtoller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/JavalinMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/JavalinMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/ViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/ViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/TheaterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/TheaterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/target/classes/TheaterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/target/classes/TheaterService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/target/classes/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/target/classes/Event.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,46 +67,87 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "18",
-    "last_opened_file_path": "D:/Theater-Box-Office/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.28850573",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Theater-Box-Office/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/connect/sqlite-jdbc-3.27.2.1.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.28850573&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "directory"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;
     ],
-    "DatabaseDriversLRU": [
-      "sqlite"
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Theater-Box-Office\0-cleanproject-plugins\0-cleanproject-plugins\src\main\resources\sqlite\connect\net\sqlitetutorial" />
+      <recent name="D:\Theater-Box-Office\0-cleanproject-plugins\0-cleanproject-plugins\src\main\resources\sqlite\db" />
       <recent name="D:\Theater-Box-Office\0-cleanproject-plugins\0-cleanproject-plugins\src\main\resources" />
       <recent name="D:\Theater-Box-Office\0-cleanproject-plugins\0-cleanproject-plugins\src\main\java" />
       <recent name="D:\Theater-Box-Office\src\main\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Theater-Box-Office\0-cleanproject-plugins\0-cleanproject-plugins\src\main\resources\sqlite\connect" />
+      <recent name="D:\Theater-Box-Office\0-cleanproject-plugins\0-cleanproject-plugins\src\main\resources\sqlite\connect\sqlitetutorial" />
+      <recent name="D:\Theater-Box-Office\0-cleanproject-plugins\0-cleanproject-plugins\src\main\resources\sqlite\connect\net" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="Application.JavalinMain">
+    <configuration name="Connect" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="net.sqlitetutorial.Connect" />
+      <module name="0-cleanproject-plugins" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.sqlitetutorial.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavalinMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JavalinMain" />
+      <module name="0-cleanproject-plugins" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SQLiteJDBC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SQLiteJDBC" />
+      <module name="0-cleanproject-plugins" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <module name="0-cleanproject-plugins" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testttt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="testttt" />
       <module name="0-cleanproject-plugins" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -112,7 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.JavalinMain" />
+        <item itemvalue="Application.testttt" />
+        <item itemvalue="Application.SQLiteJDBC" />
+        <item itemvalue="Application.test" />
+        <item itemvalue="Application.Connect" />
       </list>
     </recent_temporary>
   </component>
@@ -131,7 +178,9 @@
       <workItem from="1677415456996" duration="18374000" />
       <workItem from="1677505030739" duration="9466000" />
       <workItem from="1677594363966" duration="1565000" />
-      <workItem from="1677595951715" duration="2905000" />
+      <workItem from="1677595951715" duration="10419000" />
+      <workItem from="1677654957774" duration="13150000" />
+      <workItem from="1677744436197" duration="4516000" />
     </task>
     <task id="LOCAL-00001" summary="Integration of Javalin">
       <created>1668077726013</created>
@@ -217,7 +266,35 @@
       <option name="project" value="LOCAL" />
       <updated>1677596957871</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Project's configuration was changed: wrong module-dependencies in POMs are deleted, javalin-library placed only in package 0  -&gt; building clean architecture">
+      <created>1677608326180</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1677608326180</updated>
+    </task>
+    <task id="LOCAL-00014" summary="UseCase show theater's repertoire">
+      <created>1677698493051</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1677698493051</updated>
+    </task>
+    <task id="LOCAL-00015" summary="update target folder">
+      <created>1677698647199</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1677698647199</updated>
+    </task>
+    <task id="LOCAL-00016" summary="UseCase show theater's repertoire">
+      <created>1677698788451</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1677698788451</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +320,10 @@
     <MESSAGE value="Build package structure" />
     <MESSAGE value="SQLite-database is added" />
     <MESSAGE value="Project's configuration was changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project's configuration was changed" />
+    <MESSAGE value="Project's configuration was changed: wrong module-dependencies in POMs are deleted, javalin-library placed only in package 0  -&gt; building clean architecture" />
+    <MESSAGE value="update target folder" />
+    <MESSAGE value="UseCase show theater's repertoire" />
+    <option name="LAST_COMMIT_MESSAGE" value="UseCase show theater's repertoire" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
