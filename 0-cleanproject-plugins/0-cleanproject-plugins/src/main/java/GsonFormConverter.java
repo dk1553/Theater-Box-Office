@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+
+public class GsonFormConverter {
+
+    public static String event2jsonformString(Event event){
+        String result= "{'id':'"+ event.getId()+"','performance':'"+event.getPerformance().getName()+"','data':'"+event.getDate().toString()+"','time':'"+event.getTime().toString()+"','hall':'"+event.getHall().getHallName()+"','freeSeats':'"+String.valueOf(event.getFreeSeats().length)+"{'tickets':[";
+        for (Ticket ticket:event.getTickets()){
+            String status;
+            if (ticket.isBooked()==false){
+                status="available";
+            }else{
+                status="booked";
+            }
+            result=result+"{'id':'"+ticket.getId()+"','seat number':'"+ticket.getSeatNumber()+"','status':'"+status+"','preis':'"+ticket.getPrice().toString()+"'},";
+        }
+        return result.substring(0,result.length()-1)+"]}";
+    }
+
+    public static String eventList2jsonformatString(ArrayList <Event> events){
+        String result="{'events':[";
+        for (int i=0;i<events.size(); i++){
+            result=result+"{'id':'"+ events.get(i).getId()+"','performance':'"+events.get(i).getPerformance().getName()+"','data':'"+events.get(i).getDate().toString()+"','time':'"+events.get(i).getTime().toString()+"'},";
+        }
+        return result.substring(0,result.length()-1)+"]}";
+
+    }
+
+    public static  String performance2jsonformatString(Performance performance){
+        return "{'name':'"+ performance.getName()+"','description':'"+performance.getDescription()+"'}";
+    }
+
+    public static String performanceList2jsonformatString(ArrayList <Performance> performances){
+        String result="{'performances':[";
+        for (int i=0;i<performances.size(); i++){
+            result=result+"{'name':'"+ performances.get(i).getName()+"','description':'"+performances.get(i).getDescription()+"'},";
+        }
+        return result.substring(0,result.length()-1)+"]}";
+    }
+}

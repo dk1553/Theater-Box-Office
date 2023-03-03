@@ -1,4 +1,4 @@
-public final class Hall {
+public class Hall {
     private final String hallName;
     private final int guestLimit;
     private final int numberOfSeatsOrchestraLeft; //numberOfSeatsOrchestraLeft

@@ -11,4 +11,8 @@ public enum SeatType {
     private SeatType(double priceCoefficient){
         this.priceCoefficient=priceCoefficient;
     }
+
+    public double getPriceCoefficient() {
+        return priceCoefficient;
+    }
 }

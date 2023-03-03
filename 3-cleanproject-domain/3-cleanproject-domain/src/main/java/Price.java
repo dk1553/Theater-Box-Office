@@ -1,26 +1,36 @@
 public class Price {
-    private int amount;
+    private double amount;
     private Currency currency;
 
     public Price (){
         this.amount =0;
         this.currency=Currency.EURO;
     }
-    public Price (int amount) throws Exception {
+    public Price (double amount) throws Exception {
         this.amount =checkAmountValue(amount);
         this.currency=Currency.EURO;
     }
     public void setCurrency(Currency currency){
         this.currency=currency;
     }
-    public void setAmount(int amount) throws Exception {
+    public void setAmount(double amount) throws Exception {
         this.amount =checkAmountValue(amount);
     }
 
-    private int checkAmountValue(int value) throws Exception{
+    private double checkAmountValue(double value) throws Exception{
         if (value<0){
             throw new Exception("Invalid price");
         }
         return value;
     }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    @Override
+    public String toString(){
+        return String.valueOf(amount).substring(0,4)+" "+currency.getSymbol();
+    }
+
 }

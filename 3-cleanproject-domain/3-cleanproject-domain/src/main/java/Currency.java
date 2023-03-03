@@ -7,4 +7,8 @@ public enum Currency {
     private Currency(char symbol){
         this.symbol=symbol;
     }
+
+    public Character getSymbol() {
+        return symbol;
+    }
 }

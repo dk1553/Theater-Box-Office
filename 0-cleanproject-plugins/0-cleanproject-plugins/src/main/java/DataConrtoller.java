@@ -54,7 +54,7 @@ public class DataConrtoller {
                 Date data = rs.getDate("data");
                 Date  time = rs.getTime("time");
                 String  hall = rs.getString("hall");
-                events.add(new Event(id,service.findPerformance(performance), data, time, hall));
+                events.add(new Event(id,service.findPerformance(performance), data, time, service.findHall(hall), new Price(5)));
                 System.out.println(performance);
 
             }

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Event {
@@ -8,8 +9,13 @@ public class Event {
     private Hall hall;
     private Seat[] freeSeats;
     private Seat[] bookedSeats;
+    private ArrayList <Ticket> tickets;
 
-    public Event (int id, Performance performance, Date date, Date time, Hall hall){
+    public ArrayList<Ticket> getTickets() {
+        return tickets;
+    }
+
+    public Event (int id, Performance performance, Date date, Date time, Hall hall, Price basicPrice) throws Exception {
         this.id=id;
         this.performance=performance;
         this.date=date;
@@ -17,17 +23,12 @@ public class Event {
         this.hall=hall;
         this.freeSeats=hall.getSeats();
         this.bookedSeats=null;
+        tickets=new ArrayList<>();
+        for (Seat seat:hall.getSeats()){
+            tickets.add(new Ticket(1, basicPrice, id, seat));
+        }
     }
 
-    //for test
-    public Event (int id, Performance performance, Date date, Date time, String hall){
-        this.id=id;
-        this.performance=performance;
-        this.date=date;
-        this.time=time;
-        this.hall=null;
-
-    }
 
     public Performance getPerformance() {
         return performance;

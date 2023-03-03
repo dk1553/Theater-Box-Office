@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="UseCase show theater's repertoire">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="UseCase show theater's program (test version)">
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/GsonFormConverter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/SQLiteJDBC.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/ShowProgram.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/TheaterProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/DataConrtoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/DataConrtoller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/JavalinMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/JavalinMain.java" afterDir="false" />
@@ -21,8 +18,14 @@
       <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/ViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/ViewController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/TheaterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/TheaterService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/target/classes/TheaterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/target/classes/TheaterService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/Currency.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/Hall.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/Hall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/Price.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/SeatType.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/SeatType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/Ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/target/classes/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/target/classes/Event.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/target/classes/Hall.class" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/target/classes/Hall.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +183,8 @@
       <workItem from="1677594363966" duration="1565000" />
       <workItem from="1677595951715" duration="10419000" />
       <workItem from="1677654957774" duration="13150000" />
-      <workItem from="1677744436197" duration="4516000" />
+      <workItem from="1677744436197" duration="10501000" />
+      <workItem from="1677790467994" duration="7192000" />
     </task>
     <task id="LOCAL-00001" summary="Integration of Javalin">
       <created>1668077726013</created>
@@ -294,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677698788451</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="UseCase show theater's program (test version)">
+      <created>1677749298591</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1677749298591</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,7 +334,8 @@
     <MESSAGE value="Project's configuration was changed: wrong module-dependencies in POMs are deleted, javalin-library placed only in package 0  -&gt; building clean architecture" />
     <MESSAGE value="update target folder" />
     <MESSAGE value="UseCase show theater's repertoire" />
-    <option name="LAST_COMMIT_MESSAGE" value="UseCase show theater's repertoire" />
+    <MESSAGE value="UseCase show theater's program (test version)" />
+    <option name="LAST_COMMIT_MESSAGE" value="UseCase show theater's program (test version)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -12,6 +12,7 @@ public class JavalinMain {
         app.get("/events", ViewController::getEventList);
         app.get("/performances", ViewController::getPerformanceList);
         app.get("/performances/{performanceName}", ViewController::getPerformance);
+
     }
 
 

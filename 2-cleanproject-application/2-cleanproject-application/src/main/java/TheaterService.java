@@ -9,6 +9,10 @@ public class TheaterService {
         repertoire = new Repertoire();
         theaterProgram=new TheaterProgram();
         halls=new ArrayList<>();
+        Hall smallHall= new Hall("Kleine Halle", 10,10,10,10,10,10,10);
+        Hall bigHall = new Hall("Große Halle",10,10,10,15,20,15,20);
+        halls.add(smallHall);
+        halls.add(bigHall);
     }
 
     public void loadRepertoire(ArrayList <Performance> performances) {
