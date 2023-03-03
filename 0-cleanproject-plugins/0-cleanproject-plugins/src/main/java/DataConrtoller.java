@@ -49,14 +49,12 @@ public class DataConrtoller {
 
 
             while ( rs.next() ) {
-                int  id = rs.getInt("id");
                 String  performance = rs.getString("performance");
                 Date data = rs.getDate("data");
                 Date  time = rs.getTime("time");
                 String  hall = rs.getString("hall");
                 BigDecimal price = rs.getBigDecimal("basicPrice");
-                events.add(new Event(id,service.findPerformance(performance), data, time, service.findHall(hall), new Price(price)));
-                System.out.println(performance);
+                events.add(new Event(service.findPerformance(performance), data, time, service.findHall(hall), new Price(price)));
 
             }
             rs.close();

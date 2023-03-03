@@ -12,16 +12,15 @@ public class Event {
         return tickets;
     }
 
-    public Event (int id, Performance performance, Date date, Date time, Hall hall, Price basicPrice) throws Exception {
-        this.id=id;
+    public Event (Performance performance, Date date, Date time, Hall hall, Price basicPrice) throws Exception {
+        this.id=Identifier.getNewEventID();
         this.performance=performance;
         this.date=date;
         this.time=time;
         this.hall=hall;
         tickets=new ArrayList<>();
         for (Seat seat:hall.getSeats()){
-            //testID -> change!!
-            tickets.add(new Ticket(1, basicPrice, id, seat));
+            tickets.add(new Ticket(id,basicPrice, seat));
         }
 
     }

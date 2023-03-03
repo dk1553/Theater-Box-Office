@@ -1,7 +1,4 @@
-import org.eclipse.jetty.util.DateCache;
-
 import java.math.BigDecimal;
-import java.util.function.Predicate;
 
 public class Ticket {
     private int id;
@@ -11,12 +8,10 @@ public class Ticket {
 
     private boolean booked;
 
-    public Ticket(int id, Price basicPrice, int eventID, Seat seat) throws Exception {
-        this.id=id;
+    public Ticket(int eventID, Price basicPrice, Seat seat) throws Exception {
+        this.id=Identifier.getNewTicketID();
         this.eventID=eventID;
         this.seat=seat;
-
-       ;
         this.price= new Price(basicPrice.getAmount().multiply(BigDecimal.valueOf(seat.getType().getPriceCoefficient())));
         this.booked=false;
     }

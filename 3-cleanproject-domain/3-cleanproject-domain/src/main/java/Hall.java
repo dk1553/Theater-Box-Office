@@ -34,25 +34,25 @@ public class Hall {
         int g=numberOfSeatsBalcony;
 
         for (int i=0; i<a;i++){
-            seats[i]= new Seat(i, hallName,SeatType.ORCHESTRA_LEFT);
+            seats[i]= new Seat(hallName,SeatType.ORCHESTRA_LEFT);
         }
         for (int i=a; i<a+b;i++){
-            seats[i]= new Seat(i, hallName,SeatType.ORCHESTRA_RIGHT);
+            seats[i]= new Seat(hallName,SeatType.ORCHESTRA_RIGHT);
         }
         for (int i=a+b; i<a+b+c;i++){
-            seats[i]= new Seat(i, hallName,SeatType.ORCHESTRA_CENTER);
+            seats[i]= new Seat(hallName,SeatType.ORCHESTRA_CENTER);
         }
         for (int i=a+b+c; i<a+b+c+d;i++){
-            seats[i]= new Seat(i, hallName,SeatType.MEZZANINE_RIGHT);
+            seats[i]= new Seat(hallName,SeatType.MEZZANINE_RIGHT);
         }
         for (int i=a+b+c+d; i<a+b+c+d+e;i++){
-            seats[i]= new Seat(i, hallName,SeatType.MEZZANINE_LEFT);
+            seats[i]= new Seat(hallName,SeatType.MEZZANINE_LEFT);
         }
         for (int i=a+b+c+d+e; i<a+b+c+d+e+f;i++){
-            seats[i]= new Seat(i, hallName,SeatType.MEZZANINE_CENTER);
+            seats[i]= new Seat(hallName,SeatType.MEZZANINE_CENTER);
         }
         for (int i=a+b+c+d+e+f; i<guestLimit;i++){
-            seats[i]= new Seat(i, hallName,SeatType.BALCONY);
+            seats[i]= new Seat(hallName,SeatType.BALCONY);
         }
 
     }

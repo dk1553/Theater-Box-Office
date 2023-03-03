@@ -4,12 +4,12 @@ public class Seat {
     private SeatType type;
     private int seatNumber;
 
-    public Seat (int seatID, String hall, SeatType type){
-        this.seatID=seatID;
+    public Seat (String hall, SeatType type){
+        this.seatID=Identifier.getNewSeatID();
         this.hall=hall;
         this.type=type;
         //change seatNumber to seatLine and seatNumberInLine
-        this.seatNumber=seatID+1;
+        this.seatNumber=seatID;
 
     }
 
