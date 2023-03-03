@@ -3,17 +3,17 @@ import java.util.ArrayList;
 public class GsonFormConverter {
 
     public static String event2jsonformString(Event event){
-        String result= "{'id':'"+ event.getId()+"','performance':'"+event.getPerformance().getName()+"','data':'"+event.getDate().toString()+"','time':'"+event.getTime().toString()+"','hall':'"+event.getHall().getHallName()+"','freeSeats':'"+String.valueOf(event.getFreeSeats().length)+"{'tickets':[";
+        String result= "{'id':'"+ event.getId()+"','performance':'"+event.getPerformance().getName()+"','data':'"+event.getDate().toString()+"','time':'"+event.getTime().toString()+"','hall':'"+event.getHall().getHallName()+",\n{'tickets':[\n";
         for (Ticket ticket:event.getTickets()){
             String status;
-            if (ticket.isBooked()==false){
-                status="available";
-            }else{
+            if (ticket.isBooked()){
                 status="booked";
+            }else{
+                status="available";
             }
-            result=result+"{'id':'"+ticket.getId()+"','seat number':'"+ticket.getSeatNumber()+"','status':'"+status+"','preis':'"+ticket.getPrice().toString()+"'},";
+            result=result+"{'id':'"+ticket.getId()+"','seat number':'"+ticket.getSeat().getType().toString()+"','seat number':'"+ticket.getSeat().getSeatNumber()+"','status':'"+status+"','preis':'"+ticket.getPrice().toString()+"'},\n";
         }
-        return result.substring(0,result.length()-1)+"]}";
+        return result.substring(0,result.length()-2)+"]}";
     }
 
     public static String eventList2jsonformatString(ArrayList <Event> events){

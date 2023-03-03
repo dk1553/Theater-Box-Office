@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,7 +17,6 @@ public class DataConrtoller {
 
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery( "SELECT * FROM performances;" );
-
 
             while ( rs.next() ) {
                 String  name = rs.getString("name");
@@ -54,7 +54,8 @@ public class DataConrtoller {
                 Date data = rs.getDate("data");
                 Date  time = rs.getTime("time");
                 String  hall = rs.getString("hall");
-                events.add(new Event(id,service.findPerformance(performance), data, time, service.findHall(hall), new Price(5)));
+                BigDecimal price = rs.getBigDecimal("basicPrice");
+                events.add(new Event(id,service.findPerformance(performance), data, time, service.findHall(hall), new Price(price)));
                 System.out.println(performance);
 
             }

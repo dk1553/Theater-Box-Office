@@ -2,15 +2,12 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Event {
-    private Performance performance;
-    private int id;
-    private Date date;
-    private Date time;
-    private Hall hall;
-    private Seat[] freeSeats;
-    private Seat[] bookedSeats;
-    private ArrayList <Ticket> tickets;
-
+    private final Performance performance;
+    private final int id;
+    private final Date date;
+    private final Date time;
+    private final Hall hall;
+    private final ArrayList <Ticket> tickets;
     public ArrayList<Ticket> getTickets() {
         return tickets;
     }
@@ -21,14 +18,13 @@ public class Event {
         this.date=date;
         this.time=time;
         this.hall=hall;
-        this.freeSeats=hall.getSeats();
-        this.bookedSeats=null;
         tickets=new ArrayList<>();
         for (Seat seat:hall.getSeats()){
+            //testID -> change!!
             tickets.add(new Ticket(1, basicPrice, id, seat));
         }
-    }
 
+    }
 
     public Performance getPerformance() {
         return performance;
@@ -48,13 +44,5 @@ public class Event {
 
     public Hall getHall() {
         return hall;
-    }
-
-    public Seat[] getFreeSeats() {
-        return freeSeats;
-    }
-
-    public Seat[] getBookedSeats() {
-        return bookedSeats;
     }
 }

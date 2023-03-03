@@ -1,5 +1,8 @@
 import org.eclipse.jetty.util.DateCache;
 
+import java.math.BigDecimal;
+import java.util.function.Predicate;
+
 public class Ticket {
     private int id;
     private Price price;
@@ -12,8 +15,9 @@ public class Ticket {
         this.id=id;
         this.eventID=eventID;
         this.seat=seat;
-        basicPrice.setAmount(Math.round(seat.getType().getPriceCoefficient()*basicPrice.getAmount()));
-        this.price=basicPrice;
+
+       ;
+        this.price= new Price(basicPrice.getAmount().multiply(BigDecimal.valueOf(seat.getType().getPriceCoefficient())));
         this.booked=false;
     }
 
@@ -34,7 +38,9 @@ public class Ticket {
     }
 
 
-    public int getSeatNumber() {
-        return seat.getSeatNumber();
+    public Seat getSeat() {
+        return seat;
     }
+
+
 }
