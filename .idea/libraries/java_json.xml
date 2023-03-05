@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="java-json">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/java-json" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/java-json" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/java-json" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/java-json" recursive="false" type="SOURCES" />
+  </library>
+</component>

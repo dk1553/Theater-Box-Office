@@ -67,4 +67,29 @@ public class DataConrtoller {
         System.out.println(events.size());
         return events;
     }
+
+    public static  void addPerformancesToDatabase(ArrayList<Performance> performanceList){
+        Connection c = null;
+        Statement stmt = null;
+        try {
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection(JavalinMain.BOX_OFFICE_DATABASE);
+            c.setAutoCommit(false);
+            System.out.println("Opened database successfully");
+            stmt = c.createStatement();
+
+            for (Performance performance:performanceList){
+                String sql = "INSERT INTO performances (name, description) " +
+                        "VALUES (\'"+performance.getName()+"\',\'"+performance.getDescription()+"\');";
+                stmt.executeUpdate(sql);
+            }
+            stmt.close();
+            c.commit();
+            c.close();
+        } catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        System.out.println("Records created successfully");
+    }
 }

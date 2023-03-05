@@ -1,8 +1,14 @@
-import com.google.gson.JsonSyntaxException;
 import io.javalin.http.Context;
+import org.json.*;
 
 import java.util.ArrayList;
+import com.google.gson.*;
+import io.javalin.Javalin;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
+import java.io.Reader;
+import java.util.ArrayList;
 public class ViewController {
    private static TheaterService service;
     public static void start(){
@@ -55,6 +61,31 @@ public class ViewController {
             context.json("{'message':'Database is empty'}");
         }
 
+    }
+
+    public static void addEvent(Context context) {
+        context.status(200);
+        context.json("{'message':'Successful'}");
+
+        service.getRepertoire().addPerformance(new Performance(context.pathParam("name"),context.pathParam("description")
+        ));
+    }
+
+    public  static void addPerformances(Context context) throws JSONException {
+        context.status(200);
+        context.json("{'message':'Successful'}");
+        JSONObject performanceJson = new JSONObject(context.body());
+        JSONArray jsonArrayPerformances = performanceJson.getJSONArray("performances");
+        ArrayList <Performance> performanceList= new ArrayList<>();
+        for (int i=0; i<jsonArrayPerformances.length();i++){
+            JSONObject pJ = jsonArrayPerformances.getJSONObject(i);
+            Performance performance = new Performance(pJ.getString("name"), pJ.getString("description"));
+            performanceList.add(performance);
+            System.out.println(performance.getName());
+
+        }
+        UpdateRepertoire.addPerformances(service, performanceList);
+        DataConrtoller.addPerformancesToDatabase(performanceList);
     }
 }
 
