@@ -1,3 +1,5 @@
+package rest;
+
 import io.javalin.Javalin;
 
 public class TheaterBoxOfficeApp {
