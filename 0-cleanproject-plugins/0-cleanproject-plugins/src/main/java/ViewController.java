@@ -1,14 +1,17 @@
+import businessObjects.Event;
+import businessObjects.Performance;
+import Service.TheaterService;
+import UseCases.ShowProgram;
+import UseCases.ShowRepertoire;
+import UseCases.UpdateRepertoire;
 import io.javalin.http.Context;
 import org.json.*;
 
 import java.util.ArrayList;
-import com.google.gson.*;
-import io.javalin.Javalin;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.Reader;
-import java.util.ArrayList;
 public class ViewController {
    private static TheaterService service;
     public static void start(){

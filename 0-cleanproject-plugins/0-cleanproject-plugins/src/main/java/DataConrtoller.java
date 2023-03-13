@@ -1,3 +1,8 @@
+import businessObjects.Event;
+import businessObjects.Performance;
+import Service.TheaterService;
+import businessObjects.Price;
+
 import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
@@ -11,7 +16,7 @@ public class DataConrtoller {
         ArrayList <Performance> performances=new ArrayList<>();
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection(JavalinMain.BOX_OFFICE_DATABASE);
+            c = DriverManager.getConnection(TheaterBoxOfficeApp.BOX_OFFICE_DATABASE);
             c.setAutoCommit(false);
             System.out.println("Opened database successfully");
 
@@ -40,7 +45,7 @@ public class DataConrtoller {
         ArrayList <Event> events=new ArrayList<>();
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection(JavalinMain.BOX_OFFICE_DATABASE);
+            c = DriverManager.getConnection(TheaterBoxOfficeApp.BOX_OFFICE_DATABASE);
             c.setAutoCommit(false);
             System.out.println("Opened database successfully");
 
@@ -73,7 +78,7 @@ public class DataConrtoller {
         Statement stmt = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection(JavalinMain.BOX_OFFICE_DATABASE);
+            c = DriverManager.getConnection(TheaterBoxOfficeApp.BOX_OFFICE_DATABASE);
             c.setAutoCommit(false);
             System.out.println("Opened database successfully");
             stmt = c.createStatement();

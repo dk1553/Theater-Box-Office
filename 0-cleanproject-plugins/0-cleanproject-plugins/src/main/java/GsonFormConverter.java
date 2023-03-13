@@ -1,3 +1,7 @@
+import businessObjects.Event;
+import businessObjects.Performance;
+import businessObjects.Ticket;
+
 import java.util.ArrayList;
 
 public class GsonFormConverter {

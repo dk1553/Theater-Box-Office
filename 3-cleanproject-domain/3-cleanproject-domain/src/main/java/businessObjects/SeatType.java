@@ -1,3 +1,5 @@
+package businessObjects;
+
 public enum SeatType {
     ORCHESTRA_LEFT(1.6, "ORCHESTRA_LEFT"),
     ORCHESTRA_RIGHT(1.6, "ORCHESTRA_RIGHT"),

@@ -1,3 +1,5 @@
+package businessObjects;
+
 public class Seat {
     private int seatID;
     private String hall;

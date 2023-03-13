@@ -1,3 +1,5 @@
+package businessObjects;
+
 public class Hall {
     private final String hallName;
     private final int guestLimit;

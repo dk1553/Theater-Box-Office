@@ -1,15 +1,9 @@
-import com.google.gson.*;
 import io.javalin.Javalin;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
-import java.io.Reader;
-import java.util.ArrayList;
-
-public class JavalinMain {
+public class TheaterBoxOfficeApp {
    public static String BOX_OFFICE_DATABASE="jdbc:sqlite:D:/Theater-Box-Office/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db";
     public static void main (String[] args){
-        Javalin app=Javalin.create().start(7777);
+        Javalin app=Javalin.create().start(7771);
         ViewController.start();
 
         app.get("/events/{eventID}", ViewController::getEvent);

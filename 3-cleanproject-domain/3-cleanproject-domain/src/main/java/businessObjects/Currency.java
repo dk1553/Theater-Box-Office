@@ -1,3 +1,5 @@
+package businessObjects;
+
 public enum Currency {
     EURO ('€'),
     DOLLAR ('$');

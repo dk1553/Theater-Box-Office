@@ -1,3 +1,5 @@
+package businessObjects;
+
 public final class Performance {
     private final String name;
     private final String description;
