@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="Build object-identifier">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/java_json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/SQLiteJDBC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/java-json/java-json.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/UpdateRepertoire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/DataConrtoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/DataConrtoller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/JavalinMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/JavalinMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/ViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/DataConrtoller.class" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/DataConrtoller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/JavalinMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/JavalinMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/ViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/ViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/target/classes/SeatType.class" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/target/classes/SeatType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-cleanproject-abstractioncode/4-cleanproject-abstractioncode/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/4-cleanproject-abstractioncode/4-cleanproject-abstractioncode/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +26,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -76,7 +69,7 @@
     "jdk.selected.JAVA_MODULE": "18",
     "last_opened_file_path": "D:/Theater-Box-Office/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/java-json",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
+    "project.structure.proportion": "0.27377778",
     "project.structure.side.proportion": "0.28850573",
     "settings.editor.selected.configurable": "preferences.pathVariables"
   },
