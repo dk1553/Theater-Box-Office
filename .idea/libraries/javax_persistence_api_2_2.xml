@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="javax.persistence-api-2.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/resources/javax.persistence-api-2.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
