@@ -26,7 +26,7 @@ public class ViewController {
         try {
             for (Event event:service.getEventRepository().findAllEvents()){
                 String hallName=event.getHallName();
-                event.setHall(service.findHallByName(hallName));
+                event.setHall(service.getTheaterBuilding().findHallByName(hallName));
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -114,7 +114,7 @@ public class ViewController {
             JSONObject pJ = jsonArrayEvents.getJSONObject(i);
             try {
                 Performance performance =service.getPerformancesRepository().findPerformanceByName(pJ.getString("performance"));
-                Hall hall= service.findHallByName( pJ.getString("hall"));
+                Hall hall= service.getTheaterBuilding().findHallByName( pJ.getString("hall"));
                 Price price= new Price(pJ.getString("basic price"));
                 SimpleDateFormat formatterDate = new SimpleDateFormat("dd.MM.yyyy");
                 Date date = formatterDate.parse(pJ.getString("date"));

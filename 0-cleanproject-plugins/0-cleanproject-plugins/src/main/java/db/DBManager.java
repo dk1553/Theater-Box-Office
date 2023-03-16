@@ -1,11 +1,6 @@
 package db;
 
-import businessObjects.Event;
-import businessObjects.Performance;
-import Service.TheaterService;
-import businessObjects.Price;
-import businessObjects.Ticket;
-import resources.EventResource;
+import businessObjects.*;
 import rest.TheaterBoxOfficeApp;
 
 import java.math.BigDecimal;
@@ -13,6 +8,7 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Objects;
 
 public class DBManager {
     static Connection c = null;
@@ -104,26 +100,45 @@ public class DBManager {
         System.out.println("Records created successfully");
     }
 
-    public ArrayList<Ticket> getTickets() throws Exception {
+    public ArrayList<Ticket> getTickets(TheaterBuilding theaterBuilding) throws Exception {
         ArrayList <Ticket> tickets=new ArrayList<>();
         rs = stmt.executeQuery( "SELECT * FROM tickets;" );
+        Statement stmt2 = c.createStatement();
         while ( rs.next() ) {
             String  ticketID = rs.getString("ticketID");
             String  basicPrice = rs.getString("basicPrice");
             String  eventID = rs.getString("eventID");
             String  seat = rs.getString("seat");
-            String  status = rs.getString("status");
-
-           // tickets.add(new Ticket(ticketID, new Price(basicPrice), seat));
+            boolean isBooked=false;
+            if (rs.getInt("isBooked")==1){
+                isBooked=true;
+            }
+            String hallName="";
+            try {
+                ResultSet rs2 = stmt2.executeQuery( "SELECT * FROM program WHERE eventID =\'"+eventID+"\';" );
+                while ( rs2.next() ) {
+                    hallName=rs2.getString("hall");
+                }
+                rs2.close();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            stmt2.close();
+            Hall hall= theaterBuilding.findHallByName(hallName);
+            assert hall != null;
+            tickets.add(new Ticket(ticketID,eventID, new Price(basicPrice), hall.findSeatById(seat),isBooked));
         }
         return tickets;
     }
 
     public void addTicketsToDatabase(ArrayList<Ticket> tickets, Price basicPrice, String eventID) throws SQLException {
-
         for (Ticket ticket:tickets){
+            int status=0;
+            if (ticket.isBooked()){
+                status=1;
+            }
             String sql = "INSERT INTO tickets (ticketID, basicPrice, eventID, seat, isBooked) " +
-                    "VALUES (\'"+ticket.getId()+"\',\'"+basicPrice+"\',\'"+eventID+"\',\'"+ticket.getSeat().getSeatID()+"\',\'"+ ticket.isBooked() +"\');";
+                    "VALUES (\'"+ticket.getId()+"\',\'"+basicPrice+"\',\'"+eventID+"\',\'"+ticket.getSeat().getSeatID()+"\',\'"+ status +"\');";
             stmt.executeUpdate(sql);
         }
         c.commit();

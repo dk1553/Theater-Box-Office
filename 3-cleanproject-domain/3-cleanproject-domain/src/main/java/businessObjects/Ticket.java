@@ -19,6 +19,14 @@ public class Ticket {
         this.booked=false;
     }
 
+    public Ticket(String ticketID, String eventID, Price basicPrice, Seat seat, Boolean booked) throws Exception {
+        this.id=ticketID;
+        this.eventID=eventID;
+        this.seat=seat;
+        this.price= new Price(basicPrice.getAmount().multiply(BigDecimal.valueOf(seat.getType().getPriceCoefficient())));
+        this.booked=booked;
+    }
+
     public String getId() {
         return id;
     }

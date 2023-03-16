@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="removed all files for JPA-test (problem by merging)">
+      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/SeatIdentifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/TheaterBuilding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/DBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/Repertoire.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/Repertoire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/TheaterProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/TheaterProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/TheaterBoxOfficeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/TheaterBoxOfficeApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/ViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/Service/TheaterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/Service/TheaterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Hall.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Hall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Seat.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Seat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/EventRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/PerformanceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/PerformanceRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +198,7 @@
       <workItem from="1677744436197" duration="10501000" />
       <workItem from="1677790467994" duration="34824000" />
       <workItem from="1678719448342" duration="2389000" />
-      <workItem from="1678950958185" duration="9130000" />
+      <workItem from="1678950958185" duration="17540000" />
     </task>
     <task id="LOCAL-00001" summary="Integration of Javalin">
       <created>1668077726013</created>
@@ -392,7 +403,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678961178770</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="changes in use case Add New Events: saving new tickets in db">
+      <created>1678964240786</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1678964240786</updated>
+    </task>
+    <task id="LOCAL-00031" summary="removed all files for JPA-test (problem by merging)">
+      <created>1678964744297</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1678964744297</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,6 +457,7 @@
     <MESSAGE value="changed object's identification method: UUID instead of Identifier.java" />
     <MESSAGE value="UceCase add new events [finished]; fixed a bug in UseCase view theater program" />
     <MESSAGE value="fixed a bug in Event-ID generation" />
+    <MESSAGE value="changes in use case Add New Events: saving new tickets in db" />
     <MESSAGE value="removed all files for JPA-test (problem by merging)" />
     <option name="LAST_COMMIT_MESSAGE" value="removed all files for JPA-test (problem by merging)" />
   </component>

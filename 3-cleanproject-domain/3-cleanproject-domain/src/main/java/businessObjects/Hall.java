@@ -97,4 +97,13 @@ public class Hall {
     public Seat[] getSeats() {
         return seats;
     }
+
+    public Seat findSeatById(String id){
+        for (Seat seat:seats){
+            if (seat.getSeatID().equalsIgnoreCase(id)){
+                return seat;
+            }
+        }
+        return null;
+    }
 }

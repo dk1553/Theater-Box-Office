@@ -1,6 +1,7 @@
 package persistence;
 
 import businessObjects.Performance;
+import businessObjects.TheaterBuilding;
 import db.DBManager;
 import repositories.PerformanceRepository;
 
@@ -12,13 +13,7 @@ public class Repertoire implements PerformanceRepository {
 
     public Repertoire() throws RuntimeException {
         performances=new ArrayList<>();
-        try {
-            loadRepertoireFromDB();
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
+          }
 
     @Override
     public ArrayList<Performance> findAllPerformances() {
@@ -37,8 +32,8 @@ public class Repertoire implements PerformanceRepository {
         return null;
     }
 
-
-    private void loadRepertoireFromDB() throws SQLException, ClassNotFoundException {
+    @Override
+    public void loadRepertoireFromDB() throws SQLException, ClassNotFoundException {
         performances=new ArrayList<>();
         DBManager dbManagerRepertoire = new DBManager();
         ArrayList <Performance> performancesFormDB=dbManagerRepertoire.getRepertoire();
@@ -62,6 +57,10 @@ public class Repertoire implements PerformanceRepository {
             throw new RuntimeException(e);
         }
     }
+
+
+
+
     @Override
     public void deletePerformanceByName(String name) {
         for (Performance p:performances){

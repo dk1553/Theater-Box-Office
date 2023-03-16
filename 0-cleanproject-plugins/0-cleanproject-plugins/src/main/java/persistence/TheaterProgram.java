@@ -1,12 +1,14 @@
 package persistence;
 
+import Service.TheaterService;
 import businessObjects.Event;
 import businessObjects.Performance;
+import businessObjects.TheaterBuilding;
 import businessObjects.Ticket;
 import db.DBManager;
 import repositories.EventRepository;
-import resources.EventResource;
 
+import javax.swing.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -15,19 +17,19 @@ public class TheaterProgram implements EventRepository {
         eventList= new ArrayList<>();
         ticketList= new ArrayList<>();
         try {
-            loadTheaterProgramFromDB();
-          //  loadTicketsFromDB();
+          //  loadTheaterProgramFromDB();
+           // loadTicketsFromDB();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
     }
 
-    private void loadTicketsFromDB() throws Exception {
+    public void loadTicketsFromDB(TheaterBuilding theaterBuilding) throws Exception {
 
         ticketList=new ArrayList<>();
         DBManager dbManagerTicket = new DBManager();
-        ArrayList <Ticket> ticketsFormDB=dbManagerTicket.getTickets();
+        ArrayList <Ticket> ticketsFormDB=dbManagerTicket.getTickets(theaterBuilding);
         if (!ticketsFormDB.isEmpty()){
             ticketList.addAll(ticketsFormDB);
         }
@@ -36,6 +38,7 @@ public class TheaterProgram implements EventRepository {
 
     private ArrayList <Event> eventList;
     private ArrayList <Ticket> ticketList;
+
 
     @Override
     public ArrayList<Event> findAllEvents() {
@@ -80,16 +83,24 @@ public class TheaterProgram implements EventRepository {
             throw new RuntimeException(e);
         }
     }
+@Override
+    public void loadTheaterProgramFromDB(TheaterBuilding theaterBuilding) {
 
-    public void loadTheaterProgramFromDB() throws Exception {
-        eventList=new ArrayList<>();
-        DBManager dbManagerProgram = new DBManager();
-        ArrayList <Event> eventsFormDB=dbManagerProgram.getTheaterProgram();
-        if (!eventsFormDB.isEmpty()){
-            eventList.addAll(eventsFormDB);
+        try {
+            eventList=new ArrayList<>();
+            DBManager dbManagerProgram = new DBManager();
+            ArrayList <Event> eventsFormDB=dbManagerProgram.getTheaterProgram();
+            if (!eventsFormDB.isEmpty()){
+                eventList.addAll(eventsFormDB);
+            }
+            dbManagerProgram.close();
+
+            loadTicketsFromDB(theaterBuilding);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
-        dbManagerProgram.close();
-    }
+
+}
 
 
 }
