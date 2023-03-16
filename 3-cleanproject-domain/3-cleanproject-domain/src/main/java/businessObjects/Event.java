@@ -4,10 +4,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.UUID;
 
 public class Event {
     private final Performance performance;
-    private final int id;
+    private final String id;
     private final String date;
     private final String time;
     private Hall hall;
@@ -19,7 +20,7 @@ public class Event {
     }
 
     public Event (Performance performance, Date date, Date time, Hall hall, Price basicPrice) throws Exception {
-        this.id=Identifier.getNewEventID();
+        this.id= UUID.randomUUID().toString();
         this.performance=performance;
         this.date=validateDate(date);
         this.time=validateTime(time);
@@ -34,7 +35,7 @@ public class Event {
     }
 
     public Event (Performance performance, Date date, Date time, String hall, Price basicPrice) throws Exception {
-        this.id=Identifier.getNewEventID();
+        this.id=UUID.randomUUID().toString();
         this.performance=performance;
         this.date=validateDate(date);
         this.time=validateTime(time);
@@ -57,7 +58,7 @@ public class Event {
         return performance;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 

@@ -1,24 +1,25 @@
 package businessObjects;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 public class Ticket {
-    private int id;
+    private String id;
     private Price price;
-    private int eventID;
+    private String eventID;
     private Seat seat;
 
     private boolean booked;
 
-    public Ticket(int eventID, Price basicPrice, Seat seat) throws Exception {
-        this.id=Identifier.getNewTicketID();
+    public Ticket(String eventID, Price basicPrice, Seat seat) throws Exception {
+        this.id= UUID.randomUUID().toString();
         this.eventID=eventID;
         this.seat=seat;
         this.price= new Price(basicPrice.getAmount().multiply(BigDecimal.valueOf(seat.getType().getPriceCoefficient())));
         this.booked=false;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
