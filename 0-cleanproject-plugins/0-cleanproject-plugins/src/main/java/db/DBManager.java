@@ -46,6 +46,7 @@ public class DBManager {
             rs = stmt.executeQuery( "SELECT * FROM program;" );
         Statement stmt2 = c.createStatement();
             while ( rs.next() ) {
+                String  eventID = rs.getString("eventID");
                 String  performanceName = rs.getString("performance");
                 SimpleDateFormat simpleDateFormatDate= new SimpleDateFormat("dd.MM.yyyy");
                 SimpleDateFormat simpleDateTime= new SimpleDateFormat("hhh:mm");
@@ -61,7 +62,7 @@ public class DBManager {
                         performance=new Performance(rs2.getString("name"),rs2.getString("description") );
                     }
                     rs2.close();
-                    events.add(new Event(performance, data, time, hall, new Price(price)));
+                    events.add(new Event(eventID,performance, data, time, hall, new Price(price)));
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
