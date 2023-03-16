@@ -10,6 +10,16 @@ import java.util.ArrayList;
 public class Repertoire implements PerformanceRepository {
     private ArrayList<Performance> performances;
 
+    public Repertoire() throws RuntimeException {
+        performances=new ArrayList<>();
+        try {
+            loadRepertoireFromDB();
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
     @Override
     public ArrayList<Performance> findAllPerformances() {
         return performances;
@@ -22,34 +32,32 @@ public class Repertoire implements PerformanceRepository {
                 return performance;
             }
         }
+        System.out.println("Performance doesn't exist");
 
         return null;
     }
 
 
     private void loadRepertoireFromDB() throws SQLException, ClassNotFoundException {
+        performances=new ArrayList<>();
         DBManager dbManagerRepertoire = new DBManager();
-        performances.addAll(dbManagerRepertoire.getRepertoire());
+        ArrayList <Performance> performancesFormDB=dbManagerRepertoire.getRepertoire();
+        if (!performancesFormDB.isEmpty()){
+            performances.addAll(performancesFormDB);
+        }
+
         dbManagerRepertoire.close();
     }
 
 
-    public Repertoire() throws RuntimeException {
-        performances=new ArrayList<>();
-        try {
-            loadRepertoireFromDB();
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
 
-    }
     @Override
     public void addPerformances(ArrayList<Performance> performances) {
-        performances.addAll(performances);
         try {
             DBManager dbManagerAddPerformances = new DBManager();
             dbManagerAddPerformances.addPerformancesToDatabase(performances);
             dbManagerAddPerformances.close();
+            this.performances.addAll(performances);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
