@@ -3,6 +3,7 @@ package repositories;
 import businessObjects.Event;
 import businessObjects.Performance;
 import businessObjects.TheaterBuilding;
+import businessObjects.Ticket;
 
 import java.util.ArrayList;
 
@@ -14,4 +15,8 @@ public interface EventRepository {
         void addEvents(ArrayList<Event> events);
 
         void loadTheaterProgramFromDB(TheaterBuilding theaterBuilding);
+
+        ArrayList<Ticket> findAllTickets();
+
+        Ticket buyTicket(String ticket);
 }

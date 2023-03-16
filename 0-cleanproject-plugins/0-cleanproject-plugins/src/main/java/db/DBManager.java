@@ -146,4 +146,10 @@ public class DBManager {
     }
 
 
+    public void buyTicket(Ticket ticket) throws SQLException {
+        String sql = "UPDATE tickets SET isBooked=" +1+" WHERE ticketID=\'"+ticket.getId()+"\';";
+        stmt.executeUpdate(sql);
+        c.commit();
+        System.out.println("Records created successfully");
+    }
 }

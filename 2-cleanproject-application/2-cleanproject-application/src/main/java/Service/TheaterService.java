@@ -55,4 +55,8 @@ public class TheaterService {
     public EventRepository getEventRepository() {
         return eventRepository;
     }
+
+    public Ticket buyTicketUseCase(String ticket) {
+       return eventRepository.buyTicket(ticket);
+    }
 }

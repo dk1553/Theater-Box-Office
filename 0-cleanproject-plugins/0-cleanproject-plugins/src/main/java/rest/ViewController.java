@@ -1,11 +1,8 @@
 package rest;
 
-import businessObjects.Event;
-import businessObjects.Hall;
-import businessObjects.Performance;
+import businessObjects.*;
 import Service.TheaterService;
 
-import businessObjects.Price;
 import converters.GsonFormConverter;
 import io.javalin.http.Context;
 import org.json.*;
@@ -129,6 +126,18 @@ public class ViewController {
         }
 
         service.updateTheaterProgramUseCase(eventList);
+    }
+
+    public static void buyTicket(Context context) {
+        context.status(200);
+
+        Ticket boughtTicket=service.buyTicketUseCase(context.pathParam("ticketID"));
+        if (boughtTicket!=null){
+            context.json(GsonFormConverter.boughtTicket2jsonformatString(boughtTicket));
+        }else{
+            context.json("{'message':'Your purchase could not be completed'}");
+        }
+
     }
 }
 

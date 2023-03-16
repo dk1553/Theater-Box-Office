@@ -48,5 +48,7 @@ public class Ticket {
         return seat;
     }
 
+    public  String getEventID(){ return  eventID;}
+
 
 }

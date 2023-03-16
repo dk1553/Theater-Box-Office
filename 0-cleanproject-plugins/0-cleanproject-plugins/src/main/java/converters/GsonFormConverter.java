@@ -42,4 +42,10 @@ public class GsonFormConverter {
         }
         return result.substring(0,result.length()-1)+"]}";
     }
+
+    public static String boughtTicket2jsonformatString(Ticket ticket) {
+        String result= "{'id':'"+ ticket.getId()+"','event':'"+ticket.getEventID()+"','seat':'"+ticket.getSeat().getSeatNumber()+"','price':'"+ticket.getPrice().toString()+"','is booked':'"+ticket.isBooked()+"'}";
+
+        return result;
+    }
 }

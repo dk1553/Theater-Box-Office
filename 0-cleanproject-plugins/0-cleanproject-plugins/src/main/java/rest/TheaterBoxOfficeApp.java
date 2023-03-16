@@ -21,6 +21,7 @@ public class TheaterBoxOfficeApp {
         app.get("/performances/{performanceName}", ViewController::getPerformance);
         app.post("/addPerformances", ViewController::addPerformances);
         app.post("/addEvents", ViewController::addEvents);
+        app.get("/buyTicket/{ticketID}", ViewController::buyTicket);
     }
 
 

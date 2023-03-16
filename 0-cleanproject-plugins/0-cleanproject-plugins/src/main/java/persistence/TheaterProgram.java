@@ -1,6 +1,5 @@
 package persistence;
 
-import Service.TheaterService;
 import businessObjects.Event;
 import businessObjects.Performance;
 import businessObjects.TheaterBuilding;
@@ -8,7 +7,6 @@ import businessObjects.Ticket;
 import db.DBManager;
 import repositories.EventRepository;
 
-import javax.swing.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -101,6 +99,43 @@ public class TheaterProgram implements EventRepository {
         }
 
 }
+
+    @Override
+    public ArrayList<Ticket> findAllTickets() {
+        return  ticketList;
+    }
+
+    private Ticket findTicketById(String id){
+        for (Ticket ticket:this.ticketList){
+            if (ticket.getId().equalsIgnoreCase(id)){
+                return ticket;
+            }
+        }
+        return null;
+
+    }
+
+    @Override
+    public Ticket buyTicket(String ticketID) {
+        for (Ticket ticket:ticketList){
+            if (ticket.getId().equalsIgnoreCase(ticketID)){
+                if (!ticket.isBooked()){
+                    try {
+                        DBManager dbManagerTicket = new DBManager();
+                        dbManagerTicket.buyTicket(ticket);
+                        dbManagerTicket.close();
+                        ticketList.get(ticketList.indexOf(ticket)).setBooked();
+                        return ticket;
+                    } catch (SQLException | ClassNotFoundException e) {
+                        return null;
+                    }
+                }
+                return null;
+            }
+        }
+        return null;
+
+    }
 
 
 }
