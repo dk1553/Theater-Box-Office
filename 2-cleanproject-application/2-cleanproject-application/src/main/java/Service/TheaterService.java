@@ -8,19 +8,14 @@ import java.util.ArrayList;
 
 
 public class TheaterService {
-   private ArrayList <Hall> halls;
-   private PerformanceRepository performanceRepository;
-   private EventRepository eventRepository;
-    public TheaterService(PerformanceRepository performanceRepository, EventRepository eventRepository){
+   private final ArrayList <Hall> halls;
+   private final PerformanceRepository performanceRepository;
+   private final EventRepository eventRepository;
+    public TheaterService(ArrayList<Hall> halls, PerformanceRepository performanceRepository, EventRepository eventRepository){
+        this.halls = halls;
         this.performanceRepository = performanceRepository;
         this.eventRepository=eventRepository;
 
-
-        halls=new ArrayList<>();
-        Hall smallHall= new Hall("Kleine Halle", 10,10,10,10,10,10,10);
-        Hall bigHall = new Hall("Große Halle",10,10,10,15,20,15,20);
-        halls.add(smallHall);
-        halls.add(bigHall);
     }
 
     public PerformanceRepository getPerformancesRepository() {
@@ -36,14 +31,8 @@ public class TheaterService {
         return  performanceRepository.findAllPerformances();
     }
     public  void updateRepertoireUseCase ( ArrayList<Performance> performances) {
-        for (Performance performance:performances){
-            performanceRepository.addPerformance(performance);
-        }
-
+            performanceRepository.addPerformances(performances);
     }
-
-
-
     public Hall findHallByName(String hallName){
         for (Hall hall:halls){
             if (hall.getHallName().equalsIgnoreCase(hallName)){
@@ -51,5 +40,9 @@ public class TheaterService {
             }
         }
         return  null;
+    }
+
+    public void updateTheaterProgramUseCase(ArrayList<Event> eventList) {
+        eventRepository.addEvents(eventList);
     }
 }

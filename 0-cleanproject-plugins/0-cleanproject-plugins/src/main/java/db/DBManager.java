@@ -9,6 +9,7 @@ import rest.TheaterBoxOfficeApp;
 
 import java.math.BigDecimal;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -43,14 +44,18 @@ public class DBManager {
     public static ArrayList <Event> getTheaterProgram() throws Exception {
         ArrayList <Event> events=new ArrayList<>();
             rs = stmt.executeQuery( "SELECT * FROM program;" );
+        Statement stmt2 = c.createStatement();
             while ( rs.next() ) {
                 String  performanceName = rs.getString("performance");
-                Date data = rs.getDate("data");
-                Date  time = rs.getTime("time");
+                SimpleDateFormat simpleDateFormatDate= new SimpleDateFormat("dd.MM.yyyy");
+                SimpleDateFormat simpleDateTime= new SimpleDateFormat("hhh:mm");
+                Date data =simpleDateFormatDate.parse(rs.getString("date"));
+                Date  time =simpleDateTime.parse(rs.getString("time"));
                 String  hall = rs.getString("hall");
                 BigDecimal price = rs.getBigDecimal("basicPrice");
                 try {
-                    ResultSet rs2 = stmt.executeQuery( "SELECT * FROM performances WHERE name =\'"+performanceName+"\';" );
+
+                    ResultSet rs2 = stmt2.executeQuery( "SELECT * FROM performances WHERE name =\'"+performanceName+"\';" );
                     Performance performance=null;
                     while ( rs2.next() ) {
                         performance=new Performance(rs2.getString("name"),rs2.getString("description") );
@@ -60,6 +65,8 @@ public class DBManager {
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
+                stmt2.close();
+
 
             }
         return events;
@@ -81,6 +88,16 @@ public class DBManager {
                     "VALUES (\'"+performance.getName()+"\',\'"+performance.getDescription()+"\');";
             stmt.executeUpdate(sql);
 
+        c.commit();
+        System.out.println("Records created successfully");
+    }
+
+    public void addEventsToDatabase(ArrayList<Event> events) throws SQLException {
+        for (Event event:events){
+            String sql = "INSERT INTO program (performance, date, time, hall, basicPrice, eventID) " +
+                    "VALUES (\'"+event.getPerformance().getName()+"\',\'"+event.getDate().toString()+"\',\'"+event.getTime().toString()+"\',\'"+event.getHallName()+"\',\'"+event.getBasicPrice().toString()+"\',\'"+event.getId()+"\');";
+            stmt.executeUpdate(sql);
+        }
         c.commit();
         System.out.println("Records created successfully");
     }

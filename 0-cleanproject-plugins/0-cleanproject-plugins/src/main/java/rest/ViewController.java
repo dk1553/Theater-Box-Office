@@ -1,36 +1,38 @@
 package rest;
 
 import businessObjects.Event;
+import businessObjects.Hall;
 import businessObjects.Performance;
 import Service.TheaterService;
 
+import businessObjects.Price;
 import converters.GsonFormConverter;
 import io.javalin.http.Context;
 import org.json.*;
 
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import persistence.Repertoire;
-import persistence.TheaterProgram;
 
 public class ViewController {
    private static TheaterService service;
-    public static void start(){
-        service= new TheaterService(new Repertoire(), new TheaterProgram());
+
+    public static void start(TheaterService service) {
+        ViewController.service = service;
         try {
             for (Event event:service.getEventRepository().findAllEvents()){
                 String hallName=event.getHallName();
                 event.setHall(service.findHallByName(hallName));
-
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
+
 
     public static void getEventList(Context context) {
         ArrayList <Event> events= service.showProgramUseCase();
@@ -44,8 +46,8 @@ public class ViewController {
     public static void getEvent(Context context) {
         String result="";
         for (Event event: service.showProgramUseCase()){
-            if (String.valueOf(event.getId()).equalsIgnoreCase(context.pathParam("eventID"))){
-                result=GsonFormConverter.event2jsonformString(event);
+            if (event.getId().equalsIgnoreCase(context.pathParam("eventID"))){
+                result=GsonFormConverter.event2jsonformatString(event);
                 context.json(result);
                 return;
             }
@@ -100,6 +102,33 @@ public class ViewController {
 
         service.updateRepertoireUseCase(performanceList);
 
+    }
+
+    public static void addEvents(Context context) throws JSONException {
+        context.status(200);
+        context.json("{'message':'Successful'}");
+        JSONObject performanceJson = new JSONObject(context.body());
+        JSONArray jsonArrayEvents = performanceJson.getJSONArray("program");
+        ArrayList <Event> eventList= new ArrayList<>();
+        for (int i=0; i<jsonArrayEvents.length();i++){
+            JSONObject pJ = jsonArrayEvents.getJSONObject(i);
+            try {
+                Performance performance =service.getPerformancesRepository().findPerformanceByName(pJ.getString("performance"));
+                Hall hall= service.findHallByName( pJ.getString("hall"));
+                Price price= new Price(pJ.getString("basic price"));
+                SimpleDateFormat formatterDate = new SimpleDateFormat("dd.MM.yyyy");
+                Date date = formatterDate.parse(pJ.getString("date"));
+                SimpleDateFormat formatterTime = new SimpleDateFormat("hh:mm");
+                Date time = formatterTime.parse(pJ.getString("time"));
+                Event event = new Event(performance, date,time, hall,price );
+                eventList.add(event);
+                System.out.println(performance.getName());
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        service.updateTheaterProgramUseCase(eventList);
     }
 }
 

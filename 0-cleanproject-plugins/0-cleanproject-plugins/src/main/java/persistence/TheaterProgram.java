@@ -43,12 +43,23 @@ public class TheaterProgram implements EventRepository {
 
     @Override
     public void addEvents(ArrayList<Event> events) {
-        eventList.addAll(events);
+        try {
+            DBManager dbManagerEvent = new DBManager();
+            dbManagerEvent.addEventsToDatabase(events);
+            dbManagerEvent.close();
+            this.eventList.addAll(events);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void loadTheaterProgramFromDB() throws Exception {
+        eventList=new ArrayList<>();
         DBManager dbManagerProgram = new DBManager();
-        eventList.addAll(dbManagerProgram.getTheaterProgram());
+        ArrayList <Event> eventsFormDB=dbManagerProgram.getTheaterProgram();
+        if (!eventsFormDB.isEmpty()){
+            eventList.addAll(eventsFormDB);
+        }
         dbManagerProgram.close();
     }
 

@@ -1,13 +1,15 @@
 package businessObjects;
 
+import java.util.UUID;
+
 public class Seat {
-    private int seatID;
+    private String seatID;
     private String hall;
     private SeatType type;
-    private int seatNumber;
+    private String seatNumber;
 
     public Seat (String hall, SeatType type){
-        this.seatID=Identifier.getNewSeatID();
+        this.seatID= UUID.randomUUID().toString();
         this.hall=hall;
         this.type=type;
         //change seatNumber to seatLine and seatNumberInLine
@@ -15,7 +17,7 @@ public class Seat {
 
     }
 
-    public int getSeatID() {
+    public String getSeatID() {
         return seatID;
     }
 
@@ -27,7 +29,7 @@ public class Seat {
         return type;
     }
 
-    public int getSeatNumber() {
+    public String getSeatNumber() {
         return seatNumber;
     }
 }

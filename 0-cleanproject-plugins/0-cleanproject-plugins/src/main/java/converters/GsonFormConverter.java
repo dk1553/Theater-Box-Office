@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class GsonFormConverter {
 
-    public static String event2jsonformString(Event event){
+    public static String event2jsonformatString(Event event){
         String result= "{'id':'"+ event.getId()+"','performance':'"+event.getPerformance().getName()+"','data':'"+event.getDate().toString()+"','time':'"+event.getTime().toString()+"','hall':'"+event.getHall().getHallName()+",\n{'tickets':[\n";
         for (Ticket ticket:event.getTickets()){
             String status;
@@ -25,7 +25,7 @@ public class GsonFormConverter {
     public static String eventList2jsonformatString(ArrayList <Event> events){
         String result="{'events':[";
         for (int i=0;i<events.size(); i++){
-            result=result+"{'id':'"+ events.get(i).getId()+"','performance':'"+events.get(i).getPerformance().getName()+"','data':'"+events.get(i).getDate().toString()+"','time':'"+events.get(i).getTime().toString()+"'},";
+            result=result+"{'id':'"+ events.get(i).getId()+"','performance':'"+events.get(i).getPerformance().getName()+"','date':'"+events.get(i).getDate().toString()+"','time':'"+events.get(i).getTime().toString()+"'},";
         }
         return result.substring(0,result.length()-1)+"]}";
 
