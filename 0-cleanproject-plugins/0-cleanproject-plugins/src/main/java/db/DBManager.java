@@ -4,6 +4,7 @@ import businessObjects.Event;
 import businessObjects.Performance;
 import Service.TheaterService;
 import businessObjects.Price;
+import businessObjects.Ticket;
 import resources.EventResource;
 import rest.TheaterBoxOfficeApp;
 
@@ -102,4 +103,32 @@ public class DBManager {
         c.commit();
         System.out.println("Records created successfully");
     }
+
+    public ArrayList<Ticket> getTickets() throws Exception {
+        ArrayList <Ticket> tickets=new ArrayList<>();
+        rs = stmt.executeQuery( "SELECT * FROM tickets;" );
+        while ( rs.next() ) {
+            String  ticketID = rs.getString("ticketID");
+            String  basicPrice = rs.getString("basicPrice");
+            String  eventID = rs.getString("eventID");
+            String  seat = rs.getString("seat");
+            String  status = rs.getString("status");
+
+           // tickets.add(new Ticket(ticketID, new Price(basicPrice), seat));
+        }
+        return tickets;
+    }
+
+    public void addTicketsToDatabase(ArrayList<Ticket> tickets, Price basicPrice, String eventID) throws SQLException {
+
+        for (Ticket ticket:tickets){
+            String sql = "INSERT INTO tickets (ticketID, basicPrice, eventID, seat, isBooked) " +
+                    "VALUES (\'"+ticket.getId()+"\',\'"+basicPrice+"\',\'"+eventID+"\',\'"+ticket.getSeat().getSeatID()+"\',\'"+ ticket.isBooked() +"\');";
+            stmt.executeUpdate(sql);
+        }
+        c.commit();
+        System.out.println("Records created successfully");
+    }
+
+
 }

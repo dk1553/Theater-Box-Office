@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="UceCase add new events [finished]; fixed a bug in UseCase view theater program" />
+    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="removed all files for JPA-test (problem by merging)">
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/DBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/TheaterProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/TheaterProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Ticket.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,7 +187,7 @@
       <workItem from="1677744436197" duration="10501000" />
       <workItem from="1677790467994" duration="34824000" />
       <workItem from="1678719448342" duration="2389000" />
-      <workItem from="1678950958185" duration="5380000" />
+      <workItem from="1678950958185" duration="9130000" />
     </task>
     <task id="LOCAL-00001" summary="Integration of Javalin">
       <created>1668077726013</created>
@@ -373,7 +378,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678959657140</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="fixed a bug in Event-ID generation">
+      <created>1678960399309</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1678960399309</updated>
+    </task>
+    <task id="LOCAL-00029" summary="removed all files for JPA-test (problem by merging)">
+      <created>1678961178770</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1678961178770</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,7 +431,9 @@
     <MESSAGE value="fixed a bug in use case Update Theater Repertoire" />
     <MESSAGE value="changed object's identification method: UUID instead of Identifier.java" />
     <MESSAGE value="UceCase add new events [finished]; fixed a bug in UseCase view theater program" />
-    <option name="LAST_COMMIT_MESSAGE" value="UceCase add new events [finished]; fixed a bug in UseCase view theater program" />
+    <MESSAGE value="fixed a bug in Event-ID generation" />
+    <MESSAGE value="removed all files for JPA-test (problem by merging)" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed all files for JPA-test (problem by merging)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

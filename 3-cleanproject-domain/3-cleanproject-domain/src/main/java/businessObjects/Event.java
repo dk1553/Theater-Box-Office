@@ -106,7 +106,7 @@ public class Event {
     private String validateDate(Date date){
         String validatedDate=null;
         try {
-            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+            SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
             validatedDate = formatter.format(date);
         } catch (Exception e) {
             throw new RuntimeException(e);
