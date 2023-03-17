@@ -60,7 +60,7 @@ public class DBManager {
                     }
                     rs2.close();
                     ArrayList <Ticket> tickets= new ArrayList<>();
-                   tickets.addAll(getTicketsOfEvent(theaterBuilding, eventID, hall));
+                    tickets.addAll(getTicketsOfEvent(theaterBuilding, eventID, hall));
                     if (!tickets.isEmpty()){
                         events.add(new Event(eventID,performance, data, time, theaterBuilding.findHallByName(hall), new Price(price),tickets ));
 
@@ -75,6 +75,7 @@ public class DBManager {
 
 
             }
+
         return events;
     }
 

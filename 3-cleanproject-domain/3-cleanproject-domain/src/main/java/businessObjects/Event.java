@@ -40,7 +40,7 @@ public class Event {
         this.date=validateDate(date);
         this.time=validateTime(time);
         this.hall=null;
-        tickets=null;
+        this.tickets=new ArrayList<>();
         this.basicPrice=basicPrice;
         this.hallName=hall;
 
@@ -75,7 +75,7 @@ public class Event {
         this.date=validateDate(date);
         this.time=validateTime(time);
         this.hall=hall;
-        this.tickets=null;
+        this.tickets=new ArrayList<>();
         this.basicPrice=basicPrice;
         this.hallName=hall.getHallName();
 

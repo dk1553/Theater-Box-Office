@@ -85,6 +85,27 @@ public class TheaterService {
     return null;
     }
 
+    public Event showEventUseCase(String eventID){
+
+        for (Event event: eventRepository.findAllEvents()){
+            if (event.getId().equalsIgnoreCase(eventID)){
+                for (Ticket t:  event.getTickets()){
+                    System.out.println("test---"+t.isBooked());
+                }
+                    return event;
+            }
+        }
+        return  null;
+    }
+    public Performance showPerformanceUseCase(String performanceName){
+        for (Performance performance: performanceRepository.findAllPerformances()){
+            if (performance.getName().equalsIgnoreCase(performanceName)){
+                return performance;
+            }
+        }
+        return  null;
+    }
+
     public Boolean identifyUser(User user) {
         if ((!user.getFirstName().isBlank())&&(!user.getLastName().isBlank())){
             return true;

@@ -21,11 +21,11 @@ public class ViewController {
     public static void start(TheaterService service) {
         ViewController.service = service;
         try {
-            for (Event event:service.getEventRepository().findAllEvents()){
+           /* for (Event event:service.getEventRepository().findAllEvents()){
                 String hallName=event.getHallName();
                 event.setHall(service.getTheaterBuilding().findHallByName(hallName));
 
-            }
+            }*/
 
 
         } catch (Exception e) {
@@ -35,60 +35,27 @@ public class ViewController {
 
 
     public static void getEventList(Context context) {
-        ArrayList <Event> events= service.showProgramUseCase();
-        if (events.size()>0){
-          context.json(GsonFormConverter.eventList2jsonformatString(events));
-        }else{
-            context.json("{'message':'Database is empty'}");
-        }
+        context.json(
+                GsonFormConverter.eventList2jsonformatString(
+                        service.showProgramUseCase()));
     }
 
     public static void getEvent(Context context) {
-        String result="";
-        for (Event event: service.showProgramUseCase()){
-            if (event.getId().equalsIgnoreCase(context.pathParam("eventID"))){
-                for (Ticket t:  event.getTickets()){
-                    System.out.println("test---"+t.isBooked());
-                }
+        context.json(
+                GsonFormConverter.event2jsonformatString(
+                        service.showEventUseCase(
+                                context.pathParam("eventID"))));
 
-                result=GsonFormConverter.event2jsonformatString(event);
-                context.json(result);
-                return;
-            }
-        }
-        if (result.length()==0){
-            context.json("{'message':'Database is empty'}");
-        }
     }
 
     public static void getPerformanceList(Context context) {
-        ArrayList <Performance> performances= service.showRepertoireUseCase();
-        if (performances.size()>0){
-          context.json(GsonFormConverter.performanceList2jsonformatString(performances));
-        }else{
-            context.json("{'message':'Database is empty'}");
-        }
+          context.json(
+                  GsonFormConverter.performanceList2jsonformatString(
+                          service.showRepertoireUseCase()));
+
     }
     public static void getPerformance(Context context) {
-        String result="";
-        for (Performance performance:service.showRepertoireUseCase()){
-            if (performance.getName().equalsIgnoreCase(context.pathParam("performanceName"))){
-               context.json(GsonFormConverter.performance2jsonformatString(performance));
-                return;
-            }
-        }
-        if (result.length()==0){
-            context.json("{'message':'Database is empty'}");
-        }
-
-    }
-
-    public static void addEvent(Context context) {
-        context.status(200);
-        context.json("{'message':'Successful'}");
-
-        service.getPerformancesRepository().addPerformance(new Performance(context.pathParam("name"),context.pathParam("description")
-        ));
+        context.json(GsonFormConverter.performance2jsonformatString(service.showPerformanceUseCase(context.pathParam("performanceName"))));
     }
 
     public  static void addPerformances(Context context) throws JSONException, SQLException, ClassNotFoundException {
@@ -137,18 +104,15 @@ public class ViewController {
 
     public static void buyTicket(Context context) throws JSONException {
         context.status(200);
-
         JSONObject userJson = new JSONObject(context.body());
         JSONObject pJ = userJson.getJSONObject("user");
+        context.json(
+                GsonFormConverter.boughtTicket2jsonformatString(
+                        service.buyTicketUseCase(
+                                context.pathParam("ticketID"),
+                                pJ.getString("first name"),
+                                pJ.getString("last name"))));
 
-
-        Ticket boughtTicket=service.buyTicketUseCase(context.pathParam("ticketID"),pJ.getString("first name"), pJ.getString("last name"));
-        if (boughtTicket!=null){
-           // context.json();
-            context.json(GsonFormConverter.boughtTicket2jsonformatString(boughtTicket));
-        }else{
-            context.json("{'message':'Your purchase could not be completed'}");
-        }
 
     }
 }
