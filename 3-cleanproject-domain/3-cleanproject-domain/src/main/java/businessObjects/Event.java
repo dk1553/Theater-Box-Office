@@ -45,17 +45,54 @@ public class Event {
         this.hallName=hall;
 
     }
+   public Event (String id, Performance performance, Date date, Date time, String hall, Price basicPrice, ArrayList <Ticket> tickets) throws Exception {
+        this.id=id;
+        this.performance=performance;
+        this.date=validateDate(date);
+        this.time=validateTime(time);
+        this.hall=null;
+        this.tickets=tickets;
+        this.basicPrice=basicPrice;
+        this.hallName=hall;
+
+    }
+    public Event (String id, Performance performance, Date date, Date time, Hall hall, Price basicPrice, ArrayList <Ticket> tickets) throws Exception {
+        this.id=id;
+        this.performance=performance;
+        this.date=validateDate(date);
+        this.time=validateTime(time);
+        this.hall=hall;
+        this.tickets=tickets;
+        this.basicPrice=basicPrice;
+        this.hallName=hall.getHallName();
+
+    }
+
+    public Event (String id, Performance performance, Date date, Date time, Hall hall, Price basicPrice, String noTickets) throws Exception {
+
+        this.id=id;
+        this.performance=performance;
+        this.date=validateDate(date);
+        this.time=validateTime(time);
+        this.hall=hall;
+        this.tickets=null;
+        this.basicPrice=basicPrice;
+        this.hallName=hall.getHallName();
+
+    }
     public Event (String id, Performance performance, Date date, Date time, String hall, Price basicPrice) throws Exception {
         this.id=id;
         this.performance=performance;
         this.date=validateDate(date);
         this.time=validateTime(time);
         this.hall=null;
-        tickets=null;
+        this.tickets=null;
         this.basicPrice=basicPrice;
         this.hallName=hall;
 
     }
+
+
 
     public void setHall (Hall hall) throws Exception {
         this.hall=hall;

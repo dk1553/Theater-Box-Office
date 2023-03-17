@@ -24,7 +24,10 @@ public class ViewController {
             for (Event event:service.getEventRepository().findAllEvents()){
                 String hallName=event.getHallName();
                 event.setHall(service.getTheaterBuilding().findHallByName(hallName));
+
             }
+
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -44,6 +47,10 @@ public class ViewController {
         String result="";
         for (Event event: service.showProgramUseCase()){
             if (event.getId().equalsIgnoreCase(context.pathParam("eventID"))){
+                for (Ticket t:  event.getTickets()){
+                    System.out.println("test---"+t.isBooked());
+                }
+
                 result=GsonFormConverter.event2jsonformatString(event);
                 context.json(result);
                 return;
@@ -128,11 +135,16 @@ public class ViewController {
         service.updateTheaterProgramUseCase(eventList);
     }
 
-    public static void buyTicket(Context context) {
+    public static void buyTicket(Context context) throws JSONException {
         context.status(200);
 
-        Ticket boughtTicket=service.buyTicketUseCase(context.pathParam("ticketID"));
+        JSONObject userJson = new JSONObject(context.body());
+        JSONObject pJ = userJson.getJSONObject("user");
+
+
+        Ticket boughtTicket=service.buyTicketUseCase(context.pathParam("ticketID"),pJ.getString("first name"), pJ.getString("last name"));
         if (boughtTicket!=null){
+           // context.json();
             context.json(GsonFormConverter.boughtTicket2jsonformatString(boughtTicket));
         }else{
             context.json("{'message':'Your purchase could not be completed'}");

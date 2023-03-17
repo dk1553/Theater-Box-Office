@@ -5,13 +5,14 @@ import io.javalin.Javalin;
 import persistence.Repertoire;
 import businessObjects.TheaterBuilding;
 import persistence.TheaterProgram;
+import persistence.TicketOffice;
 
 public class TheaterBoxOfficeApp {
    public static String BOX_OFFICE_DATABASE="jdbc:sqlite:D:/Theater-Box-Office/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db";
     public static void main (String[] args){
         Javalin app=Javalin.create().start(7771);
 
-        TheaterService theaterService= new TheaterService(new Repertoire(), new TheaterProgram());
+        TheaterService theaterService= new TheaterService(new Repertoire(), new TheaterProgram(), new TicketOffice());
         ViewController.start(theaterService);
 
 
@@ -21,7 +22,7 @@ public class TheaterBoxOfficeApp {
         app.get("/performances/{performanceName}", ViewController::getPerformance);
         app.post("/addPerformances", ViewController::addPerformances);
         app.post("/addEvents", ViewController::addEvents);
-        app.get("/buyTicket/{ticketID}", ViewController::buyTicket);
+        app.post("/buyTicket/{ticketID}", ViewController::buyTicket);
     }
 
 

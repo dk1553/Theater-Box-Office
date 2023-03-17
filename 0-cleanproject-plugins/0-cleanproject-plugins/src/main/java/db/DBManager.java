@@ -38,7 +38,7 @@ public class DBManager {
         return performances;
     }
 
-    public static ArrayList <Event> getTheaterProgram() throws Exception {
+    public static ArrayList <Event> getTheaterProgram(TheaterBuilding theaterBuilding) throws Exception {
         ArrayList <Event> events=new ArrayList<>();
             rs = stmt.executeQuery( "SELECT * FROM program;" );
         Statement stmt2 = c.createStatement();
@@ -59,7 +59,15 @@ public class DBManager {
                         performance=new Performance(rs2.getString("name"),rs2.getString("description") );
                     }
                     rs2.close();
-                    events.add(new Event(eventID,performance, data, time, hall, new Price(price)));
+                    ArrayList <Ticket> tickets= new ArrayList<>();
+                   tickets.addAll(getTicketsOfEvent(theaterBuilding, eventID, hall));
+                    if (!tickets.isEmpty()){
+                        events.add(new Event(eventID,performance, data, time, theaterBuilding.findHallByName(hall), new Price(price),tickets ));
+
+                    }else{
+                        events.add(new Event(eventID,performance, data, time, theaterBuilding.findHallByName(hall), new Price(price), "noTickets"));
+
+                    }
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
@@ -124,6 +132,29 @@ public class DBManager {
                 throw new RuntimeException(e);
             }
             stmt2.close();
+            Hall hall= theaterBuilding.findHallByName(hallName);
+            assert hall != null;
+            tickets.add(new Ticket(ticketID,eventID, new Price(basicPrice), hall.findSeatById(seat),isBooked));
+        }
+        return tickets;
+    }
+
+    private static ArrayList<Ticket> getTicketsOfEvent(TheaterBuilding theaterBuilding, String eventID, String hallName) throws Exception {
+        ArrayList <Ticket> tickets=new ArrayList<>();
+        Statement stmt3 = c.createStatement();
+        ResultSet resultSet = stmt3.executeQuery( "SELECT * FROM tickets WHERE eventID=\'"+eventID+"\';");
+
+        while ( resultSet.next() ) {
+            String  ticketID = resultSet.getString("ticketID");
+            String  basicPrice = resultSet.getString("basicPrice");
+            String  seat = resultSet.getString("seat");
+            boolean isBooked=false;
+            if (resultSet.getInt("isBooked")==1){
+                isBooked=true;
+            }
+            resultSet.close();
+
+            stmt3.close();
             Hall hall= theaterBuilding.findHallByName(hallName);
             assert hall != null;
             tickets.add(new Ticket(ticketID,eventID, new Price(basicPrice), hall.findSeatById(seat),isBooked));

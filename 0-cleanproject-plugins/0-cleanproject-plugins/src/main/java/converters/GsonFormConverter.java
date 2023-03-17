@@ -17,6 +17,7 @@ public class GsonFormConverter {
             }else{
                 status="available";
             }
+            System.out.println(ticket.isBooked());
             result=result+"{'id':'"+ticket.getId()+"','seat number':'"+ticket.getSeat().getType().toString()+"','seat number':'"+ticket.getSeat().getSeatNumber()+"','status':'"+status+"','preis':'"+ticket.getPrice().toString()+"'},\n";
         }
         return result.substring(0,result.length()-2)+"]}";
