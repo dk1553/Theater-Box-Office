@@ -56,10 +56,6 @@ public class TicketOffice implements TicketRepository {
         if (!ticketsFormDB.isEmpty()){
             ticketList.addAll(ticketsFormDB);
         }
-
-        for (Ticket ticket:ticketList){
-            System.out.println("-------888--"+ticket.isBooked());
-        }
         dbManagerTicket.close();
     }
 

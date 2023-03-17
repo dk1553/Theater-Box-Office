@@ -12,9 +12,12 @@ public class Event {
     private final String date;
     private final String time;
     private Hall hall;
-    private String hallName;
+    private final String hallName;
     private final Price basicPrice;
     private ArrayList <Ticket> tickets;
+
+
+
     public ArrayList<Ticket> getTickets() {
         return tickets;
     }

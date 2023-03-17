@@ -3,46 +3,38 @@ package rest;
 import businessObjects.*;
 import Service.TheaterService;
 
-import converters.GsonFormConverter;
+import converters.GsonConverter;
 import io.javalin.http.Context;
 import org.json.*;
 
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Objects;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import resources.EventMapper;
 
 public class ViewController {
    private static TheaterService service;
+   private  static EventMapper eventMapper;
+
 
     public static void start(TheaterService service) {
         ViewController.service = service;
-        try {
-           /* for (Event event:service.getEventRepository().findAllEvents()){
-                String hallName=event.getHallName();
-                event.setHall(service.getTheaterBuilding().findHallByName(hallName));
-
-            }*/
-
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        eventMapper=new EventMapper();
     }
 
 
     public static void getEventList(Context context) {
         context.json(
-                GsonFormConverter.eventList2jsonformatString(
+                GsonConverter.eventList2jsonString(
                         service.showProgramUseCase()));
     }
 
     public static void getEvent(Context context) {
         context.json(
-                GsonFormConverter.event2jsonformatString(
+                GsonConverter.event2jsonString(
                         service.showEventUseCase(
                                 context.pathParam("eventID"))));
 
@@ -50,12 +42,12 @@ public class ViewController {
 
     public static void getPerformanceList(Context context) {
           context.json(
-                  GsonFormConverter.performanceList2jsonformatString(
+                  GsonConverter.performanceList2jsonString(
                           service.showRepertoireUseCase()));
 
     }
     public static void getPerformance(Context context) {
-        context.json(GsonFormConverter.performance2jsonformatString(service.showPerformanceUseCase(context.pathParam("performanceName"))));
+        context.json(GsonConverter.performance2jsonString(service.showPerformanceUseCase(context.pathParam("performanceName"))));
     }
 
     public  static void addPerformances(Context context) throws JSONException, SQLException, ClassNotFoundException {
@@ -75,31 +67,11 @@ public class ViewController {
 
     }
 
-    public static void addEvents(Context context) throws JSONException {
+    public static void addEvents(Context context) throws Exception {
         context.status(200);
-        context.json("{'message':'Successful'}");
-        JSONObject performanceJson = new JSONObject(context.body());
-        JSONArray jsonArrayEvents = performanceJson.getJSONArray("program");
-        ArrayList <Event> eventList= new ArrayList<>();
-        for (int i=0; i<jsonArrayEvents.length();i++){
-            JSONObject pJ = jsonArrayEvents.getJSONObject(i);
-            try {
-                Performance performance =service.getPerformancesRepository().findPerformanceByName(pJ.getString("performance"));
-                Hall hall= service.getTheaterBuilding().findHallByName( pJ.getString("hall"));
-                Price price= new Price(pJ.getString("basic price"));
-                SimpleDateFormat formatterDate = new SimpleDateFormat("dd.MM.yyyy");
-                Date date = formatterDate.parse(pJ.getString("date"));
-                SimpleDateFormat formatterTime = new SimpleDateFormat("hh:mm");
-                Date time = formatterTime.parse(pJ.getString("time"));
-                Event event = new Event(performance, date,time, hall,price );
-                eventList.add(event);
-                System.out.println(performance.getName());
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-        }
 
-        service.updateTheaterProgramUseCase(eventList);
+        context.json("{'message':'Successful'}");
+        service.updateTheaterProgramUseCase(eventMapper.map(Objects.requireNonNull(GsonConverter.json2EventResourceList(context.body())),service));
     }
 
     public static void buyTicket(Context context) throws JSONException {
@@ -107,7 +79,7 @@ public class ViewController {
         JSONObject userJson = new JSONObject(context.body());
         JSONObject pJ = userJson.getJSONObject("user");
         context.json(
-                GsonFormConverter.boughtTicket2jsonformatString(
+                GsonConverter.boughtTicket2jsonString(
                         service.buyTicketUseCase(
                                 context.pathParam("ticketID"),
                                 pJ.getString("first name"),

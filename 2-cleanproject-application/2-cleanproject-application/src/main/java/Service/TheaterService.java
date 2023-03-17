@@ -62,14 +62,6 @@ public class TheaterService {
     public TheaterBuilding getTheaterBuilding() {
         return theaterBuilding;
     }
-    public PerformanceRepository getPerformanceRepository() {
-        return performanceRepository;
-    }
-    public TicketRepository getTicketRepository(){return  ticketRepository;}
-    public EventRepository getEventRepository() {
-        return eventRepository;
-    }
-
     public Ticket buyTicketUseCase(String ticket, String userFirstName, String userLastName) {
 
         try {
@@ -84,7 +76,6 @@ public class TheaterService {
         }
     return null;
     }
-
     public Event showEventUseCase(String eventID){
 
         for (Event event: eventRepository.findAllEvents()){
@@ -105,11 +96,22 @@ public class TheaterService {
         }
         return  null;
     }
-
     public Boolean identifyUser(User user) {
         if ((!user.getFirstName().isBlank())&&(!user.getLastName().isBlank())){
             return true;
         }
         return false;
+    }
+
+    public PerformanceRepository getPerformanceRepository() {
+        return performanceRepository;
+    }
+
+    public EventRepository getEventRepository() {
+        return eventRepository;
+    }
+
+    public TicketRepository getTicketRepository() {
+        return ticketRepository;
     }
 }

@@ -5,14 +5,14 @@ import java.util.Date;
 
 public class EventResource {
     private String performance;
-    private Date data;
-    private Date time;
+    private String date;
+    private String time;
     private String hall;
-    private BigDecimal price;
+    private String price;
 
 
-    public EventResource(String performance, Date data, Date time, String hall, BigDecimal price) {
-       this.data=data;
+    public EventResource(String performance, String date, String time, String hall, String price) {
+       this.date = date;
        this.performance=performance;
        this.hall=hall;
        this.time=time;
@@ -23,11 +23,11 @@ public class EventResource {
         return performance;
     }
 
-    public Date getData() {
-        return data;
+    public String getDate() {
+        return date;
     }
 
-    public Date getTime() {
+    public String getTime() {
         return time;
     }
 
@@ -35,7 +35,7 @@ public class EventResource {
         return hall;
     }
 
-    public BigDecimal getPrice() {
+    public String getPrice() {
         return price;
     }
 }
