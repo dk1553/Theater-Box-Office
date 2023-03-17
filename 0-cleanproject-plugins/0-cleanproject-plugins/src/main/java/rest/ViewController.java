@@ -14,15 +14,18 @@ import java.util.Objects;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import resources.EventMapper;
+import resources.PerformanceMapper;
 
 public class ViewController {
    private static TheaterService service;
    private  static EventMapper eventMapper;
+    private  static PerformanceMapper performanceMapper;
 
 
     public static void start(TheaterService service) {
         ViewController.service = service;
         eventMapper=new EventMapper();
+        performanceMapper=new PerformanceMapper();
     }
 
 
@@ -47,19 +50,29 @@ public class ViewController {
 
     }
     public static void getPerformance(Context context) {
-        context.json(GsonConverter.performance2jsonString(service.showPerformanceUseCase(context.pathParam("performanceName"))));
+        context.json(
+                GsonConverter.performance2jsonString(
+                        service.showPerformanceUseCase(
+                                context.pathParam("performanceName"))));
     }
 
-    public  static void addPerformances(Context context) throws JSONException, SQLException, ClassNotFoundException {
+    public  static void addPerformances(Context context) throws Exception {
         context.status(200);
-        Boolean status= service.updateRepertoireUseCase(GsonConverter.json2PerformanceList(context.body()));
+        Boolean status= service.updateRepertoireUseCase(
+                performanceMapper.map(
+                        GsonConverter.json2PerformanceList(
+                                context.body())));
         context.json(GsonConverter.status2jsonString(status));
 
     }
 
     public static void addEvents(Context context) throws Exception {
         context.status(200);
-        Boolean status= service.updateTheaterProgramUseCase(eventMapper.map(Objects.requireNonNull(GsonConverter.json2EventResourceList(context.body())),service));
+        Boolean status= service.updateTheaterProgramUseCase(
+                eventMapper.map(
+                        Objects.requireNonNull(
+                                GsonConverter.json2EventResourceList(
+                                        context.body())),service));
         context.json(GsonConverter.status2jsonString(status));
     }
 

@@ -6,6 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import resources.EventResource;
+import resources.PerformanceResource;
 
 import java.util.ArrayList;
 
@@ -105,14 +106,14 @@ public class GsonConverter {
 
     }
 
-    public static ArrayList <Performance> json2PerformanceList(String contextBody) throws JSONException {
+    public static ArrayList <PerformanceResource> json2PerformanceList(String contextBody) throws JSONException {
         JSONObject performanceJson = new JSONObject(contextBody);
         JSONArray jsonArrayPerformances = performanceJson.getJSONArray("performances");
-        ArrayList <Performance> performanceList= new ArrayList<>();
+        ArrayList <PerformanceResource> performanceList= new ArrayList<>();
         for (int i=0; i<jsonArrayPerformances.length();i++){
             JSONObject pJ = jsonArrayPerformances.getJSONObject(i);
-            Performance performance = new Performance(pJ.getString("name"), pJ.getString("description"));
-            performanceList.add(performance);
+            PerformanceResource performanceResource = new PerformanceResource(pJ.getString("name"), pJ.getString("description"));
+            performanceList.add(performanceResource);
         }
         return performanceList;
     }

@@ -4,12 +4,15 @@ import businessObjects.Performance;
 import businessObjects.TheaterBuilding;
 import db.DBManager;
 import repositories.PerformanceRepository;
+import resources.EventMapper;
+import resources.PerformanceMapper;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Repertoire implements PerformanceRepository {
     private ArrayList<Performance> performances;
+
 
     public Repertoire() throws RuntimeException {
         performances=new ArrayList<>();
