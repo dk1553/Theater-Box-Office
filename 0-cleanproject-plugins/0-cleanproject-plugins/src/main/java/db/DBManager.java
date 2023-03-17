@@ -153,13 +153,16 @@ public class DBManager {
             if (resultSet.getInt("isBooked")==1){
                 isBooked=true;
             }
-            resultSet.close();
 
-            stmt3.close();
+
+
             Hall hall= theaterBuilding.findHallByName(hallName);
             assert hall != null;
             tickets.add(new Ticket(ticketID,eventID, new Price(basicPrice), hall.findSeatById(seat),isBooked));
+            System.out.println("this++"+ticketID);
         }
+        stmt3.close();
+        resultSet.close();
         return tickets;
     }
 
