@@ -85,8 +85,6 @@ public class GsonConverter {
         }else{
             return  "{'message':'Your purchase could not be completed'}";
         }
-
-
     }
 
     public static ArrayList <EventResource> json2EventResourceList(String contextBody) throws JSONException {
@@ -104,6 +102,26 @@ public class GsonConverter {
             }
     }
         return  null;
+
+    }
+
+    public static ArrayList <Performance> json2PerformanceList(String contextBody) throws JSONException {
+        JSONObject performanceJson = new JSONObject(contextBody);
+        JSONArray jsonArrayPerformances = performanceJson.getJSONArray("performances");
+        ArrayList <Performance> performanceList= new ArrayList<>();
+        for (int i=0; i<jsonArrayPerformances.length();i++){
+            JSONObject pJ = jsonArrayPerformances.getJSONObject(i);
+            Performance performance = new Performance(pJ.getString("name"), pJ.getString("description"));
+            performanceList.add(performance);
+        }
+        return performanceList;
+    }
+    public static String status2jsonString(Boolean isSuccessful){
+        if (isSuccessful){
+            return "{'message':'Successful'}";
+        }else{
+            return "{'message':'Sorry!Your purchase could not be completed. Unknown problem ####'}";
+        }
 
     }
 }

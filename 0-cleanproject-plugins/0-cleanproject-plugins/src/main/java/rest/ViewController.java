@@ -52,26 +52,15 @@ public class ViewController {
 
     public  static void addPerformances(Context context) throws JSONException, SQLException, ClassNotFoundException {
         context.status(200);
-        context.json("{'message':'Successful'}");
-        JSONObject performanceJson = new JSONObject(context.body());
-        JSONArray jsonArrayPerformances = performanceJson.getJSONArray("performances");
-        ArrayList <Performance> performanceList= new ArrayList<>();
-        for (int i=0; i<jsonArrayPerformances.length();i++){
-            JSONObject pJ = jsonArrayPerformances.getJSONObject(i);
-            Performance performance = new Performance(pJ.getString("name"), pJ.getString("description"));
-            performanceList.add(performance);
-            System.out.println(performance.getName());
-        }
-
-        service.updateRepertoireUseCase(performanceList);
+        Boolean status= service.updateRepertoireUseCase(GsonConverter.json2PerformanceList(context.body()));
+        context.json(GsonConverter.status2jsonString(status));
 
     }
 
     public static void addEvents(Context context) throws Exception {
         context.status(200);
-
-        context.json("{'message':'Successful'}");
-        service.updateTheaterProgramUseCase(eventMapper.map(Objects.requireNonNull(GsonConverter.json2EventResourceList(context.body())),service));
+        Boolean status= service.updateTheaterProgramUseCase(eventMapper.map(Objects.requireNonNull(GsonConverter.json2EventResourceList(context.body())),service));
+        context.json(GsonConverter.status2jsonString(status));
     }
 
     public static void buyTicket(Context context) throws JSONException {

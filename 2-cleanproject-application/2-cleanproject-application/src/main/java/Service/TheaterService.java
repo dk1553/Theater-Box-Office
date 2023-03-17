@@ -52,12 +52,23 @@ public class TheaterService {
     public ArrayList<Performance> showRepertoireUseCase () {
         return  performanceRepository.findAllPerformances();
     }
-    public  void updateRepertoireUseCase ( ArrayList<Performance> performances) {
-            performanceRepository.addPerformances(performances);
+    public  boolean updateRepertoireUseCase ( ArrayList<Performance> performances) {
+           try {
+               performanceRepository.addPerformances(performances);
+               return true;
+           } catch (Exception e) {
+               return false;
+           }
     }
-    public void updateTheaterProgramUseCase(ArrayList<Event> eventList) {
-        eventRepository.addEvents(eventList);
-        ticketRepository.addTickets(eventList);
+    public boolean updateTheaterProgramUseCase(ArrayList<Event> eventList) {
+        try{
+            eventRepository.addEvents(eventList);
+            ticketRepository.addTickets(eventList);
+            return true;
+        } catch (Exception e) {
+           return false;
+        }
+
     }
     public TheaterBuilding getTheaterBuilding() {
         return theaterBuilding;
