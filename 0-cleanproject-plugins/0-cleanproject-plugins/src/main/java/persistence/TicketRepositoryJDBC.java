@@ -9,7 +9,7 @@ import repositories.TicketRepository;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class TicketOffice implements TicketRepository {
+public class TicketRepositoryJDBC implements TicketRepository {
     private ArrayList <Ticket> ticketList;
     private Ticket findTicketById(String id){
         for (Ticket ticket:this.ticketList){

@@ -2,17 +2,16 @@ package rest;
 
 import Service.TheaterService;
 import io.javalin.Javalin;
-import persistence.Repertoire;
-import businessObjects.TheaterBuilding;
-import persistence.TheaterProgram;
-import persistence.TicketOffice;
+import persistence.PerformanceRepositoryJDBC;
+import persistence.EventRepositoryJDBC;
+import persistence.TicketRepositoryJDBC;
 
 public class TheaterBoxOfficeApp {
-   public static String BOX_OFFICE_DATABASE="jdbc:sqlite:D:/Theater-Box-Office/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db";
+   public static String JDBC_SQLITE_DATABASE ="jdbc:sqlite:D:/Theater-Box-Office/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db";
     public static void main (String[] args){
         Javalin app=Javalin.create().start(7771);
 
-        TheaterService theaterService= new TheaterService(new Repertoire(), new TheaterProgram(), new TicketOffice());
+        TheaterService theaterService= new TheaterService(new PerformanceRepositoryJDBC(), new EventRepositoryJDBC(), new TicketRepositoryJDBC());
         ViewController.start(theaterService);
 
 

@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="code refactoring">
-      <change afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/PerformanceMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/PerformanceResource.java" afterDir="false" />
+    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="code refactoring; implementation of mapping (PerformanceMapper)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/converters/GsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/converters/GsonConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/DBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/Repertoire.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/Repertoire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/ViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +185,8 @@
       <workItem from="1677790467994" duration="34824000" />
       <workItem from="1678719448342" duration="2389000" />
       <workItem from="1678950958185" duration="22634000" />
-      <workItem from="1679039774931" duration="24611000" />
+      <workItem from="1679039774931" duration="25138000" />
+      <workItem from="1679344178372" duration="1300000" />
     </task>
     <task id="LOCAL-00001" summary="Integration of Javalin">
       <created>1668077726013</created>
@@ -460,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679074114071</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="code refactoring; implementation of mapping (PerformanceMapper)">
+      <created>1679076531844</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1679076531844</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,7 +480,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="SQLite-database is added" />
     <MESSAGE value="Project's configuration was changed" />
     <MESSAGE value="Project's configuration was changed: wrong module-dependencies in POMs are deleted, javalin-library placed only in package 0  -&gt; building clean architecture" />
     <MESSAGE value="update target folder" />
@@ -504,7 +504,8 @@
     <MESSAGE value="fixed a bug in use case View Event" />
     <MESSAGE value="code refactoring; implementation of mapping (only EventMapper)" />
     <MESSAGE value="code refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="code refactoring" />
+    <MESSAGE value="code refactoring; implementation of mapping (PerformanceMapper)" />
+    <option name="LAST_COMMIT_MESSAGE" value="code refactoring; implementation of mapping (PerformanceMapper)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -8,8 +8,8 @@ import repositories.EventRepository;
 
 import java.util.ArrayList;
 
-public class TheaterProgram implements EventRepository {
-    public  TheaterProgram(){
+public class EventRepositoryJDBC implements EventRepository {
+    public EventRepositoryJDBC(){
         eventList= new ArrayList<>();
 
 

@@ -8,7 +8,6 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Objects;
 
 public class DBManager {
     static Connection c = null;
@@ -17,7 +16,7 @@ public class DBManager {
 
     public DBManager() throws ClassNotFoundException, SQLException {
         Class.forName("org.sqlite.JDBC");
-        c = DriverManager.getConnection(TheaterBoxOfficeApp.BOX_OFFICE_DATABASE);
+        c = DriverManager.getConnection(TheaterBoxOfficeApp.JDBC_SQLITE_DATABASE);
         c.setAutoCommit(false);
         stmt = c.createStatement();
         System.out.println("Opened database successfully");
