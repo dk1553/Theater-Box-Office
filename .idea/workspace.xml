@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="code refactoring; implementation of mapping (PerformanceMapper)">
+    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="code refactoring;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/JDBCService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/EventRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/EventRepositoryJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/PerformanceRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/PerformanceRepositoryJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/TicketRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/TicketRepositoryJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/TheaterBoxOfficeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/TheaterBoxOfficeApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/Service/TheaterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/Service/TheaterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/EventRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/PerformanceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/PerformanceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/TicketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/TicketRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +195,7 @@
       <workItem from="1678719448342" duration="2389000" />
       <workItem from="1678950958185" duration="22634000" />
       <workItem from="1679039774931" duration="25138000" />
-      <workItem from="1679344178372" duration="1300000" />
+      <workItem from="1679344178372" duration="4295000" />
     </task>
     <task id="LOCAL-00001" summary="Integration of Javalin">
       <created>1668077726013</created>
@@ -461,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679076531844</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="code refactoring;">
+      <created>1679420514074</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1679420514074</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,7 +496,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Project's configuration was changed" />
     <MESSAGE value="Project's configuration was changed: wrong module-dependencies in POMs are deleted, javalin-library placed only in package 0  -&gt; building clean architecture" />
     <MESSAGE value="update target folder" />
     <MESSAGE value="UseCase show theater's repertoire" />
@@ -505,7 +520,8 @@
     <MESSAGE value="code refactoring; implementation of mapping (only EventMapper)" />
     <MESSAGE value="code refactoring" />
     <MESSAGE value="code refactoring; implementation of mapping (PerformanceMapper)" />
-    <option name="LAST_COMMIT_MESSAGE" value="code refactoring; implementation of mapping (PerformanceMapper)" />
+    <MESSAGE value="code refactoring;" />
+    <option name="LAST_COMMIT_MESSAGE" value="code refactoring;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

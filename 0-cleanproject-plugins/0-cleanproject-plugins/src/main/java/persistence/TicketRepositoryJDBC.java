@@ -3,7 +3,7 @@ package persistence;
 import businessObjects.Event;
 import businessObjects.TheaterBuilding;
 import businessObjects.Ticket;
-import db.DBManager;
+import db.JDBCService;
 import repositories.TicketRepository;
 
 import java.sql.SQLException;
@@ -21,15 +21,20 @@ public class TicketRepositoryJDBC implements TicketRepository {
 
     }
 
+    public TicketRepositoryJDBC(TheaterBuilding theaterBuilding) {
+        this.ticketList = new ArrayList<>();
+        loadTicketsFromDB(theaterBuilding);
+    }
+
     @Override
     public Ticket buyTicket(String ticketID) {
         for (Ticket ticket:ticketList){
             if (ticket.getId().equalsIgnoreCase(ticketID)){
                 if (!ticket.isBooked()){
                     try {
-                        DBManager dbManagerTicket = new DBManager();
-                        dbManagerTicket.buyTicket(ticket);
-                        dbManagerTicket.close();
+                        JDBCService jdbcService = new JDBCService();
+                        jdbcService.buyTicket(ticket);
+                        jdbcService.close();
                         ticketList.get(ticketList.indexOf(ticket)).setBooked();
                         return ticket;
                     } catch (SQLException | ClassNotFoundException e) {
@@ -48,31 +53,30 @@ public class TicketRepositoryJDBC implements TicketRepository {
         return ticketList;
     }
 
-    @Override
-    public void loadTicketsFromDB(TheaterBuilding theaterBuilding) throws Exception {
-        ticketList=new ArrayList<>();
-        DBManager dbManagerTicket = new DBManager();
-        ArrayList <Ticket> ticketsFormDB=dbManagerTicket.getTickets(theaterBuilding);
-        if (!ticketsFormDB.isEmpty()){
-            ticketList.addAll(ticketsFormDB);
+    private void loadTicketsFromDB(TheaterBuilding theaterBuilding)  {
+        try {
+            ticketList=new ArrayList<>();
+            JDBCService jdbcService = new JDBCService();
+            ArrayList <Ticket> ticketsFormDB=jdbcService.getTickets(theaterBuilding);
+            if (!ticketsFormDB.isEmpty()){
+                ticketList.addAll(ticketsFormDB);
+            }
+            jdbcService.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
-        dbManagerTicket.close();
+
     }
 
     @Override
     public void addTickets(ArrayList<Event> events) {
         try {
-
             for (Event e:events){
-                DBManager dbManagerTickets = new DBManager();
-                dbManagerTickets.addTicketsToDatabase(e.getTickets(), e.getBasicPrice(),e.getId());
-                dbManagerTickets.close();
+                JDBCService jdbcService = new JDBCService();
+                jdbcService.addTicketsToDatabase(e.getTickets(), e.getBasicPrice(),e.getId());
+                jdbcService.close();
                 this.ticketList.addAll(e.getTickets());
             }
-
-
-
-
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

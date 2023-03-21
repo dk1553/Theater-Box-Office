@@ -9,12 +9,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class DBManager {
+public class JDBCService {
     static Connection c = null;
     static Statement stmt = null;
     static   ResultSet rs=null;
 
-    public DBManager() throws ClassNotFoundException, SQLException {
+    public JDBCService() throws ClassNotFoundException, SQLException {
         Class.forName("org.sqlite.JDBC");
         c = DriverManager.getConnection(TheaterBoxOfficeApp.JDBC_SQLITE_DATABASE);
         c.setAutoCommit(false);

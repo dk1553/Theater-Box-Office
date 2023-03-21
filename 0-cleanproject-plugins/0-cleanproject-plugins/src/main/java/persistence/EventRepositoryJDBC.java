@@ -3,16 +3,15 @@ package persistence;
 import businessObjects.Event;
 import businessObjects.Performance;
 import businessObjects.TheaterBuilding;
-import db.DBManager;
+import db.JDBCService;
 import repositories.EventRepository;
 
 import java.util.ArrayList;
 
 public class EventRepositoryJDBC implements EventRepository {
-    public EventRepositoryJDBC(){
+    public EventRepositoryJDBC(TheaterBuilding theaterBuilding){
         eventList= new ArrayList<>();
-
-
+        loadTheaterProgramFromDB(theaterBuilding);
     }
 
 
@@ -44,26 +43,25 @@ public class EventRepositoryJDBC implements EventRepository {
     @Override
     public void addEvents(ArrayList<Event> events) {
         try {
-            DBManager dbManagerEvent = new DBManager();
-            dbManagerEvent.addEventsToDatabase(events);
-            dbManagerEvent.close();
+            JDBCService jdbcService = new JDBCService();
+            jdbcService.addEventsToDatabase(events);
+            jdbcService.close();
             this.eventList.addAll(events);
 
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
-@Override
-    public void loadTheaterProgramFromDB(TheaterBuilding theaterBuilding) {
 
+    private void loadTheaterProgramFromDB(TheaterBuilding theaterBuilding) {
         try {
             eventList=new ArrayList<>();
-            DBManager dbManagerProgram = new DBManager();
-            ArrayList <Event> eventsFormDB=dbManagerProgram.getTheaterProgram(theaterBuilding);
+            JDBCService jdbcService = new JDBCService();
+            ArrayList <Event> eventsFormDB=jdbcService.getTheaterProgram(theaterBuilding);
             if (!eventsFormDB.isEmpty()){
                 eventList.addAll(eventsFormDB);
             }
-            dbManagerProgram.close();
+            jdbcService.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

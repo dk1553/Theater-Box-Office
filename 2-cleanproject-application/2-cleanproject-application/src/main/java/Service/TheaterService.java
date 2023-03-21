@@ -14,36 +14,14 @@ public class TheaterService {
    private final PerformanceRepository performanceRepository;
    private final EventRepository eventRepository;
     private final TicketRepository ticketRepository;
-    public TheaterService(PerformanceRepository performanceRepository, EventRepository eventRepository, TicketRepository ticketRepository){
-        this.theaterBuilding = new TheaterBuilding();
+    public TheaterService(TheaterBuilding theaterBuilding, PerformanceRepository performanceRepository, EventRepository eventRepository, TicketRepository ticketRepository){
+        this.theaterBuilding = theaterBuilding;
         this.performanceRepository = performanceRepository;
         this.eventRepository=eventRepository;
         this.ticketRepository=ticketRepository;
-
-        loadRepertoireUseCase();
-        loadTheaterProgramUseCase();
-        loadTicketsUseCase();
-
     }
 
-    public void loadRepertoireUseCase() {
-        try {
-            performanceRepository.loadRepertoireFromDB();
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-    public void loadTheaterProgramUseCase() {
-        eventRepository.loadTheaterProgramFromDB(theaterBuilding);
-    }
-    public void loadTicketsUseCase() {
-        try{
-            ticketRepository.loadTicketsFromDB(theaterBuilding);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
 
-    }
     public PerformanceRepository getPerformancesRepository() {
         return performanceRepository;
     }

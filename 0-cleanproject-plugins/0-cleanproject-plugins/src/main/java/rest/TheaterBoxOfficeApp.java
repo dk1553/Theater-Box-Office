@@ -1,6 +1,7 @@
 package rest;
 
 import Service.TheaterService;
+import businessObjects.TheaterBuilding;
 import io.javalin.Javalin;
 import persistence.PerformanceRepositoryJDBC;
 import persistence.EventRepositoryJDBC;
@@ -11,7 +12,13 @@ public class TheaterBoxOfficeApp {
     public static void main (String[] args){
         Javalin app=Javalin.create().start(7771);
 
-        TheaterService theaterService= new TheaterService(new PerformanceRepositoryJDBC(), new EventRepositoryJDBC(), new TicketRepositoryJDBC());
+        TheaterBuilding theaterBuilding=new TheaterBuilding();
+        PerformanceRepositoryJDBC performanceRepositoryJDBC= new PerformanceRepositoryJDBC();
+        EventRepositoryJDBC eventRepositoryJDBC=new EventRepositoryJDBC(theaterBuilding);
+        TicketRepositoryJDBC ticketRepositoryJDBC= new TicketRepositoryJDBC(theaterBuilding);
+
+
+        TheaterService theaterService= new TheaterService(theaterBuilding, performanceRepositoryJDBC,eventRepositoryJDBC, ticketRepositoryJDBC);
         ViewController.start(theaterService);
 
 

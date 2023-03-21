@@ -13,5 +13,4 @@ public interface EventRepository {
         void deleteEventById(int id);
         void addEvent(Event event);
         void addEvents(ArrayList<Event> events);
-        void loadTheaterProgramFromDB(TheaterBuilding theaterBuilding);
 }

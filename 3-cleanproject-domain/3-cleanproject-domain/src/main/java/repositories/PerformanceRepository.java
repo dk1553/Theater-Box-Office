@@ -13,6 +13,5 @@ public interface PerformanceRepository {
     void deletePerformanceByName(String name);
     void addPerformance(Performance performance);
     void addPerformances(ArrayList<Performance> performances);
-    void loadRepertoireFromDB() throws SQLException, ClassNotFoundException;
 
 }
