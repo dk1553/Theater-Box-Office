@@ -9,6 +9,7 @@ import resources.EventResource;
 import resources.PerformanceResource;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class GsonConverter {
 

@@ -25,4 +25,15 @@ public final class TheaterBuilding {
        }
        return null;
     }
+
+    public Seat findSeatByName(String seatID) {
+        for (Hall hall:halls){
+            for (Seat seat:hall.getSeats()){
+            if (seat.getSeatID().equalsIgnoreCase(seatID)){
+                return seat;
+             }
+            }
+        }
+        return null;
+    }
 }

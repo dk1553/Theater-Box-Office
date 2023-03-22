@@ -5,6 +5,8 @@ import businessObjects.TheaterBuilding;
 import businessObjects.Ticket;
 import db.JDBCService;
 import repositories.TicketRepository;
+import resources.TicketMapper;
+import resources.TicketResourceMapper;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -20,6 +22,16 @@ public class TicketRepositoryJDBC implements TicketRepository {
         return null;
 
     }
+    @Override
+    public ArrayList<Ticket> findTicketsOfEvent(String eventID){
+        ArrayList<Ticket> ticketsOfEvent= new ArrayList<>();
+        for (Ticket ticket:this.ticketList){
+            if (ticket.getEventID().equalsIgnoreCase(eventID)){
+                ticketsOfEvent.add(ticket);
+            }
+        }
+        return ticketsOfEvent;
+    }
 
     public TicketRepositoryJDBC(TheaterBuilding theaterBuilding) {
         this.ticketList = new ArrayList<>();
@@ -33,12 +45,15 @@ public class TicketRepositoryJDBC implements TicketRepository {
                 if (!ticket.isBooked()){
                     try {
                         JDBCService jdbcService = new JDBCService();
-                        jdbcService.buyTicket(ticket);
+                        TicketResourceMapper ticketResourceMapper= new TicketResourceMapper();
+                        jdbcService.buyTicket(ticketResourceMapper.map(ticket));
                         jdbcService.close();
                         ticketList.get(ticketList.indexOf(ticket)).setBooked();
                         return ticket;
                     } catch (SQLException | ClassNotFoundException e) {
                         return null;
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
                     }
                 }
                 return null;
@@ -55,9 +70,10 @@ public class TicketRepositoryJDBC implements TicketRepository {
 
     private void loadTicketsFromDB(TheaterBuilding theaterBuilding)  {
         try {
+            TicketMapper ticketMapper= new TicketMapper();
             ticketList=new ArrayList<>();
             JDBCService jdbcService = new JDBCService();
-            ArrayList <Ticket> ticketsFormDB=jdbcService.getTickets(theaterBuilding);
+            ArrayList <Ticket> ticketsFormDB=ticketMapper.map(jdbcService.getTickets(), theaterBuilding);
             if (!ticketsFormDB.isEmpty()){
                 ticketList.addAll(ticketsFormDB);
             }
@@ -73,7 +89,8 @@ public class TicketRepositoryJDBC implements TicketRepository {
         try {
             for (Event e:events){
                 JDBCService jdbcService = new JDBCService();
-                jdbcService.addTicketsToDatabase(e.getTickets(), e.getBasicPrice(),e.getId());
+                TicketResourceMapper ticketResourceMapper= new TicketResourceMapper();
+                jdbcService.addTicketsToDatabase(ticketResourceMapper.map(e.getTickets()));
                 jdbcService.close();
                 this.ticketList.addAll(e.getTickets());
             }

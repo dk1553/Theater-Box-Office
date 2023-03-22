@@ -5,13 +5,18 @@ import businessObjects.Performance;
 import businessObjects.TheaterBuilding;
 import db.JDBCService;
 import repositories.EventRepository;
+import repositories.PerformanceRepository;
+import repositories.TicketRepository;
+import resources.EventMapper;
+import resources.EventResource;
+import resources.EventResourceMapper;
 
 import java.util.ArrayList;
 
 public class EventRepositoryJDBC implements EventRepository {
-    public EventRepositoryJDBC(TheaterBuilding theaterBuilding){
+    public EventRepositoryJDBC(TheaterBuilding theaterBuilding, TicketRepository ticketRepository, PerformanceRepository performanceRepository){
         eventList= new ArrayList<>();
-        loadTheaterProgramFromDB(theaterBuilding);
+        loadTheaterProgramFromDB(theaterBuilding,performanceRepository, ticketRepository);
     }
 
 
@@ -44,7 +49,8 @@ public class EventRepositoryJDBC implements EventRepository {
     public void addEvents(ArrayList<Event> events) {
         try {
             JDBCService jdbcService = new JDBCService();
-            jdbcService.addEventsToDatabase(events);
+            EventResourceMapper eventResourceMapper= new EventResourceMapper();
+            jdbcService.addEventsToDatabase(eventResourceMapper.map(events));
             jdbcService.close();
             this.eventList.addAll(events);
 
@@ -53,18 +59,21 @@ public class EventRepositoryJDBC implements EventRepository {
         }
     }
 
-    private void loadTheaterProgramFromDB(TheaterBuilding theaterBuilding) {
-        try {
-            eventList=new ArrayList<>();
-            JDBCService jdbcService = new JDBCService();
-            ArrayList <Event> eventsFormDB=jdbcService.getTheaterProgram(theaterBuilding);
-            if (!eventsFormDB.isEmpty()){
-                eventList.addAll(eventsFormDB);
+
+
+        private void loadTheaterProgramFromDB(TheaterBuilding theaterBuilding, PerformanceRepository performanceRepository, TicketRepository ticketRepository) {
+            EventMapper eventMapper= new EventMapper();
+            try {
+                eventList=new ArrayList<>();
+                JDBCService jdbcService = new JDBCService();
+                ArrayList <Event> eventsFormDB=eventMapper.map(jdbcService.getTheaterProgram(), performanceRepository, theaterBuilding, ticketRepository);
+                if (!eventsFormDB.isEmpty()){
+                    eventList.addAll(eventsFormDB);
+                }
+                jdbcService.close();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
-            jdbcService.close();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
 
 }
 

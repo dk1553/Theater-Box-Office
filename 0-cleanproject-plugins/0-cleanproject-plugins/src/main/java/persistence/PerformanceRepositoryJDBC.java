@@ -3,16 +3,24 @@ package persistence;
 import businessObjects.Performance;
 import db.JDBCService;
 import repositories.PerformanceRepository;
+import resources.PerformanceMapper;
+import resources.PerformanceResource;
+import resources.PerformanceResourceMapper;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class PerformanceRepositoryJDBC implements PerformanceRepository {
     private ArrayList<Performance> performances;
+    private  static PerformanceMapper performanceMapper;
+    private static PerformanceResourceMapper performanceResourceMapper;
+
 
 
     public PerformanceRepositoryJDBC() throws RuntimeException {
         performances=new ArrayList<>();
+        performanceMapper=new PerformanceMapper();
+        performanceResourceMapper = new PerformanceResourceMapper();
         loadRepertoireFromDB();
     }
 
@@ -36,15 +44,13 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
 
     private void loadRepertoireFromDB() {
         try {
-
             JDBCService jdbcService = new JDBCService();
-            ArrayList <Performance> performancesFormDB=jdbcService.getRepertoire();
+            ArrayList <Performance> performancesFormDB=performanceMapper.map(jdbcService.getRepertoire());
             if (!performancesFormDB.isEmpty()){
                 performances.addAll(performancesFormDB);
             }
-
             jdbcService.close();
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
@@ -56,7 +62,7 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
     public void addPerformances(ArrayList<Performance> performances) {
         try {
             JDBCService jdbcService = new JDBCService();
-            jdbcService.addPerformancesToDatabase(performances);
+            jdbcService.addPerformancesToDatabase(performanceResourceMapper.map(performances));
             jdbcService.close();
             this.performances.addAll(performances);
         } catch (Exception e) {
@@ -81,7 +87,7 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
         performances.add(performance);
         try {
             JDBCService jdbcService = new JDBCService();
-            jdbcService.addPerformancesToDatabase(performances);
+            jdbcService.addPerformancesToDatabase(performanceResourceMapper.map(performances));
             jdbcService.close();
 
         } catch (Exception e) {

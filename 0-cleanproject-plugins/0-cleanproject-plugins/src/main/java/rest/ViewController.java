@@ -72,7 +72,7 @@ public class ViewController {
                 eventMapper.map(
                         Objects.requireNonNull(
                                 GsonConverter.json2EventResourceList(
-                                        context.body())),service));
+                                        context.body())),service.getPerformanceRepository(), service.getTheaterBuilding(), service.getTicketRepository()));
         context.json(GsonConverter.status2jsonString(status));
     }
 

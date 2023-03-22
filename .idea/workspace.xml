@@ -5,15 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="code refactoring;">
+      <change afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/EventResourceMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/PerformanceResourceMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/TicketMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/TicketResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/TicketResourceMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/JDBCService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/converters/GsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/converters/GsonConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/JDBCService.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/JDBCService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/EventRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/EventRepositoryJDBC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/PerformanceRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/PerformanceRepositoryJDBC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/TicketRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/TicketRepositoryJDBC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/TheaterBoxOfficeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/TheaterBoxOfficeApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/Service/TheaterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/Service/TheaterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/EventRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/PerformanceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/PerformanceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/sqlite/connect/net/sqlitetutorial/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/sqlite/connect/net/sqlitetutorial/Connect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/EventMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/EventMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/EventResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/EventResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/TheaterBuilding.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/TheaterBuilding.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/TicketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/TicketRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +48,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -195,7 +206,8 @@
       <workItem from="1678719448342" duration="2389000" />
       <workItem from="1678950958185" duration="22634000" />
       <workItem from="1679039774931" duration="25138000" />
-      <workItem from="1679344178372" duration="4295000" />
+      <workItem from="1679344178372" duration="5833000" />
+      <workItem from="1679500019274" duration="9308000" />
     </task>
     <task id="LOCAL-00001" summary="Integration of Javalin">
       <created>1668077726013</created>
@@ -477,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679420514074</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="code refactoring;">
+      <created>1679422645441</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1679422645441</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -37,28 +37,6 @@ public class Event {
 
     }
 
-    public Event (Performance performance, Date date, Date time, String hall, Price basicPrice) throws Exception {
-        this.id=UUID.randomUUID().toString();
-        this.performance=performance;
-        this.date=validateDate(date);
-        this.time=validateTime(time);
-        this.hall=null;
-        this.tickets=new ArrayList<>();
-        this.basicPrice=basicPrice;
-        this.hallName=hall;
-
-    }
-   public Event (String id, Performance performance, Date date, Date time, String hall, Price basicPrice, ArrayList <Ticket> tickets) throws Exception {
-        this.id=id;
-        this.performance=performance;
-        this.date=validateDate(date);
-        this.time=validateTime(time);
-        this.hall=null;
-        this.tickets=tickets;
-        this.basicPrice=basicPrice;
-        this.hallName=hall;
-
-    }
     public Event (String id, Performance performance, Date date, Date time, Hall hall, Price basicPrice, ArrayList <Ticket> tickets) throws Exception {
         this.id=id;
         this.performance=performance;
@@ -83,17 +61,7 @@ public class Event {
         this.hallName=hall.getHallName();
 
     }
-    public Event (String id, Performance performance, Date date, Date time, String hall, Price basicPrice) throws Exception {
-        this.id=id;
-        this.performance=performance;
-        this.date=validateDate(date);
-        this.time=validateTime(time);
-        this.hall=null;
-        this.tickets=null;
-        this.basicPrice=basicPrice;
-        this.hallName=hall;
 
-    }
 
 
 
