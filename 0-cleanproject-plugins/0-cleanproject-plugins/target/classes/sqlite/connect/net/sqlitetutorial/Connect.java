@@ -1,5 +1,7 @@
 package net.sqlitetutorial;
 
+import rest.TheaterBoxOfficeApp;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -16,7 +18,7 @@ public class Connect {
         Connection conn = null;
         try {
             // db parameters
-            String url = "jdbc:sqlite:D:/Theater-Box-Office/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db";
+            String url = TheaterBoxOfficeApp.JDBC_SQLITE_DATABASE;
             // create a connection to the database
             conn = DriverManager.getConnection(url);
             
