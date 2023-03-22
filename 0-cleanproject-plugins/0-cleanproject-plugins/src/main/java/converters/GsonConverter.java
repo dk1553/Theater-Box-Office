@@ -7,16 +7,17 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import resources.EventResource;
 import resources.PerformanceResource;
+import resources.TicketResource;
 
 import java.util.ArrayList;
 import java.util.UUID;
 
 public class GsonConverter {
 
-    public static String event2jsonString(Event event){
+    public static String event2jsonString(EventResource event){
         if (event!=null){
-            String result= "{'id':'"+ event.getId()+"','performance':'"+event.getPerformance().getName()+"','data':'"+event.getDate().toString()+"','time':'"+event.getTime().toString()+"','hall':'"+event.getHall().getHallName()+",\n{'tickets':[\n";
-            for (Ticket ticket:event.getTickets()){
+            String result= "{'id':'"+ event.getEventID()+"','performance':'"+event.getPerformance()+"','data':'"+event.getDate().toString()+"','time':'"+event.getTime().toString()+"','hall':'"+event.getHall()+",\n{'tickets':[\n";
+            for (TicketResource ticket:event.getTicketResources()){
                 String status;
                 if (ticket.isBooked()){
                     status="booked";
@@ -24,7 +25,7 @@ public class GsonConverter {
                     status="available";
                 }
                 System.out.println(ticket.isBooked());
-                result=result+"{'id':'"+ticket.getId()+"','seat number':'"+ticket.getSeat().getType().toString()+"','seat number':'"+ticket.getSeat().getSeatNumber()+"','status':'"+status+"','preis':'"+ticket.getPrice().toString()+"'},\n";
+                result=result+"{'id':'"+ticket.getId()+"','seat number':'"+ticket.getSeat()+"','seat number':'"+ticket.getSeat()+"','status':'"+status+"','preis':'"+ticket.getPrice().toString()+"'},\n";
             }
             return result.substring(0,result.length()-2)+"]}";
         }else {

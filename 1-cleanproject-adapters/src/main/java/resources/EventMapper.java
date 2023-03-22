@@ -22,11 +22,35 @@ public class EventMapper  {
         SimpleDateFormat formatterTime = new SimpleDateFormat("hh:mm");
         Date time = formatterTime.parse(eventResource.getTime());
         String eventID=eventResource.getEventID();
-        ArrayList <Ticket> tickets= ticketRepository.findTicketsOfEvent(eventID);
+
+      //  tickets.addAll(ticketRepository.findTicketsOfEvent(eventID));
+        TicketMapper ticketMapper= new TicketMapper();
+        ArrayList <TicketResource> ticketResources=new ArrayList<>();
+        ticketResources=eventResource.getTicketResources();
+        ArrayList <Ticket> tickets= new ArrayList<>();
+        if( (ticketResources.size()>0)&&(tickets!=null)){
+            System.out.println("hier---ticketResources------------"+ticketResources.size());
+            // if ((!ticketResources.isEmpty()&&(ticketResources!=null))){
+
+            ArrayList <Ticket> ticketsFormMap= new ArrayList<>();
+
+            ticketsFormMap=ticketMapper.map(ticketResources, theaterBuilding);
+            System.out.println("hier---we------------"+ticketsFormMap.size());
+            for (Ticket ticket:ticketsFormMap){
+                tickets.add(ticket);
+            }
+        }
+
+
+      //  }
+
+
+
 
         if ((performance!=null)&&(date!=null)&&(time!=null)&&(hall!=null)){
             return new Event(eventID,performance, date,time, hall,price, tickets);
         }
+        System.out.println("ups");
         return null;
 
     }

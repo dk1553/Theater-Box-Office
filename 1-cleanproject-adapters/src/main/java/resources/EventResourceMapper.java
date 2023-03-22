@@ -9,8 +9,14 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class EventResourceMapper {
-    public EventResource map(final Event event) throws Exception {
-        return  new EventResource(event.getId(), event.getPerformance().getName(), event.getDate().toString(), event.getTime().toString(), event.getHallName(), event.getBasicPrice().toString());
+    public EventResource map(final Event event) {
+        TicketResourceMapper ticketResourceMapper= new TicketResourceMapper();
+        try {
+            return  new EventResource(event.getId(), event.getPerformance().getName(), event.getDate().toString(), event.getTime().toString(), event.getHallName(), event.getBasicPrice().toString(), ticketResourceMapper.map(event.getTickets()));
+        } catch (Exception e) {
+            return null;
+        }
+
 
     }
 

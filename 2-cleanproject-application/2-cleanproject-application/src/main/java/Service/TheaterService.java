@@ -40,8 +40,10 @@ public class TheaterService {
     }
     public boolean updateTheaterProgramUseCase(ArrayList<Event> eventList) {
         try{
+            System.out.println("wow--"+eventList.get(0).getTickets().size());
             eventRepository.addEvents(eventList);
             ticketRepository.addTickets(eventList);
+
             return true;
         } catch (Exception e) {
            return false;

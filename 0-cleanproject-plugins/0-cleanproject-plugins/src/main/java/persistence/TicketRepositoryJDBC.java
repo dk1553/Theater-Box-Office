@@ -92,6 +92,8 @@ public class TicketRepositoryJDBC implements TicketRepository {
                 TicketResourceMapper ticketResourceMapper= new TicketResourceMapper();
                 jdbcService.addTicketsToDatabase(ticketResourceMapper.map(e.getTickets()));
                 jdbcService.close();
+             //   System.out.println("tetetet...."+ticketResourceMapper.map(e.getTickets()).size());
+                System.out.println("tetetet...."+e.getTickets().size());
                 this.ticketList.addAll(e.getTickets());
             }
         } catch (Exception e) {

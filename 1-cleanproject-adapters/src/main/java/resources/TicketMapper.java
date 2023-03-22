@@ -3,18 +3,30 @@ package resources;
 import businessObjects.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class TicketMapper {
     public Ticket map(final TicketResource ticketResource, TheaterBuilding theaterBuilding) throws Exception {
-        return new Ticket(ticketResource.getId(), ticketResource.getEventID(),new Price(ticketResource.getPrice()), theaterBuilding.findSeatByName(ticketResource.getSeat()), ticketResource.isBooked());
+        try {
+            return new Ticket(ticketResource.getId(), ticketResource.getEventID(),new Price(ticketResource.getPrice()), theaterBuilding.findSeatByName(ticketResource.getSeat()), ticketResource.isBooked());
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
     public ArrayList<Ticket> map(ArrayList<TicketResource> ticketResources, TheaterBuilding theaterBuilding) throws Exception {
         ArrayList<Ticket> tickets=new ArrayList<>();
-        for (TicketResource ticketResource:ticketResources){
-            tickets.add(map(ticketResource, theaterBuilding));
+        if (ticketResources!=null){
+            for (TicketResource ticketResource:ticketResources){
+                tickets.add(map(ticketResource, theaterBuilding));
+            }
+            return tickets;
+        }else{
+            return null;
         }
-        return tickets;
+
     }
+
 }

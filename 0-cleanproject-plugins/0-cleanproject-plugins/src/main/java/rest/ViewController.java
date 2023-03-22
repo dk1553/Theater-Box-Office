@@ -13,19 +13,23 @@ import java.util.Objects;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import resources.EventMapper;
-import resources.PerformanceMapper;
+import resources.*;
 
 public class ViewController {
    private static TheaterService service;
    private  static EventMapper eventMapper;
+    private  static EventResourceMapper eventResourceMapper;
     private  static PerformanceMapper performanceMapper;
+    private  static PerformanceResourceMapper performanceResourceMapper;
+
 
 
     public static void start(TheaterService service) {
         ViewController.service = service;
         eventMapper=new EventMapper();
         performanceMapper=new PerformanceMapper();
+        performanceResourceMapper= new PerformanceResourceMapper();
+        eventResourceMapper=new EventResourceMapper();
     }
 
 
@@ -37,9 +41,9 @@ public class ViewController {
 
     public static void getEvent(Context context) {
         context.json(
-                GsonConverter.event2jsonString(
+                GsonConverter.event2jsonString(eventResourceMapper.map(
                         service.showEventUseCase(
-                                context.pathParam("eventID"))));
+                                context.pathParam("eventID")))));
 
     }
 
@@ -62,17 +66,22 @@ public class ViewController {
                 performanceMapper.map(
                         GsonConverter.json2PerformanceList(
                                 context.body())));
+
         context.json(GsonConverter.status2jsonString(status));
 
     }
 
     public static void addEvents(Context context) throws Exception {
         context.status(200);
-        Boolean status= service.updateTheaterProgramUseCase(
+       /* Boolean status= service.updateTheaterProgramUseCase(
                 eventMapper.map(
                         Objects.requireNonNull(
                                 GsonConverter.json2EventResourceList(
-                                        context.body())),service.getPerformanceRepository(), service.getTheaterBuilding(), service.getTicketRepository()));
+                                        context.body())),service.getPerformanceRepository(), service.getTheaterBuilding(), service.getTicketRepository()));*/
+
+        Boolean status= service.updateTheaterProgramUseCase(
+                eventMapper.map(GsonConverter.json2EventResourceList(
+                                        context.body()),service.getPerformanceRepository(), service.getTheaterBuilding(), service.getTicketRepository()));
         context.json(GsonConverter.status2jsonString(status));
     }
 
