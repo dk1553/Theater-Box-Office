@@ -31,14 +31,15 @@ public class EventRepositoryJDBC implements EventRepository {
     }
 
     @Override
-    public Performance findEventById(int id) {
+    public Event findEventById(String eventID) {
+        for (Event event:eventList){
+            if (event.getId().equalsIgnoreCase(eventID)){
+                return event;
+            }
+        }
         return null;
     }
 
-    @Override
-    public void deleteEventById(int id) {
-
-    }
 
     @Override
     public void addEvent(Event event) {

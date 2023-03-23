@@ -16,8 +16,15 @@ public class Price {
     }
 
     public Price (String amount) throws Exception {
-
-        this.amount =checkAmountValue(BigDecimal.valueOf(Long.parseLong(amount)));
+        try {
+            this.amount =checkAmountValue(BigDecimal.valueOf(Long.parseLong(amount)));
+        } catch (Exception e) {
+            try {
+                this.amount =checkAmountValue(BigDecimal.valueOf(Double.parseDouble(amount)));
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
         this.currency=Currency.EURO;
     }
     public void setCurrency(Currency currency){

@@ -80,7 +80,7 @@ public class ViewController {
                                         context.body())),service.getPerformanceRepository(), service.getTheaterBuilding(), service.getTicketRepository()));*/
 
         Boolean status= service.updateTheaterProgramUseCase(
-                eventMapper.map(GsonConverter.json2EventResourceList(
+                eventMapper.mapNewObject(GsonConverter.json2EventResourceList(
                                         context.body()),service.getPerformanceRepository(), service.getTheaterBuilding(), service.getTicketRepository()));
         context.json(GsonConverter.status2jsonString(status));
     }

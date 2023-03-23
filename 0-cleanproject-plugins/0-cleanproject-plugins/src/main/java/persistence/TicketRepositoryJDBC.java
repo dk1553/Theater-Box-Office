@@ -78,6 +78,7 @@ public class TicketRepositoryJDBC implements TicketRepository {
                 ticketList.addAll(ticketsFormDB);
             }
             jdbcService.close();
+            System.out.println("tttt---"+ticketList.size());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

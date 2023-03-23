@@ -70,18 +70,6 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
         }
     }
 
-
-
-
-    @Override
-    public void deletePerformanceByName(String name) {
-        for (Performance p:performances){
-            if (p.getName().equalsIgnoreCase(name)){
-                performances.remove(p);
-            }
-        }
-    }
-
     @Override
     public void addPerformance(Performance performance) {
         performances.add(performance);

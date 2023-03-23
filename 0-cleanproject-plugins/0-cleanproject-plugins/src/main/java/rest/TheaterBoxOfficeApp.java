@@ -14,8 +14,8 @@ public class TheaterBoxOfficeApp {
 
         TheaterBuilding theaterBuilding=new TheaterBuilding();
         PerformanceRepositoryJDBC performanceRepositoryJDBC= new PerformanceRepositoryJDBC();
-
         TicketRepositoryJDBC ticketRepositoryJDBC= new TicketRepositoryJDBC(theaterBuilding);
+
         EventRepositoryJDBC eventRepositoryJDBC=new EventRepositoryJDBC(theaterBuilding, ticketRepositoryJDBC, performanceRepositoryJDBC);
 
 
