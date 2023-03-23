@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="fixed a bug in mapping">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/EventRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/EventRepositoryJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/PerformanceRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/PerformanceRepositoryJDBC.java" afterDir="false" />
+    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="code refactoring (in UC Buy Ticket)">
       <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/TicketRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/TicketRepositoryJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/ViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/EventMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/EventMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/EventResourceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/EventResourceMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/PerformanceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/PerformanceMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/PerformanceResourceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/PerformanceResourceMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/TicketResourceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/TicketResourceMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/Service/TheaterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/Service/TheaterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/TicketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/TicketRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -524,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679563499021</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="code refactoring (in UC Buy Ticket)">
+      <created>1679564706431</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1679564706431</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -543,7 +538,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="UseCase show theater's program (test version)" />
     <MESSAGE value="UseCase show theater's program: view single event inkl. tickets (test version)" />
     <MESSAGE value="UseCase show theater's program [finished]" />
     <MESSAGE value="Build object-identifier" />
@@ -568,7 +562,8 @@
     <MESSAGE value="mapping" />
     <MESSAGE value="test state" />
     <MESSAGE value="fixed a bug in mapping" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed a bug in mapping" />
+    <MESSAGE value="code refactoring (in UC Buy Ticket)" />
+    <option name="LAST_COMMIT_MESSAGE" value="code refactoring (in UC Buy Ticket)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

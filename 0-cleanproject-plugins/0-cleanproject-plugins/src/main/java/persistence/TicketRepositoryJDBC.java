@@ -47,7 +47,7 @@ public class TicketRepositoryJDBC implements TicketRepository {
                         TicketResourceMapper ticketResourceMapper= new TicketResourceMapper();
                         jdbcService.buyTicket(ticketResourceMapper.map(ticket));
                         jdbcService.close();
-                        ticketList.get(ticketList.indexOf(ticket)).setBooked();
+                        ticket.setBooked();
                         return ticket;
                     } catch (SQLException | ClassNotFoundException e) {
                         return null;
