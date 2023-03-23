@@ -7,15 +7,23 @@ import java.util.ArrayList;
 
 public class PerformanceResourceMapper {
     public PerformanceResource map(final Performance performance) throws Exception {
-        return new PerformanceResource( performance.getName(),performance.getDescription());
+        if (performance!=null){
+            return new PerformanceResource( performance.getName(),performance.getDescription());
+        }else {
+            return  null;
+        }
+
 
     }
 
     public ArrayList<PerformanceResource> map(ArrayList<Performance> performances) throws Exception {
+        if ((performances!=null)&&(!performances.isEmpty())){
         ArrayList<PerformanceResource> performanceResources=new ArrayList<>();
         for (Performance performance:performances){
             performanceResources.add(map(performance));
         }
         return performanceResources;
-    }
+    }else{
+        return null;
+    }}
 }

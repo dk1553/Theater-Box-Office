@@ -1,9 +1,6 @@
 package rest;
 
-import mapper.EventMapper;
-import mapper.EventResourceMapper;
-import mapper.PerformanceMapper;
-import mapper.PerformanceResourceMapper;
+import mapper.*;
 import Service.TheaterService;
 
 import converters.GsonConverter;
@@ -11,6 +8,8 @@ import io.javalin.http.Context;
 import org.json.*;
 
 import org.json.JSONObject;
+import resources.TicketMapper;
+import resources.TicketResource;
 
 public class ViewController {
    private static TheaterService service;
@@ -18,6 +17,9 @@ public class ViewController {
     private  static EventResourceMapper eventResourceMapper;
     private  static PerformanceMapper performanceMapper;
     private  static PerformanceResourceMapper performanceResourceMapper;
+
+    private  static TicketMapper ticketMapper;
+    private  static TicketResourceMapper ticketResourceMapper;
 
 
 
@@ -27,34 +29,36 @@ public class ViewController {
         performanceMapper=new PerformanceMapper();
         performanceResourceMapper= new PerformanceResourceMapper();
         eventResourceMapper=new EventResourceMapper();
+        ticketMapper= new TicketMapper();
+        ticketResourceMapper= new TicketResourceMapper();
     }
 
 
-    public static void getEventList(Context context) {
+    public static void getEventList(Context context) throws Exception {
         context.json(
-                GsonConverter.eventList2jsonString(
-                        service.showProgramUseCase()));
+                GsonConverter.eventResourceList2jsonString(eventResourceMapper.map(
+                        service.showProgramUseCase())));
     }
 
     public static void getEvent(Context context) {
         context.json(
-                GsonConverter.event2jsonString(eventResourceMapper.map(
+                GsonConverter.eventResource2jsonString(eventResourceMapper.map(
                         service.showEventUseCase(
                                 context.pathParam("eventID")))));
 
     }
 
-    public static void getPerformanceList(Context context) {
+    public static void getPerformanceList(Context context) throws Exception {
           context.json(
-                  GsonConverter.performanceList2jsonString(
-                          service.showRepertoireUseCase()));
+                  GsonConverter.performanceResourceList2jsonString(performanceResourceMapper.map(
+                          service.showRepertoireUseCase())));
 
     }
-    public static void getPerformance(Context context) {
+    public static void getPerformance(Context context) throws Exception {
         context.json(
-                GsonConverter.performance2jsonString(
+                GsonConverter.performanceResource2jsonString(performanceResourceMapper.map(
                         service.showPerformanceUseCase(
-                                context.pathParam("performanceName"))));
+                                context.pathParam("performanceName")))));
     }
 
     public  static void addPerformances(Context context) throws Exception {
@@ -76,16 +80,16 @@ public class ViewController {
         context.json(GsonConverter.status2jsonString(status));
     }
 
-    public static void buyTicket(Context context) throws JSONException {
+    public static void buyTicket(Context context) throws Exception {
         context.status(200);
         JSONObject userJson = new JSONObject(context.body());
         JSONObject pJ = userJson.getJSONObject("user");
         context.json(
-                GsonConverter.boughtTicket2jsonString(
+                GsonConverter.boughtTicket2jsonString(ticketResourceMapper.map(
                         service.buyTicketUseCase(
                                 context.pathParam("ticketID"),
                                 pJ.getString("first name"),
-                                pJ.getString("last name"))));
+                                pJ.getString("last name")))));
 
 
     }

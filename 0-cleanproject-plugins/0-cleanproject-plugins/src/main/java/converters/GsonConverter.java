@@ -1,6 +1,5 @@
 package converters;
 
-import Service.TheaterService;
 import businessObjects.*;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -10,11 +9,10 @@ import resources.PerformanceResource;
 import resources.TicketResource;
 
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class GsonConverter {
 
-    public static String event2jsonString(EventResource event){
+    public static String eventResource2jsonString(EventResource event){
         if (event!=null){
             String result= "{'id':'"+ event.getEventID()+"','performance':'"+event.getPerformance()+"','data':'"+event.getDate().toString()+"','time':'"+event.getTime().toString()+"','hall':'"+event.getHall()+",\n{'tickets':[\n";
             for (TicketResource ticket:event.getTicketResources()){
@@ -34,15 +32,15 @@ public class GsonConverter {
 
     }
 
-    public static String eventList2jsonString(ArrayList <Event> events){
+    public static String eventResourceList2jsonString(ArrayList <EventResource> events){
         if (!events.isEmpty()){
             String result="{'events':[";
-            for (Event event:events){
+            for (EventResource event:events){
                 if (event!=null){
                 int aTickets=0;
                 int bTickets=0;
-                if (!event.getTickets().isEmpty()){
-                for (Ticket ticket:event.getTickets()){
+                if ((event.getTicketResources()!=null)&&(!event.getTicketResources().isEmpty())){
+                for (TicketResource ticket:event.getTicketResources()){
 
                     if (ticket.isBooked()){
                         bTickets++;
@@ -50,7 +48,7 @@ public class GsonConverter {
                         aTickets++;
                     }
                 }}
-                result=result+"{'id':'"+ event.getId()+"','performance':'"+event.getPerformance().getName()+"','date':'"+event.getDate().toString()+"','time':'"+event.getTime().toString()+"','available tickets':'"+aTickets+"','booked tickets':'"+bTickets+"'},";
+                result=result+"{'id':'"+ event.getEventID()+"','performance':'"+event.getPerformance()+"','date':'"+event.getDate()+"','time':'"+event.getTime()+"','available tickets':'"+aTickets+"','booked tickets':'"+bTickets+"'},";
             }}
             return result.substring(0,result.length()-1)+"]}";
         }else{
@@ -60,7 +58,7 @@ public class GsonConverter {
 
     }
 
-    public static  String performance2jsonString(Performance performance){
+    public static  String performanceResource2jsonString(PerformanceResource performance){
         if (performance!=null){
             return "{'name':'"+ performance.getName()+"','description':'"+performance.getDescription()+"'}";
         }else{
@@ -69,10 +67,10 @@ public class GsonConverter {
 
     }
 
-    public static String performanceList2jsonString(ArrayList <Performance> performances){
+    public static String performanceResourceList2jsonString(ArrayList <PerformanceResource> performances){
         if (!performances.isEmpty()){
         String result="{'performances':[";
-        for (Performance performance:performances){
+        for (PerformanceResource performance:performances){
             if (performance!=null){
             result=result+"{'name':'"+ performance.getName()+"','description':'"+performance.getDescription()+"'},";
         }}
@@ -81,9 +79,9 @@ public class GsonConverter {
             return "{'message':'Database is empty'}";}
     }
 
-    public static String boughtTicket2jsonString(Ticket ticket) {
+    public static String boughtTicket2jsonString(TicketResource ticket) {
         if (ticket!=null){
-            String result= "{'id':'"+ ticket.getId()+"','event':'"+ticket.getEventID()+"','seat':'"+ticket.getSeat().getSeatNumber()+"','price':'"+ticket.getPrice().toString()+"','is booked':'"+ticket.isBooked()+"'}";
+            String result= "{'id':'"+ ticket.getId()+"','event':'"+ticket.getEventID()+"','seat':'"+ticket.getSeat()+"','price':'"+ticket.getPrice().toString()+"','is booked':'"+ticket.isBooked()+"'}";
             return result;
         }else{
             return  "{'message':'Your purchase could not be completed'}";
