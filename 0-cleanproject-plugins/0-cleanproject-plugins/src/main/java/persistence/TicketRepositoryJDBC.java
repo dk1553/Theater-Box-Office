@@ -6,22 +6,18 @@ import businessObjects.Ticket;
 import db.JDBCService;
 import repositories.TicketRepository;
 import resources.TicketMapper;
-import resources.TicketResourceMapper;
+import mapper.TicketResourceMapper;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class TicketRepositoryJDBC implements TicketRepository {
     private ArrayList <Ticket> ticketList;
-    private Ticket findTicketById(String id){
-        for (Ticket ticket:this.ticketList){
-            if (ticket.getId().equalsIgnoreCase(id)){
-                return ticket;
-            }
-        }
-        return null;
-
+    public TicketRepositoryJDBC(TheaterBuilding theaterBuilding) {
+        this.ticketList = new ArrayList<>();
+        loadTicketsFromDB(theaterBuilding);
     }
+
     @Override
     public ArrayList<Ticket> findTicketsOfEvent(String eventID){
         ArrayList<Ticket> ticketsOfEvent= new ArrayList<>();
@@ -33,15 +29,18 @@ public class TicketRepositoryJDBC implements TicketRepository {
         return ticketsOfEvent;
     }
 
-    public TicketRepositoryJDBC(TheaterBuilding theaterBuilding) {
-        this.ticketList = new ArrayList<>();
-        loadTicketsFromDB(theaterBuilding);
-    }
-
     @Override
-    public Ticket buyTicket(String ticketID) {
-        for (Ticket ticket:ticketList){
-            if (ticket.getId().equalsIgnoreCase(ticketID)){
+    public Ticket findTicketById(String id){
+        for (Ticket ticket:this.ticketList){
+            if (ticket.getId().equalsIgnoreCase(id)){
+                return ticket;
+            }
+        }
+        return null;
+    }
+    @Override
+    public Ticket buy(Ticket ticket) {
+            if (ticket!=null){
                 if (!ticket.isBooked()){
                     try {
                         JDBCService jdbcService = new JDBCService();
@@ -58,33 +57,13 @@ public class TicketRepositoryJDBC implements TicketRepository {
                 }
                 return null;
             }
-        }
         return null;
-
     }
 
     @Override
     public ArrayList<Ticket> findAllTickets() {
         return ticketList;
     }
-
-    private void loadTicketsFromDB(TheaterBuilding theaterBuilding)  {
-        try {
-            TicketMapper ticketMapper= new TicketMapper();
-            ticketList=new ArrayList<>();
-            JDBCService jdbcService = new JDBCService();
-            ArrayList <Ticket> ticketsFormDB=ticketMapper.map(jdbcService.getTickets(), theaterBuilding);
-            if (!ticketsFormDB.isEmpty()){
-                ticketList.addAll(ticketsFormDB);
-            }
-            jdbcService.close();
-            System.out.println("tttt---"+ticketList.size());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-
     @Override
     public void addTickets(ArrayList<Event> events) {
         try {
@@ -101,4 +80,20 @@ public class TicketRepositoryJDBC implements TicketRepository {
             throw new RuntimeException(e);
         }
 }
+    private void loadTicketsFromDB(TheaterBuilding theaterBuilding)  {
+        try {
+            TicketMapper ticketMapper= new TicketMapper();
+            ticketList=new ArrayList<>();
+            JDBCService jdbcService = new JDBCService();
+            ArrayList <Ticket> ticketsFormDB=ticketMapper.map(jdbcService.getTickets(), theaterBuilding);
+            if (!ticketsFormDB.isEmpty()){
+                ticketList.addAll(ticketsFormDB);
+            }
+            jdbcService.close();
+            System.out.println("tttt---"+ticketList.size());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }

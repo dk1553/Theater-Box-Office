@@ -3,11 +3,9 @@ package persistence;
 import businessObjects.Performance;
 import db.JDBCService;
 import repositories.PerformanceRepository;
-import resources.PerformanceMapper;
-import resources.PerformanceResource;
-import resources.PerformanceResourceMapper;
+import mapper.PerformanceMapper;
+import mapper.PerformanceResourceMapper;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class PerformanceRepositoryJDBC implements PerformanceRepository {

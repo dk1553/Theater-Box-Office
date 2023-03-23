@@ -1,19 +1,16 @@
 package rest;
 
-import businessObjects.*;
+import mapper.EventMapper;
+import mapper.EventResourceMapper;
+import mapper.PerformanceMapper;
+import mapper.PerformanceResourceMapper;
 import Service.TheaterService;
 
 import converters.GsonConverter;
 import io.javalin.http.Context;
 import org.json.*;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Objects;
-
-import org.json.JSONArray;
 import org.json.JSONObject;
-import resources.*;
 
 public class ViewController {
    private static TheaterService service;
@@ -73,12 +70,6 @@ public class ViewController {
 
     public static void addEvents(Context context) throws Exception {
         context.status(200);
-       /* Boolean status= service.updateTheaterProgramUseCase(
-                eventMapper.map(
-                        Objects.requireNonNull(
-                                GsonConverter.json2EventResourceList(
-                                        context.body())),service.getPerformanceRepository(), service.getTheaterBuilding(), service.getTicketRepository()));*/
-
         Boolean status= service.updateTheaterProgramUseCase(
                 eventMapper.mapNewObject(GsonConverter.json2EventResourceList(
                                         context.body()),service.getPerformanceRepository(), service.getTheaterBuilding(), service.getTicketRepository()));

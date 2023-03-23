@@ -54,13 +54,12 @@ public class TheaterService {
         return theaterBuilding;
     }
     public Ticket buyTicketUseCase(String ticket, String userFirstName, String userLastName) {
-
         try {
-
             User user = new User(userFirstName, userLastName);
             Boolean isIdentified=identifyUser(user);
             if (isIdentified){
-                return ticketRepository.buyTicket(ticket);
+                Ticket requestedTicket=ticketRepository.findTicketById(ticket);
+                return ticketRepository.buy(requestedTicket);
             }
         } catch (Exception e) {
             throw new RuntimeException(e);

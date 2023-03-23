@@ -1,14 +1,9 @@
-package resources;
+package mapper;
 
-import Service.TheaterService;
-import businessObjects.Event;
-import businessObjects.Hall;
 import businessObjects.Performance;
-import businessObjects.Price;
+import resources.PerformanceResource;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class PerformanceMapper {
     public Performance map(final PerformanceResource performanceResource) throws Exception {

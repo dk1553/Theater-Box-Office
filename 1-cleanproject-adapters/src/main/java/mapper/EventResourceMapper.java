@@ -1,12 +1,9 @@
-package resources;
+package mapper;
 
 import businessObjects.*;
-import repositories.PerformanceRepository;
-import repositories.TicketRepository;
+import resources.EventResource;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class EventResourceMapper {
     public EventResource map(final Event event) {

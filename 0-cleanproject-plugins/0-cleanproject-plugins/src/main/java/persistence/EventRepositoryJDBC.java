@@ -1,15 +1,13 @@
 package persistence;
 
 import businessObjects.Event;
-import businessObjects.Performance;
 import businessObjects.TheaterBuilding;
 import db.JDBCService;
 import repositories.EventRepository;
 import repositories.PerformanceRepository;
 import repositories.TicketRepository;
-import resources.EventMapper;
-import resources.EventResource;
-import resources.EventResourceMapper;
+import mapper.EventMapper;
+import mapper.EventResourceMapper;
 
 import java.util.ArrayList;
 

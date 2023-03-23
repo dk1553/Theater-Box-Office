@@ -1,7 +1,7 @@
-package resources;
+package mapper;
 
-import businessObjects.Event;
 import businessObjects.Ticket;
+import resources.TicketResource;
 
 import java.util.ArrayList;
 

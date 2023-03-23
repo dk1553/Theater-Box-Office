@@ -1,14 +1,13 @@
-package resources;
+package mapper;
 
-import Service.TheaterService;
 import businessObjects.*;
 import repositories.PerformanceRepository;
 import repositories.TicketRepository;
+import resources.EventResource;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.function.Function;
 
 public class EventMapper  {
 
@@ -22,34 +21,8 @@ public class EventMapper  {
         SimpleDateFormat formatterTime = new SimpleDateFormat("hh:mm");
         Date time = formatterTime.parse(eventResource.getTime());
         String eventID=eventResource.getEventID();
-
         ArrayList <Ticket> tickets=new ArrayList<>();
         tickets.addAll(ticketRepository.findTicketsOfEvent(eventID));
-
-
-     /*
-        TicketMapper ticketMapper= new TicketMapper();
-        ArrayList <TicketResource> ticketResources=new ArrayList<>();
-        ticketResources=eventResource.getTicketResources();
-        ArrayList <Ticket> tickets= new ArrayList<>();
-        if( (ticketResources.size()>0)&&(tickets!=null)){
-            System.out.println("hier---ticketResources------------"+ticketResources.size());
-            // if ((!ticketResources.isEmpty()&&(ticketResources!=null))){
-
-            ArrayList <Ticket> ticketsFormMap= new ArrayList<>();
-
-            ticketsFormMap=ticketMapper.map(ticketResources, theaterBuilding);
-            System.out.println("hier---we------------"+ticketsFormMap.size());
-            for (Ticket ticket:ticketsFormMap){
-                tickets.add(ticket);
-            }
-        }
-
-
-      //  }*/
-
-
-
 
         if ((performance!=null)&&(date!=null)&&(time!=null)&&(hall!=null)){
             return new Event(eventID,performance, date,time, hall,price, tickets);
@@ -87,40 +60,12 @@ public class EventMapper  {
         String eventID=eventResource.getEventID();
 
         ArrayList <Ticket> tickets=new ArrayList<>();
-        tickets=new ArrayList<>();
         for (Seat seat:hall.getSeats()){
             tickets.add(new Ticket(eventID,price, seat));
         }
-
-
-     /*
-        TicketMapper ticketMapper= new TicketMapper();
-        ArrayList <TicketResource> ticketResources=new ArrayList<>();
-        ticketResources=eventResource.getTicketResources();
-        ArrayList <Ticket> tickets= new ArrayList<>();
-        if( (ticketResources.size()>0)&&(tickets!=null)){
-            System.out.println("hier---ticketResources------------"+ticketResources.size());
-            // if ((!ticketResources.isEmpty()&&(ticketResources!=null))){
-
-            ArrayList <Ticket> ticketsFormMap= new ArrayList<>();
-
-            ticketsFormMap=ticketMapper.map(ticketResources, theaterBuilding);
-            System.out.println("hier---we------------"+ticketsFormMap.size());
-            for (Ticket ticket:ticketsFormMap){
-                tickets.add(ticket);
-            }
-        }
-
-
-      //  }*/
-
-
-
-
         if ((performance!=null)&&(date!=null)&&(time!=null)&&(hall!=null)){
             return new Event(eventID,performance, date,time, hall,price, tickets);
         }
-        System.out.println("ups");
         return null;
 
     }
