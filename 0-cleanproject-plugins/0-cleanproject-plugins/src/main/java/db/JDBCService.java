@@ -86,11 +86,12 @@ public class JDBCService {
             String  basicPrice = rs.getString("basicPrice");
             String  eventID = rs.getString("eventID");
             String  seat = rs.getString("seat");
+            String  validationCode = rs.getString("validationCode");
             boolean isBooked=false;
             if (rs.getInt("isBooked")==1){
                 isBooked=true;
             }
-            tickets.add(new TicketResource(ticketID,eventID, basicPrice, seat,isBooked));
+            tickets.add(new TicketResource(ticketID,eventID, basicPrice, seat,isBooked, validationCode));
         }
 
         return tickets;

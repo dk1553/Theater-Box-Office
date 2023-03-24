@@ -81,7 +81,7 @@ public class GsonConverter {
 
     public static String boughtTicket2jsonString(TicketResource ticket) {
         if (ticket!=null){
-            String result= "{'id':'"+ ticket.getId()+"','event':'"+ticket.getEventID()+"','seat':'"+ticket.getSeat()+"','price':'"+ticket.getPrice().toString()+"','is booked':'"+ticket.isBooked()+"'}";
+            String result= "{'id':'"+ ticket.getId()+"','event':'"+ticket.getEventID()+"','seat':'"+ticket.getSeat()+"','price':'"+ticket.getPrice()+"','is booked':'"+ticket.isBooked()+"','validation code':'"+ticket.getValidationCode()+"'}";
             return result;
         }else{
             return  "{'message':'Your purchase could not be completed'}";

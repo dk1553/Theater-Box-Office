@@ -5,7 +5,7 @@ import businessObjects.TheaterBuilding;
 import businessObjects.Ticket;
 import db.JDBCService;
 import repositories.TicketRepository;
-import resources.TicketMapper;
+import mapper.TicketMapper;
 import mapper.TicketResourceMapper;
 
 import java.sql.SQLException;

@@ -5,11 +5,9 @@ import Service.TheaterService;
 
 import converters.GsonConverter;
 import io.javalin.http.Context;
-import org.json.*;
 
 import org.json.JSONObject;
-import resources.TicketMapper;
-import resources.TicketResource;
+import mapper.TicketMapper;
 
 public class ViewController {
    private static TheaterService service;

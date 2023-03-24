@@ -11,18 +11,21 @@ public class TicketResource {
     private String basicPrice;
     private String eventID;
     private String  seat;
+    private String  validationCode;
 
     private boolean booked;
 
     public TicketResource(String eventID, String basicPrice, String seat) throws Exception {
         this.id= UUID.randomUUID().toString();
+        this.validationCode=UUID.randomUUID().toString();
         this.eventID=eventID;
         this.seat=seat;
         this.basicPrice= basicPrice;
         this.booked=false;
     }
 
-    public TicketResource(String ticketID, String eventID, String basicPrice, String seat, Boolean booked) throws Exception {
+    public TicketResource(String ticketID, String eventID, String basicPrice, String seat, Boolean booked, String validationCode) throws Exception {
+        this.validationCode=validationCode;
         this.id=ticketID;
         this.eventID=eventID;
         this.seat=seat;
@@ -49,4 +52,6 @@ public class TicketResource {
     }
 
     public  String getEventID(){ return  eventID;}
+    public  String getValidationCode(){ return  validationCode;}
 }
+

@@ -1,6 +1,7 @@
-package resources;
+package mapper;
 
 import businessObjects.*;
+import resources.TicketResource;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -8,7 +9,7 @@ import java.util.Collection;
 public class TicketMapper {
     public Ticket map(final TicketResource ticketResource, TheaterBuilding theaterBuilding) throws Exception {
         try {
-            return new Ticket(ticketResource.getId(), ticketResource.getEventID(),new Price(ticketResource.getPrice()), theaterBuilding.findSeatByName(ticketResource.getSeat()), ticketResource.isBooked());
+            return new Ticket(ticketResource.getId(), ticketResource.getEventID(),new Price(ticketResource.getPrice()), theaterBuilding.findSeatByName(ticketResource.getSeat()), ticketResource.isBooked(), ticketResource.getValidationCode());
 
         } catch (Exception e) {
             throw new RuntimeException(e);

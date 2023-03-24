@@ -9,7 +9,7 @@ public class TicketResourceMapper {
 
     public TicketResource map(final Ticket ticket) throws Exception {
         if (ticket!=null){
-             return  new TicketResource(ticket.getId(), ticket.getEventID(), String.valueOf(ticket.getPrice()), ticket.getSeat().getSeatID(), ticket.isBooked());
+             return  new TicketResource(ticket.getId(), ticket.getEventID(), String.valueOf(ticket.getPrice()), ticket.getSeat().getSeatID(), ticket.isBooked(), ticket.getValidationCode());
         }else {
             return null;
         }
