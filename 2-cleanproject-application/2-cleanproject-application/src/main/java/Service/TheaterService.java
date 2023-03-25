@@ -32,8 +32,8 @@ public class TheaterService {
     }
     public  boolean updateRepertoireUseCase ( ArrayList<Performance> performances) {
            try {
-               performanceRepository.addPerformances(performances);
-               return true;
+             Boolean status=performanceRepository.addPerformances(performances);
+               return status;
            } catch (Exception e) {
                return false;
            }

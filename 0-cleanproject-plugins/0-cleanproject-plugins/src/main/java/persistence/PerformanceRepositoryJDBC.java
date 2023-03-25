@@ -7,6 +7,9 @@ import mapper.PerformanceMapper;
 import mapper.PerformanceResourceMapper;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class PerformanceRepositoryJDBC implements PerformanceRepository {
     private ArrayList<Performance> performances;
@@ -57,28 +60,87 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
 
 
     @Override
-    public void addPerformances(ArrayList<Performance> performances) {
+    public Boolean addPerformances(ArrayList<Performance> performances) {
+        performances=removeDuplicates(performances);
+        performances=removeAlreadyExistingElements(performances);
+
+        if ((performances!=null)&&(!performances.isEmpty())){
         try {
             JDBCService jdbcService = new JDBCService();
             jdbcService.addPerformancesToDatabase(performanceResourceMapper.map(performances));
             jdbcService.close();
             this.performances.addAll(performances);
+            return true;
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            return false;
+        }
+        }else {
+            return false;
         }
     }
 
-    @Override
-    public void addPerformance(Performance performance) {
-        performances.add(performance);
-        try {
-            JDBCService jdbcService = new JDBCService();
-            jdbcService.addPerformancesToDatabase(performanceResourceMapper.map(performances));
-            jdbcService.close();
+  /*  @Override
+    public Boolean addPerformance(Performance performance) {
+        if (!exist(performance, this.performances)){
+            performances.add(performance);
+            try {
+                JDBCService jdbcService = new JDBCService();
+                jdbcService.addPerformancesToDatabase(performanceResourceMapper.map(performances));
+                jdbcService.close();
 
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }return true;
+        }else{
+            return false;
         }
+
+    }*/
+
+    private ArrayList <Performance> removeAlreadyExistingElements(ArrayList <Performance> performances){
+        Set <Performance> toDelete = new HashSet<>();
+        if ((performances!=null)&&(!performances.isEmpty())){
+            System.out.println(performances.size());
+            System.out.println(this.performances.size());
+        for (Performance performance:performances){
+             for (Performance exitingPerformance:this.performances){
+
+
+                if (performance.getName().equalsIgnoreCase(exitingPerformance.getName())){
+                    toDelete.add(performance);
+                }
+             }
+        }}
+        performances.removeAll(toDelete);
+        return performances;
+    }
+
+    private ArrayList <Performance> removeDuplicates(ArrayList <Performance> performances){
+        Set <Performance> toDelete= new HashSet<>();
+        if ((performances!=null)&&(!performances.isEmpty())){
+
+
+
+
+
+
+        for (Performance p:performances){
+            System.out.println(performances.size()+ "000");
+
+            for (int i=performances.indexOf(p)+1; i<performances.size(); i++){
+                System.out.println("i="+i);
+                if (p.getName().equalsIgnoreCase(performances.get(i).getName())){
+                  toDelete.add(performances.get(i));
+                }
+            }
+        }
+        if (!toDelete.isEmpty()){
+        for (Performance performance:toDelete){
+            performances.remove(performance);
+        }}
+        }
+
+        return  performances;
     }
 
 }
