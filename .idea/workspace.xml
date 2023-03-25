@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="code refactoring (in GsonConverter)">
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/Test.java" afterDir="false" />
+    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="implementation of performance uniqueness rule">
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/TestPerformanceUniqueness.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/TestBusinessObjectsBehavior.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/TestBusinessObjectsCreation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/converters/GsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/converters/GsonConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/JDBCService.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/JDBCService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/TicketRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/TicketRepositoryJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/ViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/TicketResourceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/TicketResourceMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/TicketMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/TicketMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/TicketResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/TicketResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/TheaterBoxOfficeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/TheaterBoxOfficeApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +124,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.rest.TheaterBoxOfficeApp">
+  <component name="RunManager" selected="JUnit.TestBusinessObjectsBehavior">
     <configuration name="rest.TheaterBoxOfficeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="rest.TheaterBoxOfficeApp" />
       <module name="0-cleanproject-plugins" />
@@ -147,31 +141,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.testEvent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestBusinessObjectsBehavior" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="3-cleanproject-domain" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Test" />
-      <option name="METHOD_NAME" value="testEvent" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="TestBusinessObjectsBehavior" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.testFindHall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="3-cleanproject-domain" />
+    <configuration name="TestPerformanceUniqueness" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="0-cleanproject-plugins" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Test" />
-      <option name="METHOD_NAME" value="testFindHall" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="TestPerformanceUniqueness" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.testPrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="3-cleanproject-domain" />
+    <configuration name="TestPerformanceUniqueness.testPerformanceUniqueness" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="0-cleanproject-plugins" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Test" />
-      <option name="METHOD_NAME" value="testPrice" />
+      <option name="MAIN_CLASS_NAME" value="TestPerformanceUniqueness" />
+      <option name="METHOD_NAME" value="testPerformanceUniqueness" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -179,11 +171,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestBusinessObjectsBehavior" />
         <item itemvalue="Application.rest.TheaterBoxOfficeApp" />
+        <item itemvalue="JUnit.TestPerformanceUniqueness" />
+        <item itemvalue="JUnit.TestPerformanceUniqueness.testPerformanceUniqueness" />
         <item itemvalue="JUnit.Test" />
-        <item itemvalue="JUnit.Test.testEvent" />
-        <item itemvalue="JUnit.Test.testFindHall" />
-        <item itemvalue="JUnit.Test.testPrice" />
       </list>
     </recent_temporary>
   </component>
@@ -211,21 +203,9 @@
       <workItem from="1679039774931" duration="25138000" />
       <workItem from="1679344178372" duration="5833000" />
       <workItem from="1679500019274" duration="14922000" />
-      <workItem from="1679642609594" duration="749000" />
-    </task>
-    <task id="LOCAL-00001" summary="Integration of Javalin">
-      <created>1668077726013</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1668077726013</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Main class and EventController (test form) are created. Test of Javalin on EventController.">
-      <created>1677418137712</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1677418137712</updated>
+      <workItem from="1679642609594" duration="10136000" />
+      <workItem from="1679738401605" duration="93000" />
+      <workItem from="1679738572927" duration="3000000" />
     </task>
     <task id="LOCAL-00003" summary="Modelling the main Business Objects">
       <created>1677433500723</created>
@@ -556,7 +536,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679568560296</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="implementation of ticket validation code">
+      <created>1679643673804</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1679643673804</updated>
+    </task>
+    <task id="LOCAL-00051" summary="implementation of performance uniqueness rule">
+      <created>1679741044883</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1679741044884</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,8 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="UseCase show theater's program [finished]" />
-    <MESSAGE value="Build object-identifier" />
     <MESSAGE value="solved the sync. problem (in POMs)" />
     <MESSAGE value="created repositories; trying to implement persistence layer without JPA (test state of project)" />
     <MESSAGE value="added time/date validation to event-business-object" />
@@ -600,7 +592,9 @@
     <MESSAGE value="fixed a bug in mapping" />
     <MESSAGE value="code refactoring (in UC Buy Ticket)" />
     <MESSAGE value="code refactoring (in GsonConverter)" />
-    <option name="LAST_COMMIT_MESSAGE" value="code refactoring (in GsonConverter)" />
+    <MESSAGE value="implementation of ticket validation code" />
+    <MESSAGE value="implementation of performance uniqueness rule" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementation of performance uniqueness rule" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
