@@ -31,7 +31,7 @@ public class TestPerformanceUniqueness {
     public void creationOfDuplicates() {
         //try to add duplicates to performance repository
         PerformanceRepository repository= new PerformanceRepositoryJDBC();
-        if (!repository.findAllPerformances().isEmpty()){
+        if (!repository.isEmpty()){
             ArrayList<Performance> performances= new ArrayList<>();
             performances.add(repository.findAllPerformances().get(0));
             performances.add(repository.findAllPerformances().get(0));
