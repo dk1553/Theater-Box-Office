@@ -76,9 +76,6 @@ public class TestMapping {
         }
     }
 
-
-
-
     @org.junit.Test
     public void testTicketResourceMapping(){
         try {

@@ -13,6 +13,7 @@ import static org.junit.Assert.*;
 public class TestPerformanceUniqueness {
 
 
+
     @org.junit.Test
     public void duplicatesDetection() {
         //try to find duplicates in performance repository
