@@ -4,8 +4,6 @@ import businessObjects.*;
 import repositories.EventRepository;
 import repositories.PerformanceRepository;
 import repositories.TicketRepository;
-
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 
@@ -55,9 +53,8 @@ public class TheaterService {
     }
     public Ticket buyTicketUseCase(String ticket, String userFirstName, String userLastName) {
         try {
-            User user = new User(userFirstName, userLastName);
-            Boolean isIdentified=identifyUser(user);
-            if (isIdentified){
+            Boolean userIsVerified=verifyUser(userFirstName, userLastName);
+            if (userIsVerified){
                 Ticket requestedTicket=ticketRepository.findTicketById(ticket);
                 return ticketRepository.buy(requestedTicket);
             }
@@ -86,8 +83,8 @@ public class TheaterService {
         }
         return  null;
     }
-    public Boolean identifyUser(User user) {
-        if ((!user.getFirstName().isBlank())&&(!user.getLastName().isBlank())){
+    public Boolean verifyUser(String fName, String lName) {
+        if ((!fName.isBlank())&&(!lName.isBlank())){
             return true;
         }
         return false;
