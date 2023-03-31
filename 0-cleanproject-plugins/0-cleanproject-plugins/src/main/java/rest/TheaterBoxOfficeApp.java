@@ -20,9 +20,10 @@ public class TheaterBoxOfficeApp {
 
 
         TheaterService theaterService= new TheaterService(theaterBuilding, performanceRepositoryJDBC,eventRepositoryJDBC, ticketRepositoryJDBC);
-        ViewController.start(theaterService);
 
 
+
+        app.before(context -> { ViewController.start(theaterService, context);});
         app.get("/events/{eventID}", ViewController::getEvent);
         app.get("/events", ViewController::getEventList);
         app.get("/performances", ViewController::getPerformanceList);
@@ -30,6 +31,8 @@ public class TheaterBoxOfficeApp {
         app.post("/addPerformances", ViewController::addPerformances);
         app.post("/addEvents", ViewController::addEvents);
         app.post("/buyTicket/{ticketID}", ViewController::buyTicket);
+        app.post("/login", ViewController::login);
+        app.get("/logout", ViewController::logout);
     }
 
 

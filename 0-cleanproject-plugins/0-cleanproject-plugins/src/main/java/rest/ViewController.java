@@ -6,8 +6,12 @@ import Service.TheaterService;
 import converters.GsonConverter;
 import io.javalin.http.Context;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 import mapper.TicketMapper;
+
+import java.util.Objects;
+import java.util.zip.CheckedOutputStream;
 
 public class ViewController {
    private static TheaterService service;
@@ -21,7 +25,7 @@ public class ViewController {
 
 
 
-    public static void start(TheaterService service) {
+    public static void start(TheaterService service, Context context) {
         ViewController.service = service;
         eventMapper=new EventMapper();
         performanceMapper=new PerformanceMapper();
@@ -29,6 +33,7 @@ public class ViewController {
         eventResourceMapper=new EventResourceMapper();
         ticketMapper= new TicketMapper();
         ticketResourceMapper= new TicketResourceMapper();
+        context.cookie("role", "null");
     }
 
 
@@ -60,22 +65,31 @@ public class ViewController {
     }
 
     public  static void addPerformances(Context context) throws Exception {
-        context.status(200);
-        Boolean status= service.updateRepertoireUseCase(
-                performanceMapper.map(
-                        GsonConverter.json2PerformanceList(
-                                context.body())));
+        if ((context.cookie("role")!=null)&&(Objects.equals(context.cookie("role"), "admin"))){
+            context.status(200);
+            Boolean status= service.updateRepertoireUseCase(
+                    performanceMapper.map(
+                            GsonConverter.json2PerformanceList(
+                                    context.body())));
 
-        context.json(GsonConverter.status2jsonString(status));
-
+            context.json(GsonConverter.status2jsonString(status));
+        }else{
+            context.status(401);
+            context.json("'message':'please log in to use this function'");
+        }
     }
 
     public static void addEvents(Context context) throws Exception {
-        context.status(200);
-        Boolean status= service.updateTheaterProgramUseCase(
-                eventMapper.mapNewObject(GsonConverter.json2EventResourceList(
-                                        context.body()),service.getPerformanceRepository(), service.getTheaterBuilding(), service.getTicketRepository()));
-        context.json(GsonConverter.status2jsonString(status));
+        if ((context.cookie("role")!=null)&&(Objects.equals(context.cookie("role"), "admin"))){
+            context.status(200);
+            Boolean status= service.updateTheaterProgramUseCase(
+                    eventMapper.mapNewObject(GsonConverter.json2EventResourceList(
+                            context.body()),service.getPerformanceRepository(), service.getTheaterBuilding(), service.getTicketRepository()));
+            context.json(GsonConverter.status2jsonString(status));
+        }else{
+            context.status(401);
+            context.json("'message':'please log in to use this function'");
+        }
     }
 
     public static void buyTicket(Context context) throws Exception {
@@ -90,6 +104,26 @@ public class ViewController {
                                 pJ.getString("last name")))));
 
 
+    }
+
+    public static void login(Context context) throws JSONException {
+        context.status(200);
+        JSONObject userJson = new JSONObject(context.body());
+        JSONObject pJ = userJson.getJSONObject("admin");
+        Boolean adminIsVerified=service.verifyAdmin(pJ.getString("username"), pJ.getString("password"));
+        if (adminIsVerified){
+            context.cookie("role","admin");
+        }else {
+           logout(context);
+        }
+        context.json(GsonConverter.status2jsonString(adminIsVerified));
+
+    }
+
+    public static void logout(Context context) {
+        context.status(200);
+        context.cookie("role", "null");
+        context.json(GsonConverter.status2jsonString(true));
     }
 }
 

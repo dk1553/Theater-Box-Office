@@ -92,6 +92,12 @@ public class TheaterService {
         }
         return false;
     }
+    public Boolean verifyAdmin(String username, String password) {
+        if ((username.equalsIgnoreCase("admin"))&&(password.equalsIgnoreCase("admin"))){
+            return true;
+        }
+        return false;
+    }
 
     public PerformanceRepository getPerformanceRepository() {
         return performanceRepository;
