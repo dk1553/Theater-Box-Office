@@ -13,4 +13,5 @@ public interface TicketRepository {
     ArrayList<Ticket> findTicketsOfEvent( String eventID);
     void addTickets(ArrayList<Event> events);
     Ticket findTicketById(String id);
+    Boolean isEmpty();
 }

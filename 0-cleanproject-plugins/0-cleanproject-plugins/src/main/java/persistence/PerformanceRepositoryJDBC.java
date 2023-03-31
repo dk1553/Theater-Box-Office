@@ -115,6 +115,15 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
         return performances;
     }
 
+    @Override
+    public Boolean isEmpty(){
+        if ((performances!=null)&&(!performances.isEmpty())){
+            return  false;
+        }else {
+            return true;
+        }
+    }
+
     private ArrayList <Performance> removeDuplicates(ArrayList <Performance> performances){
         Set <Performance> toDelete= new HashSet<>();
         if ((performances!=null)&&(!performances.isEmpty())){

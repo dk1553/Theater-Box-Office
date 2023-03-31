@@ -16,13 +16,14 @@ public class TicketResourceMapper {
     }
 
     public ArrayList<TicketResource> map(ArrayList<Ticket> tickets) throws Exception {
+        ArrayList<TicketResource> ticketResources=new ArrayList<>();
         if ((tickets!=null)&&(!tickets.isEmpty())){
-            ArrayList<TicketResource> ticketResources=new ArrayList<>();
+
             for (Ticket ticket:tickets){
                 ticketResources.add(map(ticket));
             }
             return ticketResources;
         }else{
-            return null;
+            return ticketResources;
     }
 }}

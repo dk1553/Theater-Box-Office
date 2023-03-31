@@ -10,5 +10,6 @@ public interface PerformanceRepository {
     Performance findPerformanceByName(String name);
   //  Boolean addPerformance(Performance performance);
     Boolean addPerformances(ArrayList<Performance> performances);
+    Boolean isEmpty();
 
 }

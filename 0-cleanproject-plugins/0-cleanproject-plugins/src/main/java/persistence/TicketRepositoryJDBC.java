@@ -86,14 +86,23 @@ public class TicketRepositoryJDBC implements TicketRepository {
             ticketList=new ArrayList<>();
             JDBCService jdbcService = new JDBCService();
             ArrayList <Ticket> ticketsFormDB=ticketMapper.map(jdbcService.getTickets(), theaterBuilding);
-            if (!ticketsFormDB.isEmpty()){
+            jdbcService.close();
+            if ((ticketsFormDB!=null)&&(!ticketsFormDB.isEmpty())){
                 ticketList.addAll(ticketsFormDB);
             }
-            jdbcService.close();
+
             System.out.println("tttt---"+ticketList.size());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
+    }
+    @Override
+    public Boolean isEmpty(){
+        if ((ticketList!=null)&&(!ticketList.isEmpty())){
+            return  false;
+        }else {
+            return true;
+        }
     }
 }

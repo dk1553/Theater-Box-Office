@@ -28,6 +28,7 @@ public class JDBCService {
         rs.close();
         stmt.close();
         c.close();
+        System.out.println("Closed database successfully");
     }
     public static ArrayList <PerformanceResource> getRepertoire() throws SQLException {
         ArrayList <PerformanceResource> performances=new ArrayList<>();
@@ -117,4 +118,6 @@ public class JDBCService {
         c.commit();
         System.out.println("Records created successfully");
     }
+
+
 }

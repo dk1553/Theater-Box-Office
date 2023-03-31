@@ -57,6 +57,14 @@ public class EventRepositoryJDBC implements EventRepository {
             throw new RuntimeException(e);
         }
     }
+    @Override
+    public Boolean isEmpty(){
+        if ((eventList!=null)&&(!eventList.isEmpty())){
+            return  false;
+        }else {
+            return true;
+        }
+    }
 
 
 

@@ -12,4 +12,5 @@ public interface EventRepository {
         Event findEventById(String id);
         void addEvent(Event event);
         void addEvents(ArrayList<Event> events);
+        Boolean isEmpty();
 }
