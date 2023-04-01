@@ -72,8 +72,6 @@ public class TicketRepositoryJDBC implements TicketRepository {
                 TicketResourceMapper ticketResourceMapper= new TicketResourceMapper();
                 jdbcService.addTicketsToDatabase(ticketResourceMapper.map(e.getTickets()));
                 jdbcService.close();
-             //   System.out.println("tetetet...."+ticketResourceMapper.map(e.getTickets()).size());
-                System.out.println("tetetet...."+e.getTickets().size());
                 this.ticketList.addAll(e.getTickets());
             }
         } catch (Exception e) {
@@ -90,8 +88,6 @@ public class TicketRepositoryJDBC implements TicketRepository {
             if ((ticketsFormDB!=null)&&(!ticketsFormDB.isEmpty())){
                 ticketList.addAll(ticketsFormDB);
             }
-
-            System.out.println("tttt---"+ticketList.size());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

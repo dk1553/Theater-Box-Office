@@ -1,8 +1,4 @@
-package converters;
-
-import businessObjects.*;
-import com.google.gson.JsonObject;
-import netscape.javascript.JSObject;
+package rest.converters;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -12,7 +8,7 @@ import resources.TicketResource;
 
 import java.util.ArrayList;
 
-public class GsonConverter {
+public class GsonService {
 
     public static String eventResource2jsonString(EventResource event){
         if (event!=null){
@@ -126,5 +122,23 @@ public class GsonConverter {
             return "{'message':'Sorry!Your purchase could not be completed. Unknown problem ####'}";
         }
 
+    }
+
+    public static String[] getCredentials(String json) throws JSONException {
+        JSONObject userJson = new JSONObject(json);
+        JSONObject pJ = userJson.getJSONObject("admin");
+        String[] creds= new String[2];
+        creds[0]=pJ.getString("username");
+        creds[1]=pJ.getString("password");
+        return creds;
+    }
+
+    public static String[] getUsername(String json) throws JSONException {
+        JSONObject userJson = new JSONObject(json);
+        JSONObject pJ = userJson.getJSONObject("user");
+        String[] username= new String[2];
+        username[0]=pJ.getString("first name");
+        username[1]=pJ.getString("last name");
+        return username;
     }
 }

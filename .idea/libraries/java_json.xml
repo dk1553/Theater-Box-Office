@@ -1,13 +1,15 @@
 <component name="libraryTable">
   <library name="java-json">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/java-json" />
+      <root url="file://$PROJECT_DIR$/1-cleanproject-adapters/src/main/resources/json/java-json" />
+      <root url="jar://$PROJECT_DIR$/1-cleanproject-adapters/src/main/resources/java-json.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="file://$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/java-json" />
+      <root url="file://$PROJECT_DIR$/1-cleanproject-adapters/src/main/resources/json/java-json" />
+      <root url="jar://$PROJECT_DIR$/1-cleanproject-adapters/src/main/resources/java-json.jar!/" />
     </SOURCES>
-    <jarDirectory url="file://$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/java-json" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/java-json" recursive="false" type="SOURCES" />
+    <jarDirectory url="file://$PROJECT_DIR$/1-cleanproject-adapters/src/main/resources/json/java-json" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/1-cleanproject-adapters/src/main/resources/json/java-json" recursive="false" type="SOURCES" />
   </library>
 </component>

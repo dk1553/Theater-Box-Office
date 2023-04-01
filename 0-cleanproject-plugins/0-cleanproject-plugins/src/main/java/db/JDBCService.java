@@ -1,10 +1,9 @@
 package db;
 
-import businessObjects.*;
 import resources.EventResource;
 import resources.PerformanceResource;
 import resources.TicketResource;
-import rest.TheaterBoxOfficeApp;
+import rest.TheaterServiceApp;
 
 import java.math.BigDecimal;
 import java.sql.*;
@@ -19,7 +18,7 @@ public class JDBCService {
 
     public JDBCService() throws ClassNotFoundException, SQLException {
         Class.forName("org.sqlite.JDBC");
-        c = DriverManager.getConnection(TheaterBoxOfficeApp.JDBC_SQLITE_DATABASE);
+        c = DriverManager.getConnection(TheaterServiceApp.JDBC_SQLITE_DATABASE);
         c.setAutoCommit(false);
         stmt = c.createStatement();
         System.out.println("Opened database successfully");

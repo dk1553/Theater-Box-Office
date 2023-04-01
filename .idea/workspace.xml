@@ -4,13 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="implementation of performance uniqueness rule">
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/TestPerformanceUniqueness.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/TestBusinessObjectsBehavior.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/TestBusinessObjectsCreation.java" afterDir="false" />
+    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="code refactoring">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_code_gson1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/java_json1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/TheaterServiceApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/mvc/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/mvc/Model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/mvc/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/java_json.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/java_json.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/TheaterBoxOfficeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/TheaterBoxOfficeApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/converters/GsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/converters/GsonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/JDBCService.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/JDBCService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/TicketRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/TicketRepositoryJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/TheaterBoxOfficeApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/ViewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/java-json/java-json.jar" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/resources/java-json.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/connect/net/sqlitetutorial/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/connect/net/sqlitetutorial/Connect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/sqlite/connect/net/sqlitetutorial/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/sqlite/connect/net/sqlitetutorial/Connect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,33 +94,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Елена/Downloads/cleanproject-master (1)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.27377778&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.28850573&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "18",
+    "last_opened_file_path": "D:/Theater-Box-Office/1-cleanproject-adapters/src/main/resources/java-json.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.27377778",
+    "project.structure.side.proportion": "0.28850573",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory"
     ],
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
+    "DatabaseDriversLRU": [
+      "sqlite"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Theater-Box-Office\3-cleanproject-domain\3-cleanproject-domain\src\main\java" />
@@ -115,25 +130,52 @@
       <recent name="D:\Theater-Box-Office\0-cleanproject-plugins\0-cleanproject-plugins\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Theater-Box-Office\1-cleanproject-adapters\src\main\resources" />
+      <recent name="D:\Theater-Box-Office\1-cleanproject-adapters\src\main\resources\json" />
       <recent name="D:\Theater-Box-Office\0-cleanproject-plugins\0-cleanproject-plugins\src\main\resources\java-json" />
       <recent name="D:\Theater-Box-Office\0-cleanproject-plugins\0-cleanproject-plugins\src\main\resources\sqlite\connect" />
       <recent name="D:\Theater-Box-Office\0-cleanproject-plugins\0-cleanproject-plugins\src\main\resources\sqlite\connect\sqlitetutorial" />
-      <recent name="D:\Theater-Box-Office\0-cleanproject-plugins\0-cleanproject-plugins\src\main\resources\sqlite\connect\net" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestBusinessObjectsBehavior">
-    <configuration name="rest.TheaterBoxOfficeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="rest.TheaterBoxOfficeApp" />
+  <component name="RunManager" selected="Application.TheaterServiceApp">
+    <configuration name="MVC.JavalinView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MVC.JavalinView" />
+      <module name="0-cleanproject-plugins" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MVC.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
       <module name="0-cleanproject-plugins" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TheaterServiceApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="rest.TheaterServiceApp" />
+      <module name="0-cleanproject-plugins" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MVC.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="3-cleanproject-domain" />
+      <module name="0-cleanproject-plugins" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Test" />
       <option name="TEST_OBJECT" value="class" />
@@ -141,29 +183,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestBusinessObjectsBehavior" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="3-cleanproject-domain" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestBusinessObjectsBehavior" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestPerformanceUniqueness" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test.testEventMappingNewObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="0-cleanproject-plugins" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestPerformanceUniqueness" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestPerformanceUniqueness.testPerformanceUniqueness" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="0-cleanproject-plugins" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestPerformanceUniqueness" />
-      <option name="METHOD_NAME" value="testPerformanceUniqueness" />
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <option name="METHOD_NAME" value="testEventMappingNewObject" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -171,11 +195,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestBusinessObjectsBehavior" />
-        <item itemvalue="Application.rest.TheaterBoxOfficeApp" />
-        <item itemvalue="JUnit.TestPerformanceUniqueness" />
-        <item itemvalue="JUnit.TestPerformanceUniqueness.testPerformanceUniqueness" />
+        <item itemvalue="Application.TheaterServiceApp" />
+        <item itemvalue="Application.MVC.JavalinView" />
         <item itemvalue="JUnit.Test" />
+        <item itemvalue="JUnit.Test.testEventMappingNewObject" />
+        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -205,56 +229,9 @@
       <workItem from="1679500019274" duration="14922000" />
       <workItem from="1679642609594" duration="10136000" />
       <workItem from="1679738401605" duration="93000" />
-      <workItem from="1679738572927" duration="3000000" />
-    </task>
-    <task id="LOCAL-00003" summary="Modelling the main Business Objects">
-      <created>1677433500723</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1677433500723</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Modelling the main Business Objects">
-      <created>1677433520501</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1677433520501</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Modelling the main Business Objects">
-      <created>1677433552346</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1677433552346</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Small changes in attributes of ticket-object">
-      <created>1677434073877</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1677434073877</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Small changes in attributes of ticket-object">
-      <created>1677434160376</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1677434160376</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Build package structure">
-      <created>1677436514190</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1677436514190</updated>
-    </task>
-    <task id="LOCAL-00009" summary="SQLite-database is added">
-      <created>1677593438010</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1677593438010</updated>
+      <workItem from="1679738572927" duration="3093000" />
+      <workItem from="1679997734558" duration="14156000" />
+      <workItem from="1680257495729" duration="27150000" />
     </task>
     <task id="LOCAL-00010" summary="SQLite-database is added">
       <created>1677596749121</created>
@@ -550,7 +527,56 @@
       <option name="project" value="LOCAL" />
       <updated>1679741044884</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="JUnit tests">
+      <created>1679741635539</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1679741635539</updated>
+    </task>
+    <task id="LOCAL-00053" summary="JUnit tests">
+      <created>1680086847621</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1680086847622</updated>
+    </task>
+    <task id="LOCAL-00054" summary="JUnit tests">
+      <created>1680086922207</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1680086922207</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Added authentication for admins">
+      <created>1680268560767</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1680268560768</updated>
+    </task>
+    <task id="LOCAL-00056" summary="JUnit tests">
+      <created>1680268618397</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1680268618397</updated>
+    </task>
+    <task id="LOCAL-00057" summary="code refactoring">
+      <created>1680268800966</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1680268800966</updated>
+    </task>
+    <task id="LOCAL-00058" summary="code refactoring">
+      <created>1680278972506</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1680278972506</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,8 +595,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="solved the sync. problem (in POMs)" />
-    <MESSAGE value="created repositories; trying to implement persistence layer without JPA (test state of project)" />
     <MESSAGE value="added time/date validation to event-business-object" />
     <MESSAGE value="fixed a bug in use case Update Theater Repertoire" />
     <MESSAGE value="changed object's identification method: UUID instead of Identifier.java" />
@@ -584,7 +608,6 @@
     <MESSAGE value="Code refactoring" />
     <MESSAGE value="fixed a bug in use case View Event" />
     <MESSAGE value="code refactoring; implementation of mapping (only EventMapper)" />
-    <MESSAGE value="code refactoring" />
     <MESSAGE value="code refactoring; implementation of mapping (PerformanceMapper)" />
     <MESSAGE value="code refactoring;" />
     <MESSAGE value="mapping" />
@@ -594,7 +617,10 @@
     <MESSAGE value="code refactoring (in GsonConverter)" />
     <MESSAGE value="implementation of ticket validation code" />
     <MESSAGE value="implementation of performance uniqueness rule" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementation of performance uniqueness rule" />
+    <MESSAGE value="Added authentication for admins" />
+    <MESSAGE value="JUnit tests" />
+    <MESSAGE value="code refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="code refactoring" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
