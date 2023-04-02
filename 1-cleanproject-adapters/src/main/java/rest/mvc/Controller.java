@@ -37,9 +37,8 @@ public class Controller {
         String viewData="'message':'please log in to use this function'";
         int   viewStatus=401;
         if ((context.cookie("role")!=null)&&(Objects.equals(context.cookie("role"), "admin"))){
-            Result status= model.addPerformances(context.body());
-            viewData= status.getViewData();
-            viewStatus= status.getViewStatus();
+            viewData= model.addPerformances(context.body());
+            viewStatus=200;
         }
         context.status(viewStatus);
         context.json(viewData);
@@ -49,9 +48,8 @@ public class Controller {
         String viewData="'message':'please log in to use this function'";
         int  viewStatus=401;
         if ((context.cookie("role")!=null)&&(Objects.equals(context.cookie("role"), "admin"))){
-            Result status=model.addEvents( context.body());
-            viewData= status.getViewData();
-            viewStatus=status.getViewStatus();}
+            viewData= model.addEvents( context.body());
+            viewStatus=200;}
         context.status(viewStatus);
         context.json(viewData);
     }

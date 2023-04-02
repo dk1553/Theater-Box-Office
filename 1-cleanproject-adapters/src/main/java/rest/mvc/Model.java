@@ -52,26 +52,21 @@ public class Model {
       return viewData;
    }
 
-   public  Result addPerformances(String json) throws Exception {
-      String viewData="";
-      int viewStatus=200;
-         Boolean status= service.updateRepertoireUseCase(
+   public  String addPerformances(String json) throws Exception {
+      Boolean status= service.updateRepertoireUseCase(
                  performanceMapper.map(
                          JsonService.json2PerformanceList(json)));
 
-         viewData= JsonService.status2jsonString(status);
-
-
-      return new Result(viewData, viewStatus);
+      String viewData= JsonService.status2jsonString(status);
+     return viewData;
    }
 
-   public Result addEvents(String json) throws Exception {
-         int viewStatus=200;
+   public String addEvents(String json) throws Exception {
          Boolean status= service.updateTheaterProgramUseCase(
                  eventMapper.mapNewObject(JsonService.json2EventResourceList(
                         json),service.getPerformanceRepository(), service.getTheaterBuilding(), service.getTicketRepository()));
          String viewData= JsonService.status2jsonString(status);
-      return new Result(viewData, viewStatus);
+      return viewData;
    }
 
    public String buyTicket(String json, String ticketID) throws Exception {
