@@ -8,7 +8,7 @@ import resources.TicketResource;
 
 import java.util.ArrayList;
 
-public class GsonService {
+public class JsonService {
 
     public static String eventResource2jsonString(EventResource event){
         if (event!=null){

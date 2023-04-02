@@ -4,28 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="code refactoring">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_code_gson1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/java_json1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/TheaterServiceApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/mvc/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/mvc/Model.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/mvc/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/java_json.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/java_json.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="code refactoring; implemented mvc-pattern">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/converters/GsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/converters/GsonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/JDBCService.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/JDBCService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/TicketRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/TicketRepositoryJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/TheaterBoxOfficeApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/rest/ViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/java-json/java-json.jar" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/resources/java-json.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/connect/net/sqlitetutorial/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/connect/net/sqlitetutorial/Connect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/sqlite/connect/net/sqlitetutorial/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/target/classes/sqlite/connect/net/sqlitetutorial/Connect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/converters/GsonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/converters/JsonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/mvc/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/mvc/Model.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,14 +213,7 @@
       <workItem from="1679738401605" duration="93000" />
       <workItem from="1679738572927" duration="3093000" />
       <workItem from="1679997734558" duration="14156000" />
-      <workItem from="1680257495729" duration="27150000" />
-    </task>
-    <task id="LOCAL-00010" summary="SQLite-database is added">
-      <created>1677596749121</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1677596749121</updated>
+      <workItem from="1680257495729" duration="28657000" />
     </task>
     <task id="LOCAL-00011" summary="Project's configuration was changed">
       <created>1677596860099</created>
@@ -576,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680278972506</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="code refactoring; implemented mvc-pattern">
+      <created>1680373430912</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1680373430912</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +577,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added time/date validation to event-business-object" />
     <MESSAGE value="fixed a bug in use case Update Theater Repertoire" />
     <MESSAGE value="changed object's identification method: UUID instead of Identifier.java" />
     <MESSAGE value="UceCase add new events [finished]; fixed a bug in UseCase view theater program" />
@@ -620,7 +601,8 @@
     <MESSAGE value="Added authentication for admins" />
     <MESSAGE value="JUnit tests" />
     <MESSAGE value="code refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="code refactoring" />
+    <MESSAGE value="code refactoring; implemented mvc-pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="code refactoring; implemented mvc-pattern" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
