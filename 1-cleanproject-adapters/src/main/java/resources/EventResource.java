@@ -1,12 +1,6 @@
 package resources;
 
-import businessObjects.Seat;
-import businessObjects.Ticket;
-
-import java.lang.reflect.Array;
-import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.UUID;
 
 public class EventResource {
@@ -74,4 +68,21 @@ public class EventResource {
     public  ArrayList <TicketResource> getTicketResources(){
         return ticketResources;
     }
+    public int getNumberOfBookedSeats(){
+        int result=0;
+        for (TicketResource ticket: ticketResources){
+            if (ticket.isBooked()){
+                result++;
+         }}
+        return result;
+    }
+    public int getNumberOfAvailableSeats(){
+        int result=0;
+        for (TicketResource ticket: ticketResources){
+            if (!ticket.isBooked()){
+                result++;
+            }}
+        return result;
+    }
 }
+

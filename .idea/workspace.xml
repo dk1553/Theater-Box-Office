@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="code refactoring; implemented mvc-pattern">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/converters/GsonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/converters/JsonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/mvc/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/mvc/Model.java" afterDir="false" />
+    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="renaming">
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/EventResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/EventResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/converters/JsonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/converters/JsonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Event.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,14 +213,7 @@
       <workItem from="1679738401605" duration="93000" />
       <workItem from="1679738572927" duration="3093000" />
       <workItem from="1679997734558" duration="14156000" />
-      <workItem from="1680257495729" duration="28657000" />
-    </task>
-    <task id="LOCAL-00011" summary="Project's configuration was changed">
-      <created>1677596860099</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1677596860099</updated>
+      <workItem from="1680257495729" duration="29155000" />
     </task>
     <task id="LOCAL-00012" summary="Project's configuration was changed">
       <created>1677596957871</created>
@@ -558,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680373430912</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="renaming">
+      <created>1680463817700</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1680463817700</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -577,7 +577,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fixed a bug in use case Update Theater Repertoire" />
     <MESSAGE value="changed object's identification method: UUID instead of Identifier.java" />
     <MESSAGE value="UceCase add new events [finished]; fixed a bug in UseCase view theater program" />
     <MESSAGE value="fixed a bug in Event-ID generation" />
@@ -602,7 +601,8 @@
     <MESSAGE value="JUnit tests" />
     <MESSAGE value="code refactoring" />
     <MESSAGE value="code refactoring; implemented mvc-pattern" />
-    <option name="LAST_COMMIT_MESSAGE" value="code refactoring; implemented mvc-pattern" />
+    <MESSAGE value="renaming" />
+    <option name="LAST_COMMIT_MESSAGE" value="renaming" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

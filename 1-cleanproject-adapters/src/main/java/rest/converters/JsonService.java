@@ -20,7 +20,6 @@ public class JsonService {
                 }else{
                     status="available";
                 }
-                System.out.println(ticket.isBooked());
                 result=result+"{'id':'"+ticket.getId()+"','seat number':'"+ticket.getSeat()+"','seat number':'"+ticket.getSeat()+"','status':'"+status+"','preis':'"+ticket.getPrice().toString()+"'},\n";
             }
             return result.substring(0,result.length()-2)+"]}";
@@ -35,18 +34,13 @@ public class JsonService {
             String result="{'events':[";
             for (EventResource event:events){
                 if (event!=null){
-                int aTickets=0;
-                int bTickets=0;
                 if ((event.getTicketResources()!=null)&&(!event.getTicketResources().isEmpty())){
-                for (TicketResource ticket:event.getTicketResources()){
+                    result=result+"{'id':'"+ event.getEventID()+"','performance':'"+event.getPerformance()+"','date':'"+event.getDate()+"','time':'"+event.getTime()+"','available tickets':'"+event.getNumberOfAvailableSeats()+"','booked tickets':'"+event.getNumberOfBookedSeats()+"'},";
 
-                    if (ticket.isBooked()){
-                        bTickets++;
-                    }else{
-                        aTickets++;
-                    }
-                }}
-                result=result+"{'id':'"+ event.getEventID()+"','performance':'"+event.getPerformance()+"','date':'"+event.getDate()+"','time':'"+event.getTime()+"','available tickets':'"+aTickets+"','booked tickets':'"+bTickets+"'},";
+                }else{
+                    result=result+"{'id':'"+ event.getEventID()+"','performance':'"+event.getPerformance()+"','date':'"+event.getDate()+"','time':'"+event.getTime()+"','available tickets':'"+"no data"+"','booked tickets':'"+"no data"+"'},";
+
+                }
             }}
             return result.substring(0,result.length()-1)+"]}";
         }else{
