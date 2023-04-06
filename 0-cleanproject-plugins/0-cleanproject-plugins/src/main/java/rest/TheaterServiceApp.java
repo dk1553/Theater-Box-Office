@@ -11,7 +11,7 @@ import rest.mvc.Model;
 
 
 public class TheaterServiceApp {
-   public static String JDBC_SQLITE_DATABASE ="jdbc:sqlite:D:/Theater-Box-Office/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db";
+   public static String JDBC_SQLITE_DATABASE ="jdbc:sqlite:0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db";
     public static void main (String[] args){
         Controller controller= new Controller(buildModel());
         Javalin app=Javalin.create().start(7771);
