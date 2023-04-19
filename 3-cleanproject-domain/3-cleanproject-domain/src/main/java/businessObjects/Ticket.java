@@ -17,7 +17,7 @@ public class Ticket {
         this.eventID=eventID;
         this.seat=seat;
         this.booked=false;
-        this.price= buildPrice(basicPrice);
+        this.price= calculatePrice(basicPrice);
     }
 
     public Ticket(String ticketID, String eventID, Price basicPrice, Seat seat, Boolean booked, String validationCode){
@@ -26,9 +26,9 @@ public class Ticket {
         this.eventID=eventID;
         this.seat=seat;
         this.booked=booked;
-        this.price= buildPrice(basicPrice);
+        this.price= calculatePrice(basicPrice);
     }
-    private Price buildPrice(Price basicPrice){
+    private Price calculatePrice(Price basicPrice){
         try {
             return new Price(basicPrice.getAmount().multiply(BigDecimal.valueOf(seat.getType().getPriceCoefficient())));
         } catch (Exception e) {
