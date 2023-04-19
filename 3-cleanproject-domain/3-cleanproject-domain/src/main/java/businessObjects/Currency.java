@@ -1,16 +1,16 @@
 package businessObjects;
 
 public enum Currency {
-    EURO ('€'),
-    DOLLAR ('$');
+    EURO ("€"),
+    DOLLAR ("$");
 
-    private Character symbol;
+    private String symbol;
 
-    private Currency(char symbol){
+    private Currency(String symbol){
         this.symbol=symbol;
     }
 
-    public Character getSymbol() {
+    public String getSymbol() {
         return symbol;
     }
 }

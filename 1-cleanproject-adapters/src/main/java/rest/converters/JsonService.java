@@ -20,7 +20,7 @@ public class JsonService {
                 }else{
                     status="available";
                 }
-                result=result+"{'id':'"+ticket.getId()+"','seat number':'"+ticket.getSeat()+"','seat number':'"+ticket.getSeat()+"','status':'"+status+"','preis':'"+ticket.getPrice().toString()+"'},\n";
+                result=result+"{'id':'"+ticket.getId()+"','seat number':'"+ticket.getSeat()+"','seat number':'"+ticket.getSeat()+"','status':'"+status+"','preis':'"+ticket.getPrice()+" "+ticket.getCurrency()+"'},\n";
             }
             return result.substring(0,result.length()-2)+"]}";
         }else {

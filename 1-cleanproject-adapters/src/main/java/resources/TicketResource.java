@@ -1,5 +1,6 @@
 package resources;
 
+import businessObjects.Currency;
 import businessObjects.Price;
 import businessObjects.Seat;
 
@@ -14,15 +15,7 @@ public class TicketResource {
     private String  validationCode;
 
     private boolean booked;
-
-    public TicketResource(String eventID, String basicPrice, String seat) throws Exception {
-        this.id= UUID.randomUUID().toString();
-        this.validationCode=UUID.randomUUID().toString();
-        this.eventID=eventID;
-        this.seat=seat;
-        this.basicPrice= basicPrice;
-        this.booked=false;
-    }
+    private String currency;
 
     public TicketResource(String ticketID, String eventID, String basicPrice, String seat, Boolean booked, String validationCode) throws Exception {
         this.validationCode=validationCode;
@@ -31,10 +24,14 @@ public class TicketResource {
         this.seat=seat;
         this.basicPrice= basicPrice;
         this.booked=booked;
+        this.currency= Currency.EURO.getSymbol();
     }
 
     public String getId() {
         return id;
+    }
+    public String getCurrency(){
+        return currency;
     }
 
     public boolean isBooked() {
