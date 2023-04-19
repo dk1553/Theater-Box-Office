@@ -7,7 +7,8 @@ public class Price {
     private Currency currency;
 
     public Price (){
-        this.amount =new BigDecimal("0");
+        //default price is 1000 Euro
+        this.amount =new BigDecimal("1000");
         this.currency=Currency.EURO;
     }
     public Price (BigDecimal amount) throws Exception {
