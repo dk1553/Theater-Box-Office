@@ -31,7 +31,7 @@ public class EventMapper  {
             return null;
         }
     }
-    public ArrayList<Event> mapNewObject(ArrayList<EventResource> eventResources, PerformanceRepository performanceRepository, TheaterBuilding theaterBuilding, TicketRepository ticketRepository) {
+    public ArrayList<Event> mapNewObject(ArrayList<EventResource> eventResources, PerformanceRepository performanceRepository, TheaterBuilding theaterBuilding) {
         if ((eventResources!=null)&&(!eventResources.isEmpty())){
         ArrayList<Event> events=new ArrayList<>();
         for (EventResource eventResource:eventResources){

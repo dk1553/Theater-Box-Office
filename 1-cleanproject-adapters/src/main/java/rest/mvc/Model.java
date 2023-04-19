@@ -64,7 +64,7 @@ public class Model {
    public String addEvents(String json) throws Exception {
          Boolean status= service.updateTheaterProgramUseCase(
                  eventMapper.mapNewObject(JsonService.json2EventResourceList(
-                        json),service.getPerformanceRepository(), service.getTheaterBuilding(), service.getTicketRepository()));
+                        json),service.getPerformanceRepository(), service.getTheaterBuilding()));
          String viewData= JsonService.status2jsonString(status);
       return viewData;
    }
