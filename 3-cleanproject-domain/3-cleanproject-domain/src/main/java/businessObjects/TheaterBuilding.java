@@ -17,7 +17,6 @@ public final class TheaterBuilding {
     }
 
     public Hall findHallByName(String name) {
-        System.out.println("-------------"+ halls.size());
        for (Hall hall:halls){
            if (hall.getHallName().equalsIgnoreCase(name)){
                return hall;

@@ -38,7 +38,6 @@ public class TheaterService {
     }
     public boolean updateTheaterProgramUseCase(ArrayList<Event> eventList) {
         try{
-            System.out.println("wow--"+eventList.get(0).getTickets().size());
             eventRepository.addEvents(eventList);
             ticketRepository.addTickets(eventList);
 
@@ -67,9 +66,6 @@ public class TheaterService {
 
         for (Event event: eventRepository.findAllEvents()){
             if (event.getId().equalsIgnoreCase(eventID)){
-                for (Ticket t:  event.getTickets()){
-                    System.out.println("test---"+t.isBooked());
-                }
                     return event;
             }
         }

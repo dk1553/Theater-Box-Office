@@ -100,8 +100,6 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
     private ArrayList <Performance> removeAlreadyExistingElements(ArrayList <Performance> performances){
         Set <Performance> toDelete = new HashSet<>();
         if ((performances!=null)&&(!performances.isEmpty())){
-            System.out.println(performances.size());
-            System.out.println(this.performances.size());
         for (Performance performance:performances){
              for (Performance exitingPerformance:this.performances){
 
@@ -134,10 +132,10 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
 
 
         for (Performance p:performances){
-            System.out.println(performances.size()+ "000");
+
 
             for (int i=performances.indexOf(p)+1; i<performances.size(); i++){
-                System.out.println("i="+i);
+
                 if (p.getName().equalsIgnoreCase(performances.get(i).getName())){
                   toDelete.add(performances.get(i));
                 }
