@@ -4,20 +4,18 @@ import businessObjects.*;
 import repositories.PerformanceRepository;
 import repositories.TicketRepository;
 import resources.EventResource;
-
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Objects;
 
 public class EventMapper  {
 
     public Event map(final EventResource eventResource, PerformanceRepository performanceRepository, TheaterBuilding theaterBuilding, TicketRepository ticketRepository) throws Exception {
         try {
             String eventID=eventResource.getEventID();
-            ArrayList <Ticket> tickets=new ArrayList<>();
-            tickets.addAll(ticketRepository.findTicketsOfEvent(eventID));
-            return buildEvent( eventResource,  performanceRepository,  theaterBuilding,  ticketRepository, tickets);
+            ArrayList<Ticket> tickets = new ArrayList<>(ticketRepository.findTicketsOfEvent(eventID));
+            return buildEvent( eventResource,  performanceRepository,  theaterBuilding, tickets);
         } catch (Exception e) {
             return null;
         }
@@ -33,11 +31,11 @@ public class EventMapper  {
             return null;
         }
     }
-    public ArrayList<Event> mapNewObject(ArrayList<EventResource> eventResources, PerformanceRepository performanceRepository, TheaterBuilding theaterBuilding, TicketRepository ticketRepository) throws Exception {
+    public ArrayList<Event> mapNewObject(ArrayList<EventResource> eventResources, PerformanceRepository performanceRepository, TheaterBuilding theaterBuilding, TicketRepository ticketRepository) {
         if ((eventResources!=null)&&(!eventResources.isEmpty())){
         ArrayList<Event> events=new ArrayList<>();
         for (EventResource eventResource:eventResources){
-            events.add(mapNewObject(eventResource, performanceRepository,theaterBuilding, ticketRepository));
+            events.add(mapNewObject(eventResource, performanceRepository,theaterBuilding));
         }
         return events;
         }else {
@@ -45,16 +43,16 @@ public class EventMapper  {
         }
     }
 
-    public Event mapNewObject(EventResource eventResource, PerformanceRepository performanceRepository, TheaterBuilding theaterBuilding, TicketRepository ticketRepository) throws Exception {
+    public Event mapNewObject(EventResource eventResource, PerformanceRepository performanceRepository, TheaterBuilding theaterBuilding){
         try {
             Hall hall=theaterBuilding.findHallByName(eventResource.getHall());
             Price price= new Price(eventResource.getPrice());
             ArrayList <Ticket> tickets=new ArrayList<>();
             String eventID=eventResource.getEventID();
-            for (Seat seat:hall.getSeats()){
+            for (Seat seat: Objects.requireNonNull(hall).getSeats()){
                 tickets.add(new Ticket(eventID,price, seat));
             }
-            return buildEvent( eventResource,  performanceRepository,  theaterBuilding,  ticketRepository, tickets);
+            return buildEvent( eventResource,  performanceRepository,  theaterBuilding, tickets);
 
         } catch (Exception e) {
             return null;
@@ -63,7 +61,7 @@ public class EventMapper  {
     }
 
 
-private Event buildEvent(EventResource eventResource, PerformanceRepository performanceRepository, TheaterBuilding theaterBuilding, TicketRepository ticketRepository, ArrayList <Ticket> tickets){
+private Event buildEvent(EventResource eventResource, PerformanceRepository performanceRepository, TheaterBuilding theaterBuilding, ArrayList <Ticket> tickets){
    try {
        Performance performance=performanceRepository.findPerformanceByName(eventResource.getPerformance());
        Hall hall=theaterBuilding.findHallByName(eventResource.getHall());
