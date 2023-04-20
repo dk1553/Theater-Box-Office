@@ -1,6 +1,7 @@
 package resources;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class EventResource {
@@ -10,7 +11,7 @@ public class EventResource {
     private String time;
     private String hall;
     private String price;
-    private ArrayList <TicketResource>  ticketResources;
+    private List<TicketResource> ticketResources;
 
 
     public EventResource( String eventID, String performance, String date, String time, String hall, String price, ArrayList <TicketResource>  ticketResources) {
@@ -65,7 +66,7 @@ public class EventResource {
     public String getEventID() {
         return eventID;
     }
-    public  ArrayList <TicketResource> getTicketResources(){
+    public List<TicketResource> getTicketResources(){
         return ticketResources;
     }
     public int getNumberOfBookedSeats(){

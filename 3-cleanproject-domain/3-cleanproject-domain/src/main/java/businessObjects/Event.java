@@ -2,10 +2,9 @@ package businessObjects;
 
 import repositories.SeatRepository;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 public class Event {
@@ -15,11 +14,11 @@ public class Event {
     private final String time;
     private final String hallName;
     private final Price basicPrice;
-    private ArrayList <Ticket> tickets;
+    private List<Ticket> tickets;
 
 
 
-    public ArrayList<Ticket> getTickets() {
+    public List<Ticket> getTickets() {
         return tickets;
     }
 

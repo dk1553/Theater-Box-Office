@@ -1,7 +1,5 @@
 package businessObjects;
 
-import java.util.UUID;
-
 public class Seat {
     private String seatID;
     private String hall;

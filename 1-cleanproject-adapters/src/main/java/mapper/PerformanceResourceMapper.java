@@ -4,6 +4,7 @@ import businessObjects.Performance;
 import resources.PerformanceResource;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PerformanceResourceMapper {
     public PerformanceResource map(final Performance performance) throws Exception {
@@ -16,7 +17,7 @@ public class PerformanceResourceMapper {
 
     }
 
-    public ArrayList<PerformanceResource> map(ArrayList<Performance> performances) throws Exception {
+    public ArrayList<PerformanceResource> map(List<Performance> performances) throws Exception {
         if ((performances!=null)&&(!performances.isEmpty())){
         ArrayList<PerformanceResource> performanceResources=new ArrayList<>();
         for (Performance performance:performances){

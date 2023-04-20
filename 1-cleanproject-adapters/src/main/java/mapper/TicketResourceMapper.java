@@ -4,6 +4,7 @@ import businessObjects.Ticket;
 import resources.TicketResource;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TicketResourceMapper {
 
@@ -15,7 +16,7 @@ public class TicketResourceMapper {
         }
     }
 
-    public ArrayList<TicketResource> map(ArrayList<Ticket> tickets) throws Exception {
+    public ArrayList<TicketResource> map(List<Ticket> tickets) throws Exception {
         ArrayList<TicketResource> ticketResources=new ArrayList<>();
         if ((tickets!=null)&&(!tickets.isEmpty())){
 

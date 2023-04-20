@@ -4,6 +4,7 @@ import businessObjects.*;
 import resources.EventResource;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class EventResourceMapper {
     public EventResource map(final Event event) {
@@ -20,7 +21,7 @@ public class EventResourceMapper {
        }
     }
 
-    public ArrayList<EventResource> map(ArrayList<Event> events) throws Exception {
+    public ArrayList<EventResource> map(List<Event> events) throws Exception {
         if ((events!=null)&&(!events.isEmpty())){
             ArrayList<EventResource> eventResources=new ArrayList<>();
             for (Event event:events){

@@ -1,13 +1,13 @@
 package persistence;
 
 import businessObjects.Hall;
-import businessObjects.Seat;
 import repositories.HallRepository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public final class HallRepositoryImplementation implements HallRepository {
-    private final ArrayList<Hall> halls;
+    private final List<Hall> halls;
 
     public HallRepositoryImplementation() {
         this.halls=new ArrayList<>();
@@ -28,7 +28,7 @@ public final class HallRepositoryImplementation implements HallRepository {
     }
 
     @Override
-    public ArrayList<Hall> getAllHalls() {
+    public List<Hall> getAllHalls() {
         return halls;
     }
 

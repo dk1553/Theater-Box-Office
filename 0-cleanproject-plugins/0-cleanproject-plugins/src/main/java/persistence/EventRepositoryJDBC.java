@@ -9,6 +9,7 @@ import mapper.EventMapper;
 import mapper.EventResourceMapper;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class EventRepositoryJDBC implements EventRepository {
@@ -19,12 +20,12 @@ public class EventRepositoryJDBC implements EventRepository {
 
 
 
-    private ArrayList <Event> eventList;
+    private List<Event> eventList;
 
 
 
     @Override
-    public ArrayList<Event> findAllEvents() {
+    public List<Event> findAllEvents() {
         return eventList;
     }
 

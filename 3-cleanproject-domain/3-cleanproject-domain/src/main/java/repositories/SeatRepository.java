@@ -1,9 +1,8 @@
 package repositories;
 
-import businessObjects.Hall;
 import businessObjects.Seat;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface SeatRepository {
 
@@ -12,5 +11,5 @@ public interface SeatRepository {
 
     Seat findSeatByID(String seat);
 
-    ArrayList <Seat>  findSeatsByHallName(String hallName);
+    List<Seat> findSeatsByHallName(String hallName);
 }

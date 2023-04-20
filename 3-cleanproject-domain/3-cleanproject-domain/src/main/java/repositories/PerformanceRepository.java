@@ -3,9 +3,10 @@ package repositories;
 import businessObjects.Performance;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface PerformanceRepository {
-    ArrayList<Performance> findAllPerformances();
+    List<Performance> findAllPerformances();
 
     Performance findPerformanceByName(String name);
   //  Boolean addPerformance(Performance performance);

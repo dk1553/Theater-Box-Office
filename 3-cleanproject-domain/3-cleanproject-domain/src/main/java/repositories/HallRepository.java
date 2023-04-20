@@ -1,12 +1,11 @@
 package repositories;
 
 import businessObjects.Hall;
-import businessObjects.Seat;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface HallRepository {
     Hall findHallByName(String hall);
-    ArrayList<Hall> getAllHalls();
+    List<Hall> getAllHalls();
 
 }

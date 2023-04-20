@@ -28,12 +28,6 @@ public class Price {
         }
         this.currency=Currency.EURO;
     }
-    public void setCurrency(Currency currency){
-        this.currency=currency;
-    }
-    public void setAmount(BigDecimal amount) throws Exception {
-        this.amount =checkAmountValue(amount);
-    }
 
     private BigDecimal checkAmountValue(BigDecimal value) throws Exception{
         if (value.doubleValue()<0){
@@ -44,6 +38,9 @@ public class Price {
 
     public BigDecimal getAmount() {
         return amount;
+    }
+    public Currency getCurrency(){
+        return currency;
     }
 
     @Override

@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Set;
 
 public class PerformanceRepositoryJDBC implements PerformanceRepository {
-    private ArrayList<Performance> performances;
+    private List<Performance> performances;
     private  static PerformanceMapper performanceMapper;
     private static PerformanceResourceMapper performanceResourceMapper;
 
@@ -26,7 +26,7 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
     }
 
     @Override
-    public ArrayList<Performance> findAllPerformances() {
+    public List<Performance> findAllPerformances() {
         return performances;
     }
 

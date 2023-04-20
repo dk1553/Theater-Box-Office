@@ -7,9 +7,10 @@ import repositories.HallRepository;
 import repositories.SeatRepository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SeatRepositoryImplementation implements SeatRepository {
-    private final ArrayList<Seat> seats;
+    private final List<Seat> seats;
 
     public SeatRepositoryImplementation(HallRepository hallRepository) {
         this.seats = new ArrayList<>();
@@ -51,7 +52,7 @@ public class SeatRepositoryImplementation implements SeatRepository {
     }
 
     @Override
-    public ArrayList<Seat> findSeatsByHallName(String hallName) {
+    public List<Seat> findSeatsByHallName(String hallName) {
         ArrayList<Seat> result = new ArrayList<>();
         for (Seat seat : seats) {
             if (seat.getHall().equalsIgnoreCase(hallName)) {

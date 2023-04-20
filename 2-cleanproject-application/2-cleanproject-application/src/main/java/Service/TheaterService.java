@@ -5,6 +5,7 @@ import repositories.*;
 import services.BookTicketDomainService;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class TheaterService {
@@ -27,11 +28,11 @@ public class TheaterService {
         return performanceRepository;
     }
 
-    public ArrayList<Event> showProgramUseCase() {
+    public List<Event> showProgramUseCase() {
         return eventRepository.findAllEvents();
     }
 
-    public ArrayList<Performance> showRepertoireUseCase() {
+    public List<Performance> showRepertoireUseCase() {
         return performanceRepository.findAllPerformances();
     }
 

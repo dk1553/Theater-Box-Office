@@ -8,10 +8,11 @@ import repositories.TicketRepository;
 import mapper.TicketMapper;
 import mapper.TicketResourceMapper;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class TicketRepositoryJDBC implements TicketRepository {
-    private ArrayList<Ticket> ticketList;
+    private List<Ticket> ticketList;
 
     public TicketRepositoryJDBC(SeatRepository seatRepository) {
         this.ticketList = new ArrayList<>();
@@ -19,7 +20,7 @@ public class TicketRepositoryJDBC implements TicketRepository {
     }
 
     @Override
-    public ArrayList<Ticket> findTicketsOfEvent(String eventID) {
+    public List<Ticket> findTicketsOfEvent(String eventID) {
         ArrayList<Ticket> ticketsOfEvent = new ArrayList<>();
         for (Ticket ticket : this.ticketList) {
             if (ticket.getEventID().equalsIgnoreCase(eventID)) {
@@ -48,7 +49,7 @@ public class TicketRepositoryJDBC implements TicketRepository {
     }
 
     @Override
-    public ArrayList<Ticket> findAllTickets() {
+    public List<Ticket> findAllTickets() {
         return ticketList;
     }
 
