@@ -46,7 +46,7 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
     private void loadRepertoireFromDB() {
         try {
             JDBCService jdbcService = new JDBCService();
-            ArrayList <Performance> performancesFormDB=performanceMapper.map(jdbcService.getRepertoire());
+           List <Performance> performancesFormDB=performanceMapper.map(jdbcService.getRepertoire());
             if (!performancesFormDB.isEmpty()){
                 performances.addAll(performancesFormDB);
             }
@@ -60,7 +60,7 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
 
 
     @Override
-    public Boolean addPerformances(ArrayList<Performance> performances) {
+    public Boolean addPerformances(List<Performance> performances) {
         performances=removeDuplicates(performances);
         performances=removeAlreadyExistingElements(performances);
 
@@ -97,7 +97,7 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
 
     }*/
 
-    private ArrayList <Performance> removeAlreadyExistingElements(ArrayList <Performance> performances){
+    private List<Performance> removeAlreadyExistingElements(List<Performance> performances){
         Set <Performance> toDelete = new HashSet<>();
         if ((performances!=null)&&(!performances.isEmpty())){
         for (Performance performance:performances){
@@ -122,7 +122,7 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
         }
     }
 
-    private ArrayList <Performance> removeDuplicates(ArrayList <Performance> performances){
+    private List<Performance> removeDuplicates(List<Performance> performances){
         Set <Performance> toDelete= new HashSet<>();
         if ((performances!=null)&&(!performances.isEmpty())){
 

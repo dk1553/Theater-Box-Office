@@ -7,6 +7,7 @@ import resources.PerformanceResource;
 import resources.TicketResource;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class JsonService {
@@ -30,7 +31,7 @@ public class JsonService {
 
     }
 
-    public static String eventResourceList2jsonString(ArrayList <EventResource> events){
+    public static String eventResourceList2jsonString(List <EventResource> events){
         if((!Objects.isNull(events))&& (!events.isEmpty())){
             String result="{'events':[";
             for (EventResource event:events){
@@ -65,7 +66,7 @@ public class JsonService {
 
     }
 
-    public static String performanceResourceList2jsonString(ArrayList <PerformanceResource> performances){
+    public static String performanceResourceList2jsonString(List <PerformanceResource> performances){
         if (!performances.isEmpty()){
         String result="{'performances':[";
         for (PerformanceResource performance:performances){
@@ -86,10 +87,10 @@ public class JsonService {
         }
     }
 
-    public static ArrayList <EventResource> json2EventResourceList(String contextBody) throws JSONException {
+    public static List <EventResource> json2EventResourceList(String contextBody) throws JSONException {
         JSONObject performanceJson = new JSONObject(contextBody);
         JSONArray jsonArrayEvents = performanceJson.getJSONArray("program");
-        ArrayList <EventResource> eventResources= new ArrayList<>();
+        List<EventResource> eventResources= new ArrayList<>();
         for (int i=0; i<jsonArrayEvents.length();i++){
             JSONObject pJ = jsonArrayEvents.getJSONObject(i);
             try {
@@ -104,10 +105,10 @@ public class JsonService {
 
     }
 
-    public static ArrayList <PerformanceResource> json2PerformanceList(String contextBody) throws JSONException {
+    public static List <PerformanceResource> json2PerformanceList(String contextBody) throws JSONException {
         JSONObject performanceJson = new JSONObject(contextBody);
         JSONArray jsonArrayPerformances = performanceJson.getJSONArray("performances");
-        ArrayList <PerformanceResource> performanceList= new ArrayList<>();
+        List <PerformanceResource> performanceList= new ArrayList<>();
         for (int i=0; i<jsonArrayPerformances.length();i++){
             JSONObject pJ = jsonArrayPerformances.getJSONObject(i);
             PerformanceResource performanceResource = new PerformanceResource(pJ.getString("name"), pJ.getString("description"));

@@ -36,7 +36,7 @@ public class TheaterService {
         return performanceRepository.findAllPerformances();
     }
 
-    public boolean updateRepertoireUseCase(ArrayList<Performance> performances) {
+    public boolean updateRepertoireUseCase(List<Performance> performances) {
         try {
             Boolean status = performanceRepository.addPerformances(performances);
             return status;
@@ -45,7 +45,7 @@ public class TheaterService {
         }
     }
 
-    public boolean updateTheaterProgramUseCase(ArrayList<Event> eventList) {
+    public boolean updateTheaterProgramUseCase(List<Event> eventList) {
         try {
             eventRepository.addEvents(eventList);
             ticketRepository.addTickets(eventList);

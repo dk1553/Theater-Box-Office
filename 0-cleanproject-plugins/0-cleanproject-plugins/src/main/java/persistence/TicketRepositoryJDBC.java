@@ -21,7 +21,7 @@ public class TicketRepositoryJDBC implements TicketRepository {
 
     @Override
     public List<Ticket> findTicketsOfEvent(String eventID) {
-        ArrayList<Ticket> ticketsOfEvent = new ArrayList<>();
+        List<Ticket> ticketsOfEvent = new ArrayList<>();
         for (Ticket ticket : this.ticketList) {
             if (ticket.getEventID().equalsIgnoreCase(eventID)) {
                 ticketsOfEvent.add(ticket);
@@ -54,7 +54,7 @@ public class TicketRepositoryJDBC implements TicketRepository {
     }
 
     @Override
-    public void addTickets(ArrayList<Event> events) {
+    public void addTickets(List<Event> events) {
         try {
             for (Event event : events) {
 
@@ -74,7 +74,7 @@ public class TicketRepositoryJDBC implements TicketRepository {
             TicketMapper ticketMapper = new TicketMapper();
             ticketList = new ArrayList<>();
             JDBCService jdbcService = new JDBCService();
-            ArrayList<Ticket> ticketsFormDB = ticketMapper.map(jdbcService.getTickets(), seatRepository);
+            List<Ticket> ticketsFormDB = ticketMapper.map(jdbcService.getTickets(), seatRepository);
             jdbcService.close();
             if ((ticketsFormDB != null) && (!ticketsFormDB.isEmpty())) {
                 ticketList.addAll(ticketsFormDB);

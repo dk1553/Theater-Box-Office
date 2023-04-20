@@ -9,22 +9,22 @@ import resources.EventResource;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Objects;
+import java.util.List;
 
 public class EventMapper  {
 
     public Event map(final EventResource eventResource, PerformanceRepository performanceRepository, HallRepository hallRepository, TicketRepository ticketRepository) throws Exception {
         try {
             String eventID=eventResource.getEventID();
-            ArrayList<Ticket> tickets = new ArrayList<>(ticketRepository.findTicketsOfEvent(eventID));
+          List<Ticket> tickets = new ArrayList<>(ticketRepository.findTicketsOfEvent(eventID));
             return buildEvent( eventResource,  performanceRepository, hallRepository, tickets);
         } catch (Exception e) {
             return null;
         }
     }
-    public ArrayList<Event> map(ArrayList<EventResource> eventResources, PerformanceRepository performanceRepository, HallRepository hallRepository, TicketRepository ticketRepository) throws Exception {
+    public List<Event> map(List<EventResource> eventResources, PerformanceRepository performanceRepository, HallRepository hallRepository, TicketRepository ticketRepository) throws Exception {
         if ((eventResources!=null)&&(!eventResources.isEmpty())){
-            ArrayList<Event> events=new ArrayList<>();
+           List<Event> events=new ArrayList<>();
             for (EventResource eventResource:eventResources){
                 events.add(map(eventResource, performanceRepository, hallRepository, ticketRepository));
             }
@@ -33,9 +33,9 @@ public class EventMapper  {
             return null;
         }
     }
-    public ArrayList<Event> mapNewObject(ArrayList<EventResource> eventResources, PerformanceRepository performanceRepository, HallRepository hallRepository, SeatRepository seatRepository) {
+    public List<Event> mapNewObject(List<EventResource> eventResources, PerformanceRepository performanceRepository, HallRepository hallRepository, SeatRepository seatRepository) {
         if ((eventResources!=null)&&(!eventResources.isEmpty())){
-        ArrayList<Event> events=new ArrayList<>();
+        List<Event> events=new ArrayList<>();
         for (EventResource eventResource:eventResources){
             events.add(mapNewObject(eventResource, performanceRepository, hallRepository, seatRepository));
         }
@@ -49,7 +49,7 @@ public class EventMapper  {
         try {
             Hall hall= hallRepository.findHallByName(eventResource.getHall());
             Price price= new Price(eventResource.getPrice());
-            ArrayList <Ticket> tickets=new ArrayList<>();
+          List <Ticket> tickets=new ArrayList<>();
             String eventID=eventResource.getEventID();
             for (Seat seat: seatRepository.findSeatsByHallName(hall.getHallName())){
                 tickets.add(new Ticket(eventID,price, seat));
@@ -67,7 +67,7 @@ public class EventMapper  {
     }
 
 
-private Event buildEvent(EventResource eventResource, PerformanceRepository performanceRepository, HallRepository hallRepository, ArrayList <Ticket> tickets){
+private Event buildEvent(EventResource eventResource, PerformanceRepository performanceRepository, HallRepository hallRepository, List <Ticket> tickets){
    try {
        Performance performance=performanceRepository.findPerformanceByName(eventResource.getPerformance());
        String hallName= eventResource.getHall();

@@ -36,7 +36,7 @@ public class Event {
 
     }
 
-    public Event (String id, Performance performance, Date date, Date time, String hallName, Price basicPrice, ArrayList <Ticket> tickets) throws Exception {
+    public Event (String id, Performance performance, Date date, Date time, String hallName, Price basicPrice, List <Ticket> tickets) throws Exception {
         this.id=id;
         this.performance=performance;
         this.date=ValidationService.validateDate(date);

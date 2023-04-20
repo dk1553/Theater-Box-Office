@@ -16,8 +16,8 @@ public class TicketResourceMapper {
         }
     }
 
-    public ArrayList<TicketResource> map(List<Ticket> tickets) throws Exception {
-        ArrayList<TicketResource> ticketResources=new ArrayList<>();
+    public List <TicketResource> map(List<Ticket> tickets) throws Exception {
+        List<TicketResource> ticketResources=new ArrayList<>();
         if ((tickets!=null)&&(!tickets.isEmpty())){
 
             for (Ticket ticket:tickets){

@@ -4,6 +4,7 @@ import Service.TheaterService;
 import businessObjects.Seat;
 import persistence.*;
 import io.javalin.Javalin;
+import repositories.*;
 import rest.mvc.Controller;
 import rest.mvc.Model;
 
@@ -25,11 +26,11 @@ public class TheaterServiceApp {
 
     }
     private static Model buildModel(){
-        HallRepositoryImplementation hallRepositoryImplementation = new HallRepositoryImplementation();
-        SeatRepositoryImplementation seatRepositoryImplementation= new SeatRepositoryImplementation(hallRepositoryImplementation);
-        PerformanceRepositoryJDBC performanceRepositoryJDBC = new PerformanceRepositoryJDBC();
-        TicketRepositoryJDBC ticketRepositoryJDBC = new TicketRepositoryJDBC(seatRepositoryImplementation);
-        EventRepositoryJDBC eventRepositoryJDBC = new EventRepositoryJDBC(hallRepositoryImplementation, ticketRepositoryJDBC, performanceRepositoryJDBC);
+        HallRepository hallRepositoryImplementation = new HallRepositoryImplementation();
+        SeatRepository seatRepositoryImplementation= new SeatRepositoryImplementation(hallRepositoryImplementation);
+        PerformanceRepository performanceRepositoryJDBC = new PerformanceRepositoryJDBC();
+        TicketRepository ticketRepositoryJDBC = new TicketRepositoryJDBC(seatRepositoryImplementation);
+        EventRepository eventRepositoryJDBC = new EventRepositoryJDBC(hallRepositoryImplementation, ticketRepositoryJDBC, performanceRepositoryJDBC);
         return new Model(new TheaterService(hallRepositoryImplementation, seatRepositoryImplementation, performanceRepositoryJDBC, eventRepositoryJDBC, ticketRepositoryJDBC));
     }
 

@@ -10,7 +10,9 @@ public interface TicketRepository {
     void save(Ticket ticket) throws Exception;
     List<Ticket> findAllTickets();
     List<Ticket> findTicketsOfEvent(String eventID);
-    void addTickets(ArrayList<Event> events);
+    void addTickets(List<Event> events);
     Ticket findTicketById(String id);
     Boolean isEmpty();
+
+
 }

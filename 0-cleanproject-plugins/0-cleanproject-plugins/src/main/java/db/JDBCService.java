@@ -10,6 +10,7 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class JDBCService {
     static Connection c;
@@ -29,8 +30,8 @@ public class JDBCService {
         c.close();
         MessagePrinter.dbClosed();
     }
-    public static ArrayList <PerformanceResource> getRepertoire() throws SQLException {
-        ArrayList <PerformanceResource> performances=new ArrayList<>();
+    public static List<PerformanceResource> getRepertoire() throws SQLException {
+       List <PerformanceResource> performances=new ArrayList<>();
             rs = stmt.executeQuery( "SELECT * FROM performances;" );
             while ( rs.next() ) {
                 String  name = rs.getString("name");
@@ -39,8 +40,8 @@ public class JDBCService {
             }
         return performances;
     }
-    public static ArrayList <EventResource> getTheaterProgram() throws Exception {
-        ArrayList <EventResource> events=new ArrayList<>();
+    public static List<EventResource> getTheaterProgram() throws Exception {
+      List <EventResource> events=new ArrayList<>();
         rs = stmt.executeQuery( "SELECT * FROM program;" );
         while ( rs.next() ) {
             String  eventID = rs.getString("eventID");
@@ -57,7 +58,7 @@ public class JDBCService {
         return events;
     }
 
-    public static  void addPerformancesToDatabase(ArrayList<PerformanceResource> performanceList) throws SQLException {
+    public static  void addPerformancesToDatabase(List<PerformanceResource> performanceList) throws SQLException {
             for (PerformanceResource performance:performanceList){
                 String sql = "INSERT INTO performances (name, description) " +
                         "VALUES (\'"+performance.getName()+"\',\'"+performance.getDescription()+"\');";
@@ -67,7 +68,7 @@ public class JDBCService {
             MessagePrinter.recordsCreated();
     }
 
-    public void addEventsToDatabase(ArrayList<EventResource> events) throws SQLException {
+    public void addEventsToDatabase(List<EventResource> events) throws SQLException {
         for (EventResource event:events){
             String sql = "INSERT INTO program (performance, date, time, hall, basicPrice, eventID) " +
                     "VALUES (\'"+event.getPerformance()+"\',\'"+event.getDate()+"\',\'"+event.getTime()+"\',\'"+event.getHall()+"\',\'"+event.getPrice().toString()+"\',\'"+event.getEventID()+"\');";
@@ -77,8 +78,8 @@ public class JDBCService {
         MessagePrinter.recordsCreated();
     }
 
-    public ArrayList<TicketResource> getTickets() throws Exception {
-        ArrayList <TicketResource> tickets=new ArrayList<>();
+    public List<TicketResource> getTickets() throws Exception {
+     List <TicketResource> tickets=new ArrayList<>();
         rs = stmt.executeQuery( "SELECT * FROM tickets;" );
 
         while ( rs.next() ) {
@@ -97,7 +98,7 @@ public class JDBCService {
         return tickets;
     }
 
-    public void addTicketsToDatabase(ArrayList<TicketResource> tickets) throws SQLException {
+    public void addTicketsToDatabase(List<TicketResource> tickets) throws SQLException {
         for (TicketResource ticket:tickets){
             int status=0;
             if (ticket.isBooked()){

@@ -3,6 +3,7 @@ package persistence;
 import businessObjects.Event;
 import db.JDBCService;
 import repositories.EventRepository;
+import repositories.HallRepository;
 import repositories.PerformanceRepository;
 import repositories.TicketRepository;
 import mapper.EventMapper;
@@ -13,9 +14,9 @@ import java.util.List;
 import java.util.Objects;
 
 public class EventRepositoryJDBC implements EventRepository {
-    public EventRepositoryJDBC(HallRepositoryImplementation hallRepositoryImplementation, TicketRepository ticketRepository, PerformanceRepository performanceRepository){
+    public EventRepositoryJDBC(HallRepository hallRepository, TicketRepository ticketRepository, PerformanceRepository performanceRepository){
         eventList= new ArrayList<>();
-        loadTheaterProgramFromDB(hallRepositoryImplementation,performanceRepository, ticketRepository);
+        loadTheaterProgramFromDB(hallRepository,performanceRepository, ticketRepository);
     }
 
 
@@ -46,7 +47,7 @@ public class EventRepositoryJDBC implements EventRepository {
     }
 
     @Override
-    public void addEvents(ArrayList<Event> events) {
+    public void addEvents(List<Event> events) {
         try {
             JDBCService jdbcService = new JDBCService();
             EventResourceMapper eventResourceMapper= new EventResourceMapper();
@@ -69,12 +70,12 @@ public class EventRepositoryJDBC implements EventRepository {
 
 
 
-        private void loadTheaterProgramFromDB(HallRepositoryImplementation hallRepositoryImplementation, PerformanceRepository performanceRepository, TicketRepository ticketRepository) {
+        private void loadTheaterProgramFromDB(HallRepository hallRepository, PerformanceRepository performanceRepository, TicketRepository ticketRepository) {
             EventMapper eventMapper= new EventMapper();
             try {
                 eventList=new ArrayList<>();
                 JDBCService jdbcService = new JDBCService();
-                ArrayList <Event> eventsFormDB=eventMapper.map(jdbcService.getTheaterProgram(), performanceRepository, hallRepositoryImplementation, ticketRepository);
+               List <Event> eventsFormDB=eventMapper.map(jdbcService.getTheaterProgram(), performanceRepository, hallRepository, ticketRepository);
                 if ((!Objects.isNull(eventsFormDB)) && (!eventsFormDB.isEmpty())){
                     eventList.addAll(eventsFormDB);
                 }

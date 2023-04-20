@@ -12,7 +12,7 @@ public class EventResourceMapper {
        if (event!=null){
            TicketResourceMapper ticketResourceMapper= new TicketResourceMapper();
            try {
-               return  new EventResource(event.getId(), event.getPerformance().getName(), event.getDate().toString(), event.getTime().toString(), event.getHallName(), event.getBasicPrice().toString(), ticketResourceMapper.map(event.getTickets()));
+               return  new EventResource(event.getId(), event.getPerformance().getName(), event.getDate(), event.getTime(), event.getHallName(), event.getBasicPrice().toString(), ticketResourceMapper.map(event.getTickets()));
            } catch (Exception e) {
               return null;
            }
@@ -21,9 +21,9 @@ public class EventResourceMapper {
        }
     }
 
-    public ArrayList<EventResource> map(List<Event> events) throws Exception {
+    public List<EventResource> map(List<Event> events) throws Exception {
         if ((events!=null)&&(!events.isEmpty())){
-            ArrayList<EventResource> eventResources=new ArrayList<>();
+            List<EventResource> eventResources=new ArrayList<>();
             for (Event event:events){
                 eventResources.add(map(event));
             }

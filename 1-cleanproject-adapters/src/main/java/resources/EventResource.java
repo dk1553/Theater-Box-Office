@@ -14,7 +14,7 @@ public class EventResource {
     private List<TicketResource> ticketResources;
 
 
-    public EventResource( String eventID, String performance, String date, String time, String hall, String price, ArrayList <TicketResource>  ticketResources) {
+    public EventResource( String eventID, String performance, String date, String time, String hall, String price, List <TicketResource>  ticketResources) {
       this.eventID=eventID;
        this.date = date;
        this.performance=performance;

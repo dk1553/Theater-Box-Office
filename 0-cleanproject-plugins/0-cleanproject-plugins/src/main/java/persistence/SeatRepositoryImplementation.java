@@ -53,7 +53,7 @@ public class SeatRepositoryImplementation implements SeatRepository {
 
     @Override
     public List<Seat> findSeatsByHallName(String hallName) {
-        ArrayList<Seat> result = new ArrayList<>();
+       List<Seat> result = new ArrayList<>();
         for (Seat seat : seats) {
             if (seat.getHall().equalsIgnoreCase(hallName)) {
                 result.add(seat);
