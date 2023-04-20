@@ -7,7 +7,7 @@ public class Ticket {
     private String id;
     private Price price;
     private String eventID;
-    private Seat seat;
+    private String seat;
     private String validationCode;
     private boolean booked;
 
@@ -15,22 +15,22 @@ public class Ticket {
         this.id= UUID.randomUUID().toString();
         this.validationCode=UUID.randomUUID().toString();
         this.eventID=eventID;
-        this.seat=seat;
+        this.seat=seat.getSeatNumber();
         this.booked=false;
-        this.price= calculatePrice(basicPrice);
+        this.price= calculatePrice(basicPrice, seat.getType().getPriceCoefficient());
     }
 
     public Ticket(String ticketID, String eventID, Price basicPrice, Seat seat, Boolean booked, String validationCode){
         this.id=ticketID;
         this.validationCode=validationCode;
         this.eventID=eventID;
-        this.seat=seat;
+        this.seat=seat.getSeatNumber();
         this.booked=booked;
-        this.price= calculatePrice(basicPrice);
+        this.price= calculatePrice(basicPrice, seat.getType().getPriceCoefficient());
     }
-    private Price calculatePrice(Price basicPrice){
+    private Price calculatePrice(Price basicPrice, double priceCoefficient){
         try {
-            return new Price(basicPrice.getAmount().multiply(BigDecimal.valueOf(seat.getType().getPriceCoefficient())));
+            return new Price(basicPrice.getAmount().multiply(BigDecimal.valueOf(priceCoefficient)));
         } catch (Exception e) {
             return new Price();
         }
@@ -53,7 +53,7 @@ public class Ticket {
     }
 
 
-    public Seat getSeat() {
+    public String getSeat() {
         return seat;
     }
 
