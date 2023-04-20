@@ -10,6 +10,7 @@ import mapper.TicketResourceMapper;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class TicketRepositoryJDBC implements TicketRepository {
     private ArrayList <Ticket> ticketList;
@@ -39,25 +40,12 @@ public class TicketRepositoryJDBC implements TicketRepository {
         return null;
     }
     @Override
-    public Ticket buy(Ticket ticket) {
-            if (ticket!=null){
-                if (!ticket.isBooked()){
-                    try {
-                        JDBCService jdbcService = new JDBCService();
-                        TicketResourceMapper ticketResourceMapper= new TicketResourceMapper();
-                        jdbcService.buyTicket(ticketResourceMapper.map(ticket));
-                        jdbcService.close();
-                        ticket.setBooked();
-                        return ticket;
-                    } catch (SQLException | ClassNotFoundException e) {
-                        return null;
-                    } catch (Exception e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-                return null;
-            }
-        return null;
+    public void save(Ticket ticket) throws Exception {
+
+        JDBCService jdbcService = new JDBCService();
+        TicketResourceMapper ticketResourceMapper = new TicketResourceMapper();
+        jdbcService.buyTicket(ticketResourceMapper.map(ticket));
+        jdbcService.close();
     }
 
     @Override

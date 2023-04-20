@@ -1,14 +1,13 @@
 package repositories;
 
 import businessObjects.Event;
-import businessObjects.TheaterBuilding;
 import businessObjects.Ticket;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface TicketRepository {
-    Ticket buy(Ticket ticket);
+    void save(Ticket ticket) throws Exception;
     ArrayList<Ticket> findAllTickets();
     ArrayList<Ticket> findTicketsOfEvent( String eventID);
     void addTickets(ArrayList<Event> events);

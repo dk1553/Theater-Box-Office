@@ -4,6 +4,9 @@ import businessObjects.*;
 import repositories.EventRepository;
 import repositories.PerformanceRepository;
 import repositories.TicketRepository;
+import services.BookTicketDomainService;
+import services.BookTicketDomainServiceInterface;
+
 import java.util.ArrayList;
 
 
@@ -54,8 +57,9 @@ public class TheaterService {
         try {
             Boolean userIsVerified=verifyUser(userFirstName, userLastName);
             if (userIsVerified){
-                Ticket requestedTicket=ticketRepository.findTicketById(ticket);
-                return ticketRepository.buy(requestedTicket);
+                BookTicketDomainService bookTicketDomainService= new BookTicketDomainService();
+                return  bookTicketDomainService.bookTicket(ticketRepository, ticket);
+
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
