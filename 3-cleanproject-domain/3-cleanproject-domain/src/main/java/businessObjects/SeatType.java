@@ -10,17 +10,19 @@ public enum SeatType {
     BALCONY(1, "BALCONY");
 
     private double priceCoefficient;
-    private  String typeName;
-    private SeatType(double priceCoefficient, String typeName){
-        this.priceCoefficient=priceCoefficient;
-        this.typeName=typeName;
+    private String typeName;
+
+    private SeatType(double priceCoefficient, String typeName) {
+        this.priceCoefficient = priceCoefficient;
+        this.typeName = typeName;
     }
 
     public double getPriceCoefficient() {
         return priceCoefficient;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return typeName;
     }
 }

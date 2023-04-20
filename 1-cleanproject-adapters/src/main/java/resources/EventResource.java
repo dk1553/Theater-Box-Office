@@ -14,33 +14,34 @@ public class EventResource {
     private List<TicketResource> ticketResources;
 
 
-    public EventResource( String eventID, String performance, String date, String time, String hall, String price, List <TicketResource>  ticketResources) {
-      this.eventID=eventID;
-       this.date = date;
-       this.performance=performance;
-       this.hall=hall;
-       this.time=time;
-       this.price=price;
-       this.ticketResources=ticketResources;
+    public EventResource(String eventID, String performance, String date, String time, String hall, String price, List<TicketResource> ticketResources) {
+        this.eventID = eventID;
+        this.date = date;
+        this.performance = performance;
+        this.hall = hall;
+        this.time = time;
+        this.price = price;
+        this.ticketResources = ticketResources;
     }
 
-    public EventResource( String eventID, String performance, String date, String time, String hall, String price) {
-        this.eventID=eventID;
+    public EventResource(String eventID, String performance, String date, String time, String hall, String price) {
+        this.eventID = eventID;
         this.date = date;
-        this.performance=performance;
-        this.hall=hall;
-        this.time=time;
-        this.price=price;
-        this.ticketResources=new ArrayList<>();
+        this.performance = performance;
+        this.hall = hall;
+        this.time = time;
+        this.price = price;
+        this.ticketResources = new ArrayList<>();
     }
-    public EventResource( String performance, String date, String time, String hall, String price) {
-        this.eventID= UUID.randomUUID().toString();
+
+    public EventResource(String performance, String date, String time, String hall, String price) {
+        this.eventID = UUID.randomUUID().toString();
         this.date = date;
-        this.performance=performance;
-        this.hall=hall;
-        this.time=time;
-        this.price=price;
-        this.ticketResources=new ArrayList<>();
+        this.performance = performance;
+        this.hall = hall;
+        this.time = time;
+        this.price = price;
+        this.ticketResources = new ArrayList<>();
 
     }
 
@@ -63,26 +64,32 @@ public class EventResource {
     public String getPrice() {
         return price;
     }
+
     public String getEventID() {
         return eventID;
     }
-    public List<TicketResource> getTicketResources(){
+
+    public List<TicketResource> getTicketResources() {
         return ticketResources;
     }
-    public int getNumberOfBookedSeats(){
-        int result=0;
-        for (TicketResource ticket: ticketResources){
-            if (ticket.isBooked()){
+
+    public int getNumberOfBookedSeats() {
+        int result = 0;
+        for (TicketResource ticket : ticketResources) {
+            if (ticket.isBooked()) {
                 result++;
-         }}
+            }
+        }
         return result;
     }
-    public int getNumberOfAvailableSeats(){
-        int result=0;
-        for (TicketResource ticket: ticketResources){
-            if (!ticket.isBooked()){
+
+    public int getNumberOfAvailableSeats() {
+        int result = 0;
+        for (TicketResource ticket : ticketResources) {
+            if (!ticket.isBooked()) {
                 result++;
-            }}
+            }
+        }
         return result;
     }
 }

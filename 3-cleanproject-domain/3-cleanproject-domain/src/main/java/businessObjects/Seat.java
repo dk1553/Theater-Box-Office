@@ -6,12 +6,12 @@ public class Seat {
     private SeatType type;
     private String seatNumber;
 
-    public Seat (String hall, SeatType type){
-        this.seatID= String.valueOf(SeatIdentifier.getNewSeatID());
-        this.hall=hall;
-        this.type=type;
+    public Seat(String hall, SeatType type) {
+        this.seatID = String.valueOf(SeatIdentifier.getNewSeatID());
+        this.hall = hall;
+        this.type = type;
         //change seatNumber to seatLine and seatNumberInLine
-        this.seatNumber=seatID;
+        this.seatNumber = seatID;
 
     }
 

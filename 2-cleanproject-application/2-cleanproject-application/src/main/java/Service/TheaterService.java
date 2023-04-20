@@ -4,7 +4,6 @@ import businessObjects.*;
 import repositories.*;
 import services.BookTicketDomainService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -15,17 +14,12 @@ public class TheaterService {
     private final TicketRepository ticketRepository;
     private final SeatRepository seatRepository;
 
-    public TheaterService(HallRepository hallRepository,SeatRepository seatRepository,  PerformanceRepository performanceRepository, EventRepository eventRepository, TicketRepository ticketRepository) {
+    public TheaterService(HallRepository hallRepository, SeatRepository seatRepository, PerformanceRepository performanceRepository, EventRepository eventRepository, TicketRepository ticketRepository) {
         this.hallRepository = hallRepository;
-        this.seatRepository=seatRepository;
+        this.seatRepository = seatRepository;
         this.performanceRepository = performanceRepository;
         this.eventRepository = eventRepository;
         this.ticketRepository = ticketRepository;
-    }
-
-
-    public PerformanceRepository getPerformancesRepository() {
-        return performanceRepository;
     }
 
     public List<Event> showProgramUseCase() {
@@ -111,14 +105,6 @@ public class TheaterService {
 
     public PerformanceRepository getPerformanceRepository() {
         return performanceRepository;
-    }
-
-    public EventRepository getEventRepository() {
-        return eventRepository;
-    }
-
-    public TicketRepository getTicketRepository() {
-        return ticketRepository;
     }
 
     public SeatRepository getSeatRepository() {

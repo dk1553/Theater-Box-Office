@@ -8,9 +8,9 @@ import java.util.List;
 
 public class PerformanceMapper {
     public Performance map(final PerformanceResource performanceResource) throws Exception {
-        if (performanceResource!=null){
-            return new Performance(performanceResource.getName(),performanceResource.getDescription());
-        }else{
+        if (performanceResource != null) {
+            return new Performance(performanceResource.getName(), performanceResource.getDescription());
+        } else {
             return null;
         }
 
@@ -18,13 +18,13 @@ public class PerformanceMapper {
     }
 
     public List<Performance> map(List<PerformanceResource> performanceResources) throws Exception {
-        if ((performanceResources!=null)&&(!performanceResources.isEmpty())){
-            List<Performance> performances=new ArrayList<>();
-            for (PerformanceResource performanceResource:performanceResources){
+        if ((performanceResources != null) && (!performanceResources.isEmpty())) {
+            List<Performance> performances = new ArrayList<>();
+            for (PerformanceResource performanceResource : performanceResources) {
                 performances.add(map(performanceResource));
             }
             return performances;
-        }else{
+        } else {
             return null;
         }
 

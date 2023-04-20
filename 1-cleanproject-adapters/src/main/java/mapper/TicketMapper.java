@@ -10,7 +10,7 @@ import java.util.List;
 public class TicketMapper {
     public Ticket map(final TicketResource ticketResource, SeatRepository seatRepository) throws Exception {
         try {
-            return new Ticket(ticketResource.getId(), ticketResource.getEventID(),new Price(ticketResource.getPrice()), seatRepository.findSeatByID(ticketResource.getSeat()), ticketResource.isBooked(), ticketResource.getValidationCode());
+            return new Ticket(ticketResource.getId(), ticketResource.getEventID(), new Price(ticketResource.getPrice()), seatRepository.findSeatByID(ticketResource.getSeat()), ticketResource.isBooked(), ticketResource.getValidationCode());
 
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -19,13 +19,13 @@ public class TicketMapper {
     }
 
     public List<Ticket> map(List<TicketResource> ticketResources, SeatRepository seatRepository) throws Exception {
-        List<Ticket> tickets=new ArrayList<>();
-        if (ticketResources!=null){
-            for (TicketResource ticketResource:ticketResources){
+        List<Ticket> tickets = new ArrayList<>();
+        if (ticketResources != null) {
+            for (TicketResource ticketResource : ticketResources) {
                 tickets.add(map(ticketResource, seatRepository));
             }
             return tickets;
-        }else{
+        } else {
             return null;
         }
 

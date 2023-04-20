@@ -17,33 +17,32 @@ public class Event {
     private List<Ticket> tickets;
 
 
-
     public List<Ticket> getTickets() {
         return tickets;
     }
 
-    public Event (Performance performance, Date date, Date time, String hallName, Price basicPrice, SeatRepository seatRepository) throws Exception {
-        this.id= UUID.randomUUID().toString();
-        this.performance=performance;
-        this.date=ValidationService.validateDate(date);
-        this.time=ValidationService.validateTime(time);
-        this.basicPrice=basicPrice;
-        tickets=new ArrayList<>();
-        for (Seat seat:seatRepository.findSeatsByHallName(hallName)){
-            tickets.add(new Ticket(id,basicPrice, seat));
+    public Event(Performance performance, Date date, Date time, String hallName, Price basicPrice, SeatRepository seatRepository) throws Exception {
+        this.id = UUID.randomUUID().toString();
+        this.performance = performance;
+        this.date = ValidationService.validateDate(date);
+        this.time = ValidationService.validateTime(time);
+        this.basicPrice = basicPrice;
+        tickets = new ArrayList<>();
+        for (Seat seat : seatRepository.findSeatsByHallName(hallName)) {
+            tickets.add(new Ticket(id, basicPrice, seat));
         }
-        this.hallName= hallName;
+        this.hallName = hallName;
 
     }
 
-    public Event (String id, Performance performance, Date date, Date time, String hallName, Price basicPrice, List <Ticket> tickets) throws Exception {
-        this.id=id;
-        this.performance=performance;
-        this.date=ValidationService.validateDate(date);
-        this.time=ValidationService.validateTime(time);
-        this.tickets=tickets;
-        this.basicPrice=basicPrice;
-        this.hallName=hallName;
+    public Event(String id, Performance performance, Date date, Date time, String hallName, Price basicPrice, List<Ticket> tickets) throws Exception {
+        this.id = id;
+        this.performance = performance;
+        this.date = ValidationService.validateDate(date);
+        this.time = ValidationService.validateTime(time);
+        this.tickets = tickets;
+        this.basicPrice = basicPrice;
+        this.hallName = hallName;
 
     }
 
@@ -62,13 +61,14 @@ public class Event {
     public String getTime() {
         return time;
     }
+
     public String getHallName() {
         return hallName;
     }
 
-    public Price getBasicPrice(){
+    public Price getBasicPrice() {
         return basicPrice;
     }
-    
+
 
 }

@@ -12,18 +12,19 @@ public class Hall {
     private final int numberOfSeatsBalcony;
 
 
-    public Hall(String hallName, int numberOfSeatsOrchestraLeft, int numberOfSeatsOrchestraRight, int numberOfSeatsOrchestraCenter, int numberOfSeatsMezzanineRight, int numberOfSeatsMezzanineLeft, int numberOfSeatsMezzanineCenter, int numberOfSeatsBalcony ){
-        this.hallName=hallName;
-        this.numberOfSeatsOrchestraLeft=numberOfSeatsOrchestraLeft;
-        this.numberOfSeatsOrchestraRight=numberOfSeatsOrchestraRight;
-        this.numberOfSeatsOrchestraCenter=numberOfSeatsOrchestraCenter;
-        this.numberOfSeatsMezzanineRight=numberOfSeatsMezzanineRight;
-        this.numberOfSeatsMezzanineLeft=numberOfSeatsMezzanineLeft;
-        this.numberOfSeatsMezzanineCenter=numberOfSeatsMezzanineCenter;
-        this.numberOfSeatsBalcony=numberOfSeatsBalcony;
-        this.guestLimit =numberOfSeatsOrchestraLeft+numberOfSeatsOrchestraRight+numberOfSeatsOrchestraCenter+numberOfSeatsMezzanineRight+numberOfSeatsMezzanineLeft+numberOfSeatsMezzanineCenter+numberOfSeatsMezzanineCenter+numberOfSeatsBalcony;
+    public Hall(String hallName, int numberOfSeatsOrchestraLeft, int numberOfSeatsOrchestraRight, int numberOfSeatsOrchestraCenter, int numberOfSeatsMezzanineRight, int numberOfSeatsMezzanineLeft, int numberOfSeatsMezzanineCenter, int numberOfSeatsBalcony) {
+        this.hallName = hallName;
+        this.numberOfSeatsOrchestraLeft = numberOfSeatsOrchestraLeft;
+        this.numberOfSeatsOrchestraRight = numberOfSeatsOrchestraRight;
+        this.numberOfSeatsOrchestraCenter = numberOfSeatsOrchestraCenter;
+        this.numberOfSeatsMezzanineRight = numberOfSeatsMezzanineRight;
+        this.numberOfSeatsMezzanineLeft = numberOfSeatsMezzanineLeft;
+        this.numberOfSeatsMezzanineCenter = numberOfSeatsMezzanineCenter;
+        this.numberOfSeatsBalcony = numberOfSeatsBalcony;
+        this.guestLimit = numberOfSeatsOrchestraLeft + numberOfSeatsOrchestraRight + numberOfSeatsOrchestraCenter + numberOfSeatsMezzanineRight + numberOfSeatsMezzanineLeft + numberOfSeatsMezzanineCenter + numberOfSeatsMezzanineCenter + numberOfSeatsBalcony;
 
     }
+
     public String getHallName() {
         return hallName;
     }

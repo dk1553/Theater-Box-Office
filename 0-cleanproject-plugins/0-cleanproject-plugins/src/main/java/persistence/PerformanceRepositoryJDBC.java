@@ -13,14 +13,13 @@ import java.util.Set;
 
 public class PerformanceRepositoryJDBC implements PerformanceRepository {
     private List<Performance> performances;
-    private  static PerformanceMapper performanceMapper;
+    private static PerformanceMapper performanceMapper;
     private static PerformanceResourceMapper performanceResourceMapper;
 
 
-
     public PerformanceRepositoryJDBC() throws RuntimeException {
-        performances=new ArrayList<>();
-        performanceMapper=new PerformanceMapper();
+        performances = new ArrayList<>();
+        performanceMapper = new PerformanceMapper();
         performanceResourceMapper = new PerformanceResourceMapper();
         loadRepertoireFromDB();
     }
@@ -32,8 +31,8 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
 
     @Override
     public Performance findPerformanceByName(String name) {
-        for (Performance performance:performances){
-            if (performance.getName().equalsIgnoreCase(name)){
+        for (Performance performance : performances) {
+            if (performance.getName().equalsIgnoreCase(name)) {
                 return performance;
             }
         }
@@ -46,8 +45,8 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
     private void loadRepertoireFromDB() {
         try {
             JDBCService jdbcService = new JDBCService();
-           List <Performance> performancesFormDB=performanceMapper.map(jdbcService.getRepertoire());
-            if (!performancesFormDB.isEmpty()){
+            List<Performance> performancesFormDB = performanceMapper.map(jdbcService.getRepertoire());
+            if (!performancesFormDB.isEmpty()) {
                 performances.addAll(performancesFormDB);
             }
             jdbcService.close();
@@ -58,96 +57,75 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
     }
 
 
-
     @Override
     public Boolean addPerformances(List<Performance> performances) {
-        performances=removeDuplicates(performances);
-        performances=removeAlreadyExistingElements(performances);
+        performances = removeDuplicates(performances);
+        performances = removeAlreadyExistingElements(performances);
 
-        if ((performances!=null)&&(!performances.isEmpty())){
-        try {
-            JDBCService jdbcService = new JDBCService();
-            jdbcService.addPerformancesToDatabase(performanceResourceMapper.map(performances));
-            jdbcService.close();
-            this.performances.addAll(performances);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-        }else {
-            return false;
-        }
-    }
-
-  /*  @Override
-    public Boolean addPerformance(Performance performance) {
-        if (!exist(performance, this.performances)){
-            performances.add(performance);
+        if ((performances != null) && (!performances.isEmpty())) {
             try {
                 JDBCService jdbcService = new JDBCService();
                 jdbcService.addPerformancesToDatabase(performanceResourceMapper.map(performances));
                 jdbcService.close();
-
+                this.performances.addAll(performances);
+                return true;
             } catch (Exception e) {
-                throw new RuntimeException(e);
-            }return true;
-        }else{
+                return false;
+            }
+        } else {
             return false;
         }
+    }
 
-    }*/
-
-    private List<Performance> removeAlreadyExistingElements(List<Performance> performances){
-        Set <Performance> toDelete = new HashSet<>();
-        if ((performances!=null)&&(!performances.isEmpty())){
-        for (Performance performance:performances){
-             for (Performance exitingPerformance:this.performances){
+    private List<Performance> removeAlreadyExistingElements(List<Performance> performances) {
+        Set<Performance> toDelete = new HashSet<>();
+        if ((performances != null) && (!performances.isEmpty())) {
+            for (Performance performance : performances) {
+                for (Performance exitingPerformance : this.performances) {
 
 
-                if (performance.getName().equalsIgnoreCase(exitingPerformance.getName())){
-                    toDelete.add(performance);
+                    if (performance.getName().equalsIgnoreCase(exitingPerformance.getName())) {
+                        toDelete.add(performance);
+                    }
                 }
-             }
-        }}
+            }
+        }
         performances.removeAll(toDelete);
         return performances;
     }
 
     @Override
-    public Boolean isEmpty(){
-        if ((performances!=null)&&(!performances.isEmpty())){
-            return  false;
-        }else {
+    public Boolean isEmpty() {
+        if ((performances != null) && (!performances.isEmpty())) {
+            return false;
+        } else {
             return true;
         }
     }
 
-    private List<Performance> removeDuplicates(List<Performance> performances){
-        Set <Performance> toDelete= new HashSet<>();
-        if ((performances!=null)&&(!performances.isEmpty())){
+    private List<Performance> removeDuplicates(List<Performance> performances) {
+        Set<Performance> toDelete = new HashSet<>();
+        if ((performances != null) && (!performances.isEmpty())) {
 
 
+            for (Performance p : performances) {
 
 
+                for (int i = performances.indexOf(p) + 1; i < performances.size(); i++) {
 
-
-        for (Performance p:performances){
-
-
-            for (int i=performances.indexOf(p)+1; i<performances.size(); i++){
-
-                if (p.getName().equalsIgnoreCase(performances.get(i).getName())){
-                  toDelete.add(performances.get(i));
+                    if (p.getName().equalsIgnoreCase(performances.get(i).getName())) {
+                        toDelete.add(performances.get(i));
+                    }
+                }
+            }
+            if (!toDelete.isEmpty()) {
+                for (Performance performance : toDelete) {
+                    performances.remove(performance);
                 }
             }
         }
-        if (!toDelete.isEmpty()){
-        for (Performance performance:toDelete){
-            performances.remove(performance);
-        }}
-        }
 
-        return  performances;
+        return performances;
     }
 
 }
