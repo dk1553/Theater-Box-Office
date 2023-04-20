@@ -7,6 +7,7 @@ import resources.PerformanceResource;
 import resources.TicketResource;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class JsonService {
 
@@ -30,7 +31,7 @@ public class JsonService {
     }
 
     public static String eventResourceList2jsonString(ArrayList <EventResource> events){
-        if (!events.isEmpty()){
+        if((!Objects.isNull(events))&& (!events.isEmpty())){
             String result="{'events':[";
             for (EventResource event:events){
                 if (event!=null){

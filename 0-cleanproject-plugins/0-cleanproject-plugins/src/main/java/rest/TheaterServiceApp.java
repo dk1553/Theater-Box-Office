@@ -1,11 +1,9 @@
 package rest;
 
 import Service.TheaterService;
-import businessObjects.TheaterBuilding;
+import businessObjects.Seat;
+import persistence.*;
 import io.javalin.Javalin;
-import persistence.EventRepositoryJDBC;
-import persistence.PerformanceRepositoryJDBC;
-import persistence.TicketRepositoryJDBC;
 import rest.mvc.Controller;
 import rest.mvc.Model;
 
@@ -27,11 +25,12 @@ public class TheaterServiceApp {
 
     }
     private static Model buildModel(){
-        TheaterBuilding theaterBuilding = new TheaterBuilding();
+        HallRepositoryImplementation hallRepositoryImplementation = new HallRepositoryImplementation();
+        SeatRepositoryImplementation seatRepositoryImplementation= new SeatRepositoryImplementation(hallRepositoryImplementation);
         PerformanceRepositoryJDBC performanceRepositoryJDBC = new PerformanceRepositoryJDBC();
-        TicketRepositoryJDBC ticketRepositoryJDBC = new TicketRepositoryJDBC(theaterBuilding);
-        EventRepositoryJDBC eventRepositoryJDBC = new EventRepositoryJDBC(theaterBuilding, ticketRepositoryJDBC, performanceRepositoryJDBC);
-        return new Model(new TheaterService(theaterBuilding, performanceRepositoryJDBC, eventRepositoryJDBC, ticketRepositoryJDBC));
+        TicketRepositoryJDBC ticketRepositoryJDBC = new TicketRepositoryJDBC(seatRepositoryImplementation);
+        EventRepositoryJDBC eventRepositoryJDBC = new EventRepositoryJDBC(hallRepositoryImplementation, ticketRepositoryJDBC, performanceRepositoryJDBC);
+        return new Model(new TheaterService(hallRepositoryImplementation, seatRepositoryImplementation, performanceRepositoryJDBC, eventRepositoryJDBC, ticketRepositoryJDBC));
     }
 
 }

@@ -103,8 +103,8 @@ public class JDBCService {
             if (ticket.isBooked()){
                 status=1;
             }
-            String sql = "INSERT INTO tickets (ticketID, basicPrice, eventID, seat, isBooked) " +
-                    "VALUES (\'"+ticket.getId()+"\',\'"+ticket.getPrice()+"\',\'"+ticket.getEventID()+"\',\'"+ticket.getSeat()+"\',\'"+ status +"\');";
+            String sql = "INSERT INTO tickets (ticketID, basicPrice, eventID, seat, isBooked, validationCode) " +
+                    "VALUES (\'"+ticket.getId()+"\',\'"+ticket.getPrice()+"\',\'"+ticket.getEventID()+"\',\'"+ticket.getSeat()+"\',\'"+ status+"\',\'"+ ticket.getValidationCode() +"\');";
             stmt.executeUpdate(sql);
         }
         c.commit();

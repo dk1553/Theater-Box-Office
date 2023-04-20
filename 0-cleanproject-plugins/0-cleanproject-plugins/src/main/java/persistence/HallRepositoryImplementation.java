@@ -1,11 +1,15 @@
-package businessObjects;
+package persistence;
+
+import businessObjects.Hall;
+import businessObjects.Seat;
+import repositories.HallRepository;
 
 import java.util.ArrayList;
 
-public final class TheaterBuilding {
+public final class HallRepositoryImplementation implements HallRepository {
     private final ArrayList<Hall> halls;
 
-    public TheaterBuilding() {
+    public HallRepositoryImplementation() {
         this.halls=new ArrayList<>();
         Hall smallHall= new Hall("Kleine Halle", 10,10,10,10,10,10,10);
         Hall bigHall = new Hall("Große Halle",10,10,10,15,20,15,20);
@@ -23,14 +27,10 @@ public final class TheaterBuilding {
        return null;
     }
 
-    public Seat findSeatByName(String seatID) {
-        for (Hall hall:halls){
-            for (Seat seat:hall.getSeats()){
-            if (seat.getSeatID().equalsIgnoreCase(seatID)){
-                return seat;
-             }
-            }
-        }
-        return null;
+    @Override
+    public ArrayList<Hall> getAllHalls() {
+        return halls;
     }
+
+
 }

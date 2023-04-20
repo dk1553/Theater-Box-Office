@@ -17,7 +17,7 @@ public class TicketResource {
     private boolean booked;
     private String currency;
 
-    public TicketResource(String ticketID, String eventID, String basicPrice, String seat, Boolean booked, String validationCode) throws Exception {
+    public TicketResource(String ticketID, String eventID, String basicPrice, String seat, Boolean booked, String validationCode) {
         this.validationCode=validationCode;
         this.id=ticketID;
         this.eventID=eventID;

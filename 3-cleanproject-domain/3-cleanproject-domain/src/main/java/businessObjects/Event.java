@@ -1,5 +1,7 @@
 package businessObjects;
 
+import repositories.SeatRepository;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -11,7 +13,6 @@ public class Event {
     private final String id;
     private final String date;
     private final String time;
-    private Hall hall;
     private final String hallName;
     private final Price basicPrice;
     private ArrayList <Ticket> tickets;
@@ -22,56 +23,53 @@ public class Event {
         return tickets;
     }
 
-    public Event (Performance performance, Date date, Date time, Hall hall, Price basicPrice) throws Exception {
+    public Event (Performance performance, Date date, Date time, String hallName, Price basicPrice, SeatRepository seatRepository) throws Exception {
         this.id= UUID.randomUUID().toString();
         this.performance=performance;
         this.date=ValidationService.validateDate(date);
         this.time=ValidationService.validateTime(time);
-        this.hall=hall;
         this.basicPrice=basicPrice;
         tickets=new ArrayList<>();
-        for (Seat seat:hall.getSeats()){
+        for (Seat seat:seatRepository.findSeatsByHallName(hallName)){
             tickets.add(new Ticket(id,basicPrice, seat));
         }
-        this.hallName= hall.getHallName();
+        this.hallName= hallName;
 
     }
 
-    public Event (String id, Performance performance, Date date, Date time, Hall hall, Price basicPrice, ArrayList <Ticket> tickets) throws Exception {
+    public Event (String id, Performance performance, Date date, Date time, String hallName, Price basicPrice, ArrayList <Ticket> tickets) throws Exception {
         this.id=id;
         this.performance=performance;
         this.date=ValidationService.validateDate(date);
         this.time=ValidationService.validateTime(time);
-        this.hall=hall;
         this.tickets=tickets;
         this.basicPrice=basicPrice;
-        this.hallName=hall.getHallName();
+        this.hallName=hallName;
 
     }
 
-    public Event (String id, Performance performance, Date date, Date time, Hall hall, Price basicPrice, String noTickets) throws Exception {
+    public Event (String id, Performance performance, Date date, Date time, String hallName, Price basicPrice, String noTickets) throws Exception {
 
         this.id=id;
         this.performance=performance;
         this.date=ValidationService.validateDate(date);
         this.time=ValidationService.validateTime(time);
-        this.hall=hall;
         this.tickets=new ArrayList<>();
         this.basicPrice=basicPrice;
-        this.hallName=hall.getHallName();
+        this.hallName=hallName;
 
     }
 
 
 
 
-    public void setHall (Hall hall) throws Exception {
+   /* public void setHall (Hall hall) throws Exception {
         this.hall=hall;
         tickets=new ArrayList<>();
         for (Seat seat:hall.getSeats()){
             tickets.add(new Ticket(id,this.basicPrice, seat));
         }
-    }
+    }*/
 
     public Performance getPerformance() {
         return performance;
@@ -87,10 +85,6 @@ public class Event {
 
     public String getTime() {
         return time;
-    }
-
-    public Hall getHall() {
-        return hall;
     }
     public String getHallName() {
         return hallName;

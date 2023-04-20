@@ -1,9 +1,6 @@
 package repositories;
 
 import businessObjects.Event;
-import businessObjects.Performance;
-import businessObjects.TheaterBuilding;
-import businessObjects.Ticket;
 
 import java.util.ArrayList;
 

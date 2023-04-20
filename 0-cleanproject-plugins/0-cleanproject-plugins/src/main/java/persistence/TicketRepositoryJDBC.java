@@ -1,9 +1,9 @@
 package persistence;
 
 import businessObjects.Event;
-import businessObjects.TheaterBuilding;
 import businessObjects.Ticket;
 import db.JDBCService;
+import repositories.SeatRepository;
 import repositories.TicketRepository;
 import mapper.TicketMapper;
 import mapper.TicketResourceMapper;
@@ -13,9 +13,9 @@ import java.util.ArrayList;
 public class TicketRepositoryJDBC implements TicketRepository {
     private ArrayList<Ticket> ticketList;
 
-    public TicketRepositoryJDBC(TheaterBuilding theaterBuilding) {
+    public TicketRepositoryJDBC(SeatRepository seatRepository) {
         this.ticketList = new ArrayList<>();
-        loadTicketsFromDB(theaterBuilding);
+        loadTicketsFromDB(seatRepository);
     }
 
     @Override
@@ -55,24 +55,25 @@ public class TicketRepositoryJDBC implements TicketRepository {
     @Override
     public void addTickets(ArrayList<Event> events) {
         try {
-            for (Event e : events) {
+            for (Event event : events) {
+
                 JDBCService jdbcService = new JDBCService();
                 TicketResourceMapper ticketResourceMapper = new TicketResourceMapper();
-                jdbcService.addTicketsToDatabase(ticketResourceMapper.map(e.getTickets()));
+                jdbcService.addTicketsToDatabase(ticketResourceMapper.map(event.getTickets()));
                 jdbcService.close();
-                this.ticketList.addAll(e.getTickets());
+                this.ticketList.addAll(event.getTickets());
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    private void loadTicketsFromDB(TheaterBuilding theaterBuilding) {
+    private void loadTicketsFromDB(SeatRepository seatRepository) {
         try {
             TicketMapper ticketMapper = new TicketMapper();
             ticketList = new ArrayList<>();
             JDBCService jdbcService = new JDBCService();
-            ArrayList<Ticket> ticketsFormDB = ticketMapper.map(jdbcService.getTickets(), theaterBuilding);
+            ArrayList<Ticket> ticketsFormDB = ticketMapper.map(jdbcService.getTickets(), seatRepository);
             jdbcService.close();
             if ((ticketsFormDB != null) && (!ticketsFormDB.isEmpty())) {
                 ticketList.addAll(ticketsFormDB);

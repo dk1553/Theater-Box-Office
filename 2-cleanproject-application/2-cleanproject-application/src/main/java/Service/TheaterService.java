@@ -1,23 +1,22 @@
 package Service;
 
 import businessObjects.*;
-import repositories.EventRepository;
-import repositories.PerformanceRepository;
-import repositories.TicketRepository;
+import repositories.*;
 import services.BookTicketDomainService;
-import services.BookTicketDomainServiceInterface;
 
 import java.util.ArrayList;
 
 
 public class TheaterService {
-    private final TheaterBuilding theaterBuilding;
+    private final HallRepository hallRepository;
     private final PerformanceRepository performanceRepository;
     private final EventRepository eventRepository;
     private final TicketRepository ticketRepository;
+    private final SeatRepository seatRepository;
 
-    public TheaterService(TheaterBuilding theaterBuilding, PerformanceRepository performanceRepository, EventRepository eventRepository, TicketRepository ticketRepository) {
-        this.theaterBuilding = theaterBuilding;
+    public TheaterService(HallRepository hallRepository,SeatRepository seatRepository,  PerformanceRepository performanceRepository, EventRepository eventRepository, TicketRepository ticketRepository) {
+        this.hallRepository = hallRepository;
+        this.seatRepository=seatRepository;
         this.performanceRepository = performanceRepository;
         this.eventRepository = eventRepository;
         this.ticketRepository = ticketRepository;
@@ -50,6 +49,7 @@ public class TheaterService {
             eventRepository.addEvents(eventList);
             ticketRepository.addTickets(eventList);
 
+
             return true;
         } catch (Exception e) {
             return false;
@@ -57,8 +57,8 @@ public class TheaterService {
 
     }
 
-    public TheaterBuilding getTheaterBuilding() {
-        return theaterBuilding;
+    public HallRepository getHallRepository() {
+        return hallRepository;
     }
 
     public Ticket buyTicketUseCase(String ticket, String userFirstName, String userLastName) {
@@ -118,5 +118,9 @@ public class TheaterService {
 
     public TicketRepository getTicketRepository() {
         return ticketRepository;
+    }
+
+    public SeatRepository getSeatRepository() {
+        return seatRepository;
     }
 }
