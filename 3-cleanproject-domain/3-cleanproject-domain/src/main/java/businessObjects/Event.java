@@ -25,8 +25,8 @@ public class Event {
     public Event (Performance performance, Date date, Date time, Hall hall, Price basicPrice) throws Exception {
         this.id= UUID.randomUUID().toString();
         this.performance=performance;
-        this.date=validateDate(date);
-        this.time=validateTime(time);
+        this.date=ValidationService.validateDate(date);
+        this.time=ValidationService.validateTime(time);
         this.hall=hall;
         this.basicPrice=basicPrice;
         tickets=new ArrayList<>();
@@ -40,8 +40,8 @@ public class Event {
     public Event (String id, Performance performance, Date date, Date time, Hall hall, Price basicPrice, ArrayList <Ticket> tickets) throws Exception {
         this.id=id;
         this.performance=performance;
-        this.date=validateDate(date);
-        this.time=validateTime(time);
+        this.date=ValidationService.validateDate(date);
+        this.time=ValidationService.validateTime(time);
         this.hall=hall;
         this.tickets=tickets;
         this.basicPrice=basicPrice;
@@ -53,8 +53,8 @@ public class Event {
 
         this.id=id;
         this.performance=performance;
-        this.date=validateDate(date);
-        this.time=validateTime(time);
+        this.date=ValidationService.validateDate(date);
+        this.time=ValidationService.validateTime(time);
         this.hall=hall;
         this.tickets=new ArrayList<>();
         this.basicPrice=basicPrice;
@@ -100,25 +100,5 @@ public class Event {
         return basicPrice;
     }
     
-    private String validateTime(Date time){
-       String validatedTime=null;
-        try {
-            SimpleDateFormat formatter = new SimpleDateFormat("hh:mm");
-            validatedTime = formatter.format(time);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        return validatedTime;
-    }
 
-    private String validateDate(Date date){
-        String validatedDate=null;
-        try {
-            SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
-            validatedDate = formatter.format(date);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        return validatedDate;
-    }
 }
