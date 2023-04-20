@@ -1,7 +1,5 @@
 package businessObjects;
 
-import businessObjects.Hall;
-
 import java.util.ArrayList;
 
 public final class TheaterBuilding {

@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class JDBCService {
-    static Connection c = null;
-    static Statement stmt = null;
-    static   ResultSet rs=null;
+    static Connection c;
+    static Statement stmt;
+    static   ResultSet rs;
 
     public JDBCService() throws ClassNotFoundException, SQLException {
         Class.forName("org.sqlite.JDBC");
