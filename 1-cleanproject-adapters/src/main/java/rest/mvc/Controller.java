@@ -2,6 +2,8 @@ package rest.mvc;
 import io.javalin.http.Context;
 
 import org.json.JSONException;
+import rest.converters.JsonService;
+
 import java.util.Objects;
 
 public class Controller {
@@ -34,7 +36,7 @@ public class Controller {
     }
 
     public  static void addPerformances(Context context) throws Exception {
-        String viewData="'message':'please log in to use this function'";
+        String viewData= JsonService.loginMessage();
         int   viewStatus=401;
         if ((context.cookie("role")!=null)&&(Objects.equals(context.cookie("role"), "admin"))){
             viewData= model.addPerformances(context.body());
@@ -45,7 +47,7 @@ public class Controller {
     }
 
     public static void addEvents(Context context) throws Exception {
-        String viewData="'message':'please log in to use this function'";
+        String viewData= JsonService.loginMessage();
         int  viewStatus=401;
         if ((context.cookie("role")!=null)&&(Objects.equals(context.cookie("role"), "admin"))){
             viewData= model.addEvents( context.body());

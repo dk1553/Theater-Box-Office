@@ -60,6 +60,11 @@ public class JsonService {
 
     }
 
+    public static  String loginMessage(){
+       return "'message':'please log in to use this function'";
+
+    }
+
     public static String performanceResourceList2jsonString(ArrayList <PerformanceResource> performances){
         if (!performances.isEmpty()){
         String result="{'performances':[";
