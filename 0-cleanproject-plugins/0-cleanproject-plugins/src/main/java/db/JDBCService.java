@@ -21,13 +21,13 @@ public class JDBCService {
         c = DriverManager.getConnection(TheaterServiceApp.JDBC_SQLITE_DATABASE);
         c.setAutoCommit(false);
         stmt = c.createStatement();
-        System.out.println("Opened database successfully");
+        MessagePrinter.dbOpened();
     }
     public void close() throws SQLException {
         rs.close();
         stmt.close();
         c.close();
-        System.out.println("Closed database successfully");
+        MessagePrinter.dbClosed();
     }
     public static ArrayList <PerformanceResource> getRepertoire() throws SQLException {
         ArrayList <PerformanceResource> performances=new ArrayList<>();
@@ -64,7 +64,7 @@ public class JDBCService {
                 stmt.executeUpdate(sql);
             }
             c.commit();
-            System.out.println("Records created successfully");
+            MessagePrinter.recordsCreated();
     }
 
     public void addEventsToDatabase(ArrayList<EventResource> events) throws SQLException {
@@ -74,7 +74,7 @@ public class JDBCService {
             stmt.executeUpdate(sql);
         }
         c.commit();
-        System.out.println("Records created successfully");
+        MessagePrinter.recordsCreated();
     }
 
     public ArrayList<TicketResource> getTickets() throws Exception {
@@ -108,14 +108,14 @@ public class JDBCService {
             stmt.executeUpdate(sql);
         }
         c.commit();
-        System.out.println("Records created successfully");
+        MessagePrinter.recordsCreated();
     }
 
     public void buyTicket(TicketResource ticket) throws SQLException {
         String sql = "UPDATE tickets SET isBooked=" +1+" WHERE ticketID=\'"+ticket.getId()+"\';";
         stmt.executeUpdate(sql);
         c.commit();
-        System.out.println("Records created successfully");
+        MessagePrinter.recordsCreated();
     }
 
 
