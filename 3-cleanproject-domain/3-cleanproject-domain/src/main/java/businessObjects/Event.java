@@ -48,29 +48,6 @@ public class Event {
 
     }
 
-    public Event (String id, Performance performance, Date date, Date time, String hallName, Price basicPrice, String noTickets) throws Exception {
-
-        this.id=id;
-        this.performance=performance;
-        this.date=ValidationService.validateDate(date);
-        this.time=ValidationService.validateTime(time);
-        this.tickets=new ArrayList<>();
-        this.basicPrice=basicPrice;
-        this.hallName=hallName;
-
-    }
-
-
-
-
-   /* public void setHall (Hall hall) throws Exception {
-        this.hall=hall;
-        tickets=new ArrayList<>();
-        for (Seat seat:hall.getSeats()){
-            tickets.add(new Ticket(id,this.basicPrice, seat));
-        }
-    }*/
-
     public Performance getPerformance() {
         return performance;
     }
