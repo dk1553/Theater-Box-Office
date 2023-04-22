@@ -19,15 +19,14 @@ public class TicketMapper {
     }
 
     public List<Ticket> map(List<TicketResource> ticketResources, SeatRepository seatRepository) throws Exception {
-        List<Ticket> tickets = new ArrayList<>();
-        if (ticketResources != null) {
-            for (TicketResource ticketResource : ticketResources) {
-                tickets.add(map(ticketResource, seatRepository));
-            }
-            return tickets;
-        } else {
+        if (ticketResources == null) {
             return null;
         }
+        List<Ticket> tickets = new ArrayList<>();
+        for (TicketResource ticketResource : ticketResources) {
+            tickets.add(map(ticketResource, seatRepository));
+        }
+        return tickets;
 
     }
 

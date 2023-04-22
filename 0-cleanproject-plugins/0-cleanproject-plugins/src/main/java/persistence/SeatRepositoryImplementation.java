@@ -15,7 +15,7 @@ public class SeatRepositoryImplementation implements SeatRepository {
     public SeatRepositoryImplementation(HallRepository hallRepository) {
         this.seats = new ArrayList<>();
 
-        for (Hall hall : hallRepository.getAllHalls()) {
+        for (Hall hall : hallRepository.findAllHalls()) {
 
             int a = hall.getNumberOfSeatsOrchestraLeft();
             int b = hall.getNumberOfSeatsOrchestraRight();

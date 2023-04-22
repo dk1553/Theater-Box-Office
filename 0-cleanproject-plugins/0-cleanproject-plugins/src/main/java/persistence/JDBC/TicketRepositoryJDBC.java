@@ -1,4 +1,4 @@
-package persistence;
+package persistence.JDBC;
 
 import businessObjects.Event;
 import businessObjects.Ticket;

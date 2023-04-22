@@ -25,27 +25,25 @@ public class EventMapper {
     }
 
     public List<Event> map(List<EventResource> eventResources, PerformanceRepository performanceRepository, HallRepository hallRepository, TicketRepository ticketRepository) throws Exception {
-        if ((eventResources != null) && (!eventResources.isEmpty())) {
-            List<Event> events = new ArrayList<>();
-            for (EventResource eventResource : eventResources) {
-                events.add(map(eventResource, performanceRepository, hallRepository, ticketRepository));
-            }
-            return events;
-        } else {
+        if ((eventResources == null) && (eventResources.isEmpty())) {
             return null;
         }
+        List<Event> events = new ArrayList<>();
+        for (EventResource eventResource : eventResources) {
+            events.add(map(eventResource, performanceRepository, hallRepository, ticketRepository));
+        }
+        return events;
     }
 
     public List<Event> mapNewObject(List<EventResource> eventResources, PerformanceRepository performanceRepository, HallRepository hallRepository, SeatRepository seatRepository) {
-        if ((eventResources != null) && (!eventResources.isEmpty())) {
-            List<Event> events = new ArrayList<>();
-            for (EventResource eventResource : eventResources) {
-                events.add(mapNewObject(eventResource, performanceRepository, hallRepository, seatRepository));
-            }
-            return events;
-        } else {
+        if ((eventResources == null) && (eventResources.isEmpty())) {
             return null;
         }
+        List<Event> events = new ArrayList<>();
+        for (EventResource eventResource : eventResources) {
+            events.add(mapNewObject(eventResource, performanceRepository, hallRepository, seatRepository));
+        }
+        return events;
     }
 
     public Event mapNewObject(EventResource eventResource, PerformanceRepository performanceRepository, HallRepository hallRepository, SeatRepository seatRepository) {

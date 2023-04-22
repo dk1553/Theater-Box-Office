@@ -1,4 +1,4 @@
-package persistence;
+package persistence.JDBC;
 
 import businessObjects.Event;
 import db.JDBCService;
@@ -38,11 +38,6 @@ public class EventRepositoryJDBC implements EventRepository {
         return null;
     }
 
-
-    @Override
-    public void addEvent(Event event) {
-        eventList.add(event);
-    }
 
     @Override
     public void addEvents(List<Event> events) {

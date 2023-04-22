@@ -2,19 +2,23 @@ package db;
 
 public class MessagePrinter {
     private static String message;
-    public static void dbOpened(){
-        message="Opened database successfully";
+
+    public static void dbOpened() {
+        message = "Opened database successfully";
         print();
     }
-    public static void dbClosed(){
-        message="Closed database successfully";
+
+    public static void dbClosed() {
+        message = "Closed database successfully";
         print();
     }
-    public static void recordsCreated(){
-        message="Records created successfully";
+
+    public static void recordsCreated() {
+        message = "Records created successfully";
         print();
     }
-    public static void print(){
+
+    public static void print() {
         System.out.println(message);
     }
 }

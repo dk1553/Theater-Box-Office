@@ -3,9 +3,13 @@ package rest;
 import Service.TheaterService;
 import persistence.*;
 import io.javalin.Javalin;
+import persistence.JDBC.EventRepositoryJDBC;
+import persistence.JDBC.PerformanceRepositoryJDBC;
+import persistence.JDBC.TicketRepositoryJDBC;
 import repositories.*;
 import rest.mvc.Controller;
 import rest.mvc.Model;
+import services.BookTicketDomainServiceJDBC;
 
 
 public class TheaterServiceApp {
@@ -50,7 +54,7 @@ public class TheaterServiceApp {
         PerformanceRepository performanceRepositoryJDBC = new PerformanceRepositoryJDBC();
         TicketRepository ticketRepositoryJDBC = new TicketRepositoryJDBC(seatRepositoryImplementation);
         EventRepository eventRepositoryJDBC = new EventRepositoryJDBC(hallRepositoryImplementation, ticketRepositoryJDBC, performanceRepositoryJDBC);
-        return new Model(new TheaterService(hallRepositoryImplementation, seatRepositoryImplementation, performanceRepositoryJDBC, eventRepositoryJDBC, ticketRepositoryJDBC));
+        return new Model(new TheaterService(hallRepositoryImplementation, seatRepositoryImplementation, performanceRepositoryJDBC, eventRepositoryJDBC, ticketRepositoryJDBC, new BookTicketDomainServiceJDBC()));
     }
 
 }

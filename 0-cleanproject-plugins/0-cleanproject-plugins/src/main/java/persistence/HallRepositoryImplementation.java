@@ -28,7 +28,7 @@ public final class HallRepositoryImplementation implements HallRepository {
     }
 
     @Override
-    public List<Hall> getAllHalls() {
+    public List<Hall> findAllHalls() {
         return halls;
     }
 

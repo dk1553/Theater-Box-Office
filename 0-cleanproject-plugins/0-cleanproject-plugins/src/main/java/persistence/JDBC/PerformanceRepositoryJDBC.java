@@ -1,4 +1,4 @@
-package persistence;
+package persistence.JDBC;
 
 import businessObjects.Performance;
 import db.JDBCService;

@@ -13,13 +13,15 @@ public class TheaterService {
     private final EventRepository eventRepository;
     private final TicketRepository ticketRepository;
     private final SeatRepository seatRepository;
+    private final BookTicketDomainService bookTicketDomainService;
 
-    public TheaterService(HallRepository hallRepository, SeatRepository seatRepository, PerformanceRepository performanceRepository, EventRepository eventRepository, TicketRepository ticketRepository) {
+    public TheaterService(HallRepository hallRepository, SeatRepository seatRepository, PerformanceRepository performanceRepository, EventRepository eventRepository, TicketRepository ticketRepository, BookTicketDomainService bookTicketDomainService) {
         this.hallRepository = hallRepository;
         this.seatRepository = seatRepository;
         this.performanceRepository = performanceRepository;
         this.eventRepository = eventRepository;
         this.ticketRepository = ticketRepository;
+        this.bookTicketDomainService= bookTicketDomainService;
     }
 
     public List<Event> showProgramUseCase() {
@@ -61,7 +63,7 @@ public class TheaterService {
             Boolean userIsVerified = verifyUser(userFirstName, userLastName);
             if (userIsVerified) {
 
-                return new BookTicketDomainService().bookTicket(ticketRepository, ticket);
+                return this.bookTicketDomainService.bookTicket(ticketRepository, ticket);
 
             }
         } catch (Exception e) {
