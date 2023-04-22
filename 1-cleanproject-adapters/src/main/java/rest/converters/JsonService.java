@@ -13,6 +13,13 @@ import java.util.Objects;
 
 public class JsonService {
 
+   static final String messageSuccessful= "{'message':'Successful'}";
+    static final String messageDBisEmpty = "{'message':'Database is empty'}";
+    static final String messageLogin = "'message':'Please log in to use this function!'";
+    static final String messageNotCompleted ="{'message':'Your purchase could not be completed'}";
+    static final String messageUnknownProblem ="{'message':'Sorry! Your purchase could not be completed. Unknown problem ####'}";
+
+
     public static String eventResource2jsonString(EventResource event) {
         if (event != null) {
             String result = "{'id':'" + event.getEventID() + "','performance':'" + event.getPerformance() + "','data':'" + event.getDate().toString() + "','time':'" + event.getTime().toString() + "','hall':'" + event.getHall() + ",\n{'tickets':[\n";
@@ -27,7 +34,7 @@ public class JsonService {
             }
             return result.substring(0, result.length() - 2) + "]}";
         } else {
-            return "{'message':'Database is empty'}";
+            return messageDBisEmpty;
         }
 
     }
@@ -48,7 +55,7 @@ public class JsonService {
             }
             return result.substring(0, result.length() - 1) + "]}";
         } else {
-            return "{'message':'Database is empty'}";
+            return messageDBisEmpty;
         }
 
 
@@ -58,13 +65,13 @@ public class JsonService {
         if (performance != null) {
             return "{'name':'" + performance.getName() + "','description':'" + performance.getDescription() + "'}";
         } else {
-            return "{'message':'Database is empty'}";
+            return messageDBisEmpty;
         }
 
     }
 
     public static String loginMessage() {
-        return "'message':'please log in to use this function'";
+        return messageLogin;
 
     }
 
@@ -78,7 +85,7 @@ public class JsonService {
             }
             return result.substring(0, result.length() - 1) + "]}";
         } else {
-            return "{'message':'Database is empty'}";
+            return messageDBisEmpty;
         }
     }
 
@@ -87,7 +94,7 @@ public class JsonService {
             String result = "{'id':'" + ticket.getId() + "','event':'" + ticket.getEventID() + "','seat':'" + ticket.getSeat() + "','price':'" + ticket.getPrice() + "','is booked':'" + ticket.isBooked() + "','validation code':'" + ticket.getValidationCode() + "'}";
             return result;
         } else {
-            return "{'message':'Your purchase could not be completed'}";
+            return messageNotCompleted;
         }
     }
 
@@ -123,9 +130,9 @@ public class JsonService {
 
     public static String status2jsonString(Boolean isSuccessful) {
         if (isSuccessful) {
-            return "{'message':'Successful'}";
+            return messageSuccessful;
         } else {
-            return "{'message':'Sorry!Your purchase could not be completed. Unknown problem ####'}";
+            return messageUnknownProblem;
         }
 
     }
