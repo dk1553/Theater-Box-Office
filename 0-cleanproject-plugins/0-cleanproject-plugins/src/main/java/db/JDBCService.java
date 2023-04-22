@@ -14,14 +14,14 @@ public class JDBCService {
     static Connection C;
     static Statement STMT;
     static ResultSet RS;
-    final static String INSERT ="INSERT INTO ";
-    final static String VALUES =" VALUES (\'";
-    final static String COMMA ="\',\'";
-    final static String END_OF_COMMAND ="\');";
-    final static String SELECT_FROM ="SELECT * FROM ";
-    final static  String UPDATE ="UPDATE ";
-    final static String SET =" SET ";
-    final static String WHERE =" WHERE ";
+    static String INSERT = "INSERT INTO ";
+    static String VALUES = " VALUES (\'";
+    static String COMMA = "\',\'";
+    static String END_OF_COMMAND = "\');";
+    static String SELECT_FROM = "SELECT * FROM ";
+    static String UPDATE = "UPDATE ";
+    static String SET = " SET ";
+    static String WHERE = " WHERE ";
 
 
     public JDBCService() throws ClassNotFoundException, SQLException {
