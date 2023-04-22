@@ -11,37 +11,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JDBCService {
-    static Connection c;
-    static Statement stmt;
-    static ResultSet rs;
-    final static String insert="INSERT INTO ";
-    final static String values=" VALUES (\'";
-    final static String comma="\',\'";
-    final static String endOfCommand="\');";
-    final static String selectFrom="SELECT * FROM ";
+    static Connection C;
+    static Statement STMT;
+    static ResultSet RS;
+    final static String INSERT ="INSERT INTO ";
+    final static String VALUES =" VALUES (\'";
+    final static String COMMA ="\',\'";
+    final static String END_OF_COMMAND ="\');";
+    final static String SELECT_FROM ="SELECT * FROM ";
+    final static  String UPDATE ="UPDATE ";
+    final static String SET =" SET ";
+    final static String WHERE =" WHERE ";
 
 
     public JDBCService() throws ClassNotFoundException, SQLException {
         Class.forName("org.sqlite.JDBC");
-        c = DriverManager.getConnection(TheaterServiceApp.JDBC_SQLITE_DATABASE);
-        c.setAutoCommit(false);
-        stmt = c.createStatement();
+        C = DriverManager.getConnection(TheaterServiceApp.JDBC_SQLITE_DATABASE);
+        C.setAutoCommit(false);
+        STMT = C.createStatement();
         MessagePrinter.dbOpened();
     }
 
     public void close() throws SQLException {
-        rs.close();
-        stmt.close();
-        c.close();
+        RS.close();
+        STMT.close();
+        C.close();
         MessagePrinter.dbClosed();
     }
 
     public static List<PerformanceResource> getRepertoire() throws SQLException {
         List<PerformanceResource> performances = new ArrayList<>();
-        rs = stmt.executeQuery(selectFrom+"performances;");
-        while (rs.next()) {
-            String name = rs.getString("name");
-            String description = rs.getString("description");
+        RS = STMT.executeQuery(SELECT_FROM +"performances;");
+        while (RS.next()) {
+            String name = RS.getString("name");
+            String description = RS.getString("description");
             performances.add(new PerformanceResource(name, description));
         }
         return performances;
@@ -49,13 +52,13 @@ public class JDBCService {
 
     public static List<EventResource> getTheaterProgram() throws Exception {
         List<EventResource> events = new ArrayList<>();
-        rs = stmt.executeQuery(selectFrom+"program;");
-        while (rs.next()) {
-            String eventID = rs.getString("eventID");
-            String performanceName = rs.getString("performance");
-            String hall = rs.getString("hall");
-            BigDecimal price = rs.getBigDecimal("basicPrice");
-            events.add(new EventResource(eventID, performanceName, rs.getString("date"), rs.getString("time"), hall, String.valueOf(price)));
+        RS = STMT.executeQuery(SELECT_FROM +"program;");
+        while (RS.next()) {
+            String eventID = RS.getString("eventID");
+            String performanceName = RS.getString("performance");
+            String hall = RS.getString("hall");
+            BigDecimal price = RS.getBigDecimal("basicPrice");
+            events.add(new EventResource(eventID, performanceName, RS.getString("date"), RS.getString("time"), hall, String.valueOf(price)));
         }
 
         return events;
@@ -63,36 +66,36 @@ public class JDBCService {
 
     public static void addPerformancesToDatabase(List<PerformanceResource> performanceList) throws SQLException {
         for (PerformanceResource performance : performanceList) {
-            String sql = insert+"performances (name, description)" +
-                    values + performance.getName() + comma + performance.getDescription() + endOfCommand;
-            stmt.executeUpdate(sql);
+            String sql = INSERT +"performances (name, description)" +
+                    VALUES + performance.getName() + COMMA + performance.getDescription() + END_OF_COMMAND;
+            STMT.executeUpdate(sql);
         }
-        c.commit();
+        C.commit();
         MessagePrinter.recordsCreated();
     }
 
     public void addEventsToDatabase(List<EventResource> events) throws SQLException {
         for (EventResource event : events) {
-            String sql = insert+"program (performance, date, time, hall, basicPrice, eventID)" +
-                    values + event.getPerformance() + comma + event.getDate() + comma + event.getTime() + comma + event.getHall() + comma + event.getPrice() + comma + event.getEventID() + endOfCommand;
-            stmt.executeUpdate(sql);
+            String sql = INSERT +"program (performance, date, time, hall, basicPrice, eventID)" +
+                    VALUES + event.getPerformance() + COMMA + event.getDate() + COMMA + event.getTime() + COMMA + event.getHall() + COMMA + event.getPrice() + COMMA + event.getEventID() + END_OF_COMMAND;
+            STMT.executeUpdate(sql);
         }
-        c.commit();
+        C.commit();
         MessagePrinter.recordsCreated();
     }
 
     public List<TicketResource> getTickets() throws Exception {
         List<TicketResource> tickets = new ArrayList<>();
-        rs = stmt.executeQuery(selectFrom+"tickets;");
+        RS = STMT.executeQuery(SELECT_FROM +"tickets;");
 
-        while (rs.next()) {
-            String ticketID = rs.getString("ticketID");
-            String basicPrice = rs.getString("basicPrice");
-            String eventID = rs.getString("eventID");
-            String seat = rs.getString("seat");
-            String validationCode = rs.getString("validationCode");
+        while (RS.next()) {
+            String ticketID = RS.getString("ticketID");
+            String basicPrice = RS.getString("basicPrice");
+            String eventID = RS.getString("eventID");
+            String seat = RS.getString("seat");
+            String validationCode = RS.getString("validationCode");
             boolean isBooked = false;
-            if (rs.getInt("isBooked") == 1) {
+            if (RS.getInt("isBooked") == 1) {
                 isBooked = true;
             }
             tickets.add(new TicketResource(ticketID, eventID, basicPrice, seat, isBooked, validationCode));
@@ -107,22 +110,20 @@ public class JDBCService {
             if (ticket.isBooked()) {
                 status = 1;
             }
-            String sql = insert+"tickets (ticketID, basicPrice, eventID, seat, isBooked, validationCode)" +
-                    values + ticket.getId() + comma + ticket.getPrice() + comma + ticket.getEventID() + comma + ticket.getSeat() + comma + status + comma + ticket.getValidationCode() + endOfCommand;
-            stmt.executeUpdate(sql);
+            String sql = INSERT +"tickets (ticketID, basicPrice, eventID, seat, isBooked, validationCode)" +
+                    VALUES + ticket.getId() + COMMA + ticket.getPrice() + COMMA + ticket.getEventID() + COMMA + ticket.getSeat() + COMMA + status + COMMA + ticket.getValidationCode() + END_OF_COMMAND;
+            STMT.executeUpdate(sql);
         }
-        c.commit();
+        C.commit();
         MessagePrinter.recordsCreated();
     }
 
-    final static  String update="UPDATE ";
-    final static String set=" SET ";
-    final static String where=" WHERE ";
+
 
     public void buyTicket(TicketResource ticket) throws SQLException {
-        String sql = update+"tickets"+set+"isBooked=" + 1 + where+"ticketID=\'" + ticket.getId() + "\';";
-        stmt.executeUpdate(sql);
-        c.commit();
+        String sql = UPDATE +"tickets"+ SET +"isBooked=" + 1 + WHERE +"ticketID=\'" + ticket.getId() + "\';";
+        STMT.executeUpdate(sql);
+        C.commit();
         MessagePrinter.recordsCreated();
     }
 
