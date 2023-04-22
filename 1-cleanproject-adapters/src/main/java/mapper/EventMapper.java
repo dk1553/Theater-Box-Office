@@ -9,6 +9,7 @@ import resources.EventResource;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class EventMapper {
 
     public List<Event> map(List<EventResource> eventResources, PerformanceRepository performanceRepository, HallRepository hallRepository, TicketRepository ticketRepository) throws Exception {
         if ((eventResources == null) && (eventResources.isEmpty())) {
-            return null;
+            return Collections.emptyList();
         }
         List<Event> events = new ArrayList<>();
         for (EventResource eventResource : eventResources) {
@@ -37,7 +38,7 @@ public class EventMapper {
 
     public List<Event> mapNewObject(List<EventResource> eventResources, PerformanceRepository performanceRepository, HallRepository hallRepository, SeatRepository seatRepository) {
         if ((eventResources == null) && (eventResources.isEmpty())) {
-            return null;
+            return Collections.emptyList();
         }
         List<Event> events = new ArrayList<>();
         for (EventResource eventResource : eventResources) {
@@ -54,10 +55,6 @@ public class EventMapper {
             String eventID = eventResource.getEventID();
             for (Seat seat : seatRepository.findSeatsByHallName(hall.getHallName())) {
                 tickets.add(new Ticket(eventID, price, seat));
-            }
-
-            for (Ticket ticket : tickets) {
-
             }
             return buildEvent(eventResource, performanceRepository, hallRepository, tickets);
 

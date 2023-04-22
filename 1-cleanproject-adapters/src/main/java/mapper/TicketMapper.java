@@ -5,6 +5,7 @@ import repositories.SeatRepository;
 import resources.TicketResource;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class TicketMapper {
@@ -20,7 +21,7 @@ public class TicketMapper {
 
     public List<Ticket> map(List<TicketResource> ticketResources, SeatRepository seatRepository) throws Exception {
         if (ticketResources == null) {
-            return null;
+            return Collections.emptyList();
         }
         List<Ticket> tickets = new ArrayList<>();
         for (TicketResource ticketResource : ticketResources) {
