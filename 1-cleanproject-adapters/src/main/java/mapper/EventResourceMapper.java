@@ -22,7 +22,7 @@ public class EventResourceMapper {
     }
 
     public List<EventResource> map(List<Event> events) throws Exception {
-        if ((events == null) && (events.isEmpty())) {
+        if ((events == null) || (events.isEmpty())) {
             return Collections.emptyList();
         }
         List<EventResource> eventResources = new ArrayList<>();

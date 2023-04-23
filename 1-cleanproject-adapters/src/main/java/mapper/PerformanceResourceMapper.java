@@ -18,7 +18,7 @@ public class PerformanceResourceMapper {
     }
 
     public List<PerformanceResource> map(List<Performance> performances) throws Exception {
-        if ((performances == null) && (performances.isEmpty())) {
+        if ((performances == null) || (performances.isEmpty())) {
             return Collections.emptyList();
         }
         List<PerformanceResource> performanceResources = new ArrayList<>();

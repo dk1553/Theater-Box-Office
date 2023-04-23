@@ -26,7 +26,7 @@ public class EventMapper {
     }
 
     public List<Event> map(List<EventResource> eventResources, PerformanceRepository performanceRepository, HallRepository hallRepository, TicketRepository ticketRepository) throws Exception {
-        if ((eventResources == null) && (eventResources.isEmpty())) {
+        if ((eventResources == null) || (eventResources.isEmpty())) {
             return Collections.emptyList();
         }
         List<Event> events = new ArrayList<>();
@@ -37,7 +37,7 @@ public class EventMapper {
     }
 
     public List<Event> mapNewObject(List<EventResource> eventResources, PerformanceRepository performanceRepository, HallRepository hallRepository, SeatRepository seatRepository) {
-        if ((eventResources == null) && (eventResources.isEmpty())) {
+        if ((eventResources == null) || (eventResources.isEmpty())) {
             return Collections.emptyList();
         }
         List<Event> events = new ArrayList<>();

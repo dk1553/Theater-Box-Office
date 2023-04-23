@@ -18,7 +18,7 @@ public class TicketResourceMapper {
     }
 
     public List<TicketResource> map(List<Ticket> tickets) throws Exception {
-        if ((tickets == null) && (tickets.isEmpty())) {
+        if ((tickets == null) || (tickets.isEmpty())) {
             return Collections.emptyList();
         }
         List<TicketResource> ticketResources = new ArrayList<>();
