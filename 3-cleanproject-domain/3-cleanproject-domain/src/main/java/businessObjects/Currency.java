@@ -6,7 +6,7 @@ public enum Currency {
 
     private String symbol;
 
-    private Currency(String symbol) {
+    Currency(String symbol) {
         this.symbol = symbol;
     }
 

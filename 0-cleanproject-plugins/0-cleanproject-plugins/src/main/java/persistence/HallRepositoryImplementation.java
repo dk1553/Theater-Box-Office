@@ -28,6 +28,18 @@ public final class HallRepositoryImplementation implements HallRepository {
     }
 
     @Override
+    public int countSeatsByHall(Hall hall) {
+        return  hall.getNumberOfSeatsOrchestraLeft() +
+                hall.getNumberOfSeatsOrchestraRight()
+                + hall.getNumberOfSeatsOrchestraCenter()
+                + hall.getNumberOfSeatsMezzanineRight()
+                + hall.getNumberOfSeatsMezzanineLeft()
+                + hall.getNumberOfSeatsMezzanineCenter()
+                + hall.getNumberOfSeatsMezzanineCenter()
+                + hall.getNumberOfSeatsBalcony();
+    }
+
+    @Override
     public List<Hall> findAllHalls() {
         return halls;
     }

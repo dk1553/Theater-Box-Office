@@ -34,8 +34,7 @@ public class TheaterService {
 
     public boolean updateRepertoireUseCase(List<Performance> performances) {
         try {
-            Boolean status = performanceRepository.addPerformances(performances);
-            return status;
+            return performanceRepository.addPerformances(performances);
         } catch (Exception e) {
             return false;
         }
@@ -92,17 +91,11 @@ public class TheaterService {
     }
 
     public Boolean verifyUser(String fName, String lName) {
-        if ((!fName.isBlank()) && (!lName.isBlank())) {
-            return true;
-        }
-        return false;
+        return (!fName.isBlank()) && (!lName.isBlank());
     }
 
     public Boolean verifyAdmin(String username, String password) {
-        if ((username.equalsIgnoreCase("admin")) && (password.equalsIgnoreCase("admin"))) {
-            return true;
-        }
-        return false;
+        return (username.equalsIgnoreCase("admin")) && (password.equalsIgnoreCase("1234"));
     }
 
     public PerformanceRepository getPerformanceRepository() {

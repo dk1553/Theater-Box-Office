@@ -43,7 +43,7 @@ public class SeatRepositoryImplementation implements SeatRepository {
             for (int i = a + b + c + d + e; i < a + b + c + d + e + f; i++) {
                 seats.add(new Seat(hall.getHallName(), SeatType.MEZZANINE_CENTER));
             }
-            for (int i = a + b + c + d + e + f; i < hall.getGuestLimit(); i++) {
+            for (int i = a + b + c + d + e + f; i <  a + b + c + d + e + f+g; i++) {
                 seats.add(new Seat(hall.getHallName(), SeatType.BALCONY));
             }
         }

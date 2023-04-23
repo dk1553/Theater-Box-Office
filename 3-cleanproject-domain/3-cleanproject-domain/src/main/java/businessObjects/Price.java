@@ -17,7 +17,7 @@ public class Price {
         this.currency = Currency.EURO;
     }
 
-    public Price(String amount) throws Exception {
+    public Price(String amount) {
         try {
             this.amount = checkAmountValue(BigDecimal.valueOf(Long.parseLong(amount)));
         } catch (Exception e) {

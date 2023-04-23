@@ -2,7 +2,6 @@ package businessObjects;
 
 public class Hall {
     private final String hallName;
-    private final int guestLimit;
     private final int numberOfSeatsOrchestraLeft;
     private final int numberOfSeatsOrchestraRight;
     private final int numberOfSeatsOrchestraCenter;
@@ -21,16 +20,11 @@ public class Hall {
         this.numberOfSeatsMezzanineLeft = numberOfSeatsMezzanineLeft;
         this.numberOfSeatsMezzanineCenter = numberOfSeatsMezzanineCenter;
         this.numberOfSeatsBalcony = numberOfSeatsBalcony;
-        this.guestLimit = numberOfSeatsOrchestraLeft + numberOfSeatsOrchestraRight + numberOfSeatsOrchestraCenter + numberOfSeatsMezzanineRight + numberOfSeatsMezzanineLeft + numberOfSeatsMezzanineCenter + numberOfSeatsMezzanineCenter + numberOfSeatsBalcony;
 
     }
 
     public String getHallName() {
         return hallName;
-    }
-
-    public int getGuestLimit() {
-        return guestLimit;
     }
 
     public int getNumberOfSeatsOrchestraLeft() {
