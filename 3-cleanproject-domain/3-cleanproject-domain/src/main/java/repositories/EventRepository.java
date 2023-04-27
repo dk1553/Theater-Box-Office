@@ -9,7 +9,7 @@ public interface EventRepository {
 
     Event findEventById(String id);
 
-    void addEvents(List<Event> events);
+    void addEvents(List<Event> events, TicketRepository ticketRepository);
 
     Boolean isEmpty();
 }

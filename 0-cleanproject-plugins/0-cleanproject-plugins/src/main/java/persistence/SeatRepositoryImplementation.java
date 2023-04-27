@@ -47,6 +47,7 @@ public class SeatRepositoryImplementation implements SeatRepository {
                 seats.add(new Seat(hall.getHallName(), SeatType.BALCONY));
             }
         }
+        System.out.println(this.seats.get(0).getSeatNumber());
 
 
     }

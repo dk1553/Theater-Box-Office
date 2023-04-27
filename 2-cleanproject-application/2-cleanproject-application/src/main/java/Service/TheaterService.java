@@ -4,6 +4,7 @@ import businessObjects.*;
 import repositories.*;
 import services.BookTicketDomainService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -42,10 +43,14 @@ public class TheaterService {
 
     public boolean updateTheaterProgramUseCase(List<Event> eventList) {
         try {
-            eventRepository.addEvents(eventList);
-            ticketRepository.addTickets(eventList);
-
-
+            eventRepository.addEvents(eventList, ticketRepository);
+            List <Ticket> tickets = new ArrayList<>();
+            for (Event event:eventList){
+                for (Seat seat : seatRepository.findSeatsByHallName(event.getHallName())) {
+                    tickets.add(new Ticket(event.getId(), event.getBasicPrice(), seat));
+                }
+            }
+            ticketRepository.addTickets(tickets);
             return true;
         } catch (Exception e) {
             return false;
@@ -104,5 +109,8 @@ public class TheaterService {
 
     public SeatRepository getSeatRepository() {
         return seatRepository;
+    }
+    public TicketRepository getTicketRepository() {
+        return ticketRepository;
     }
 }

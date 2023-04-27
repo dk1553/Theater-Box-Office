@@ -12,7 +12,7 @@ public interface TicketRepository {
 
     List<Ticket> findTicketsOfEvent(String eventID);
 
-    void addTickets(List<Event> events);
+    void addTickets(List<Ticket> tickets);
 
     Ticket findTicketById(String id);
 

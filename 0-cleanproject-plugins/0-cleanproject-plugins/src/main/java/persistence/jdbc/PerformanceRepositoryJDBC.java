@@ -16,7 +16,6 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
     private static PerformanceMapper performanceMapper;
     private static PerformanceResourceMapper performanceResourceMapper;
 
-
     public PerformanceRepositoryJDBC() throws RuntimeException {
         performances = new ArrayList<>();
         performanceMapper = new PerformanceMapper();

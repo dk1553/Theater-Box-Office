@@ -27,14 +27,14 @@ public class Model {
 
     public String getEventList() throws Exception {
         String viewData = JsonService.eventResourceList2jsonString(eventResourceMapper.map(
-                service.showProgramUseCase()));
+                service.showProgramUseCase(), service.getTicketRepository()));
 
         return viewData;
     }
 
     public String getEvent(String eventID) {
         String viewData = JsonService.eventResource2jsonString(eventResourceMapper.map(
-                service.showEventUseCase(eventID)));
+                service.showEventUseCase(eventID), service.getTicketRepository()));
         return viewData;
 
     }

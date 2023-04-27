@@ -55,16 +55,13 @@ public class TicketRepositoryJDBC implements TicketRepository {
     }
 
     @Override
-    public void addTickets(List<Event> events) {
+    public void addTickets(List<Ticket> tickets) {
         try {
-            for (Event event : events) {
-
                 JDBCService jdbcService = new JDBCService();
                 TicketResourceMapper ticketResourceMapper = new TicketResourceMapper();
-                jdbcService.addTicketsToDatabase(ticketResourceMapper.map(event.getTickets()));
+                jdbcService.addTicketsToDatabase(ticketResourceMapper.map(tickets));
                 jdbcService.close();
-                this.ticketList.addAll(event.getTickets());
-            }
+                this.ticketList.addAll(tickets);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

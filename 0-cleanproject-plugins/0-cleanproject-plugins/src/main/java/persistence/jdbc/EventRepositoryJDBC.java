@@ -40,11 +40,11 @@ public class EventRepositoryJDBC implements EventRepository {
 
 
     @Override
-    public void addEvents(List<Event> events) {
+    public void addEvents(List<Event> events, TicketRepository ticketRepository) {
         try {
             JDBCService jdbcService = new JDBCService();
             EventResourceMapper eventResourceMapper = new EventResourceMapper();
-            jdbcService.addEventsToDatabase(eventResourceMapper.map(events));
+            jdbcService.addEventsToDatabase(eventResourceMapper.map(events,ticketRepository ));
             jdbcService.close();
             this.eventList.addAll(events);
 

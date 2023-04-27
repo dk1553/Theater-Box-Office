@@ -76,7 +76,7 @@ public class EventMapper {
             Date time = formatterTime.parse(eventResource.getTime());
             String eventID = eventResource.getEventID();
             if ((performance != null) && (date != null) && (time != null) && (hallRepository.findHallByName(hallName) != null)) {
-                return new Event(eventID, performance, date, time, hallName, price, tickets);
+                return new Event(eventID, performance, date, time, hallName, price);
             } else {
                 return null;
             }
