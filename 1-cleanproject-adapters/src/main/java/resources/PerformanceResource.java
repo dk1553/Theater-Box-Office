@@ -1,8 +1,8 @@
 package resources;
 
 public class PerformanceResource {
-    private String name;
-    private String description;
+    private final String name;
+    private final String description;
 
     public PerformanceResource(String name, String description) {
         this.description = description;

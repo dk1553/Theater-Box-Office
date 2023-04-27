@@ -2,14 +2,14 @@ package resources;
 
 import businessObjects.Currency;
 public class TicketResource {
-    private String id;
-    private String basicPrice;
-    private String eventID;
-    private String seat;
-    private String validationCode;
+    private final String id;
+    private final String basicPrice;
+    private final String eventID;
+    private final String seat;
+    private final String validationCode;
 
-    private boolean booked;
-    private String currency;
+    private final boolean booked;
+    private final String currency;
 
     public TicketResource(String ticketID, String eventID, String basicPrice, String seat, Boolean booked, String validationCode) {
         this.validationCode = validationCode;

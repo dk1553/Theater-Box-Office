@@ -5,13 +5,13 @@ import java.util.List;
 import java.util.UUID;
 
 public class EventResource {
-    private String eventID;
-    private String performance;
-    private String date;
-    private String time;
-    private String hall;
-    private String price;
-    private List<TicketResource> ticketResources;
+    private final String eventID;
+    private final String performance;
+    private final String date;
+    private final String time;
+    private final String hall;
+    private final String price;
+    private final List<TicketResource> ticketResources;
 
 
     public EventResource(String eventID, String performance, String date, String time, String hall, String price, List<TicketResource> ticketResources) {

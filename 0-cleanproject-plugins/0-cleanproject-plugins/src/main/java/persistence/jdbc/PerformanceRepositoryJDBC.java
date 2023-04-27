@@ -57,24 +57,23 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
 
     @Override
     public Boolean addPerformances(List<Performance> performances) {
-        List<Performance> cleanedPerformanceList= removeAlreadyExistingElements(removeDuplicates(performances));
+        List<Performance> cleanedPerformanceList = removeAlreadyExistingElements(removeDuplicates(performances));
 
-        if ((performances != null) && (!performances.isEmpty())) {
-            try {
-                JDBCService.addPerformancesToDatabase(performanceResourceMapper.map(cleanedPerformanceList));
-                this.performances.addAll(performances);
-                return true;
-            } catch (Exception e) {
-                return false;
-            }
-        } else {
+        if ((performances == null) || (performances.isEmpty())) {
+            return false;
+        }
+        try {
+            JDBCService.addPerformancesToDatabase(performanceResourceMapper.map(cleanedPerformanceList));
+            this.performances.addAll(performances);
+            return true;
+        } catch (Exception e) {
             return false;
         }
     }
 
     private List<Performance> removeAlreadyExistingElements(List<Performance> performances) {
-        Set<Performance> toDelete = new HashSet<>();
         if ((performances != null) && (!performances.isEmpty())) {
+            Set<Performance> toDelete = new HashSet<>();
             for (Performance performance : performances) {
                 for (Performance exitingPerformance : this.performances) {
 
@@ -84,8 +83,9 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
                     }
                 }
             }
+            performances.removeAll(toDelete);
         }
-        performances.removeAll(toDelete);
+
         return performances;
     }
 

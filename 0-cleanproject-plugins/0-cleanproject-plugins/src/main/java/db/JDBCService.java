@@ -23,7 +23,9 @@ public class JDBCService {
     final   static String SET = " SET ";
     final  static String WHERE = " WHERE ";
 
-
+    private JDBCService() {
+        throw new IllegalStateException("Utility class");
+    }
     private static void openConnection() throws ClassNotFoundException, SQLException {
         Class.forName("org.sqlite.JDBC");
         connection = DriverManager.getConnection(TheaterServiceApp.JDBC_SQLITE_DATABASE);

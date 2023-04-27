@@ -57,7 +57,7 @@ public class EventTest {
 
     @Test
     public void testConstructor() throws Exception {
-        ArrayList<Ticket> tickets = new ArrayList<>();
+        List<Ticket> tickets = new ArrayList<>();
         tickets.add(mock(Ticket.class));
         String id = UUID.randomUUID().toString();
         Event event = new Event(id, performance, date, time, hall.getHallName(), price, tickets);
