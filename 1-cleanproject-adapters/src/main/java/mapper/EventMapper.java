@@ -3,8 +3,6 @@ package mapper;
 import businessObjects.*;
 import repositories.HallRepository;
 import repositories.PerformanceRepository;
-import repositories.SeatRepository;
-import repositories.TicketRepository;
 import resources.EventResource;
 
 import java.text.SimpleDateFormat;
@@ -15,48 +13,39 @@ import java.util.List;
 
 public class EventMapper {
 
-    public Event map(final EventResource eventResource, PerformanceRepository performanceRepository, HallRepository hallRepository, TicketRepository ticketRepository) throws Exception {
+    public Event map(final EventResource eventResource, PerformanceRepository performanceRepository, HallRepository hallRepository) throws Exception {
         try {
-            String eventID = eventResource.getEventID();
-            List<Ticket> tickets = new ArrayList<>(ticketRepository.findTicketsOfEvent(eventID));
-            return buildEvent(eventResource, performanceRepository, hallRepository, tickets);
+            return buildEvent(eventResource, performanceRepository, hallRepository);
         } catch (Exception e) {
             return null;
         }
     }
 
-    public List<Event> map(List<EventResource> eventResources, PerformanceRepository performanceRepository, HallRepository hallRepository, TicketRepository ticketRepository) throws Exception {
+    public List<Event> map(List<EventResource> eventResources, PerformanceRepository performanceRepository, HallRepository hallRepository) throws Exception {
         if ((eventResources == null) || (eventResources.isEmpty())) {
             return Collections.emptyList();
         }
         List<Event> events = new ArrayList<>();
         for (EventResource eventResource : eventResources) {
-            events.add(map(eventResource, performanceRepository, hallRepository, ticketRepository));
+            events.add(map(eventResource, performanceRepository, hallRepository));
         }
         return events;
     }
 
-    public List<Event> mapNewObject(List<EventResource> eventResources, PerformanceRepository performanceRepository, HallRepository hallRepository, SeatRepository seatRepository) {
+    public List<Event> mapNewObject(List<EventResource> eventResources, PerformanceRepository performanceRepository, HallRepository hallRepository) {
         if ((eventResources == null) || (eventResources.isEmpty())) {
             return Collections.emptyList();
         }
         List<Event> events = new ArrayList<>();
         for (EventResource eventResource : eventResources) {
-            events.add(mapNewObject(eventResource, performanceRepository, hallRepository, seatRepository));
+            events.add(mapNewObject(eventResource, performanceRepository, hallRepository));
         }
         return events;
     }
 
-    public Event mapNewObject(EventResource eventResource, PerformanceRepository performanceRepository, HallRepository hallRepository, SeatRepository seatRepository) {
+    public Event mapNewObject(EventResource eventResource, PerformanceRepository performanceRepository, HallRepository hallRepository) {
         try {
-            Hall hall = hallRepository.findHallByName(eventResource.getHall());
-            Price price = new Price(eventResource.getPrice());
-            List<Ticket> tickets = new ArrayList<>();
-            String eventID = eventResource.getEventID();
-            for (Seat seat : seatRepository.findSeatsByHallName(hall.getHallName())) {
-                tickets.add(new Ticket(eventID, price, seat));
-            }
-            return buildEvent(eventResource, performanceRepository, hallRepository, tickets);
+            return buildEvent(eventResource, performanceRepository, hallRepository);
 
         } catch (Exception e) {
             return null;
@@ -65,7 +54,7 @@ public class EventMapper {
     }
 
 
-    private Event buildEvent(EventResource eventResource, PerformanceRepository performanceRepository, HallRepository hallRepository, List<Ticket> tickets) {
+    private Event buildEvent(EventResource eventResource, PerformanceRepository performanceRepository, HallRepository hallRepository) {
         try {
             Performance performance = performanceRepository.findPerformanceByName(eventResource.getPerformance());
             String hallName = eventResource.getHall();

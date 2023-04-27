@@ -43,12 +43,11 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
 
     private void loadRepertoireFromDB() {
         try {
-            JDBCService jdbcService = new JDBCService();
-            List<Performance> performancesFormDB = performanceMapper.map(jdbcService.getRepertoire());
+
+            List<Performance> performancesFormDB = performanceMapper.map(JDBCService.getRepertoire());
             if (!performancesFormDB.isEmpty()) {
                 performances.addAll(performancesFormDB);
             }
-            jdbcService.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -58,14 +57,11 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
 
     @Override
     public Boolean addPerformances(List<Performance> performances) {
-        performances = removeDuplicates(performances);
-        performances = removeAlreadyExistingElements(performances);
+        List<Performance> cleanedPerformanceList= removeAlreadyExistingElements(removeDuplicates(performances));
 
         if ((performances != null) && (!performances.isEmpty())) {
             try {
-                JDBCService jdbcService = new JDBCService();
-                jdbcService.addPerformancesToDatabase(performanceResourceMapper.map(performances));
-                jdbcService.close();
+                JDBCService.addPerformancesToDatabase(performanceResourceMapper.map(cleanedPerformanceList));
                 this.performances.addAll(performances);
                 return true;
             } catch (Exception e) {
@@ -95,11 +91,7 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
 
     @Override
     public Boolean isEmpty() {
-        if ((performances != null) && (!performances.isEmpty())) {
-            return false;
-        } else {
-            return true;
-        }
+        return (performances == null) || (performances.isEmpty());
     }
 
     private List<Performance> removeDuplicates(List<Performance> performances) {

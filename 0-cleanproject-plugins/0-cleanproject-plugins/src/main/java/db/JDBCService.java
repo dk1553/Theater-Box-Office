@@ -24,7 +24,7 @@ public class JDBCService {
     final  static String WHERE = " WHERE ";
 
 
-    public JDBCService() throws ClassNotFoundException, SQLException {
+    private static void openConnection() throws ClassNotFoundException, SQLException {
         Class.forName("org.sqlite.JDBC");
         connection = DriverManager.getConnection(TheaterServiceApp.JDBC_SQLITE_DATABASE);
         connection.setAutoCommit(false);
@@ -32,14 +32,15 @@ public class JDBCService {
         MessagePrinter.dbOpened();
     }
 
-    public void close() throws SQLException {
+    private static void closeConnection() throws SQLException {
         rs.close();
         stmt.close();
         connection.close();
         MessagePrinter.dbClosed();
     }
 
-    public static List<PerformanceResource> getRepertoire() throws SQLException {
+    public static List<PerformanceResource> getRepertoire() throws SQLException, ClassNotFoundException {
+        openConnection();
         List<PerformanceResource> performances = new ArrayList<>();
         rs = stmt.executeQuery(SELECT_FROM +"performances;");
         while (rs.next()) {
@@ -47,10 +48,12 @@ public class JDBCService {
             String description = rs.getString("description");
             performances.add(new PerformanceResource(name, description));
         }
+        closeConnection();
         return performances;
     }
 
     public static List<EventResource> getTheaterProgram() throws Exception {
+        openConnection();
         List<EventResource> events = new ArrayList<>();
         rs = stmt.executeQuery(SELECT_FROM +"program;");
         while (rs.next()) {
@@ -60,11 +63,13 @@ public class JDBCService {
             BigDecimal price = rs.getBigDecimal("basicPrice");
             events.add(new EventResource(eventID, performanceName, rs.getString("date"), rs.getString("time"), hall, String.valueOf(price)));
         }
+        closeConnection();
 
         return events;
     }
 
-    public static void addPerformancesToDatabase(List<PerformanceResource> performanceList) throws SQLException {
+    public static void addPerformancesToDatabase(List<PerformanceResource> performanceList) throws SQLException, ClassNotFoundException {
+        openConnection();
         for (PerformanceResource performance : performanceList) {
             String sql = INSERT +"performances (name, description)" +
                     VALUES + performance.getName() + COMMA + performance.getDescription() + END_OF_COMMAND;
@@ -72,9 +77,11 @@ public class JDBCService {
         }
         connection.commit();
         MessagePrinter.recordsCreated();
+        closeConnection();
     }
 
-    public void addEventsToDatabase(List<EventResource> events) throws SQLException {
+    public static void addEventsToDatabase(List<EventResource> events) throws SQLException, ClassNotFoundException {
+        openConnection();
         for (EventResource event : events) {
             String sql = INSERT +"program (performance, date, time, hall, basicPrice, eventID)" +
                     VALUES + event.getPerformance() + COMMA + event.getDate() + COMMA + event.getTime() + COMMA + event.getHall() + COMMA + event.getPrice() + COMMA + event.getEventID() + END_OF_COMMAND;
@@ -82,9 +89,11 @@ public class JDBCService {
         }
         connection.commit();
         MessagePrinter.recordsCreated();
+        closeConnection();
     }
 
-    public List<TicketResource> getTickets() throws Exception {
+    public static List<TicketResource> getTickets() throws Exception {
+        openConnection();
         List<TicketResource> tickets = new ArrayList<>();
         rs = stmt.executeQuery(SELECT_FROM +"tickets;");
 
@@ -100,11 +109,12 @@ public class JDBCService {
             }
             tickets.add(new TicketResource(ticketID, eventID, basicPrice, seat, isBooked, validationCode));
         }
-
+        closeConnection();
         return tickets;
     }
 
-    public void addTicketsToDatabase(List<TicketResource> tickets) throws SQLException {
+    public static void addTicketsToDatabase(List<TicketResource> tickets) throws SQLException, ClassNotFoundException {
+        openConnection();
         for (TicketResource ticket : tickets) {
             int status = 0;
             if (ticket.isBooked()) {
@@ -116,15 +126,18 @@ public class JDBCService {
         }
         connection.commit();
         MessagePrinter.recordsCreated();
+        closeConnection();
     }
 
 
 
-    public void buyTicket(TicketResource ticket) throws SQLException {
+    public static void buyTicket(TicketResource ticket) throws SQLException, ClassNotFoundException {
+        openConnection();
         String sql = UPDATE +"tickets"+ SET +"isBooked=" + 1 + WHERE +"ticketID=\'" + ticket.getId() + "\';";
         stmt.executeUpdate(sql);
         connection.commit();
         MessagePrinter.recordsCreated();
+        closeConnection();
     }
 
 

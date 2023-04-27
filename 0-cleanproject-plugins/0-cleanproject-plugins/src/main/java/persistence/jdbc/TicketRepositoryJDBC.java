@@ -1,6 +1,5 @@
 package persistence.jdbc;
 
-import businessObjects.Event;
 import businessObjects.Ticket;
 import db.JDBCService;
 import repositories.SeatRepository;
@@ -43,10 +42,8 @@ public class TicketRepositoryJDBC implements TicketRepository {
 
     @Override
     public void save(Ticket ticket) throws Exception {
-        JDBCService jdbcService = new JDBCService();
         TicketResourceMapper ticketResourceMapper = new TicketResourceMapper();
-        jdbcService.buyTicket(ticketResourceMapper.map(ticket));
-        jdbcService.close();
+        JDBCService.buyTicket(ticketResourceMapper.map(ticket));
     }
 
     @Override
@@ -57,10 +54,8 @@ public class TicketRepositoryJDBC implements TicketRepository {
     @Override
     public void addTickets(List<Ticket> tickets) {
         try {
-                JDBCService jdbcService = new JDBCService();
                 TicketResourceMapper ticketResourceMapper = new TicketResourceMapper();
-                jdbcService.addTicketsToDatabase(ticketResourceMapper.map(tickets));
-                jdbcService.close();
+                 JDBCService.addTicketsToDatabase(ticketResourceMapper.map(tickets));
                 this.ticketList.addAll(tickets);
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -71,9 +66,7 @@ public class TicketRepositoryJDBC implements TicketRepository {
         try {
             TicketMapper ticketMapper = new TicketMapper();
             ticketList = new ArrayList<>();
-            JDBCService jdbcService = new JDBCService();
-            List<Ticket> ticketsFormDB = ticketMapper.map(jdbcService.getTickets(), seatRepository);
-            jdbcService.close();
+            List<Ticket> ticketsFormDB = ticketMapper.map(JDBCService.getTickets(), seatRepository);
             if ((ticketsFormDB != null) && (!ticketsFormDB.isEmpty())) {
                 ticketList.addAll(ticketsFormDB);
             }

@@ -1,7 +1,6 @@
 package mapper;
 
 import businessObjects.*;
-import repositories.SeatRepository;
 import repositories.TicketRepository;
 import resources.EventResource;
 

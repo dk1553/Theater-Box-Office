@@ -42,10 +42,9 @@ public class EventRepositoryJDBC implements EventRepository {
     @Override
     public void addEvents(List<Event> events, TicketRepository ticketRepository) {
         try {
-            JDBCService jdbcService = new JDBCService();
             EventResourceMapper eventResourceMapper = new EventResourceMapper();
-            jdbcService.addEventsToDatabase(eventResourceMapper.map(events,ticketRepository ));
-            jdbcService.close();
+            JDBCService.addEventsToDatabase(eventResourceMapper.map(events,ticketRepository ));
+
             this.eventList.addAll(events);
 
         } catch (Exception e) {
@@ -55,11 +54,7 @@ public class EventRepositoryJDBC implements EventRepository {
 
     @Override
     public Boolean isEmpty() {
-        if ((!Objects.isNull(eventList)) && (!eventList.isEmpty())) {
-            return false;
-        } else {
-            return true;
-        }
+        return (Objects.isNull(eventList)) || (eventList.isEmpty());
     }
 
 
@@ -67,12 +62,11 @@ public class EventRepositoryJDBC implements EventRepository {
         EventMapper eventMapper = new EventMapper();
         try {
             eventList = new ArrayList<>();
-            JDBCService jdbcService = new JDBCService();
-            List<Event> eventsFormDB = eventMapper.map(jdbcService.getTheaterProgram(), performanceRepository, hallRepository, ticketRepository);
+            List<Event> eventsFormDB = eventMapper.map(JDBCService.getTheaterProgram(), performanceRepository, hallRepository);
             if ((!Objects.isNull(eventsFormDB)) && (!eventsFormDB.isEmpty())) {
                 eventList.addAll(eventsFormDB);
             }
-            jdbcService.close();
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

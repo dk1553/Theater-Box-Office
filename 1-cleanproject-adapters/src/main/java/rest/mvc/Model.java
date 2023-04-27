@@ -65,7 +65,7 @@ public class Model {
     public String addEvents(String json) throws Exception {
         Boolean status = service.updateTheaterProgramUseCase(
                 eventMapper.mapNewObject(JsonService.json2EventResourceList(
-                        json), service.getPerformanceRepository(), service.getHallRepository(), service.getSeatRepository()));
+                        json), service.getPerformanceRepository(), service.getHallRepository()));
         String viewData = JsonService.status2jsonString(status);
         return viewData;
     }
@@ -81,8 +81,8 @@ public class Model {
     }
 
     public Boolean verifyAdmin(String json) throws JSONException {
-        String[] creds = JsonService.getCredentials(json);
-        return service.verifyAdmin(creds[0], creds[1]);
+        String[] cred = JsonService.getCredentials(json);
+        return service.verifyAdmin(cred[0], cred[1]);
     }
 
     public String getLoginStatus(Boolean adminIsVerified) throws JSONException {
