@@ -6,10 +6,11 @@ import resources.PerformanceResource;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class PerformanceResourceMapper {
     public PerformanceResource map(final Performance performance) throws Exception {
-        if (performance == null) {
+        if (Objects.isNull(performance)) {
             return null;
         }
         return new PerformanceResource(performance.getName(), performance.getDescription());
@@ -18,7 +19,7 @@ public class PerformanceResourceMapper {
     }
 
     public List<PerformanceResource> map(List<Performance> performances) throws Exception {
-        if ((performances == null) || (performances.isEmpty())) {
+        if ((Objects.isNull(performances)) || (performances.isEmpty())) {
             return Collections.emptyList();
         }
         List<PerformanceResource> performanceResources = new ArrayList<>();

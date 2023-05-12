@@ -14,9 +14,9 @@ import java.util.List;
 import java.util.Objects;
 
 public class EventRepositoryJDBC implements EventRepository {
-    public EventRepositoryJDBC(HallRepository hallRepository, TicketRepository ticketRepository, PerformanceRepository performanceRepository) {
+    public EventRepositoryJDBC(HallRepository hallRepository, PerformanceRepository performanceRepository) {
         eventList = new ArrayList<>();
-        loadTheaterProgramFromDB(hallRepository, performanceRepository, ticketRepository);
+        loadTheaterProgramFromDB(hallRepository, performanceRepository);
     }
 
 
@@ -58,7 +58,7 @@ public class EventRepositoryJDBC implements EventRepository {
     }
 
 
-    private void loadTheaterProgramFromDB(HallRepository hallRepository, PerformanceRepository performanceRepository, TicketRepository ticketRepository) {
+    private void loadTheaterProgramFromDB(HallRepository hallRepository, PerformanceRepository performanceRepository) {
         EventMapper eventMapper = new EventMapper();
         try {
             eventList = new ArrayList<>();

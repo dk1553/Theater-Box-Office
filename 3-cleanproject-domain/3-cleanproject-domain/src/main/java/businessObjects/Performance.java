@@ -1,13 +1,13 @@
 package businessObjects;
 
 
-public final class Performance {
+public class Performance {
 
-    private String name;
+   private String name;
 
-    private String description;
+     private String description;
 
-    public Performance(String name, String description) {
+   public Performance(String name, String description) {
         this.description = description;
         this.name = name;
     }

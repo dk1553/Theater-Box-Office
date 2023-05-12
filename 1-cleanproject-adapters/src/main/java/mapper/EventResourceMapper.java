@@ -7,11 +7,12 @@ import resources.EventResource;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class EventResourceMapper {
     public EventResource map(Event event, TicketRepository ticketRepository) {
 
-        if (event == null) {
+        if (Objects.isNull(event )) {
             return null;
         }
         TicketResourceMapper ticketResourceMapper = new TicketResourceMapper();
@@ -23,7 +24,7 @@ public class EventResourceMapper {
     }
 
     public List<EventResource> map(List<Event> events, TicketRepository ticketRepository) throws Exception {
-        if ((events == null) || (events.isEmpty())) {
+        if ((Objects.isNull(events )) || (events.isEmpty())) {
             return Collections.emptyList();
         }
         List<EventResource> eventResources = new ArrayList<>();

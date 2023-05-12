@@ -6,11 +6,12 @@ import resources.TicketResource;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class TicketResourceMapper {
 
     public TicketResource map(final Ticket ticket) throws Exception {
-        if (ticket == null) {
+        if (Objects.isNull(ticket)) {
             return null;
         }
         return new TicketResource(ticket.getId(), ticket.getEventID(), String.valueOf(ticket.getPrice()), ticket.getSeat(), ticket.isBooked(), ticket.getValidationCode());
@@ -18,7 +19,7 @@ public class TicketResourceMapper {
     }
 
     public List<TicketResource> map(List<Ticket> tickets) throws Exception {
-        if ((tickets == null) || (tickets.isEmpty())) {
+        if ((Objects.isNull(tickets )) || (tickets.isEmpty())) {
             return Collections.emptyList();
         }
         List<TicketResource> ticketResources = new ArrayList<>();

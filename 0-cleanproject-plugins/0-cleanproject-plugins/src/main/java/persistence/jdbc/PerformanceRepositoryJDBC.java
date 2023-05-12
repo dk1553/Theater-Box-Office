@@ -13,13 +13,11 @@ import java.util.Set;
 
 public class PerformanceRepositoryJDBC implements PerformanceRepository {
     private List<Performance> performances;
-    private static PerformanceMapper performanceMapper;
-    private static PerformanceResourceMapper performanceResourceMapper;
+
+
 
     public PerformanceRepositoryJDBC() throws RuntimeException {
         performances = new ArrayList<>();
-        performanceMapper = new PerformanceMapper();
-        performanceResourceMapper = new PerformanceResourceMapper();
         loadRepertoireFromDB();
     }
 
@@ -44,7 +42,7 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
     private void loadRepertoireFromDB() {
         try {
 
-            List<Performance> performancesFormDB = performanceMapper.map(JDBCService.getRepertoire());
+            List<Performance> performancesFormDB = new PerformanceMapper().map(JDBCService.getRepertoire());
             if (!performancesFormDB.isEmpty()) {
                 performances.addAll(performancesFormDB);
             }
@@ -63,7 +61,7 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
             return false;
         }
         try {
-            JDBCService.addPerformancesToDatabase(performanceResourceMapper.map(cleanedPerformanceList));
+            JDBCService.addPerformancesToDatabase(new PerformanceResourceMapper().map(cleanedPerformanceList));
             this.performances.addAll(performances);
             return true;
         } catch (Exception e) {

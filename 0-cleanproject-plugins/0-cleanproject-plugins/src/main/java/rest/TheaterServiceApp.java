@@ -53,7 +53,7 @@ public class TheaterServiceApp {
         SeatRepository seatRepositoryImplementation = new SeatRepositoryImplementation(hallRepositoryImplementation);
         PerformanceRepository performanceRepositoryJDBC = new PerformanceRepositoryJDBC();
         TicketRepository ticketRepositoryJDBC = new TicketRepositoryJDBC(seatRepositoryImplementation);
-        EventRepository eventRepositoryJDBC = new EventRepositoryJDBC(hallRepositoryImplementation, ticketRepositoryJDBC, performanceRepositoryJDBC);
+        EventRepository eventRepositoryJDBC = new EventRepositoryJDBC(hallRepositoryImplementation, performanceRepositoryJDBC);
         return new Model(new TheaterService(hallRepositoryImplementation, seatRepositoryImplementation, performanceRepositoryJDBC, eventRepositoryJDBC, ticketRepositoryJDBC, new BookTicketDomainServiceJDBC()));
     }
 

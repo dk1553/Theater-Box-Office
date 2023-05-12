@@ -15,7 +15,7 @@ public class Model {
     private static TicketResourceMapper ticketResourceMapper;
 
     public Model(TheaterService theaterService) {
-        this.service = theaterService;
+        service = theaterService;
 
         eventMapper = new EventMapper();
         performanceMapper = new PerformanceMapper();
@@ -85,11 +85,13 @@ public class Model {
         return service.verifyAdmin(cred[0], cred[1]);
     }
 
-    public String getLoginStatus(Boolean adminIsVerified) throws JSONException {
-        return JsonService.status2jsonString(adminIsVerified);
+    public String getLoginStatus(Boolean adminIsVerified){
+       String viewData =JsonService.status2jsonString(adminIsVerified);
+       return viewData;
     }
 
     public String getLogoutStatus() {
-        return JsonService.status2jsonString(true);
+        String viewData = JsonService.status2jsonString(true);
+        return viewData;
     }
 }

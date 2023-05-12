@@ -24,15 +24,6 @@ public class EventResource {
         this.ticketResources = ticketResources;
     }
 
-    public EventResource(String eventID, String performance, String date, String time, String hall, String price) {
-        this.eventID = eventID;
-        this.date = date;
-        this.performance = performance;
-        this.hall = hall;
-        this.time = time;
-        this.price = price;
-        this.ticketResources = new ArrayList<>();
-    }
 
     public EventResource(String performance, String date, String time, String hall, String price) {
         this.eventID = UUID.randomUUID().toString();

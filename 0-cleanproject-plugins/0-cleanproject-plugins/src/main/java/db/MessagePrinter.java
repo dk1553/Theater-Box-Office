@@ -2,6 +2,9 @@ package db;
 
 public class MessagePrinter {
     private static String message;
+    private MessagePrinter() {
+        throw new IllegalStateException("Utility class");
+    }
 
     public static void dbOpened() {
         message = "Opened database successfully";
