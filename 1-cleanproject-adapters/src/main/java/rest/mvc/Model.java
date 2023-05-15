@@ -94,4 +94,15 @@ public class Model {
         String viewData = JsonService.status2jsonString(true);
         return viewData;
     }
+
+
+    public String buyYearTicket(String json) throws Exception {
+        String[] username = JsonService.getUsername(json);
+        String viewData =
+                JsonService.boughtTicket2jsonString(ticketResourceMapper.map(
+                        service.buyYearTicketUseCase(
+                                 username[0], username[1])));
+
+        return viewData;
+    }
 }

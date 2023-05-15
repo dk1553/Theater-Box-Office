@@ -9,7 +9,8 @@ import persistence.jdbc.TicketRepositoryJDBC;
 import repositories.*;
 import rest.mvc.Controller;
 import rest.mvc.Model;
-import services.BookTicketDomainServiceJDBC;
+import services.BookOneWayTicketDomainServiceJDBC;
+import services.BookYearTicketDomainServiceJDBC;
 
 
 public class TheaterServiceApp {
@@ -36,8 +37,11 @@ public class TheaterServiceApp {
         app.post("/addEvents", context -> {
             controller.addEvents(context);
         });
-        app.post("/buyTicket/{ticketID}", context -> {
+        app.post("/buyOneWayTicket/{ticketID}", context -> {
             controller.buyTicket(context);
+        });
+        app.post("/buyYearTicket", context -> {
+            controller.buyYearTicket(context);
         });
         app.post("/login", context -> {
             controller.login(context);
@@ -54,7 +58,7 @@ public class TheaterServiceApp {
         PerformanceRepository performanceRepositoryJDBC = new PerformanceRepositoryJDBC();
         TicketRepository ticketRepositoryJDBC = new TicketRepositoryJDBC(seatRepositoryImplementation);
         EventRepository eventRepositoryJDBC = new EventRepositoryJDBC(hallRepositoryImplementation, performanceRepositoryJDBC);
-        return new Model(new TheaterService(hallRepositoryImplementation, seatRepositoryImplementation, performanceRepositoryJDBC, eventRepositoryJDBC, ticketRepositoryJDBC, new BookTicketDomainServiceJDBC()));
+        return new Model(new TheaterService(hallRepositoryImplementation, seatRepositoryImplementation, performanceRepositoryJDBC, eventRepositoryJDBC, ticketRepositoryJDBC, new BookOneWayTicketDomainServiceJDBC(), new BookYearTicketDomainServiceJDBC()));
     }
 
 }

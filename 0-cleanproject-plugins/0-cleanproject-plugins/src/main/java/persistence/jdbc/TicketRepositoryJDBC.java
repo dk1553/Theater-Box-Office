@@ -1,5 +1,6 @@
 package persistence.jdbc;
 
+import businessObjects.OneWayTicket;
 import businessObjects.Ticket;
 import db.JDBCService;
 import repositories.SeatRepository;
@@ -44,6 +45,7 @@ public class TicketRepositoryJDBC implements TicketRepository {
     public void save(Ticket ticket) throws Exception {
         TicketResourceMapper ticketResourceMapper = new TicketResourceMapper();
         JDBCService.buyTicket(ticketResourceMapper.map(ticket));
+
     }
 
     @Override

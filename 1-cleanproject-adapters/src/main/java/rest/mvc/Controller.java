@@ -81,4 +81,11 @@ public class Controller {
         context.status(200);
         context.json(viewData);
     }
+
+
+    public static void buyYearTicket(Context context)throws Exception  {
+        String viewData = model.buyYearTicket(context.body());
+        context.status(200);
+        context.json(viewData);
+    }
 }

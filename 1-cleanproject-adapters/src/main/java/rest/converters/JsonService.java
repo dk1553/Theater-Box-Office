@@ -25,7 +25,7 @@ public class JsonService {
         if (event == null) {
             return messageDBisEmpty;
         }
-        String result = "{'id':'" + event.getEventID() + "','performance':'" + event.getPerformance() + "','data':'" + event.getDate() + "','time':'" + event.getTime() + "','hall':'" + event.getHall() + ",\n{'tickets':[\n";
+        StringBuilder result = new StringBuilder("{'id':'" + event.getEventID() + "','performance':'" + event.getPerformance() + "','data':'" + event.getDate() + "','time':'" + event.getTime() + "','hall':'" + event.getHall() + ",\n{'tickets':[\n");
         for (TicketResource ticket : event.getTicketResources()) {
             String status;
             if (ticket.isBooked()) {
@@ -33,7 +33,7 @@ public class JsonService {
             } else {
                 status = "available";
             }
-            result = result + "{'id':'" + ticket.getId() + "','seat number':'" + ticket.getSeat() + "','seat number':'" + ticket.getSeat() + "','status':'" + status + "','preis':'" + ticket.getPrice() + " " + ticket.getCurrency() + "'},\n";
+            result.append("{'id':'").append(ticket.getId()).append("','seat number':'").append(ticket.getSeat()).append("','status':'").append(status).append("','price':'").append(ticket.getPrice()).append(" ").append(ticket.getCurrency()).append("'},\n");
         }
         return result.substring(0, result.length() - 2) + "]}";
 
@@ -44,14 +44,14 @@ public class JsonService {
         if ((Objects.isNull(events)) || (events.isEmpty())) {
             return messageDBisEmpty;
         }
-        String result = "{'events':[";
+        StringBuilder result = new StringBuilder("{'events':[");
         for (EventResource event : events) {
             if (event != null) {
                 if ((event.getTicketResources() != null) && (!event.getTicketResources().isEmpty())) {
-                    result = result + "{'id':'" + event.getEventID() + "','performance':'" + event.getPerformance() + "','date':'" + event.getDate() + "','time':'" + event.getTime() + "','available tickets':'" + event.getNumberOfAvailableSeats() + "','booked tickets':'" + event.getNumberOfBookedSeats() + "'},";
+                    result.append("{'id':'").append(event.getEventID()).append("','performance':'").append(event.getPerformance()).append("','date':'").append(event.getDate()).append("','time':'").append(event.getTime()).append("','available tickets':'").append(event.getNumberOfAvailableSeats()).append("','booked tickets':'").append(event.getNumberOfBookedSeats()).append("'},");
 
                 } else {
-                    result = result + "{'id':'" + event.getEventID() + "','performance':'" + event.getPerformance() + "','date':'" + event.getDate() + "','time':'" + event.getTime() + "','available tickets':'" + "no data" + "','booked tickets':'" + "no data" + "'},";
+                    result.append("{'id':'").append(event.getEventID()).append("','performance':'").append(event.getPerformance()).append("','date':'").append(event.getDate()).append("','time':'").append(event.getTime()).append("','available tickets':'").append("no data").append("','booked tickets':'").append("no data").append("'},");
 
                 }
             }
@@ -79,10 +79,10 @@ public class JsonService {
         if (performances.isEmpty()) {
             return messageDBisEmpty;
         }
-        String result = "{'performances':[";
+        StringBuilder result = new StringBuilder("{'performances':[");
         for (PerformanceResource performance : performances) {
             if (performance != null) {
-                result = result + "{'name':'" + performance.getName() + "','description':'" + performance.getDescription() + "'},";
+                result.append("{'name':'").append(performance.getName()).append("','description':'").append(performance.getDescription()).append("'},");
             }
         }
         return result.substring(0, result.length() - 1) + "]}";
@@ -93,8 +93,17 @@ public class JsonService {
         if (ticket == null) {
             return messageNotCompleted;
         }
-        return "{'id':'" + ticket.getId() + "','event':'" + ticket.getEventID() + "','seat':'" + ticket.getSeat() + "','price':'" + ticket.getPrice() + "','is booked':'" + ticket.isBooked() + "','validation code':'" + ticket.getValidationCode() + "'}";
+        String result = "{'id':'";
 
+        result = result + ticket.getId();
+        if (!ticket.getEventID().equals("")) {
+            result = result + "','event':'" + ticket.getEventID() + "','seat':'" + ticket.getSeat();
+        }
+        result = result + "','price':'" + ticket.getPrice() + "','is booked':'" + ticket.isBooked() + "','validation code':'" + ticket.getValidationCode();
+        if (!ticket.getEndOfValidity().equals("")) {
+            result = result + "','valid until':'" + ticket.getEndOfValidity();
+        }
+        return result + "'}";
     }
 
     public static List<EventResource> json2EventResourceList(String contextBody) throws JSONException {

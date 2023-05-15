@@ -4,10 +4,8 @@ import businessObjects.*;
 import repositories.SeatRepository;
 import resources.TicketResource;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class TicketMapper {
     public Ticket map(final TicketResource ticketResource, SeatRepository seatRepository) throws Exception {
@@ -15,7 +13,13 @@ public class TicketMapper {
             return null;
         }
         try {
-            return new Ticket(ticketResource.getId(), ticketResource.getEventID(), new Price(ticketResource.getPrice()), seatRepository.findSeatByID(ticketResource.getSeat()), ticketResource.isBooked(), ticketResource.getValidationCode());
+            if (ticketResource.getEventID().equals("")|| (Objects.isNull(ticketResource.getEventID()))){
+                SimpleDateFormat formatterDate = new SimpleDateFormat("dd.MM.yyyy");
+                System.out.println(ticketResource.getEndOfValidity());
+                Date endOfValidity = formatterDate.parse(ticketResource.getEndOfValidity());
+                return new YearTicket(ticketResource.getId(), new Price(ticketResource.getPrice()), ticketResource.isBooked(), ticketResource.getValidationCode(), endOfValidity);
+            }
+            return new OneWayTicket(ticketResource.getId(), ticketResource.getEventID(), new Price(ticketResource.getPrice()), seatRepository.findSeatByID(ticketResource.getSeat()), ticketResource.isBooked(), ticketResource.getValidationCode());
 
         } catch (Exception e) {
             throw new RuntimeException(e);

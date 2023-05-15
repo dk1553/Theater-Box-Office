@@ -1,5 +1,6 @@
 package mapper;
 
+import businessObjects.OneWayTicket;
 import businessObjects.Ticket;
 import resources.TicketResource;
 
@@ -14,7 +15,7 @@ public class TicketResourceMapper {
         if (Objects.isNull(ticket)) {
             return null;
         }
-        return new TicketResource(ticket.getId(), ticket.getEventID(), String.valueOf(ticket.getPrice()), ticket.getSeat(), ticket.isBooked(), ticket.getValidationCode());
+        return new TicketResource(ticket.getId(), ticket.getEventID(), String.valueOf(ticket.getPrice()), ticket.getSeat(), ticket.isBooked(), ticket.getValidationCode(), ticket.getEndOfValidity());
 
     }
 

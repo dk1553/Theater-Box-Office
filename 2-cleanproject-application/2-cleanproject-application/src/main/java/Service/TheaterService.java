@@ -2,7 +2,8 @@ package Service;
 
 import businessObjects.*;
 import repositories.*;
-import services.BookTicketDomainService;
+import services.BookOneWayTicketDomainService;
+import services.BookYearTicketDomainService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,15 +15,18 @@ public class TheaterService {
     private final EventRepository eventRepository;
     private final TicketRepository ticketRepository;
     private final SeatRepository seatRepository;
-    private final BookTicketDomainService bookTicketDomainService;
+    private final BookOneWayTicketDomainService bookOneWayTicketDomainService;
+    private final BookYearTicketDomainService bookYearTicketDomainService;
 
-    public TheaterService(HallRepository hallRepository, SeatRepository seatRepository, PerformanceRepository performanceRepository, EventRepository eventRepository, TicketRepository ticketRepository, BookTicketDomainService bookTicketDomainService) {
+
+    public TheaterService(HallRepository hallRepository, SeatRepository seatRepository, PerformanceRepository performanceRepository, EventRepository eventRepository, TicketRepository ticketRepository, BookOneWayTicketDomainService bookOneWayTicketDomainService, BookYearTicketDomainService bookYearTicketDomainService) {
         this.hallRepository = hallRepository;
         this.seatRepository = seatRepository;
         this.performanceRepository = performanceRepository;
         this.eventRepository = eventRepository;
         this.ticketRepository = ticketRepository;
-        this.bookTicketDomainService= bookTicketDomainService;
+        this.bookOneWayTicketDomainService = bookOneWayTicketDomainService;
+        this.bookYearTicketDomainService= bookYearTicketDomainService;
     }
 
     public List<Event> showProgramUseCase() {
@@ -47,7 +51,7 @@ public class TheaterService {
             List <Ticket> tickets = new ArrayList<>();
             for (Event event:eventList){
                 for (Seat seat : seatRepository.findSeatsByHallName(event.getHallName())) {
-                    tickets.add(new Ticket(event.getId(), event.getBasicPrice(), seat));
+                    tickets.add(new OneWayTicket(event.getId(), event.getBasicPrice(), seat));
                 }
             }
             ticketRepository.addTickets(tickets);
@@ -67,7 +71,7 @@ public class TheaterService {
             Boolean userIsVerified = verifyUser(userFirstName, userLastName);
             if (userIsVerified) {
 
-                return this.bookTicketDomainService.bookTicket(ticketRepository, ticket);
+                return this.bookOneWayTicketDomainService.bookTicket(ticketRepository, ticket);
 
             }
         } catch (Exception e) {
@@ -112,5 +116,17 @@ public class TheaterService {
     }
     public TicketRepository getTicketRepository() {
         return ticketRepository;
+    }
+
+    public Ticket buyYearTicketUseCase(String userFirstName, String userLastName) {
+        try {
+            Boolean userIsVerified = verifyUser(userFirstName, userLastName);
+            if (userIsVerified) {
+                return this.bookYearTicketDomainService.bookTicket(ticketRepository);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return null;
     }
 }

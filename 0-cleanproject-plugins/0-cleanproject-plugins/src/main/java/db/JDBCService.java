@@ -105,11 +105,12 @@ public class JDBCService {
             String eventID = rs.getString("eventID");
             String seat = rs.getString("seat");
             String validationCode = rs.getString("validationCode");
+            String endOfValidity = rs.getString("validUntil");
             boolean isBooked = false;
             if (rs.getInt("isBooked") == 1) {
                 isBooked = true;
             }
-            tickets.add(new TicketResource(ticketID, eventID, basicPrice, seat, isBooked, validationCode));
+            tickets.add(new TicketResource(ticketID, eventID, basicPrice, seat, isBooked, validationCode, endOfValidity));
         }
         closeConnection();
         return tickets;
@@ -121,9 +122,10 @@ public class JDBCService {
             int status = 0;
             if (ticket.isBooked()) {
                 status = 1;
+
             }
-            String sql = INSERT +"tickets (ticketID, basicPrice, eventID, seat, isBooked, validationCode)" +
-                    VALUES + ticket.getId() + COMMA + ticket.getPrice() + COMMA + ticket.getEventID() + COMMA + ticket.getSeat() + COMMA + status + COMMA + ticket.getValidationCode() + END_OF_COMMAND;
+            String sql = INSERT +"tickets (ticketID, basicPrice, eventID, seat, isBooked, validationCode, validUntil)" +
+                    VALUES + ticket.getId() + COMMA + ticket.getPrice() + COMMA + ticket.getEventID() + COMMA + ticket.getSeat() + COMMA + status + COMMA + ticket.getValidationCode()+COMMA+ticket.getEndOfValidity() + END_OF_COMMAND;
             stmt.executeUpdate(sql);
         }
         connection.commit();

@@ -10,8 +10,9 @@ public class TicketResource {
 
     private final boolean booked;
     private final String currency;
+    public String getEndOfValidity;
 
-    public TicketResource(String ticketID, String eventID, String basicPrice, String seat, Boolean booked, String validationCode) {
+    public TicketResource(String ticketID, String eventID, String basicPrice, String seat, Boolean booked, String validationCode,  String getEndOfValidity) {
         this.validationCode = validationCode;
         this.id = ticketID;
         this.eventID = eventID;
@@ -19,7 +20,9 @@ public class TicketResource {
         this.basicPrice = basicPrice;
         this.booked = booked;
         this.currency = Currency.EURO.getSymbol();
+        this.getEndOfValidity=getEndOfValidity;
     }
+
 
     public String getId() {
         return id;
@@ -49,6 +52,10 @@ public class TicketResource {
 
     public String getValidationCode() {
         return validationCode;
+    }
+
+    public String getEndOfValidity() {
+        return getEndOfValidity;
     }
 }
 

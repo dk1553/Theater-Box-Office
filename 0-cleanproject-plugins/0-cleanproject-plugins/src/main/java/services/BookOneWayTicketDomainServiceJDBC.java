@@ -5,7 +5,7 @@ import repositories.TicketRepository;
 
 import java.util.Objects;
 
-public class BookTicketDomainServiceJDBC implements BookTicketDomainService {
+public class BookOneWayTicketDomainServiceJDBC implements BookOneWayTicketDomainService {
     @Override
     public  Ticket findTicket(TicketRepository ticketRepository, String ticket) {
         if (ticket.equals("")){

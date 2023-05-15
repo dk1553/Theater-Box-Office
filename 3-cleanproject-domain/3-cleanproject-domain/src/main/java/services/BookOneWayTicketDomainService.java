@@ -3,8 +3,7 @@ package services;
 import businessObjects.Ticket;
 import repositories.TicketRepository;
 
-public interface BookTicketDomainService {
-
+public interface BookOneWayTicketDomainService {
 
      Ticket bookTicket(TicketRepository ticketRepository, String ticketID) ;
 
