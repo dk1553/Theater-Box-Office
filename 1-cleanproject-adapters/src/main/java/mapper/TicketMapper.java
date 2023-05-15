@@ -15,7 +15,6 @@ public class TicketMapper {
         try {
             if (ticketResource.getEventID().equals("")|| (Objects.isNull(ticketResource.getEventID()))){
                 SimpleDateFormat formatterDate = new SimpleDateFormat("dd.MM.yyyy");
-                System.out.println(ticketResource.getEndOfValidity());
                 Date endOfValidity = formatterDate.parse(ticketResource.getEndOfValidity());
                 return new YearTicket(ticketResource.getId(), new Price(ticketResource.getPrice()), ticketResource.isBooked(), ticketResource.getValidationCode(), endOfValidity);
             }

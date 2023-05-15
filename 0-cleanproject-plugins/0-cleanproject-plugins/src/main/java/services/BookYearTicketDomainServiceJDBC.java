@@ -15,9 +15,8 @@ import java.util.List;
 public class BookYearTicketDomainServiceJDBC implements BookYearTicketDomainService {
     @Override
     public Ticket bookTicket(TicketRepository ticketRepository) throws Exception {
-        Calendar c= Calendar.getInstance();
-        c.add(Calendar.DATE, 365);
-        YearTicket ticket = new YearTicket(new Price(BigDecimal.valueOf(500)), c.getTime());
+
+        YearTicket ticket = new YearTicket(new Price(BigDecimal.valueOf(500)));
         try {
             ticket.setBooked();
             List<Ticket> tickets= new ArrayList<>();

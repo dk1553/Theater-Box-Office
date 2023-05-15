@@ -1,6 +1,5 @@
 package businessObjects;
 
-import java.math.BigDecimal;
 import java.util.UUID;
 
 public class Ticket {
