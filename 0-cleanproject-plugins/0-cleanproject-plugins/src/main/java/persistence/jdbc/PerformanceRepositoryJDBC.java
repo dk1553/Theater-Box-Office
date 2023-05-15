@@ -6,10 +6,7 @@ import repositories.PerformanceRepository;
 import mapper.PerformanceMapper;
 import mapper.PerformanceResourceMapper;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class PerformanceRepositoryJDBC implements PerformanceRepository {
     private List<Performance> performances;
@@ -70,19 +67,19 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
     }
 
     private List<Performance> removeAlreadyExistingElements(List<Performance> performances) {
-        if ((performances != null) && (!performances.isEmpty())) {
-            Set<Performance> toDelete = new HashSet<>();
-            for (Performance performance : performances) {
-                for (Performance exitingPerformance : this.performances) {
-
-
-                    if (performance.getName().equalsIgnoreCase(exitingPerformance.getName())) {
-                        toDelete.add(performance);
-                    }
+        if ((Objects.isNull(performances)) || (performances.isEmpty())){
+            return Collections.emptyList();
+        }
+        Set<Performance> toDelete = new HashSet<>();
+        for (Performance performance : performances) {
+            for (Performance exitingPerformance : this.performances) {
+                if (performance.getName().equalsIgnoreCase(exitingPerformance.getName())) {
+                    toDelete.add(performance);
                 }
             }
-            performances.removeAll(toDelete);
         }
+        performances.removeAll(toDelete);
+
 
         return performances;
     }
@@ -94,25 +91,19 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
 
     private List<Performance> removeDuplicates(List<Performance> performances) {
         Set<Performance> toDelete = new HashSet<>();
-        if ((performances != null) && (!performances.isEmpty())) {
+        if ((Objects.isNull(performances)) || (performances.isEmpty())) {
+            return Collections.emptyList();
+        }
 
 
-            for (Performance p : performances) {
-
-
-                for (int i = performances.indexOf(p) + 1; i < performances.size(); i++) {
-
-                    if (p.getName().equalsIgnoreCase(performances.get(i).getName())) {
-                        toDelete.add(performances.get(i));
-                    }
-                }
-            }
-            if (!toDelete.isEmpty()) {
-                for (Performance performance : toDelete) {
-                    performances.remove(performance);
+        for (Performance p : performances) {
+            for (int i = performances.indexOf(p) + 1; i < performances.size(); i++) {
+                if (p.getName().equalsIgnoreCase(performances.get(i).getName())) {
+                    toDelete.add(performances.get(i));
                 }
             }
         }
+        performances.removeAll(toDelete);
 
         return performances;
     }
