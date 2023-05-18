@@ -2,7 +2,7 @@ package businessObjects;
 
 import java.math.BigDecimal;
 
-public class Price {
+public final class Price {
     final  private BigDecimal amount;
     final private Currency currency;
 
