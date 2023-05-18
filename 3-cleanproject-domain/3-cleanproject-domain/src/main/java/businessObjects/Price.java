@@ -3,8 +3,8 @@ package businessObjects;
 import java.math.BigDecimal;
 
 public class Price {
-    private BigDecimal amount;
-    private Currency currency;
+    final  private BigDecimal amount;
+    final private Currency currency;
 
     public Price() {
         //default price is 1000 Euro
@@ -17,17 +17,20 @@ public class Price {
         this.currency = Currency.EURO;
     }
 
-    public Price(String amount) {
+    public Price(String amount) throws Exception {
+        this.amount = checkAmountValue(parseAmount(amount));
+        this.currency = Currency.EURO;
+    }
+    private BigDecimal parseAmount(String amount){
         try {
-            this.amount = checkAmountValue(BigDecimal.valueOf(Long.parseLong(amount)));
+           return BigDecimal.valueOf(Long.parseLong(amount));
         } catch (Exception e) {
             try {
-                this.amount = checkAmountValue(BigDecimal.valueOf(Double.parseDouble(amount)));
+               return  BigDecimal.valueOf(Double.parseDouble(amount));
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
         }
-        this.currency = Currency.EURO;
     }
 
     private BigDecimal checkAmountValue(BigDecimal value) throws Exception {
