@@ -3,9 +3,9 @@ package businessObjects;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class ServiceStringTime {
-    private String time;
-    private String date;
+public final class ServiceStringTime {
+    final  private String time;
+    final  private String date;
 
     public ServiceStringTime(Date date, Date time) {
         this.time = validateTime(time);

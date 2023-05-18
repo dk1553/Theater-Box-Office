@@ -4,14 +4,14 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class ServiceTime {
-    private  Date date;
-    private  Date time;
+public final class ServiceTime {
+    private final Date date;
+    private final Date time;
     public ServiceTime(String date, String time) throws ParseException {
         this.date = parseDate(date);
         this.time = parseTime(time);
     }
-    public ServiceTime(String date) throws ParseException {
+     public  ServiceTime(String date) throws ParseException {
         this.date = parseDate(date);
         this.time = null;
     }
