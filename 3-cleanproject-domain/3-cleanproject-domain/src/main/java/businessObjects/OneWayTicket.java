@@ -9,11 +9,10 @@ public class OneWayTicket extends Ticket{
 
 
     public OneWayTicket(String eventID, Price basicPrice, Seat seat) throws Exception {
+        super();
         this.eventID = eventID;
         this.seat = seat.getSeatNumber();
         this.price = calculatePrice(basicPrice, seat.getType().getPriceCoefficient());
-
-
     }
 
     public OneWayTicket(String ticketID, String eventID, Price basicPrice, Seat seat, Boolean booked, String validationCode) throws Exception {
