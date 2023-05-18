@@ -18,8 +18,9 @@ public class Event {
     public Event(Performance performance, Date date, Date time, String hallName, Price basicPrice) throws Exception {
         this.id = UUID.randomUUID().toString();
         this.performance = performance;
-        this.date = ValidationService.validateDate(date);
-        this.time = ValidationService.validateTime(time);
+        ServiceTime serviceTime= new ServiceTime(date, time);
+        this.date = serviceTime.getDate();
+        this.time = serviceTime.getTime();
         this.basicPrice = basicPrice;
         this.hallName = hallName;
     }
@@ -27,8 +28,9 @@ public class Event {
     public Event(String id, Performance performance, Date date, Date time, String hallName, Price basicPrice) throws Exception {
         this.id = id;
         this.performance = performance;
-        this.date = ValidationService.validateDate(date);
-        this.time = ValidationService.validateTime(time);
+        ServiceTime serviceTime= new ServiceTime(date, time);
+        this.date = serviceTime.getDate();
+        this.time = serviceTime.getTime();
         this.basicPrice = basicPrice;
         this.hallName = hallName;
     }
