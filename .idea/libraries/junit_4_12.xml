@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="junit-4.12">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/resources/junit-4.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/resources/powermock-core-2.0.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/resources/powermock-module-junit4-common-2.0.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/resources/powermock-module-junit4-rule-2.0.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/resources/powermock-reflect-2.0.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

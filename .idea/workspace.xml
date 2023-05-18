@@ -4,7 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="Information Expert Principle" />
+    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="code cleanUp + fixed a bug">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mockito_all.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mockito_core.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/powermock_core_2_0_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/powermock_module_junit4_common_2_0_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/powermock_tests_utils.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/easymock-5.1.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/easymock-5.1.0-samples.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/easymock-5.1.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/easymock-5.1.0-tests.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/easymock-5.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/original-easymock-5.1.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/original-easymock-5.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/TestHallRepositoryImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/t.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/testTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/testsWithEasyMock/TestOneWayTicketBookingServiceJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/TestPerformanceUniqueness.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/TestPerformanceUniquenessJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/test/java/TestMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/TestMapping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/OneWayTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/OneWayTicket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/YearTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/YearTicket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/TestBusinessObjectsBehavior.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/TestBusinessObjectsCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/TestBusinessObjectsCreation.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,33 +101,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "18",
-    "last_opened_file_path": "D:/Theater-Box-Office/1-cleanproject-adapters/src/main/resources/java-json.jar",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.27377778",
-    "project.structure.side.proportion": "0.28850573",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Theater-Box-Office/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/original-easymock-5.1.0.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.27377778&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.28850573&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "directory"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;
     ],
-    "DatabaseDriversLRU": [
-      "sqlite"
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Theater-Box-Office\3-cleanproject-domain\3-cleanproject-domain\src\main\java" />
@@ -108,43 +137,23 @@
       <recent name="D:\Theater-Box-Office\0-cleanproject-plugins\0-cleanproject-plugins\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Theater-Box-Office\0-cleanproject-plugins\0-cleanproject-plugins\src\main\resources" />
+      <recent name="D:\Theater-Box-Office\3-cleanproject-domain\3-cleanproject-domain\src\main\resources" />
       <recent name="D:\Theater-Box-Office\1-cleanproject-adapters\src\main\resources" />
       <recent name="D:\Theater-Box-Office\1-cleanproject-adapters\src\main\resources\json" />
       <recent name="D:\Theater-Box-Office\0-cleanproject-plugins\0-cleanproject-plugins\src\main\resources\java-json" />
-      <recent name="D:\Theater-Box-Office\0-cleanproject-plugins\0-cleanproject-plugins\src\main\resources\sqlite\connect" />
-      <recent name="D:\Theater-Box-Office\0-cleanproject-plugins\0-cleanproject-plugins\src\main\resources\sqlite\connect\sqlitetutorial" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
   <component name="RunManager" selected="Application.TheaterServiceApp">
-    <configuration name="MVC.JavalinView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MVC.JavalinView" />
-      <module name="0-cleanproject-plugins" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="MVC.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test" />
-      <module name="0-cleanproject-plugins" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TheaterServiceApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="rest.TheaterServiceApp" />
       <module name="0-cleanproject-plugins" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="MVC.*" />
+          <option name="PATTERN" value="rest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -152,21 +161,57 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IncomeCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="0-cleanproject-plugins" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.IncomeCalculatorTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.testEventMappingNewObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestOneWayTicketBookingServiceJDBC" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="0-cleanproject-plugins" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testsWithEasyMock" />
+      <option name="MAIN_CLASS_NAME" value="testsWithEasyMock.TestOneWayTicketBookingServiceJDBC" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestOneWayTicketBookingServiceJDBC.testCalc1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="0-cleanproject-plugins" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testsWithEasyMock" />
+      <option name="MAIN_CLASS_NAME" value="testsWithEasyMock.TestOneWayTicketBookingServiceJDBC" />
+      <option name="METHOD_NAME" value="testCalc1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="t" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="0-cleanproject-plugins" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Test" />
-      <option name="METHOD_NAME" value="testEventMappingNewObject" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="t" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -174,10 +219,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.TheaterServiceApp" />
-        <item itemvalue="Application.MVC.JavalinView" />
-        <item itemvalue="JUnit.Test" />
-        <item itemvalue="JUnit.Test.testEventMappingNewObject" />
-        <item itemvalue="Application.Test" />
+        <item itemvalue="JUnit.TestOneWayTicketBookingServiceJDBC" />
+        <item itemvalue="JUnit.TestOneWayTicketBookingServiceJDBC.testCalc1" />
+        <item itemvalue="JUnit.IncomeCalculatorTest" />
+        <item itemvalue="JUnit.t" />
       </list>
     </recent_temporary>
   </component>
@@ -210,265 +255,23 @@
       <workItem from="1679738572927" duration="3093000" />
       <workItem from="1679997734558" duration="14156000" />
       <workItem from="1680257495729" duration="29812000" />
-    </task>
-    <task id="LOCAL-00013" summary="Project's configuration was changed: wrong module-dependencies in POMs are deleted, javalin-library placed only in package 0  -&gt; building clean architecture">
-      <created>1677608326180</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1677608326180</updated>
-    </task>
-    <task id="LOCAL-00014" summary="UseCase show theater's repertoire">
-      <created>1677698493051</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1677698493051</updated>
-    </task>
-    <task id="LOCAL-00015" summary="update target folder">
-      <created>1677698647199</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1677698647199</updated>
-    </task>
-    <task id="LOCAL-00016" summary="UseCase show theater's repertoire">
-      <created>1677698788451</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1677698788451</updated>
-    </task>
-    <task id="LOCAL-00017" summary="UseCase show theater's program (test version)">
-      <created>1677749298591</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1677749298591</updated>
-    </task>
-    <task id="LOCAL-00018" summary="UseCase show theater's program: view single event inkl. tickets (test version)">
-      <created>1677836995766</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1677836995766</updated>
-    </task>
-    <task id="LOCAL-00019" summary="UseCase show theater's program [finished]">
-      <created>1677850732112</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1677850732112</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Build object-identifier">
-      <created>1677854140426</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1677854140426</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Build object-identifier">
-      <created>1677854200897</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1677854200897</updated>
-    </task>
-    <task id="LOCAL-00022" summary="solved the sync. problem (in POMs)">
-      <created>1678707234927</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1678707234927</updated>
-    </task>
-    <task id="LOCAL-00023" summary="created repositories; trying to implement persistence layer without JPA (test state of project)">
-      <created>1678822408724</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1678822408724</updated>
-    </task>
-    <task id="LOCAL-00024" summary="added time/date validation to event-business-object">
-      <created>1678951086833</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1678951086833</updated>
-    </task>
-    <task id="LOCAL-00025" summary="fixed a bug in use case Update Theater Repertoire">
-      <created>1678951302389</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1678951302389</updated>
-    </task>
-    <task id="LOCAL-00026" summary="changed object's identification method: UUID instead of Identifier.java">
-      <created>1678959507764</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1678959507764</updated>
-    </task>
-    <task id="LOCAL-00027" summary="UceCase add new events [finished]; fixed a bug in UseCase view theater program">
-      <created>1678959657140</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1678959657140</updated>
-    </task>
-    <task id="LOCAL-00028" summary="fixed a bug in Event-ID generation">
-      <created>1678960399309</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1678960399309</updated>
-    </task>
-    <task id="LOCAL-00029" summary="removed all files for JPA-test (problem by merging)">
-      <created>1678961178770</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1678961178770</updated>
-    </task>
-    <task id="LOCAL-00030" summary="changes in use case Add New Events: saving new tickets in db">
-      <created>1678964240786</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1678964240786</updated>
-    </task>
-    <task id="LOCAL-00031" summary="removed all files for JPA-test (problem by merging)">
-      <created>1678964744297</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1678964744297</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Loading tickets from DB into the theater service when the app runs">
-      <created>1678975217737</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1678975217737</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Use Case buy a ticket is in progress">
-      <created>1678979096490</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1678979096490</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Use Case buy a ticket [finished]">
-      <created>1679061624274</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1679061624274</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Code refactoring">
-      <created>1679064126755</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1679064126755</updated>
-    </task>
-    <task id="LOCAL-00036" summary="fixed a bug in use case View Event">
-      <created>1679064928412</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1679064928412</updated>
-    </task>
-    <task id="LOCAL-00037" summary="code refactoring; implementation of mapping (only EventMapper)">
-      <created>1679069345032</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1679069345032</updated>
-    </task>
-    <task id="LOCAL-00038" summary="code refactoring">
-      <created>1679074114071</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1679074114071</updated>
-    </task>
-    <task id="LOCAL-00039" summary="code refactoring; implementation of mapping (PerformanceMapper)">
-      <created>1679076531844</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1679076531844</updated>
-    </task>
-    <task id="LOCAL-00040" summary="code refactoring;">
-      <created>1679420514074</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1679420514074</updated>
-    </task>
-    <task id="LOCAL-00041" summary="code refactoring;">
-      <created>1679422645441</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1679422645441</updated>
-    </task>
-    <task id="LOCAL-00042" summary="code refactoring;">
-      <created>1679510201410</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1679510201410</updated>
-    </task>
-    <task id="LOCAL-00043" summary="mapping">
-      <created>1679510282332</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1679510282332</updated>
-    </task>
-    <task id="LOCAL-00044" summary="test state">
-      <created>1679561279139</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1679561279139</updated>
-    </task>
-    <task id="LOCAL-00045" summary="test state">
-      <created>1679561294277</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1679561294277</updated>
-    </task>
-    <task id="LOCAL-00046" summary="fixed a bug in mapping">
-      <created>1679563499021</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1679563499021</updated>
-    </task>
-    <task id="LOCAL-00047" summary="code refactoring (in UC Buy Ticket)">
-      <created>1679564706431</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1679564706431</updated>
-    </task>
-    <task id="LOCAL-00048" summary="code refactoring (in UC Buy Ticket)">
-      <created>1679564838247</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1679564838247</updated>
-    </task>
-    <task id="LOCAL-00049" summary="code refactoring (in GsonConverter)">
-      <created>1679568560296</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1679568560296</updated>
+      <workItem from="1680788762482" duration="1474000" />
+      <workItem from="1681922732758" duration="840000" />
+      <workItem from="1681923601564" duration="14463000" />
+      <workItem from="1681992449793" duration="20245000" />
+      <workItem from="1682162710932" duration="7921000" />
+      <workItem from="1682413369518" duration="476000" />
+      <workItem from="1682583368485" duration="11198000" />
+      <workItem from="1682622599807" duration="664000" />
+      <workItem from="1682623793111" duration="178000" />
+      <workItem from="1682624169072" duration="503000" />
+      <workItem from="1683010296942" duration="3319000" />
+      <workItem from="1683401840493" duration="81000" />
+      <workItem from="1683613851844" duration="2540000" />
+      <workItem from="1683617205531" duration="3023000" />
+      <workItem from="1683908790457" duration="5085000" />
+      <workItem from="1684176847402" duration="6690000" />
+      <workItem from="1684428283711" duration="8288000" />
     </task>
     <task id="LOCAL-00050" summary="implementation of ticket validation code">
       <created>1679643673804</created>
@@ -554,7 +357,266 @@
       <option name="project" value="LOCAL" />
       <updated>1680464327783</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="added relative path of jdbc">
+      <created>1680783173039</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1680783173039</updated>
+    </task>
+    <task id="LOCAL-00063" summary="code refactoring: removing duplicates">
+      <created>1681924299870</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1681924299872</updated>
+    </task>
+    <task id="LOCAL-00064" summary="code refactoring: removing unused code">
+      <created>1681924791961</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1681924791961</updated>
+    </task>
+    <task id="LOCAL-00065" summary="code refactoring: removing unused code">
+      <created>1681924964052</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1681924964053</updated>
+    </task>
+    <task id="LOCAL-00066" summary="code refactoring: code seams">
+      <created>1681927265757</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1681927265757</updated>
+    </task>
+    <task id="LOCAL-00067" summary="code refactoring: code seams">
+      <created>1681927598192</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1681927598192</updated>
+    </task>
+    <task id="LOCAL-00068" summary="made ticket currency visible">
+      <created>1681929330983</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1681929330983</updated>
+    </task>
+    <task id="LOCAL-00069" summary="code cleanUp: removing unused codelines">
+      <created>1681929501536</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1681929501536</updated>
+    </task>
+    <task id="LOCAL-00070" summary="code refactoring: long class">
+      <created>1681978611783</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1681978611784</updated>
+    </task>
+    <task id="LOCAL-00071" summary="code cleanUp">
+      <created>1681978906082</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1681978906082</updated>
+    </task>
+    <task id="LOCAL-00072" summary="code refactoring: remove duplicates">
+      <created>1681980195102</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1681980195104</updated>
+    </task>
+    <task id="LOCAL-00073" summary="implemented BookTicketDomainService">
+      <created>1682004150833</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1682004150833</updated>
+    </task>
+    <task id="LOCAL-00074" summary="code cleanUp">
+      <created>1682007508211</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1682007508211</updated>
+    </task>
+    <task id="LOCAL-00075" summary="implemented hall-repository and seat-repository">
+      <created>1682014886809</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1682014886809</updated>
+    </task>
+    <task id="LOCAL-00076" summary="implemented hall-repository and seat-repository">
+      <created>1682014897654</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1682014897654</updated>
+    </task>
+    <task id="LOCAL-00077" summary="code cleanUp">
+      <created>1682015996149</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1682015996149</updated>
+    </task>
+    <task id="LOCAL-00078" summary="code cleanUp">
+      <created>1682016340695</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1682016340695</updated>
+    </task>
+    <task id="LOCAL-00079" summary="code cleanUp">
+      <created>1682016844141</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1682016844141</updated>
+    </task>
+    <task id="LOCAL-00080" summary="code cleanUp">
+      <created>1682018009898</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1682018009898</updated>
+    </task>
+    <task id="LOCAL-00081" summary="code cleanUp">
+      <created>1682018561181</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1682018561181</updated>
+    </task>
+    <task id="LOCAL-00082" summary="code cleanUp">
+      <created>1682164294800</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1682164294801</updated>
+    </task>
+    <task id="LOCAL-00083" summary="code cleanUp">
+      <created>1682164828235</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1682164828235</updated>
+    </task>
+    <task id="LOCAL-00084" summary="code cleanUp">
+      <created>1682165246752</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1682165246752</updated>
+    </task>
+    <task id="LOCAL-00085" summary="code cleanUp">
+      <created>1682166413282</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1682166413282</updated>
+    </task>
+    <task id="LOCAL-00086" summary="code cleanUp">
+      <created>1682166594934</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1682166594934</updated>
+    </task>
+    <task id="LOCAL-00087" summary="code cleanUp">
+      <created>1682166705558</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1682166705559</updated>
+    </task>
+    <task id="LOCAL-00088" summary="code cleanUp">
+      <created>1682166910682</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1682166910682</updated>
+    </task>
+    <task id="LOCAL-00089" summary="code cleanUp">
+      <created>1682167043002</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1682167043002</updated>
+    </task>
+    <task id="LOCAL-00090" summary="code cleanUp">
+      <created>1682240271776</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1682240271776</updated>
+    </task>
+    <task id="LOCAL-00091" summary="code cleanUp">
+      <created>1682240748938</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1682240748938</updated>
+    </task>
+    <task id="LOCAL-00092" summary="code cleanUp">
+      <created>1682597865701</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1682597865701</updated>
+    </task>
+    <task id="LOCAL-00093" summary="code cleanUp">
+      <created>1682606346700</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1682606346700</updated>
+    </task>
+    <task id="LOCAL-00094" summary="code cleanUp">
+      <created>1682623933923</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1682623933923</updated>
+    </task>
+    <task id="LOCAL-00095" summary="code cleanUp">
+      <created>1683909283252</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1683909283253</updated>
+    </task>
+    <task id="LOCAL-00096" summary="implemented use case Buy Year Ticket (Ticket.java -&gt; OneWayTicket.java and YearTicket.java)">
+      <created>1684182151344</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1684182151344</updated>
+    </task>
+    <task id="LOCAL-00097" summary="code cleanUp">
+      <created>1684182865429</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1684182865429</updated>
+    </task>
+    <task id="LOCAL-00098" summary="code cleanUp + fixed a bug">
+      <created>1684183494922</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1684183494922</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,19 +635,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="UceCase add new events [finished]; fixed a bug in UseCase view theater program" />
-    <MESSAGE value="fixed a bug in Event-ID generation" />
-    <MESSAGE value="changes in use case Add New Events: saving new tickets in db" />
-    <MESSAGE value="removed all files for JPA-test (problem by merging)" />
-    <MESSAGE value="Loading tickets from DB into the theater service when the app runs" />
-    <MESSAGE value="Use Case buy a ticket is in progress" />
-    <MESSAGE value="Use Case buy a ticket [finished]" />
-    <MESSAGE value="Code refactoring" />
-    <MESSAGE value="fixed a bug in use case View Event" />
-    <MESSAGE value="code refactoring; implementation of mapping (only EventMapper)" />
-    <MESSAGE value="code refactoring; implementation of mapping (PerformanceMapper)" />
-    <MESSAGE value="code refactoring;" />
-    <MESSAGE value="mapping" />
     <MESSAGE value="test state" />
     <MESSAGE value="fixed a bug in mapping" />
     <MESSAGE value="code refactoring (in UC Buy Ticket)" />
@@ -598,7 +647,20 @@
     <MESSAGE value="code refactoring; implemented mvc-pattern" />
     <MESSAGE value="renaming" />
     <MESSAGE value="Information Expert Principle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Information Expert Principle" />
+    <MESSAGE value="added relative path of jdbc" />
+    <MESSAGE value="code refactoring: removing duplicates" />
+    <MESSAGE value="code refactoring: removing unused code" />
+    <MESSAGE value="code refactoring: code seams" />
+    <MESSAGE value="made ticket currency visible" />
+    <MESSAGE value="code cleanUp: removing unused codelines" />
+    <MESSAGE value="code refactoring: long class" />
+    <MESSAGE value="code refactoring: remove duplicates" />
+    <MESSAGE value="implemented BookTicketDomainService" />
+    <MESSAGE value="implemented hall-repository and seat-repository" />
+    <MESSAGE value="implemented use case Buy Year Ticket (Ticket.java -&gt; OneWayTicket.java and YearTicket.java)" />
+    <MESSAGE value="code cleanUp" />
+    <MESSAGE value="code cleanUp + fixed a bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="code cleanUp + fixed a bug" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
