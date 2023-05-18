@@ -5,7 +5,6 @@ import repositories.HallRepository;
 import repositories.PerformanceRepository;
 import resources.EventResource;
 
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class EventMapper {
@@ -59,13 +58,10 @@ public class EventMapper {
             Performance performance = performanceRepository.findPerformanceByName(eventResource.getPerformance());
             String hallName = eventResource.getHall();
             Price price = new Price(eventResource.getPrice());
-            SimpleDateFormat formatterDate = new SimpleDateFormat("dd.MM.yyyy");
-            Date date = formatterDate.parse(eventResource.getDate());
-            SimpleDateFormat formatterTime = new SimpleDateFormat("hh:mm");
-            Date time = formatterTime.parse(eventResource.getTime());
+            ServiceTime serviceTime= new ServiceTime(eventResource.getDate(), eventResource.getTime());
             String eventID = eventResource.getEventID();
-            if ((performance != null) && (date != null) && (time != null) && (hallRepository.findHallByName(hallName) != null)) {
-                return new Event(eventID, performance, date, time, hallName, price);
+            if ((performance != null) && (serviceTime.getDate() != null) && (serviceTime.getTime() != null) && (hallRepository.findHallByName(hallName) != null)) {
+                return new Event(eventID, performance, serviceTime.getDate(), serviceTime.getTime(), hallName, price);
             } else {
                 return null;
             }

@@ -15,14 +15,14 @@ public class YearTicket extends Ticket {
 
     public YearTicket(String ticketID, Price price, Boolean booked, String validationCode, Date validUntil) throws Exception {
         super(ticketID, booked, validationCode);
-        this.validUntil = new ServiceTime(validUntil).getDate();
+        this.validUntil = new ServiceStringTime(validUntil).getDate();
         this.price = price;
     }
 
     private String calculateEndOfValidity() {
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DATE, 365);
-        return  new ServiceTime(c.getTime()).getDate();
+        return  new ServiceStringTime(c.getTime()).getDate();
     }
 
     @Override
