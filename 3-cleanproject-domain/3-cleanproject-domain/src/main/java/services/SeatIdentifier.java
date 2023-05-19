@@ -1,4 +1,4 @@
-package utilities;
+package services;
 
 public class SeatIdentifier {
 

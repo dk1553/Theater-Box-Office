@@ -1,7 +1,7 @@
 package entities;
 
 import enums.SeatType;
-import utilities.SeatIdentifier;
+import services.SeatIdentifier;
 
 public class Seat {
     private String seatID;
