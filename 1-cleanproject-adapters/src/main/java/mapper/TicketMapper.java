@@ -11,7 +11,7 @@ public class TicketMapper {
             return null;
         }
         try {
-            if (ticketResource.getEventID().equals("")|| (Objects.isNull(ticketResource.getEventID()))){
+            if (ticketResource.isYearTicket()){
                 Date endOfValidity = new ServiceTime(ticketResource.getEndOfValidity()).getDate();
                 return new YearTicket(ticketResource.getId(), new Price(ticketResource.getPrice()), ticketResource.isBooked(), ticketResource.getValidationCode(), endOfValidity);
             }

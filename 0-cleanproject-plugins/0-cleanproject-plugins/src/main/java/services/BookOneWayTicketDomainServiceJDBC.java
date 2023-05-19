@@ -2,16 +2,15 @@ package services;
 
 import businessObjects.Ticket;
 import repositories.TicketRepository;
-
 import java.util.Objects;
 
 public class BookOneWayTicketDomainServiceJDBC implements BookOneWayTicketDomainService {
     @Override
-    public  Ticket findTicket(TicketRepository ticketRepository, String ticket) {
-        if (ticket.equals("")){
+    public  Ticket findTicket(TicketRepository ticketRepository, String ticketID) {
+        if (ticketID.equals("")){
             return null;
         }
-        return ticketRepository.findTicketById(ticket);
+        return ticketRepository.findTicketById(ticketID);
     }
     @Override
     public  Ticket bookTicket(TicketRepository ticketRepository, String ticketID) {

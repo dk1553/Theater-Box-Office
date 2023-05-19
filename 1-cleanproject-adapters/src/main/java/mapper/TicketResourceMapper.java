@@ -1,7 +1,7 @@
 package mapper;
 
-import businessObjects.OneWayTicket;
 import businessObjects.Ticket;
+import businessObjects.YearTicket;
 import resources.TicketResource;
 
 import java.util.ArrayList;
@@ -15,7 +15,10 @@ public class TicketResourceMapper {
         if (Objects.isNull(ticket)) {
             return null;
         }
-        return new TicketResource(ticket.getId(), ticket.getEventID(), String.valueOf(ticket.getPrice()), ticket.getSeat(), ticket.isBooked(), ticket.getValidationCode(), ticket.getEndOfValidity());
+        if (ticket.getClass().equals(YearTicket.class)){
+             return new TicketResource(true, ticket.getId(), ticket.getEventID(), String.valueOf(ticket.getPrice()), ticket.getSeat(), ticket.isBooked(), ticket.getValidationCode(), ticket.getEndOfValidity());
+        }
+        return new TicketResource(false, ticket.getId(), ticket.getEventID(), String.valueOf(ticket.getPrice()), ticket.getSeat(), ticket.isBooked(), ticket.getValidationCode(), ticket.getEndOfValidity());
 
     }
 
