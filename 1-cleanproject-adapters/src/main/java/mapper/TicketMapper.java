@@ -1,8 +1,11 @@
 package mapper;
 
-import businessObjects.*;
+import entities.*;
 import repositories.SeatRepository;
 import resources.TicketResource;
+import vo.Price;
+import vo.ServiceTime;
+
 import java.util.*;
 
 public class TicketMapper {

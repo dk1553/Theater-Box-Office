@@ -1,4 +1,4 @@
-package businessObjects;
+package vo;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

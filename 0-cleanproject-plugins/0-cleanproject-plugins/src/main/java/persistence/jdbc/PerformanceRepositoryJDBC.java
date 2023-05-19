@@ -1,6 +1,6 @@
 package persistence.jdbc;
 
-import businessObjects.Performance;
+import entities.Performance;
 import db.JDBCService;
 import repositories.PerformanceRepository;
 import mapper.PerformanceMapper;

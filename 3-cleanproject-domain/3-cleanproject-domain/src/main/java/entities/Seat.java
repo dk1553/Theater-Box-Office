@@ -1,4 +1,7 @@
-package businessObjects;
+package entities;
+
+import enums.SeatType;
+import utilities.SeatIdentifier;
 
 public class Seat {
     private String seatID;

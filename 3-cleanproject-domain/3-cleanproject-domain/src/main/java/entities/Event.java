@@ -1,4 +1,7 @@
-package businessObjects;
+package entities;
+
+import vo.Price;
+import vo.ServiceStringTime;
 
 import java.util.Date;
 import java.util.UUID;

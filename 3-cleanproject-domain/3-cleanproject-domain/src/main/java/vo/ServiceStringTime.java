@@ -1,4 +1,4 @@
-package businessObjects;
+package vo;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

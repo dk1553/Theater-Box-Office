@@ -1,6 +1,6 @@
 package mapper;
 
-import businessObjects.Performance;
+import entities.Performance;
 import resources.PerformanceResource;
 
 import java.util.ArrayList;

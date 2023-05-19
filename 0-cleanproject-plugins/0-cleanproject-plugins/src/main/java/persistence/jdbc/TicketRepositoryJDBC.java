@@ -1,6 +1,6 @@
 package persistence.jdbc;
 
-import businessObjects.Ticket;
+import entities.Ticket;
 import db.JDBCService;
 import repositories.SeatRepository;
 import repositories.TicketRepository;

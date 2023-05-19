@@ -1,6 +1,6 @@
 package repositories;
 
-import businessObjects.Performance;
+import entities.Performance;
 
 import java.util.List;
 

@@ -1,7 +1,6 @@
 package repositories;
 
-import businessObjects.Event;
-import businessObjects.Ticket;
+import entities.Ticket;
 
 import java.util.List;
 

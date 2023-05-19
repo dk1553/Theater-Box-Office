@@ -4,33 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="code cleanUp + fixed a bug">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mockito_all.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mockito_core.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/powermock_core_2_0_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/powermock_module_junit4_common_2_0_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/powermock_tests_utils.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/easymock-5.1.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/easymock-5.1.0-samples.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/easymock-5.1.0-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/easymock-5.1.0-tests.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/easymock-5.1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/original-easymock-5.1.0-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/original-easymock-5.1.0.jar" afterDir="false" />
+    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="changed JDBC table's structure and code cleanUp">
       <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/TestHallRepositoryImplementation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/t.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/testTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/testsWithEasyMock/TestOneWayTicketBookingServiceJDBC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/JDBCService.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/JDBCService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/HallRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/HallRepositoryImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/SeatRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/SeatRepositoryImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/jdbc/EventRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/jdbc/EventRepositoryJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/jdbc/PerformanceRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/jdbc/PerformanceRepositoryJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/jdbc/TicketRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/jdbc/TicketRepositoryJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/services/BookOneWayTicketDomainServiceJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/services/BookOneWayTicketDomainServiceJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/services/BookYearTicketDomainServiceJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/services/BookYearTicketDomainServiceJDBC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/MockTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/TestPerformanceUniqueness.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/TestPerformanceUniquenessJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/testsWithEasyMock/TestOneWayTicketBookingServiceJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/testsWithEasyMock/TestOneWayTicketBookingServiceJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/EventMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/EventMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/EventResourceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/EventResourceMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/PerformanceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/PerformanceMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/PerformanceResourceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/PerformanceResourceMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/TicketMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/TicketMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/TicketResourceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/mapper/TicketResourceMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/TicketResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/resources/TicketResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/test/java/TestMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/TestMapping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/OneWayTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/OneWayTicket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/YearTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/YearTicket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/Service/TheaterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/2-cleanproject-application/2-cleanproject-application/src/main/java/Service/TheaterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/enums/Currency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/entities/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Hall.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/entities/Hall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/OneWayTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/entities/OneWayTicket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Performance.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/entities/Performance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/vo/Price.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Seat.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/entities/Seat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/SeatIdentifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/utilities/SeatIdentifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/SeatType.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/enums/SeatType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/ServiceStringTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/vo/ServiceStringTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/ServiceTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/vo/ServiceTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/entities/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/businessObjects/YearTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/entities/YearTicket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/EventRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/HallRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/HallRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/PerformanceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/PerformanceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/SeatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/SeatRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/TicketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/repositories/TicketRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/services/BookOneWayTicketDomainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/services/BookOneWayTicketDomainService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/services/BookYearTicketDomainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/services/BookYearTicketDomainService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/TestBusinessObjectsBehavior.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/TestBusinessObjectsCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/TestBusinessObjectsCreation.java" afterDir="false" />
     </list>
@@ -207,10 +225,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="t" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestPerformanceUniquenessJDBC" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="0-cleanproject-plugins" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="t" />
+      <option name="MAIN_CLASS_NAME" value="TestPerformanceUniquenessJDBC" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -219,10 +237,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.TheaterServiceApp" />
+        <item itemvalue="JUnit.TestPerformanceUniquenessJDBC" />
         <item itemvalue="JUnit.TestOneWayTicketBookingServiceJDBC" />
         <item itemvalue="JUnit.TestOneWayTicketBookingServiceJDBC.testCalc1" />
         <item itemvalue="JUnit.IncomeCalculatorTest" />
-        <item itemvalue="JUnit.t" />
       </list>
     </recent_temporary>
   </component>
@@ -271,63 +289,8 @@
       <workItem from="1683617205531" duration="3023000" />
       <workItem from="1683908790457" duration="5085000" />
       <workItem from="1684176847402" duration="6690000" />
-      <workItem from="1684428283711" duration="8288000" />
-    </task>
-    <task id="LOCAL-00050" summary="implementation of ticket validation code">
-      <created>1679643673804</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1679643673804</updated>
-    </task>
-    <task id="LOCAL-00051" summary="implementation of performance uniqueness rule">
-      <created>1679741044883</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1679741044884</updated>
-    </task>
-    <task id="LOCAL-00052" summary="JUnit tests">
-      <created>1679741635539</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1679741635539</updated>
-    </task>
-    <task id="LOCAL-00053" summary="JUnit tests">
-      <created>1680086847621</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1680086847622</updated>
-    </task>
-    <task id="LOCAL-00054" summary="JUnit tests">
-      <created>1680086922207</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1680086922207</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Added authentication for admins">
-      <created>1680268560767</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1680268560768</updated>
-    </task>
-    <task id="LOCAL-00056" summary="JUnit tests">
-      <created>1680268618397</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1680268618397</updated>
-    </task>
-    <task id="LOCAL-00057" summary="code refactoring">
-      <created>1680268800966</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1680268800966</updated>
+      <workItem from="1684428283711" duration="11768000" />
+      <workItem from="1684484424197" duration="5331000" />
     </task>
     <task id="LOCAL-00058" summary="code refactoring">
       <created>1680278972506</created>
@@ -616,7 +579,63 @@
       <option name="project" value="LOCAL" />
       <updated>1684183494922</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="implemented mock tests with EasyMock">
+      <created>1684437974191</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1684437974192</updated>
+    </task>
+    <task id="LOCAL-00100" summary="fixed a bug">
+      <created>1684437996921</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1684437996921</updated>
+    </task>
+    <task id="LOCAL-00101" summary="changed (Service) ValidationService to (VO) ServiceTime">
+      <created>1684439086477</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1684439086477</updated>
+    </task>
+    <task id="LOCAL-00102" summary="changed ServiceTime to ServiceStringTime and implemented second VO called ServiceTime">
+      <created>1684440525974</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1684440525974</updated>
+    </task>
+    <task id="LOCAL-00103" summary="code cleanUp">
+      <created>1684440886292</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1684440886293</updated>
+    </task>
+    <task id="LOCAL-00104" summary="code cleanUp">
+      <created>1684441002676</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1684441002676</updated>
+    </task>
+    <task id="LOCAL-00105" summary="code cleanUp">
+      <created>1684441076738</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1684441076738</updated>
+    </task>
+    <task id="LOCAL-00106" summary="changed JDBC table's structure and code cleanUp">
+      <created>1684487587581</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1684487587582</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,11 +654,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="test state" />
-    <MESSAGE value="fixed a bug in mapping" />
-    <MESSAGE value="code refactoring (in UC Buy Ticket)" />
-    <MESSAGE value="code refactoring (in GsonConverter)" />
-    <MESSAGE value="implementation of ticket validation code" />
     <MESSAGE value="implementation of performance uniqueness rule" />
     <MESSAGE value="Added authentication for admins" />
     <MESSAGE value="JUnit tests" />
@@ -658,9 +672,14 @@
     <MESSAGE value="implemented BookTicketDomainService" />
     <MESSAGE value="implemented hall-repository and seat-repository" />
     <MESSAGE value="implemented use case Buy Year Ticket (Ticket.java -&gt; OneWayTicket.java and YearTicket.java)" />
-    <MESSAGE value="code cleanUp" />
     <MESSAGE value="code cleanUp + fixed a bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="code cleanUp + fixed a bug" />
+    <MESSAGE value="implemented mock tests with EasyMock" />
+    <MESSAGE value="fixed a bug" />
+    <MESSAGE value="changed (Service) ValidationService to (VO) ServiceTime" />
+    <MESSAGE value="changed ServiceTime to ServiceStringTime and implemented second VO called ServiceTime" />
+    <MESSAGE value="code cleanUp" />
+    <MESSAGE value="changed JDBC table's structure and code cleanUp" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed JDBC table's structure and code cleanUp" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

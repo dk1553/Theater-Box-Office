@@ -1,4 +1,6 @@
-package businessObjects;
+package vo;
+
+import enums.Currency;
 
 import java.math.BigDecimal;
 

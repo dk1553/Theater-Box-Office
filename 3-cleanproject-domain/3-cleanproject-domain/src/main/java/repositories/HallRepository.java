@@ -1,6 +1,6 @@
 package repositories;
 
-import businessObjects.Hall;
+import entities.Hall;
 
 import java.util.List;
 

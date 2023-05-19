@@ -1,4 +1,4 @@
-package businessObjects;
+package enums;
 
 public enum Currency {
     EURO("€"),

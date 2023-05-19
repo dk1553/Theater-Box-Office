@@ -1,6 +1,6 @@
 package Service;
 
-import businessObjects.*;
+import entities.*;
 import repositories.*;
 import services.BookOneWayTicketDomainService;
 import services.BookYearTicketDomainService;

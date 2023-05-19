@@ -1,7 +1,7 @@
 package mapper;
 
-import businessObjects.Ticket;
-import businessObjects.YearTicket;
+import entities.Ticket;
+import entities.YearTicket;
 import resources.TicketResource;
 
 import java.util.ArrayList;

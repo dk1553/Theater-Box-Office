@@ -1,4 +1,4 @@
-package businessObjects;
+package utilities;
 
 public class SeatIdentifier {
 

@@ -1,8 +1,8 @@
 package persistence;
 
-import businessObjects.Hall;
-import businessObjects.Seat;
-import businessObjects.SeatType;
+import entities.Hall;
+import entities.Seat;
+import enums.SeatType;
 import repositories.HallRepository;
 import repositories.SeatRepository;
 

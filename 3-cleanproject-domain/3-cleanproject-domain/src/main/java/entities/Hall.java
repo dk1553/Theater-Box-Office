@@ -1,4 +1,4 @@
-package businessObjects;
+package entities;
 
 public class Hall {
     private final String hallName;

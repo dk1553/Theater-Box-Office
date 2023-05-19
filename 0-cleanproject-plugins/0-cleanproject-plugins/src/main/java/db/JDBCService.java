@@ -62,8 +62,8 @@ public class JDBCService {
             String eventID = rs.getString("eventID");
             String performanceName = rs.getString("performance");
             String hall = rs.getString("hall");
-            BigDecimal price = rs.getBigDecimal("basicPrice");
-            events.add(new EventResource(eventID, performanceName, rs.getString("date"), rs.getString("time"), hall, String.valueOf(price), null));
+            String price = rs.getString("basicPrice");
+            events.add(new EventResource(eventID, performanceName, rs.getString("date"), rs.getString("time"), hall, price, null));
         }
         closeConnection();
 

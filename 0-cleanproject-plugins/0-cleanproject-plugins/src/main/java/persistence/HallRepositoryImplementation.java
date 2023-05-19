@@ -1,6 +1,6 @@
 package persistence;
 
-import businessObjects.Hall;
+import entities.Hall;
 import repositories.HallRepository;
 
 import java.util.ArrayList;

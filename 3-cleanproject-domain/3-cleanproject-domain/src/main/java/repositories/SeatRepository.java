@@ -1,6 +1,6 @@
 package repositories;
 
-import businessObjects.Seat;
+import entities.Seat;
 
 import java.util.List;
 

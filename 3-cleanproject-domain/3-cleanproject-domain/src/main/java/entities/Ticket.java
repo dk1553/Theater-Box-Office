@@ -1,4 +1,6 @@
-package businessObjects;
+package entities;
+
+import vo.Price;
 
 import java.util.UUID;
 

@@ -1,6 +1,6 @@
 package resources;
 
-import businessObjects.Currency;
+import enums.Currency;
 public class TicketResource {
     private final String id;
     private final String basicPrice;

@@ -1,9 +1,11 @@
 package mapper;
 
-import businessObjects.*;
+import entities.*;
 import repositories.HallRepository;
 import repositories.PerformanceRepository;
 import resources.EventResource;
+import vo.Price;
+import vo.ServiceTime;
 
 import java.util.*;
 

@@ -1,6 +1,6 @@
 package persistence.jdbc;
 
-import businessObjects.Event;
+import entities.Event;
 import db.JDBCService;
 import repositories.EventRepository;
 import repositories.HallRepository;

@@ -1,6 +1,6 @@
 package services;
 
-import businessObjects.Ticket;
+import entities.Ticket;
 import repositories.TicketRepository;
 
 public interface BookOneWayTicketDomainService {
