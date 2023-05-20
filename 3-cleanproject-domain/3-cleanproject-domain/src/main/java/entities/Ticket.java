@@ -33,8 +33,8 @@ public class Ticket {
         this.booked = true;
     }
 
-    public Price getPrice() {
-        return null;
+    public Price getPrice() throws Exception {
+        return new Price("0");
     }
 
 
@@ -42,13 +42,13 @@ public class Ticket {
         return validationCode;
     }
     public String getEventID() {
-        return "";
+        return "0000";
     }
     public String getSeat() {
-        return "";
+        return "0";
     }
     public String getEndOfValidity() {
-        return "";
+        return "01.01.0001";
     }
 
 
