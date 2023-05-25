@@ -15,7 +15,9 @@ public interface TicketRepository {
 
     Ticket findTicketById(String id);
 
-    Boolean isEmpty();
+    void loadTicketsFromDB(SeatRepository seatRepository);
+
+
 
 
 }

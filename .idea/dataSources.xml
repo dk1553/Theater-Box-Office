@@ -9,5 +9,12 @@
       <working-dir>$ProjectFileDir$</working-dir>
       <auto-close enable="true" timeout="3" />
     </data-source>
+    <data-source source="LOCAL" name="theater-box-office.db [2]" uuid="b358f3ec-a119-41e0-815c-2331d8a4e809">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

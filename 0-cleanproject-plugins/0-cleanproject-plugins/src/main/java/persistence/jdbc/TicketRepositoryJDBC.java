@@ -62,8 +62,8 @@ public class TicketRepositoryJDBC implements TicketRepository {
             throw new RuntimeException(e);
         }
     }
-
-    private void loadTicketsFromDB(SeatRepository seatRepository) {
+    @Override
+    public void loadTicketsFromDB(SeatRepository seatRepository) {
         try {
             TicketMapper ticketMapper = new TicketMapper();
             ticketList = new ArrayList<>();
@@ -77,8 +77,5 @@ public class TicketRepositoryJDBC implements TicketRepository {
 
     }
 
-    @Override
-    public Boolean isEmpty() {
-        return (ticketList == null) || (ticketList.isEmpty());
-    }
+
 }

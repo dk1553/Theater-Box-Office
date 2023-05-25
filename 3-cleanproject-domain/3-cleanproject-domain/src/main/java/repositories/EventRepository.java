@@ -11,5 +11,5 @@ public interface EventRepository {
 
     void addEvents(List<Event> events, TicketRepository ticketRepository);
 
-    Boolean isEmpty();
+    void loadTheaterProgramFromDB(HallRepository hallRepository, PerformanceRepository performanceRepository);
 }

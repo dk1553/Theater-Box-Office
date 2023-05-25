@@ -16,6 +16,7 @@ import java.util.Objects;
 public class EventRepositoryJDBC implements EventRepository {
     public EventRepositoryJDBC(HallRepository hallRepository, PerformanceRepository performanceRepository) {
         eventList = new ArrayList<>();
+        System.out.println("2");
         loadTheaterProgramFromDB(hallRepository, performanceRepository);
     }
 
@@ -52,13 +53,10 @@ public class EventRepositoryJDBC implements EventRepository {
         }
     }
 
+
+
     @Override
-    public Boolean isEmpty() {
-        return (Objects.isNull(eventList)) || (eventList.isEmpty());
-    }
-
-
-    private void loadTheaterProgramFromDB(HallRepository hallRepository, PerformanceRepository performanceRepository) {
+    public void loadTheaterProgramFromDB(HallRepository hallRepository, PerformanceRepository performanceRepository) {
         EventMapper eventMapper = new EventMapper();
         try {
             eventList = new ArrayList<>();

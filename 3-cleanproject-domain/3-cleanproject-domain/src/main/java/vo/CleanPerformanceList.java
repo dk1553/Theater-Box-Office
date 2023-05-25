@@ -17,8 +17,6 @@ public final class CleanPerformanceList {
         if ((Objects.isNull(newPerformances)) || (newPerformances.isEmpty())) {
             return Collections.emptyList();
         }
-
-
         for (Performance p : newPerformances) {
             for (int i = newPerformances.indexOf(p) + 1; i < newPerformances.size(); i++) {
                 if (p.getName().equalsIgnoreCase(newPerformances.get(i).getName())) {

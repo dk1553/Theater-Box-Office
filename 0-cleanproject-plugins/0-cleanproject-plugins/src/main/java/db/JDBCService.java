@@ -50,6 +50,7 @@ public class JDBCService {
             String description = rs.getString("description");
             performances.add(new PerformanceResource(name, description));
         }
+
         closeConnection();
         return performances;
     }

@@ -9,8 +9,10 @@ public interface PerformanceRepository {
 
     Performance findPerformanceByName(String name);
 
+    void loadRepertoireFromDB();
+
     Boolean addPerformances(List<Performance> performances);
 
-    Boolean isEmpty();
+
 
 }

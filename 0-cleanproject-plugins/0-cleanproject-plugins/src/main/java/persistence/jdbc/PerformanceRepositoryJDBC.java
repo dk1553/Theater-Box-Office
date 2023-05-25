@@ -36,8 +36,8 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
         return null;
     }
 
-
-    private void loadRepertoireFromDB() {
+    @Override
+    public void loadRepertoireFromDB() {
         try {
 
             List<Performance> performancesFormDB = new PerformanceMapper().map(JDBCService.getRepertoire());
@@ -68,10 +68,7 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
     }
 
 
-    @Override
-    public Boolean isEmpty() {
-        return (performances == null) || (performances.isEmpty());
-    }
+
 
 
 }
