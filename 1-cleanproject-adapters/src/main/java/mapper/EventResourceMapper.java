@@ -17,7 +17,7 @@ public class EventResourceMapper {
         }
         TicketResourceMapper ticketResourceMapper = new TicketResourceMapper();
         try {
-            return new EventResource(event.getId(), event.getPerformance().getName(), event.getDate(), event.getTime(), event.getHallName(), event.getBasicPrice().toString(), ticketResourceMapper.map(ticketRepository.findTicketsOfEvent(event.getId())));
+            return new EventResource(event.getId(), event.getPerformance(), event.getDate(), event.getTime(), event.getHallName(), event.getBasicPrice().toString(), ticketResourceMapper.map(ticketRepository.findTicketsOfEvent(event.getId())));
         } catch (Exception e) {
             return null;
         }

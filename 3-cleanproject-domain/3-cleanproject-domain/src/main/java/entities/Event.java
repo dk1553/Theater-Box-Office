@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.UUID;
 
 public class Event {
-    private final Performance performance;
+    private final String performance;
     private final String id;
     private final String date;
     private final String time;
@@ -20,7 +20,7 @@ public class Event {
 
     public Event(Performance performance, Date date, Date time, String hallName, Price basicPrice) throws Exception {
         this.id = UUID.randomUUID().toString();
-        this.performance = performance;
+        this.performance = performance.getName();
         ServiceStringTime serviceStringTime = new ServiceStringTime(date, time);
         this.date = serviceStringTime.getDate();
         this.time = serviceStringTime.getTime();
@@ -30,7 +30,7 @@ public class Event {
 
     public Event(String id, Performance performance, Date date, Date time, String hallName, Price basicPrice) throws Exception {
         this.id = id;
-        this.performance = performance;
+        this.performance = performance.getName();
         ServiceStringTime serviceStringTime = new ServiceStringTime(date, time);
         this.date = serviceStringTime.getDate();
         this.time = serviceStringTime.getTime();
@@ -38,7 +38,7 @@ public class Event {
         this.hallName = hallName;
     }
 
-    public Performance getPerformance() {
+    public String getPerformance() {
         return performance;
     }
 
