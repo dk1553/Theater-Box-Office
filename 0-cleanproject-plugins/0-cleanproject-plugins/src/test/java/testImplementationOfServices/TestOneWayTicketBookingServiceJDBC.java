@@ -1,13 +1,14 @@
-package testsWithEasyMock;
+package testImplementationOfServices;
 
 import static org.easymock.EasyMock.*;
 import static org.junit.Assert.assertEquals;
-import businessObjects.*;
+import entities.*;
+import enums.SeatType;
 import org.junit.Before;
 import org.junit.Test;
 import repositories.TicketRepository;
 import services.BookOneWayTicketDomainServiceJDBC;
-import java.math.BigDecimal;
+import vo.Price;
 
 
 public class TestOneWayTicketBookingServiceJDBC {
@@ -17,7 +18,7 @@ public class TestOneWayTicketBookingServiceJDBC {
     @Before
     public void setUp() throws Exception {
         ticketRepository=createMock(TicketRepository.class);
-        oneWayTicket = new OneWayTicket("0", new Price(BigDecimal.valueOf(50)), new Seat("Kleine Halle", SeatType.BALCONY ));
+        oneWayTicket = new OneWayTicket("0", new Price("50"), new Seat("Kleine Halle", SeatType.BALCONY ));
         expect(ticketRepository.findTicketById("testID")).andReturn(oneWayTicket);
         ticketRepository.save(oneWayTicket);
         replay(ticketRepository);

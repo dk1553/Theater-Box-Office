@@ -1,26 +1,16 @@
-import businessObjects.Event;
-import businessObjects.Performance;
-import businessObjects.Price;
-import businessObjects.TheaterBuilding;
+package TestVOs;
+
+import org.junit.Test;
+import vo.Price;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-public class TestBusinessObjectsCreation {
-    @org.junit.Test
-    public void testEventCreation() {
-        TheaterBuilding theaterBuilding= new TheaterBuilding();
-        try {
-            Event testEvent = new Event(new Performance("testPerformance", "testDescription"), new Date(),new Date(), theaterBuilding.findHallByName("Kleine halle"), new Price("50"));
-            assertNotNull(testEvent);
-        } catch (Exception e) {
-            assertTrue("Creation of event failed", false);
-        }
-    }
-    @org.junit.Test
-    public void testPriceCreation() {
+public class TestPrice {
+    @Test
+    public void testRegularCreation() {
         try {
             Price testPrice1 = new Price("50");
             assertEquals(testPrice1.toString(), "50");
@@ -38,11 +28,15 @@ public class TestBusinessObjectsCreation {
             assertTrue("Creation of price failed", false);
         }
 
+    }
+    @Test
+    public void testFailCreation() {
+
         Boolean creationFalied = false;
         try {
-            Price testPrice7 = new Price("test");
+            new Price("test");
         } catch (Exception e) {
-            creationFalied=true;
+            creationFalied = true;
         }
         assertTrue(creationFalied);
     }

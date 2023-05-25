@@ -21,6 +21,7 @@ public class Ticket {
         this.validationCode = validationCode;
         this.booked = booked;
     }
+
     public String getId() {
         return id;
     }
@@ -41,12 +42,15 @@ public class Ticket {
     public String getValidationCode() {
         return validationCode;
     }
+
     public String getEventID() {
         return "0000";
     }
+
     public String getSeat() {
         return "0";
     }
+
     public String getEndOfValidity() {
         return "01.01.0001";
     }
