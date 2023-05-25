@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="fixed a bug">
+      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/jdbc/CleanPerformanceList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/jdbc/PerformanceRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/jdbc/PerformanceRepositoryJDBC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,14 +239,7 @@
       <workItem from="1684484424197" duration="7351000" />
       <workItem from="1684612786163" duration="368000" />
       <workItem from="1684998858494" duration="7222000" />
-      <workItem from="1685011509369" duration="630000" />
-    </task>
-    <task id="LOCAL-00063" summary="code refactoring: removing duplicates">
-      <created>1681924299870</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1681924299872</updated>
+      <workItem from="1685011509369" duration="2416000" />
     </task>
     <task id="LOCAL-00064" summary="code refactoring: removing unused code">
       <created>1681924791961</created>
@@ -582,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685011934116</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="fixed a bug">
+      <created>1685012325041</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1685012325041</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
