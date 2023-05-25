@@ -5,25 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="code cleanUp">
-      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/TestBusinessObjects/TestEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/TestBusinessObjects/TestPerformance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/TestBusinessObjects/TestTickets.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/TestVOs/TestServiceStringTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/TestVOs/TestServiceTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/TestPerformanceUniqueness.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/testsWithEasyMock/TestOneWayTicketBookingServiceJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/test/java/testServices/TestOneWayTicketBookingServiceJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/test/java/TestMapping.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/entities/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/entities/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/EventTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/TestBusinessObjectsBehavior.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/TestBusinessObjectsCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/test/java/TestVOs/TestPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -87,33 +80,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Theater-Box-Office/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/original-easymock-5.1.0.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.27377778&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.28850573&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;
-    ],
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
-    ]
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Theater-Box-Office\3-cleanproject-domain\3-cleanproject-domain\src\main\java" />
@@ -268,6 +241,7 @@
       <workItem from="1684484424197" duration="7351000" />
       <workItem from="1684612786163" duration="368000" />
       <workItem from="1684998858494" duration="7222000" />
+      <workItem from="1685011509369" duration="279000" />
     </task>
     <task id="LOCAL-00062" summary="added relative path of jdbc">
       <created>1680783173039</created>
@@ -628,6 +602,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

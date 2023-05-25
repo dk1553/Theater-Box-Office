@@ -6,11 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="level-2-cleanproject-application" />
+        <module name="level-0-cleanproject-plugins" />
+        <module name="0-cleanproject-plugins" />
+        <module name="level-3-cleanproject-domain" />
+        <module name="level-4-cleanproject-abstractioncode" />
+        <module name="2-cleanproject-application" />
         <module name="4-cleanproject-abstractioncode" />
+        <module name="level-1-cleanproject-adapters" />
         <module name="1-cleanproject-adapters" />
         <module name="3-cleanproject-domain" />
-        <module name="0-cleanproject-plugins" />
-        <module name="2-cleanproject-application" />
       </profile>
     </annotationProcessing>
   </component>
