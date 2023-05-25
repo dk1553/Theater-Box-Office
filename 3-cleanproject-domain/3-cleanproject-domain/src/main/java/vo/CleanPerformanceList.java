@@ -4,8 +4,8 @@ import entities.Performance;
 
 import java.util.*;
 
-public class CleanPerformanceList {
-    private List<Performance> performanceList;
+public final class CleanPerformanceList {
+    final List<Performance> performanceList;
     public CleanPerformanceList(List<Performance> newPerformances,List<Performance> oldPerformances){
         performanceList= removeAlreadyExistingElements(removeDuplicates(newPerformances), oldPerformances);
 
