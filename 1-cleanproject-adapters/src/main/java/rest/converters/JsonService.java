@@ -8,7 +8,6 @@ import resources.PerformanceResource;
 import resources.TicketResource;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -109,18 +108,15 @@ public class JsonService {
     public static List<EventResource> json2EventResourceList(String contextBody) throws JSONException {
         JSONObject performanceJson = new JSONObject(contextBody);
         JSONArray jsonArrayEvents = performanceJson.getJSONArray("program");
+        System.out.println(jsonArrayEvents.length());
         List<EventResource> eventResources = new ArrayList<>();
         for (int i = 0; i < jsonArrayEvents.length(); i++) {
+            System.out.println("sssss+   " + i);
             JSONObject pJ = jsonArrayEvents.getJSONObject(i);
-            try {
-                EventResource event = new EventResource(pJ.getString("performance"), pJ.getString("date"), pJ.getString("time"), pJ.getString("hall"), pJ.getString("basic price"));
-                eventResources.add(event);
-                return eventResources;
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+            EventResource event = new EventResource(pJ.getString("performance"), pJ.getString("date"), pJ.getString("time"), pJ.getString("hall"), pJ.getString("basic price"));
+            eventResources.add(event);
         }
-        return Collections.emptyList();
+        return eventResources;
 
     }
 
@@ -129,6 +125,7 @@ public class JsonService {
         JSONArray jsonArrayPerformances = performanceJson.getJSONArray("performances");
         List<PerformanceResource> performanceList = new ArrayList<>();
         for (int i = 0; i < jsonArrayPerformances.length(); i++) {
+            System.out.println("iiiii+   " + i);
             JSONObject pJ = jsonArrayPerformances.getJSONObject(i);
             PerformanceResource performanceResource = new PerformanceResource(pJ.getString("name"), pJ.getString("description"));
             performanceList.add(performanceResource);
@@ -140,7 +137,6 @@ public class JsonService {
         if (isSuccessful) {
             return messageSuccessful;
         }
-
         return messageUnknownProblem;
 
 

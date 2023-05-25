@@ -6,10 +6,12 @@ import java.util.*;
 
 public final class CleanPerformanceList {
     final List<Performance> performanceList;
-    public CleanPerformanceList(List<Performance> newPerformances,List<Performance> oldPerformances){
-        performanceList= removeAlreadyExistingElements(removeDuplicates(newPerformances), oldPerformances);
+
+    public CleanPerformanceList(List<Performance> newPerformances, List<Performance> oldPerformances) {
+        performanceList = removeAlreadyExistingElements(removeDuplicates(newPerformances), oldPerformances);
 
     }
+
     private List<Performance> removeDuplicates(List<Performance> newPerformances) {
         Set<Performance> toDelete = new HashSet<>();
         if ((Objects.isNull(newPerformances)) || (newPerformances.isEmpty())) {
@@ -29,8 +31,8 @@ public final class CleanPerformanceList {
         return newPerformances;
     }
 
-    private List<Performance> removeAlreadyExistingElements(List<Performance> newPerformances,List<Performance> oldPerformances) {
-        if ((Objects.isNull(newPerformances)) || (newPerformances.isEmpty())){
+    private List<Performance> removeAlreadyExistingElements(List<Performance> newPerformances, List<Performance> oldPerformances) {
+        if ((Objects.isNull(newPerformances)) || (newPerformances.isEmpty())) {
             return Collections.emptyList();
         }
         Set<Performance> toDelete = new HashSet<>();

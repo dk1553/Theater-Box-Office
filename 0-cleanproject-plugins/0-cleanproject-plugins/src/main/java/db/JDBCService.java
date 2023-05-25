@@ -5,7 +5,6 @@ import resources.PerformanceResource;
 import resources.TicketResource;
 import rest.TheaterServiceApp;
 
-import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,18 +13,19 @@ public class JDBCService {
     static Connection connection;
     static Statement stmt;
     static ResultSet rs;
-   final static String INSERT = "INSERT INTO ";
-    final    static String VALUES = " VALUES (\'";
-    final  static String COMMA = "\',\'";
-    final   static String END_OF_COMMAND = "\');";
-    final   static String SELECT_FROM = "SELECT * FROM ";
-    final  static String UPDATE = "UPDATE ";
-    final   static String SET = " SET ";
-    final  static String WHERE = " WHERE ";
+    final static String INSERT = "INSERT INTO ";
+    final static String VALUES = " VALUES (\'";
+    final static String COMMA = "\',\'";
+    final static String END_OF_COMMAND = "\');";
+    final static String SELECT_FROM = "SELECT * FROM ";
+    final static String UPDATE = "UPDATE ";
+    final static String SET = " SET ";
+    final static String WHERE = " WHERE ";
 
     private JDBCService() {
         throw new IllegalStateException("Utility class");
     }
+
     private static void openConnection() throws ClassNotFoundException, SQLException {
         Class.forName("org.sqlite.JDBC");
         connection = DriverManager.getConnection(TheaterServiceApp.JDBC_SQLITE_DATABASE);
@@ -44,7 +44,7 @@ public class JDBCService {
     public static List<PerformanceResource> getRepertoire() throws SQLException, ClassNotFoundException {
         openConnection();
         List<PerformanceResource> performances = new ArrayList<>();
-        rs = stmt.executeQuery(SELECT_FROM +"performances;");
+        rs = stmt.executeQuery(SELECT_FROM + "performances;");
         while (rs.next()) {
             String name = rs.getString("name");
             String description = rs.getString("description");
@@ -57,7 +57,7 @@ public class JDBCService {
     public static List<EventResource> getTheaterProgram() throws Exception {
         openConnection();
         List<EventResource> events = new ArrayList<>();
-        rs = stmt.executeQuery(SELECT_FROM +"program;");
+        rs = stmt.executeQuery(SELECT_FROM + "program;");
         while (rs.next()) {
             String eventID = rs.getString("eventID");
             String performanceName = rs.getString("performance");
@@ -73,7 +73,7 @@ public class JDBCService {
     public static void addPerformancesToDatabase(List<PerformanceResource> performanceList) throws SQLException, ClassNotFoundException {
         openConnection();
         for (PerformanceResource performance : performanceList) {
-            String sql = INSERT +"performances (name, description)" +
+            String sql = INSERT + "performances (name, description)" +
                     VALUES + performance.getName() + COMMA + performance.getDescription() + END_OF_COMMAND;
             stmt.executeUpdate(sql);
         }
@@ -85,7 +85,7 @@ public class JDBCService {
     public static void addEventsToDatabase(List<EventResource> events) throws SQLException, ClassNotFoundException {
         openConnection();
         for (EventResource event : events) {
-            String sql = INSERT +"program (performance, date, time, hall, basicPrice, eventID)" +
+            String sql = INSERT + "program (performance, date, time, hall, basicPrice, eventID)" +
                     VALUES + event.getPerformance() + COMMA + event.getDate() + COMMA + event.getTime() + COMMA + event.getHall() + COMMA + event.getPrice() + COMMA + event.getEventID() + END_OF_COMMAND;
             stmt.executeUpdate(sql);
         }
@@ -94,7 +94,7 @@ public class JDBCService {
         closeConnection();
     }
 
-    public static List<TicketResource> getTickets() throws Exception {
+    public static List<TicketResource> getAllTickets() throws Exception {
         List<TicketResource> tickets = new ArrayList<>();
         tickets.addAll(getOneWayTickets());
         tickets.addAll(getYearTickets());
@@ -104,7 +104,7 @@ public class JDBCService {
     private static List<TicketResource> getOneWayTickets() throws Exception {
         openConnection();
         List<TicketResource> tickets = new ArrayList<>();
-        rs = stmt.executeQuery(SELECT_FROM +"oneWayTickets;");
+        rs = stmt.executeQuery(SELECT_FROM + "oneWayTickets;");
 
         while (rs.next()) {
             String ticketID = rs.getString("ticketID");
@@ -122,7 +122,7 @@ public class JDBCService {
     private static List<TicketResource> getYearTickets() throws Exception {
         openConnection();
         List<TicketResource> tickets = new ArrayList<>();
-        rs = stmt.executeQuery(SELECT_FROM +"yearTickets;");
+        rs = stmt.executeQuery(SELECT_FROM + "yearTickets;");
 
         while (rs.next()) {
             String ticketID = rs.getString("ticketID");
@@ -137,19 +137,18 @@ public class JDBCService {
     }
 
 
-
     public static void addTicketsToDatabase(List<TicketResource> tickets) throws SQLException, ClassNotFoundException {
         openConnection();
         for (TicketResource ticket : tickets) {
             String sql;
-            if (ticket.isYearTicket()){
-                sql = INSERT +"yearTickets (ticketID, price, isBooked, validationCode, validUntil)" +
-                        VALUES + ticket.getId() + COMMA + ticket.getPrice() + COMMA + ticket.isBooked() + COMMA + ticket.getValidationCode()+COMMA+ticket.getEndOfValidity()+ END_OF_COMMAND;
-            }else {
+            if (ticket.isYearTicket()) {
+                sql = INSERT + "yearTickets (ticketID, price, isBooked, validationCode, validUntil)" +
+                        VALUES + ticket.getId() + COMMA + ticket.getPrice() + COMMA + ticket.isBooked() + COMMA + ticket.getValidationCode() + COMMA + ticket.getEndOfValidity() + END_OF_COMMAND;
+            } else {
                 sql = INSERT + "oneWayTickets (ticketID, price, eventID, seat, isBooked, validationCode)" +
                         VALUES + ticket.getId() + COMMA + ticket.getPrice() + COMMA + ticket.getEventID() + COMMA + ticket.getSeat() + COMMA + ticket.isBooked() + COMMA + ticket.getValidationCode() + END_OF_COMMAND;
             }
-           stmt.executeUpdate(sql);
+            stmt.executeUpdate(sql);
         }
         connection.commit();
         MessagePrinter.recordsCreated();
@@ -159,7 +158,7 @@ public class JDBCService {
 
     public static void buyOneWayTicket(TicketResource ticket) throws SQLException, ClassNotFoundException {
         openConnection();
-        String sql = UPDATE +"oneWayTickets"+ SET +"isBooked=true" + WHERE +"ticketID=\'" + ticket.getId() + "\';";
+        String sql = UPDATE + "oneWayTickets" + SET + "isBooked=true" + WHERE + "ticketID=\'" + ticket.getId() + "\';";
         stmt.executeUpdate(sql);
         connection.commit();
         MessagePrinter.recordsCreated();

@@ -4,18 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="fixed a bug">
-      <change afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/jdbc/CleanPerformanceList.java" afterDir="false" />
+    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="code cleanUp + Tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/JDBCService.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/db/JDBCService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/jdbc/PerformanceRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/jdbc/PerformanceRepositoryJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/jdbc/TicketRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/java/persistence/jdbc/TicketRepositoryJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" beforeDir="false" afterPath="$PROJECT_DIR$/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/converters/JsonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/src/main/java/rest/converters/JsonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/vo/CleanPerformanceList.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-cleanproject-domain/3-cleanproject-domain/src/main/java/vo/CleanPerformanceList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ComposerSettings">
-    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -34,7 +36,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -79,14 +80,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql&#10;sqlite" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Theater-Box-Office/0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/original-easymock-5.1.0.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.27377778&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.28850573&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;
+    ],
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
+    ]
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Theater-Box-Office\3-cleanproject-domain\3-cleanproject-domain\src\main\java" />
@@ -109,7 +129,7 @@
   <component name="RunManager" selected="Application.TheaterServiceApp">
     <configuration name="TheaterServiceApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="rest.TheaterServiceApp" />
-      <module name="level-0-cleanproject-plugins" />
+      <module name="0-cleanproject-plugins" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="rest.*" />
@@ -238,8 +258,14 @@
       <workItem from="1684428283711" duration="11768000" />
       <workItem from="1684484424197" duration="7351000" />
       <workItem from="1684612786163" duration="368000" />
-      <workItem from="1684998858494" duration="7222000" />
-      <workItem from="1685011509369" duration="2416000" />
+      <workItem from="1684998858494" duration="9883000" />
+    </task>
+    <task id="LOCAL-00063" summary="code refactoring: removing duplicates">
+      <created>1681924299870</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1681924299872</updated>
     </task>
     <task id="LOCAL-00064" summary="code refactoring: removing unused code">
       <created>1681924791961</created>
@@ -570,21 +596,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685000043378</updated>
     </task>
-    <task id="LOCAL-00111" summary="fixed a bug">
-      <created>1685011934116</created>
+    <task id="LOCAL-00111" summary="code cleanUp + Tests">
+      <created>1685011029511</created>
       <option name="number" value="00111" />
       <option name="presentableId" value="LOCAL-00111" />
       <option name="project" value="LOCAL" />
-      <updated>1685011934116</updated>
+      <updated>1685011029511</updated>
     </task>
-    <task id="LOCAL-00112" summary="fixed a bug">
-      <created>1685012325041</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1685012325041</updated>
-    </task>
-    <option name="localTasksCounter" value="113" />
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,11 +619,9 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="implementation of performance uniqueness rule" />
     <MESSAGE value="Added authentication for admins" />
     <MESSAGE value="JUnit tests" />
     <MESSAGE value="code refactoring" />
@@ -624,12 +641,13 @@
     <MESSAGE value="implemented use case Buy Year Ticket (Ticket.java -&gt; OneWayTicket.java and YearTicket.java)" />
     <MESSAGE value="code cleanUp + fixed a bug" />
     <MESSAGE value="implemented mock tests with EasyMock" />
+    <MESSAGE value="fixed a bug" />
     <MESSAGE value="changed (Service) ValidationService to (VO) ServiceTime" />
     <MESSAGE value="changed ServiceTime to ServiceStringTime and implemented second VO called ServiceTime" />
     <MESSAGE value="changed JDBC table's structure and code cleanUp" />
     <MESSAGE value="code cleanUp" />
-    <MESSAGE value="fixed a bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed a bug" />
+    <MESSAGE value="code cleanUp + Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="code cleanUp + Tests" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

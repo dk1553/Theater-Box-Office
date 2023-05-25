@@ -67,7 +67,7 @@ public class TicketRepositoryJDBC implements TicketRepository {
         try {
             TicketMapper ticketMapper = new TicketMapper();
             ticketList = new ArrayList<>();
-            List<Ticket> ticketsFormDB = ticketMapper.map(JDBCService.getTickets(), seatRepository);
+            List<Ticket> ticketsFormDB = ticketMapper.map(JDBCService.getAllTickets(), seatRepository);
             if ((ticketsFormDB != null) && (!ticketsFormDB.isEmpty())) {
                 ticketList.addAll(ticketsFormDB);
             }

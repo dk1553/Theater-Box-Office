@@ -1,17 +1,17 @@
 package persistence.jdbc;
 
-import entities.Performance;
 import db.JDBCService;
-import repositories.PerformanceRepository;
+import entities.Performance;
 import mapper.PerformanceMapper;
 import mapper.PerformanceResourceMapper;
+import repositories.PerformanceRepository;
 import vo.CleanPerformanceList;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PerformanceRepositoryJDBC implements PerformanceRepository {
     private List<Performance> performances;
-
 
 
     public PerformanceRepositoryJDBC() throws RuntimeException {
@@ -68,12 +68,10 @@ public class PerformanceRepositoryJDBC implements PerformanceRepository {
     }
 
 
-
     @Override
     public Boolean isEmpty() {
         return (performances == null) || (performances.isEmpty());
     }
-
 
 
 }
