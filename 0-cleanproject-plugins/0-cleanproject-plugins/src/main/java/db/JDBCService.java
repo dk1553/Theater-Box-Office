@@ -3,7 +3,7 @@ package db;
 import resources.EventResource;
 import resources.PerformanceResource;
 import resources.TicketResource;
-import rest.TheaterServiceApp;
+import rest.TheaterBoxOfficeApp;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class JDBCService {
 
     private static void openConnection() throws ClassNotFoundException, SQLException {
         Class.forName("org.sqlite.JDBC");
-        connection = DriverManager.getConnection(TheaterServiceApp.JDBC_SQLITE_DATABASE);
+        connection = DriverManager.getConnection(TheaterBoxOfficeApp.JDBC_SQLITE_DATABASE);
         connection.setAutoCommit(false);
         stmt = connection.createStatement();
         MessagePrinter.dbOpened();

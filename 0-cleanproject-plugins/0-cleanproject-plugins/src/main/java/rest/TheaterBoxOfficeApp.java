@@ -13,7 +13,7 @@ import services.BookOneWayTicketDomainServiceJDBC;
 import services.BookYearTicketDomainServiceJDBC;
 
 
-public class TheaterServiceApp {
+public class TheaterBoxOfficeApp {
     public static String JDBC_SQLITE_DATABASE = "jdbc:sqlite:0-cleanproject-plugins/0-cleanproject-plugins/src/main/resources/sqlite/db/theater-box-office.db";
 
     public static void main(String[] args) {
