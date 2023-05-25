@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="code cleanUp">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="3bbfcd90-3186-4009-becf-350875a30641" name="Changes" comment="fixed a bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1-cleanproject-adapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/1-cleanproject-adapters/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +78,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql&#10;sqlite" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -106,7 +104,20 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestTickets">
+  <component name="RunManager" selected="Application.TheaterServiceApp">
+    <configuration name="TheaterServiceApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="rest.TheaterServiceApp" />
+      <module name="level-0-cleanproject-plugins" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestEvent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="3-cleanproject-domain" />
       <extension name="coverage">
@@ -132,21 +143,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="TestBusinessObjects" />
       <option name="MAIN_CLASS_NAME" value="TestBusinessObjects.TestPerformance" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestServiceStringTime (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="3-cleanproject-domain" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TestVOs.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="TestVOs" />
-      <option name="MAIN_CLASS_NAME" value="TestVOs.TestServiceStringTime" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -184,11 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TheaterServiceApp" />
         <item itemvalue="JUnit.TestTickets" />
         <item itemvalue="JUnit.TestPerformance" />
         <item itemvalue="JUnit.TestEvent" />
         <item itemvalue="JUnit.TestServiceTime (1)" />
-        <item itemvalue="JUnit.TestServiceStringTime (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -241,14 +237,7 @@
       <workItem from="1684484424197" duration="7351000" />
       <workItem from="1684612786163" duration="368000" />
       <workItem from="1684998858494" duration="7222000" />
-      <workItem from="1685011509369" duration="279000" />
-    </task>
-    <task id="LOCAL-00062" summary="added relative path of jdbc">
-      <created>1680783173039</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1680783173039</updated>
+      <workItem from="1685011509369" duration="630000" />
     </task>
     <task id="LOCAL-00063" summary="code refactoring: removing duplicates">
       <created>1681924299870</created>
@@ -586,7 +575,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685000043378</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="fixed a bug">
+      <created>1685011934116</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1685011934116</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -626,12 +622,12 @@
     <MESSAGE value="implemented use case Buy Year Ticket (Ticket.java -&gt; OneWayTicket.java and YearTicket.java)" />
     <MESSAGE value="code cleanUp + fixed a bug" />
     <MESSAGE value="implemented mock tests with EasyMock" />
-    <MESSAGE value="fixed a bug" />
     <MESSAGE value="changed (Service) ValidationService to (VO) ServiceTime" />
     <MESSAGE value="changed ServiceTime to ServiceStringTime and implemented second VO called ServiceTime" />
     <MESSAGE value="changed JDBC table's structure and code cleanUp" />
     <MESSAGE value="code cleanUp" />
-    <option name="LAST_COMMIT_MESSAGE" value="code cleanUp" />
+    <MESSAGE value="fixed a bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed a bug" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
