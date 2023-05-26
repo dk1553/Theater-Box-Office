@@ -44,7 +44,7 @@ public class TheaterBoxOfficeApp {
             controller.buyYearTicket(context);
         });
         app.post("/login", context -> {
-            controller.login(context);
+            controller.loginAdmin(context);
         });
         app.get("/logout", context -> {
             controller.logout(context);

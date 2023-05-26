@@ -48,8 +48,8 @@ public class TheaterService {
     public boolean updateTheaterProgramUseCase(List<Event> eventList) {
         try {
             eventRepository.addEvents(eventList, ticketRepository);
-            List <Ticket> tickets = new ArrayList<>();
-            for (Event event:eventList){
+            List<Ticket> tickets = new ArrayList<>();
+            for (Event event : eventList) {
                 for (Seat seat : seatRepository.findSeatsByHallName(event.getHallName())) {
                     tickets.add(new OneWayTicket(event.getId(), event.getBasicPrice(), seat));
                 }
@@ -73,6 +73,18 @@ public class TheaterService {
 
                 return this.bookOneWayTicketDomainService.bookTicket(ticketRepository, ticket);
 
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
+    public Ticket buyYearTicketUseCase(String userFirstName, String userLastName) {
+        try {
+            Boolean userIsVerified = verifyUser(userFirstName, userLastName);
+            if (userIsVerified) {
+                return this.bookYearTicketDomainService.bookTicket(ticketRepository);
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -111,22 +123,9 @@ public class TheaterService {
         return performanceRepository;
     }
 
-    public SeatRepository getSeatRepository() {
-        return seatRepository;
-    }
     public TicketRepository getTicketRepository() {
         return ticketRepository;
     }
 
-    public Ticket buyYearTicketUseCase(String userFirstName, String userLastName) {
-        try {
-            Boolean userIsVerified = verifyUser(userFirstName, userLastName);
-            if (userIsVerified) {
-                return this.bookYearTicketDomainService.bookTicket(ticketRepository);
-            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        return null;
-    }
+
 }

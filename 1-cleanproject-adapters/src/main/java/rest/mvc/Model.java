@@ -1,7 +1,8 @@
 package rest.mvc;
 
 import Service.TheaterService;
-import rest.converters.JsonService;
+import rest.converters.ConvertFromJsonService;
+import rest.converters.ConvertToJsonService;
 import mapper.*;
 import org.json.JSONException;
 
@@ -26,21 +27,21 @@ public class Model {
 
 
     public String getEventList() throws Exception {
-        String viewData = JsonService.eventResourceList2jsonString(eventResourceMapper.map(
+        String viewData = ConvertToJsonService.eventResourceList2jsonString(eventResourceMapper.map(
                 service.showProgramUseCase(), service.getTicketRepository()));
 
         return viewData;
     }
 
     public String getEvent(String eventID) {
-        String viewData = JsonService.eventResource2jsonString(eventResourceMapper.map(
+        String viewData = ConvertToJsonService.eventResource2jsonString(eventResourceMapper.map(
                 service.showEventUseCase(eventID), service.getTicketRepository()));
         return viewData;
 
     }
 
     public String getPerformanceList() throws Exception {
-        String viewData = JsonService.performanceResourceList2jsonString(performanceResourceMapper.map(
+        String viewData = ConvertToJsonService.performanceResourceList2jsonString(performanceResourceMapper.map(
                 service.showRepertoireUseCase()));
         return viewData;
 
@@ -48,7 +49,7 @@ public class Model {
 
     public String getPerformance(String performanceName) throws Exception {
         String viewData =
-                JsonService.performanceResource2jsonString(performanceResourceMapper.map(
+                ConvertToJsonService.performanceResource2jsonString(performanceResourceMapper.map(
                         service.showPerformanceUseCase(performanceName)));
         return viewData;
     }
@@ -56,50 +57,50 @@ public class Model {
     public String addPerformances(String json) throws Exception {
         Boolean status = service.updateRepertoireUseCase(
                 performanceMapper.map(
-                        JsonService.json2PerformanceList(json)));
+                        ConvertFromJsonService.json2PerformanceList(json)));
 
-        String viewData = JsonService.status2jsonString(status);
+        String viewData = ConvertToJsonService.status2jsonString(status);
         return viewData;
     }
 
     public String addEvents(String json) throws Exception {
         Boolean status = service.updateTheaterProgramUseCase(
-                eventMapper.mapNewObject(JsonService.json2EventResourceList(
+                eventMapper.mapNewObject(ConvertFromJsonService.json2EventResourceList(
                         json), service.getPerformanceRepository(), service.getHallRepository()));
-        String viewData = JsonService.status2jsonString(status);
+        String viewData = ConvertToJsonService.status2jsonString(status);
         return viewData;
     }
 
     public String buyTicket(String json, String ticketID) throws Exception {
-        String[] username = JsonService.getUsername(json);
+        String[] username = ConvertFromJsonService.json2Username(json);
         String viewData =
-                JsonService.boughtTicket2jsonString(ticketResourceMapper.map(
+                ConvertToJsonService.boughtTicket2jsonString(ticketResourceMapper.map(
                         service.buyTicketUseCase(
                                 ticketID, username[0], username[1])));
 
         return viewData;
     }
 
-    public Boolean verifyAdmin(String json) throws JSONException {
-        String[] cred = JsonService.getCredentials(json);
+    public Boolean adminSignIn(String json) throws JSONException {
+        String[] cred = ConvertFromJsonService.json2Credentials(json);
         return service.verifyAdmin(cred[0], cred[1]);
     }
 
     public String getLoginStatus(Boolean adminIsVerified){
-       String viewData =JsonService.status2jsonString(adminIsVerified);
+       String viewData = ConvertToJsonService.status2jsonString(adminIsVerified);
        return viewData;
     }
 
     public String getLogoutStatus() {
-        String viewData = JsonService.status2jsonString(true);
+        String viewData = ConvertToJsonService.status2jsonString(true);
         return viewData;
     }
 
 
     public String buyYearTicket(String json) throws Exception {
-        String[] username = JsonService.getUsername(json);
+        String[] username = ConvertFromJsonService.json2Username(json);
         String viewData =
-                JsonService.boughtTicket2jsonString(ticketResourceMapper.map(
+                ConvertToJsonService.boughtTicket2jsonString(ticketResourceMapper.map(
                         service.buyYearTicketUseCase(
                                  username[0], username[1])));
 

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class JsonService {
+public class ConvertToJsonService {
 
     static final String messageSuccessful = "{'message':'Successful'}";
     static final String messageDBisEmpty = "{'message':'Database is empty'}";
@@ -69,7 +69,7 @@ public class JsonService {
 
     }
 
-    public static String loginMessage() {
+    public static String loginMessage2jsonString() {
         return messageLogin;
 
     }
@@ -105,34 +105,6 @@ public class JsonService {
         return result + "'}";
     }
 
-    public static List<EventResource> json2EventResourceList(String contextBody) throws JSONException {
-        JSONObject performanceJson = new JSONObject(contextBody);
-        JSONArray jsonArrayEvents = performanceJson.getJSONArray("program");
-        System.out.println(jsonArrayEvents.length());
-        List<EventResource> eventResources = new ArrayList<>();
-        for (int i = 0; i < jsonArrayEvents.length(); i++) {
-            System.out.println("sssss+   " + i);
-            JSONObject pJ = jsonArrayEvents.getJSONObject(i);
-            EventResource event = new EventResource(pJ.getString("performance"), pJ.getString("date"), pJ.getString("time"), pJ.getString("hall"), pJ.getString("basic price"));
-            eventResources.add(event);
-        }
-        return eventResources;
-
-    }
-
-    public static List<PerformanceResource> json2PerformanceList(String contextBody) throws JSONException {
-        JSONObject performanceJson = new JSONObject(contextBody);
-        JSONArray jsonArrayPerformances = performanceJson.getJSONArray("performances");
-        List<PerformanceResource> performanceList = new ArrayList<>();
-        for (int i = 0; i < jsonArrayPerformances.length(); i++) {
-            System.out.println("iiiii+   " + i);
-            JSONObject pJ = jsonArrayPerformances.getJSONObject(i);
-            PerformanceResource performanceResource = new PerformanceResource(pJ.getString("name"), pJ.getString("description"));
-            performanceList.add(performanceResource);
-        }
-        return performanceList;
-    }
-
     public static String status2jsonString(Boolean isSuccessful) {
         if (isSuccessful) {
             return messageSuccessful;
@@ -142,21 +114,5 @@ public class JsonService {
 
     }
 
-    public static String[] getCredentials(String json) throws JSONException {
-        JSONObject userJson = new JSONObject(json);
-        JSONObject pJ = userJson.getJSONObject("admin");
-        String[] creds = new String[2];
-        creds[0] = pJ.getString("username");
-        creds[1] = pJ.getString("password");
-        return creds;
-    }
 
-    public static String[] getUsername(String json) throws JSONException {
-        JSONObject userJson = new JSONObject(json);
-        JSONObject pJ = userJson.getJSONObject("user");
-        String[] username = new String[2];
-        username[0] = pJ.getString("first name");
-        username[1] = pJ.getString("last name");
-        return username;
-    }
 }

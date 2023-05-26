@@ -1,7 +1,7 @@
 package rest.mvc;
 
 import io.javalin.http.Context;
-import rest.converters.JsonService;
+import rest.converters.ConvertToJsonService;
 
 import java.util.Objects;
 
@@ -36,7 +36,7 @@ public class Controller {
     }
 
     public static void addPerformances(Context context) throws Exception {
-        String viewData = JsonService.loginMessage();
+        String viewData = ConvertToJsonService.loginMessage2jsonString();
         int viewStatus = 401;
         if ((context.cookie("role") != null) && (Objects.equals(context.cookie("role"), "admin"))) {
             viewData = model.addPerformances(context.body());
@@ -47,7 +47,7 @@ public class Controller {
     }
 
     public static void addEvents(Context context) throws Exception {
-        String viewData = JsonService.loginMessage();
+        String viewData = ConvertToJsonService.loginMessage2jsonString();
         int viewStatus = 401;
         if ((context.cookie("role") != null) && (Objects.equals(context.cookie("role"), "admin"))) {
             viewData = model.addEvents(context.body());
@@ -63,8 +63,8 @@ public class Controller {
         context.json(viewData);
     }
 
-    public static void login(Context context) throws Exception {
-        Boolean adminIsVerified = model.verifyAdmin(context.body());
+    public static void loginAdmin(Context context) throws Exception {
+        Boolean adminIsVerified = model.adminSignIn(context.body());
         if (adminIsVerified) {
             context.cookie("role", "admin");
         } else {
