@@ -41,6 +41,9 @@ public class JDBCService {
         MessagePrinter.dbClosed();
     }
 
+
+
+
     public static List<PerformanceResource> getRepertoire() throws SQLException, ClassNotFoundException {
         openConnection();
         List<PerformanceResource> performances = new ArrayList<>();

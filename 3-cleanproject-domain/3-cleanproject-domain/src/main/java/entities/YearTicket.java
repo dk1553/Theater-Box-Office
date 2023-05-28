@@ -25,7 +25,7 @@ public class YearTicket extends Ticket {
     private String calculateEndOfValidity() {
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DATE, 365);
-        return  new ServiceStringTime(c.getTime()).getDate();
+        return new ServiceStringTime(c.getTime()).getDate();
     }
 
     @Override

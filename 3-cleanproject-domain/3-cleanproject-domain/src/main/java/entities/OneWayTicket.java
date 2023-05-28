@@ -30,6 +30,9 @@ public class OneWayTicket extends Ticket{
             return new Price();
         }
     }
+
+
+
     @Override
     public String getEventID() {
         return eventID;

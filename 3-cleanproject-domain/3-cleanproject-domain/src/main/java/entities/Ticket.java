@@ -22,27 +22,9 @@ public class Ticket {
         this.booked = booked;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public boolean isBooked() {
-        return booked;
-    }
-
-    public void setBooked() {
-        this.booked = true;
-    }
-
     public Price getPrice() throws Exception {
         return new Price("0");
     }
-
-
-    public String getValidationCode() {
-        return validationCode;
-    }
-
     public String getEventID() {
         return "0000";
     }
@@ -54,6 +36,23 @@ public class Ticket {
     public String getEndOfValidity() {
         return "01.01.0001";
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public boolean isBooked() {
+        return booked;
+    }
+
+    public void setBooked() {
+        this.booked = true;
+    }
+    public String getValidationCode() {
+        return validationCode;
+    }
+
+
 
 
 }

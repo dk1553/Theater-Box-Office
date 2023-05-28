@@ -14,10 +14,6 @@ public class Event {
     private final String hallName;
     private final Price basicPrice;
 
-
-
-
-
     public Event(Performance performance, Date date, Date time, String hallName, Price basicPrice) throws Exception {
         this.id = UUID.randomUUID().toString();
         this.performance = performance.getName();
