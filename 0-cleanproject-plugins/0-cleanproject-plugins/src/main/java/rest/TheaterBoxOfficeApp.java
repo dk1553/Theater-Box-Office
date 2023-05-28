@@ -46,14 +46,16 @@ public class TheaterBoxOfficeApp {
 
 
         app.get("/events/{eventID}", context -> {
-            String viewData = ConvertToJsonService.eventResourceList2jsonString(eventResourceMapper.map(
-                    service.showProgramUseCase(), service.getTicketRepository()));
-            context.json(viewData);
-        });
-        app.get("/events", context -> {
+
+
             String eventID=context.pathParam("eventID");
             String viewData = ConvertToJsonService.eventResource2jsonString(eventResourceMapper.map(
                     service.showEventUseCase(eventID), service.getTicketRepository()));
+            context.json(viewData);
+        });
+        app.get("/events", context -> {
+            String viewData = ConvertToJsonService.eventResourceList2jsonString(eventResourceMapper.map(
+                    service.showProgramUseCase(), service.getTicketRepository()));
             context.json(viewData);
         });
         app.get("/performances", context -> {
