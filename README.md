@@ -13,9 +13,63 @@ Die Vorlage muss in die Insomnia-App importiert werden:
 View theater repertoire: [Get] http://localhost:7771/performances \
 View theater program: [Get] http://localhost:7771/events \
 View event details: [Get] http://localhost:7771/events/{eventID} \
-Login (for admins only): [Post] http://localhost:7771/login \
-Logout (for admins only): [Post] http://localhost:7771/logout \
-Add new events: [Post] http://localhost:7771/addEvents \
-Add new performances: [Post] http://localhost:7771/addPerformances \
-Buy One Way Ticket: [Post] http://localhost:7771/buyOneWayTicket/{ticketID} \
+Login (for admins only): [Post] http://localhost:7771/login 
+```
+{
+	"admin":
+		{
+		
+			"username": "admin",
+			"password": "1234"
+		}
+}
+```
+Logout (for admins only): [Get] http://localhost:7771/logout \
+Add new events: [Post] http://localhost:7771/addEvents 
+```
+{
+	"program": [
+		{
+		
+			"performance": "DAS KUNSTSEIDENE MÄDCHEN",
+			"date": "15.06.2023",
+			"time": "10:10",
+			"hall":"Große Halle",
+			"basic price":"10.90"
+		}
+	]
+}
+```
+Add new performances: [Post] http://localhost:7771/addPerformances 
+```
+{
+	"performances": [
+		{
+			"name": "DAS KUNSTSEIDENE MÄDCHEN",
+			"description": "nach dem Roman von Irmgard Keun"
+		}
+	]
+}
+```
+Buy One Way Ticket: [Post] http://localhost:7771/buyOneWayTicket/{ticketID} 
+```
+{
+	"user":
+		{
+		
+			"first name": "A",
+			"last name": "B"
+		}
+}
+```
 Buy Year Ticket: [Post] http://localhost:7771/buyYearTicket 
+```
+{
+	"user":
+		{
+		
+			"first name": "A",
+			"last name": "B"
+		}
+}
+```
