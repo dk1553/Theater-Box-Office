@@ -13,9 +13,7 @@ public class Seat {
         this.seatID = String.valueOf(SeatIdentifier.getNewSeatID());
         this.hall = hall;
         this.type = type;
-        //change seatNumber to seatLine and seatNumberInLine
         this.seatNumber = seatID;
-
     }
 
     public String getSeatID() {
