@@ -16,7 +16,6 @@ import java.util.Objects;
 public class EventRepositoryJDBC implements EventRepository {
     public EventRepositoryJDBC(HallRepository hallRepository, PerformanceRepository performanceRepository) {
         eventList = new ArrayList<>();
-        System.out.println("2");
         loadTheaterProgramFromDB(hallRepository, performanceRepository);
     }
 
