@@ -14,7 +14,7 @@ import java.util.Objects;
 public class ConvertToJsonService {
 
     static final String messageSuccessful = "{'message':'Successful'}";
-    static final String messageDBisEmpty = "{'message':'Database is empty'}";
+    static final String messageDBisEmpty = "{'message':'Something went wrong :/'}";
     static final String messageLogin = "'message':'Please log in to use this function!'";
     static final String messageNotCompleted = "{'message':'Your purchase could not be completed'}";
     static final String messageUnknownProblem = "{'message':'Sorry! Your purchase could not be completed. Unknown problem ####'}";
