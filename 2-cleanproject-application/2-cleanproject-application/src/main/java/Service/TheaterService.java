@@ -26,7 +26,7 @@ public class TheaterService {
         this.eventRepository = eventRepository;
         this.ticketRepository = ticketRepository;
         this.bookOneWayTicketDomainService = bookOneWayTicketDomainService;
-        this.bookYearTicketDomainService= bookYearTicketDomainService;
+        this.bookYearTicketDomainService = bookYearTicketDomainService;
     }
 
     public List<Event> showProgramUseCase() {

@@ -22,6 +22,7 @@ public class ConvertFromJsonService {
         return eventResources;
 
     }
+
     public static List<PerformanceResource> json2PerformanceList(String contextBody) throws JSONException {
         JSONObject performanceJson = new JSONObject(contextBody);
         JSONArray jsonArrayPerformances = performanceJson.getJSONArray("performances");
@@ -33,6 +34,7 @@ public class ConvertFromJsonService {
         }
         return performanceList;
     }
+
     public static String[] json2Credentials(String json) throws JSONException {
         JSONObject userJson = new JSONObject(json);
         JSONObject pJ = userJson.getJSONObject("admin");

@@ -1,6 +1,7 @@
 package resources;
 
 import enums.Currency;
+
 public class TicketResource {
     private final String id;
     private final String basicPrice;
@@ -13,8 +14,8 @@ public class TicketResource {
     private final String currency;
     public String getEndOfValidity;
 
-    public TicketResource(Boolean isYearTicket, String ticketID, String eventID, String basicPrice, String seat, Boolean booked, String validationCode,  String getEndOfValidity) {
-        this.isYearTicket=isYearTicket;
+    public TicketResource(Boolean isYearTicket, String ticketID, String eventID, String basicPrice, String seat, Boolean booked, String validationCode, String getEndOfValidity) {
+        this.isYearTicket = isYearTicket;
         this.validationCode = validationCode;
         this.id = ticketID;
         this.eventID = eventID;
@@ -22,7 +23,7 @@ public class TicketResource {
         this.basicPrice = basicPrice;
         this.booked = booked;
         this.currency = Currency.EURO.getSymbol();
-        this.getEndOfValidity=getEndOfValidity;
+        this.getEndOfValidity = getEndOfValidity;
 
 
     }
@@ -61,7 +62,8 @@ public class TicketResource {
     public String getEndOfValidity() {
         return getEndOfValidity;
     }
-    public Boolean isYearTicket(){
+
+    public Boolean isYearTicket() {
         return isYearTicket;
     }
 }

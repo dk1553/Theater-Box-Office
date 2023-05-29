@@ -1,6 +1,8 @@
 package mapper;
 
-import entities.*;
+import entities.OneWayTicket;
+import entities.Ticket;
+import entities.YearTicket;
 import repositories.SeatRepository;
 import resources.TicketResource;
 import vo.Price;
@@ -10,11 +12,11 @@ import java.util.*;
 
 public class TicketMapper {
     public Ticket map(final TicketResource ticketResource, SeatRepository seatRepository) throws Exception {
-        if (Objects.isNull(ticketResource )||Objects.isNull(seatRepository )) {
+        if (Objects.isNull(ticketResource) || Objects.isNull(seatRepository)) {
             return null;
         }
         try {
-            if (ticketResource.isYearTicket()){
+            if (ticketResource.isYearTicket()) {
                 Date endOfValidity = new ServiceTime(ticketResource.getEndOfValidity()).getDate();
                 return new YearTicket(ticketResource.getId(), new Price(ticketResource.getPrice()), ticketResource.isBooked(), ticketResource.getValidationCode(), endOfValidity);
             }
@@ -27,7 +29,7 @@ public class TicketMapper {
     }
 
     public List<Ticket> map(List<TicketResource> ticketResources, SeatRepository seatRepository) throws Exception {
-        if (Objects.isNull(ticketResources )) {
+        if (Objects.isNull(ticketResources)) {
             return Collections.emptyList();
         }
         List<Ticket> tickets = new ArrayList<>();

@@ -1,6 +1,6 @@
 package mapper;
 
-import entities.*;
+import entities.Event;
 import repositories.TicketRepository;
 import resources.EventResource;
 
@@ -12,7 +12,7 @@ import java.util.Objects;
 public class EventResourceMapper {
     public EventResource map(Event event, TicketRepository ticketRepository) {
 
-        if (Objects.isNull(event )) {
+        if (Objects.isNull(event)) {
             return null;
         }
         TicketResourceMapper ticketResourceMapper = new TicketResourceMapper();
@@ -24,7 +24,7 @@ public class EventResourceMapper {
     }
 
     public List<EventResource> map(List<Event> events, TicketRepository ticketRepository) throws Exception {
-        if ((Objects.isNull(events )) || (events.isEmpty())) {
+        if ((Objects.isNull(events)) || (events.isEmpty())) {
             return Collections.emptyList();
         }
         List<EventResource> eventResources = new ArrayList<>();

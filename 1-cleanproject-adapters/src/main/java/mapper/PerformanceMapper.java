@@ -10,14 +10,14 @@ import java.util.Objects;
 
 public class PerformanceMapper {
     public Performance map(final PerformanceResource performanceResource) throws Exception {
-        if (Objects.isNull(performanceResource )) {
+        if (Objects.isNull(performanceResource)) {
             return null;
         }
         return new Performance(performanceResource.getName(), performanceResource.getDescription());
     }
 
     public List<Performance> map(List<PerformanceResource> performanceResources) throws Exception {
-        if ((Objects.isNull(performanceResources )) || (performanceResources.isEmpty())) {
+        if ((Objects.isNull(performanceResources)) || (performanceResources.isEmpty())) {
             return Collections.emptyList();
         }
         List<Performance> performances = new ArrayList<>();

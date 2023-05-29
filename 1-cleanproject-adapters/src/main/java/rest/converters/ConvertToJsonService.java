@@ -1,13 +1,9 @@
 package rest.converters;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import resources.EventResource;
 import resources.PerformanceResource;
 import resources.TicketResource;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 

@@ -1,18 +1,22 @@
 package mapper;
 
-import entities.*;
+import entities.Event;
+import entities.Performance;
 import repositories.HallRepository;
 import repositories.PerformanceRepository;
 import resources.EventResource;
 import vo.Price;
 import vo.ServiceTime;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
 public class EventMapper {
 
     public Event map(final EventResource eventResource, PerformanceRepository performanceRepository, HallRepository hallRepository) throws Exception {
-        if (Objects.isNull(eventResource )||Objects.isNull(performanceRepository )||Objects.isNull(hallRepository)) {
+        if (Objects.isNull(eventResource) || Objects.isNull(performanceRepository) || Objects.isNull(hallRepository)) {
             return null;
         }
         try {
@@ -34,7 +38,7 @@ public class EventMapper {
     }
 
     public List<Event> mapNewObject(List<EventResource> eventResources, PerformanceRepository performanceRepository, HallRepository hallRepository) {
-        if ((Objects.isNull(eventResources )) || (eventResources.isEmpty())) {
+        if ((Objects.isNull(eventResources)) || (eventResources.isEmpty())) {
             return Collections.emptyList();
         }
         List<Event> events = new ArrayList<>();
@@ -60,7 +64,7 @@ public class EventMapper {
             Performance performance = performanceRepository.findPerformanceByName(eventResource.getPerformance());
             String hallName = eventResource.getHall();
             Price price = new Price(eventResource.getPrice());
-            ServiceTime serviceTime= new ServiceTime(eventResource.getDate(), eventResource.getTime());
+            ServiceTime serviceTime = new ServiceTime(eventResource.getDate(), eventResource.getTime());
             String eventID = eventResource.getEventID();
             if ((performance != null) && (serviceTime.getDate() != null) && (serviceTime.getTime() != null) && (hallRepository.findHallByName(hallName) != null)) {
                 return new Event(eventID, performance, serviceTime.getDate(), serviceTime.getTime(), hallName, price);
