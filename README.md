@@ -32,7 +32,7 @@ Add new events: [Post] http://localhost:7771/addEvents
 		{
 		
 			"performance": "DAS KUNSTSEIDENE MÄDCHEN",
-			"date": "15.06.2023",
+			"date": "25.06.2023",
 			"time": "10:10",
 			"hall":"Große Halle",
 			"basic price":"10.90"
@@ -45,8 +45,8 @@ Add new performances: [Post] http://localhost:7771/addPerformances
 {
 	"performances": [
 		{
-			"name": "DAS KUNSTSEIDENE MÄDCHEN",
-			"description": "nach dem Roman von Irmgard Keun"
+			"name": "HOUSE OF TROUBLE",
+			"description": "nach Molière"
 		}
 	]
 }
